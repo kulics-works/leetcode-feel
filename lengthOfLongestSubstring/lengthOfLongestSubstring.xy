@@ -1,0 +1,33 @@
+lengthOfLongestSubstring (s:Str)->(length:I32)
+{
+    top := 0
+    temp := [:I32]
+
+    haveIt (input:[]I32, it:I32)->(yes:Bool, index:I32)
+    {
+        input.@ i -> v
+        {
+            ? v == it 
+            {
+                <- (true, i)
+            }
+        }
+        <- (false, 0)
+    }
+
+    s.@ v 
+    {
+        (yes, index) := haveIt.(temp, v)
+        ? yes
+        {
+            temp = temp.Substring.(index+1)
+        }
+        temp += v
+
+        ? temp.Count > top
+        {
+            top = temp.Count
+        }
+    }
+    <- (top)
+}
