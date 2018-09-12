@@ -1,0 +1,13 @@
+numJewelsInStones (J, S:Str)->(num:I32)
+{
+    count := 0
+    S.@
+    {
+        ? J.Contains.(it)
+        {
+            count += 1
+        }
+    }
+    <- (count)
+}
+
