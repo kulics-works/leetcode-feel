@@ -1,13 +1,18 @@
-numJewelsInStones (J, S:Str)->(num:I32)
+Solution
 {
-    count := 0
-    S.@
+    .. XyLang\Library
+
+    numJewelsInStones (J, S:Str)->(num:I32)
     {
-        ? J.Contains.(it)
+        count := 0
+        S.@
         {
-            count += 1
+            ? J.Contains.(it)
+            {
+                count += 1
+            }
         }
+        <- (count)
     }
-    <- (count)
 }
 

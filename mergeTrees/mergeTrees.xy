@@ -1,0 +1,28 @@
+Solution
+{
+    .. XyLang\Library
+
+    mergeTrees (t1, t2:TreeNode)->(v:TreeNode)
+    {
+        result := TreeNode.{}
+
+        ? t1 == null & t2 == null 
+        {
+            result = null
+        }
+        ? t1 != null & t2 == null
+        {
+            result = t1
+        }
+        ? t1 == null & t2 != null
+        {
+            result = t2
+        }
+        ? 
+        {
+            result.Val = t1.Val + t2.Val
+            result.Left = mergeTrees.(t1.Left, t2.Left)
+            result.Right = mergeTrees.(t1.Right, t2.Right)
+        }
+    }
+}

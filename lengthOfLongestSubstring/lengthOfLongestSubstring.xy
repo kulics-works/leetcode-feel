@@ -1,33 +1,38 @@
-lengthOfLongestSubstring (s:Str)->(length:I32)
+Solution
 {
-    top := 0
-    temp := [:I32]
+    .. XyLang\Library
 
-    haveIt (input:[]I32, it:I32)->(yes:Bool, index:I32)
+    lengthOfLongestSubstring (s:Str)->(length:I32)
     {
-        input.@ i -> v
+        top := 0
+        temp := [:I32]
+
+        haveIt (input:[]I32, it:I32)->(yes:Bool, index:I32)
         {
-            ? v == it 
+            input.@ i -> v
             {
-                <- (true, i)
+                ? v == it 
+                {
+                    <- (true, i)
+                }
+            }
+            <- (false, 0)
+        }
+
+        s.@ v 
+        {
+            (yes, index) := haveIt.(temp, v)
+            ? yes
+            {
+                temp = temp.Substring.(index+1)
+            }
+            temp += v
+
+            ? temp.Count > top
+            {
+                top = temp.Count
             }
         }
-        <- (false, 0)
+        <- (top)
     }
-
-    s.@ v 
-    {
-        (yes, index) := haveIt.(temp, v)
-        ? yes
-        {
-            temp = temp.Substring.(index+1)
-        }
-        temp += v
-
-        ? temp.Count > top
-        {
-            top = temp.Count
-        }
-    }
-    <- (top)
 }

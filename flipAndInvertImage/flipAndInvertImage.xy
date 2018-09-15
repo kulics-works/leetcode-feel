@@ -1,0 +1,23 @@
+Solution
+{
+    .. XyLang\Library
+
+    flipAndInvertImage (A:[][]I32)->(v:[][]I32)
+    {
+        reverse (numbers:[]I32)->(v:[]I32)
+        {
+            v := [:I32]
+            [numbers.Count-1 >> 0].@ i
+            {
+                v += 1 - numbers.[i]
+            }
+            <- (v)
+        }
+
+        A.@ i -> v
+        {
+            A.[i] = reverse.(v)
+        }
+        <- (A)
+    }
+}

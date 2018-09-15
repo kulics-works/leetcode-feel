@@ -1,0 +1,21 @@
+Solution
+{
+    .. XyLang\Library
+
+    peakIndexInMountainArray (A:[]I32)->(v:I32)
+    {
+        max := 0
+        A.@ i -> v
+        {
+            ? v >= max 
+            {
+                max = v
+            }
+            ?
+            {
+                <- (i-1)
+            }
+        }
+        <- (0)
+    }
+}
