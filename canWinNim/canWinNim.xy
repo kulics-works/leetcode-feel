@@ -1,0 +1,9 @@
+Solution
+{
+    .. XyLang\Library
+
+    canWinNim (n:I32)->(v:Bool)
+    {
+        <- (n % 4 == 0)
+    }
+}

@@ -1,0 +1,15 @@
+Solution
+{
+    .. XyLang\Library
+
+    titleToNumber (s:Str)->(v:I32)
+    {
+        num := 0
+        s.@
+        {
+            num *= 26
+            num += it - 'A' + 1
+        }
+        <- (num)
+    }
+}

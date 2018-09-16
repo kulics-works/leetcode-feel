@@ -1,0 +1,9 @@
+Solution
+{
+    .. XyLang\Library
+
+    reverseString (s:Str)->(v:Str)
+    {
+        <- (s.Reverse.())
+    }
+}

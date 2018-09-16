@@ -1,0 +1,14 @@
+Solution
+{
+    .. XyLang\Library
+
+    invertTree (root:TreeNode)->(v:TreeNode)
+    {
+        ? root == null { <- (null) }
+        <- (TreeNode.{...
+        Val = root.Val,
+        Left = invertTree.(root.Right),
+        Right = invertTree.(root.Left)
+        })
+    }
+}

@@ -1,0 +1,14 @@
+Solution
+{
+    .. XyLang\Library
+
+    reverseWords (s:Str)->(v:Str)
+    {
+        result := ""
+        s.Split.(' ').@ 
+        {
+            result += it.Reverse.() + " "
+        }
+        <- (result)
+    }
+}

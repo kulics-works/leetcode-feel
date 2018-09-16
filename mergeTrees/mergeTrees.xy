@@ -24,5 +24,6 @@ Solution
             result.Left = mergeTrees.(t1.Left, t2.Left)
             result.Right = mergeTrees.(t1.Right, t2.Right)
         }
+        <- (result)
     }
 }
