@@ -11,7 +11,7 @@ Solution
             line = 0
             str.@ char
             {
-                ? line1.Contrains.(char)
+                ? line1.Contains.(char)
                 {
                     ? line == 0 | line == 1
                     {
@@ -19,7 +19,7 @@ Solution
                     }
                     ? { <- @ }
                 }
-                ? line2.Contrains.(char)
+                ? line2.Contains.(char)
                 {
                     ? line == 0 | line == 2
                     {

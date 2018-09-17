@@ -1,0 +1,38 @@
+Solution
+{
+    .. XyLang\Library
+
+    addTwoNumbers (l1,l2:ListNode)->(v:ListNode)
+    {
+        head := ListNode.{0}
+        (p,q,current) := (l1,l2,head)
+        carry := 0
+        @ p != null | q != null 
+        {
+            x := 0
+            ? p != null {
+                x = p.Val
+            }
+            y := 0
+            ? q != null {
+                y = q.Val
+            }
+
+            sum := x + y + carry
+            carry = sum/10
+            current.Next = ListNode.{sum%10}
+            current = current.Next 
+            ? p != null {
+                p = p.Next
+            }
+            ? q != null {
+                q = q.Next
+            }
+        }
+        ? carry > 0
+        {
+            current.Next = ListNode.{carry}
+        } 
+        <- (head.Next)
+    }
+}
