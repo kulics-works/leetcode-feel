@@ -4,6 +4,6 @@ Solution
 
     hasAlternatingBits (n:I32)->(v:Bool)
     {
-        <- ( (n + n.Rht.(1) + 1).And.(n + n.Rht.(1)) == 0 )
+        <- ( (n + n.RHT.(1) + 1).AND.(n + n.RHT.(1)) == 0 )
     }
 }
