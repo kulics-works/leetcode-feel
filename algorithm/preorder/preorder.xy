@@ -1,0 +1,19 @@
+Solution
+{
+    .. XyLang\Library
+
+    preorder (root:Node)->(v:[]I32)
+    {
+        ? root == null
+        {
+            <- ([]I32.{})
+        }
+        list := []I32.{}
+        list += root.Val
+        root.Children@
+        {
+            list += preorder.(it)
+        }
+        <- (list)
+    }
+}

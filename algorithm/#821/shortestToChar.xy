@@ -1,0 +1,37 @@
+Solution
+{
+    .. XyLang\Library
+
+    shortestToChar (S:Str, C:U8)->(v:[]I32)
+    {
+        flag := -S.Count
+        arr := []I32.{S.Count}
+        S.@ i -> v
+        {
+            ? v == C 
+            {
+                flag = i
+            }
+            arr.[i] = i - flag
+        }
+        flag = S.Count * 2
+        [S.Count-1>>0].@ i -> v
+        {
+            ? v == C
+            {
+                flag = i
+            }
+            arr.[i] = min.(flag-i, arr.[i])
+        }
+        <- (arr)
+    }
+
+    min (a,b:I32)->(v:I32)
+    {
+        ? a < b
+        {
+            <- (a)
+        }
+        <- (b)
+    }
+}

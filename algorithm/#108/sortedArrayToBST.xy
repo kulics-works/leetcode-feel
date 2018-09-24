@@ -1,0 +1,19 @@
+Solution
+{
+    .. XyLang\Library
+
+    sortedArrayToBST (nums:[]I32)->(v:TreeNode)
+    {
+        ? nums.Count == 0
+        {
+            <- (null)
+        }
+        middle := nums.Count/2
+
+        <- (TreeNode.{...
+            Val = nums.[middle],
+            Left = sortedArrayToBST.(nums.[<<middle-1]),
+            Right = sortedArrayToBST.(nums.[middle+1<<])
+        })
+    }
+}

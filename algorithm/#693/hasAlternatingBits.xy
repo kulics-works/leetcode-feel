@@ -1,0 +1,9 @@
+Solution
+{
+    .. XyLang\Library
+
+    hasAlternatingBits (n:I32)->(v:Bool)
+    {
+        <- ( (n + n.Rht.(1) + 1).And.(n + n.Rht.(1)) == 0 )
+    }
+}

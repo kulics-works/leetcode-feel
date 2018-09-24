@@ -1,0 +1,22 @@
+Solution
+{
+    .. XyLang\Library
+
+    sortArrayByParity (A:[]I32)->(v:I32)
+    {
+        arr1 := [:I32]
+        arr2 := [:I32]
+        A.@
+        {
+            ? it & 1 != 1 
+            {
+                arr1 += it
+            }
+            ? 
+            {
+                arr2 += it
+            }
+        }
+        <- (arr1 + arr2)
+    }
+}

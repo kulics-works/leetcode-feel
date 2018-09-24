@@ -1,0 +1,16 @@
+Solution
+{
+    .. XyLang\Library
+
+    arrayPairSum (nums:[]I32)->(v:I32)
+    {
+        nums = nums.OrderBy.(it <- it).ToList.()
+        sum := 0
+        length := nums.Count
+        [0<<length-1; 2].@
+        {
+            sum += nums.[it]
+        }
+        <- (sum)
+    }
+}
