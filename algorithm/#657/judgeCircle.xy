@@ -2,7 +2,7 @@ Solution
 {
     .. XyLang\Library
 
-    judgeCircle (moves:Str)->(yes:Bool) 
+    judgeCircle (moves:str)->(yes:bl) 
     {
         x := 0
         y := 0

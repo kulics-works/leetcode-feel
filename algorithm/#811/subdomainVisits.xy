@@ -2,24 +2,24 @@ Solution
 {
     .. XyLang\Library
 
-    subdomainVisits (cpdomains:[]Str])->(v:[]Str)
+    subdomainVisits (cpdomains:[]str])->(v:[]str)
     {
-        results := [:Str]
-        dic := [:Str->I32]
+        results := [:str]
+        dic := [:str->i32]
         cpdomains.@
         {
-            temp := it.Split.(" ")
-            count := temp.[0].ToI32.()
-            arr := temp.[1].Split.(".")
+            temp := it.split.(" ")
+            count := temp.[0].toI32.()
+            arr := temp.[1].split.(".")
             arr.@ i -> _
             {
-                records := #Str.Join.(".", arr.[i<<])
+                records := #str.Join.(".", arr.[i<<])
                 dic.{records} += count
             }
         }
         dic.@ k -> v
         {
-            results += v.ToStr.() + " " + k
+            results += v.toStr.() + " " + k
         }
         <- (results)
     }

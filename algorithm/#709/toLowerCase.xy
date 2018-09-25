@@ -2,8 +2,8 @@ Solution
 {
     .. XyLang\Library
 
-    toLowerCase (str:Str)->(v:Str) 
+    toLowerCase (str:str)->(v:str) 
     {
-        <- (str.ToLower.())
+        <- (str.toLower.())
     }
 }

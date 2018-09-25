@@ -2,12 +2,12 @@ Solution
 {
     .. XyLang\Library
 
-    reverseWords (s:Str)->(v:Str)
+    reverseWords (s:str)->(v:str)
     {
         result := ""
-        s.Split.(' ').@ 
+        s.split.(' ').@ 
         {
-            result += it.Reverse.() + " "
+            result += it.reverse.() + " "
         }
         <- (result)
     }

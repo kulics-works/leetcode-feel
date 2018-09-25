@@ -2,13 +2,13 @@ Solution
 {
     .. XyLang\Library
 
-    twoSum (nums:[]I32)->(v:[]I32)
+    twoSum (nums:[]i32)->(v:[]i32)
     {
-        hashmap := [I32]I32.{}
+        hashmap := [i32]i32.{}
         nums.@ i -> v
         {
             temp := target - v
-            ? hashmap.ContainsKey.(temp)
+            ? hashmap.hasKey.(temp)
             {
                 <- ( [i, hashmap.[temp]] )
             }

@@ -2,15 +2,15 @@ Solution
 {
     .. XyLang\Library
 
-    preorder (root:Node)->(v:[]I32)
+    preorder (root:Node)->(v:[]i32)
     {
         ? root == null
         {
-            <- ([]I32.{})
+            <- ([]i32.{})
         }
-        list := []I32.{}
-        list += root.Val
-        root.Children@
+        list := []i32.{}
+        list += root.val
+        root.children.@
         {
             list += preorder.(it)
         }

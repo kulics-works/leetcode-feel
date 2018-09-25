@@ -2,16 +2,16 @@ Solution
 {
     .. XyLang\Library
 
-    findWords (words:[]Str)->(v:[]Str)
+    findWords (words:[]str)->(v:[]str)
     {
-        result := [:Str]
+        result := [:str]
         words.@
         {
-            str := it.ToLower.()
+            str := it.toLower.()
             line = 0
             str.@ char
             {
-                ? line1.Contains.(char)
+                ? line1.has.(char)
                 {
                     ? line == 0 | line == 1
                     {
@@ -19,7 +19,7 @@ Solution
                     }
                     ? { <- @ }
                 }
-                ? line2.Contains.(char)
+                ? line2.has.(char)
                 {
                     ? line == 0 | line == 2
                     {

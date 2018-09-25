@@ -2,8 +2,8 @@ Solution
 {
     .. XyLang\Library
 
-    reverseString (s:Str)->(v:Str)
+    reverseString (s:str)->(v:str)
     {
-        <- (s.Reverse.())
+        <- (s.reverse.())
     }
 }

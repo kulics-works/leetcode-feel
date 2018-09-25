@@ -2,10 +2,10 @@ Solution
 {
     .. XyLang\Library
 
-    shortestToChar (S:Str, C:U8)->(v:[]I32)
+    shortestToChar (S:str, C:chr)->(v:[]i32)
     {
-        flag := -S.Count
-        arr := []I32.{S.Count}
+        flag := -S.count
+        arr := []i32.{S.count}
         S.@ i -> v
         {
             ? v == C 
@@ -14,8 +14,8 @@ Solution
             }
             arr.[i] = i - flag
         }
-        flag = S.Count * 2
-        [S.Count-1>>0].@ i -> v
+        flag = S.count * 2
+        [S.count-1>>0].@ i -> v
         {
             ? v == C
             {
@@ -26,7 +26,7 @@ Solution
         <- (arr)
     }
 
-    min (a,b:I32)->(v:I32)
+    min (a,b:i32)->(v:i32)
     {
         ? a < b
         {

@@ -2,18 +2,18 @@ Solution
 {
     .. XyLang\Library
 
-    postorder (root:Node)->(v:[]I32)
+    postorder (root:Node)->(v:[]i32)
     {
         ? root == null
         {
-            <- ([]I32.{})
+            <- ([]i32.{})
         }
-        list := []I32.{}
-        root.Children@
+        list := []i32.{}
+        root.children.@
         {
             list += postorder.(it)
         }
-        list += root.Val
+        list += root.val
         <- (list)
     }
 }

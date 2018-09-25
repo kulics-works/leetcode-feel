@@ -4,7 +4,7 @@ Solution
 
     deleteNode (node:ListNode)->()
     {
-        node.Val = node.Next.Val
-        node.Next = node.Next.Next
+        node.val = node.next.val
+        node.next = node.next.next
     }
 }

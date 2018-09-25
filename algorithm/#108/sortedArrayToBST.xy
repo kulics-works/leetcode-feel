@@ -2,18 +2,18 @@ Solution
 {
     .. XyLang\Library
 
-    sortedArrayToBST (nums:[]I32)->(v:TreeNode)
+    sortedArrayToBST (nums:[]i32)->(v:TreeNode)
     {
-        ? nums.Count == 0
+        ? nums.count == 0
         {
             <- (null)
         }
-        middle := nums.Count/2
+        middle := nums.count/2
 
         <- (TreeNode.{...
-            Val = nums.[middle],
-            Left = sortedArrayToBST.(nums.[<<middle-1]),
-            Right = sortedArrayToBST.(nums.[middle+1<<])
+            val = nums.[middle],
+            left = sortedArrayToBST.(nums.[<<middle-1]),
+            right = sortedArrayToBST.(nums.[middle+1<<])
         })
     }
 }

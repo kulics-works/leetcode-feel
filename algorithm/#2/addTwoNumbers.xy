@@ -11,28 +11,28 @@ Solution
         {
             x := 0
             ? p != null {
-                x = p.Val
+                x = p.val
             }
             y := 0
             ? q != null {
-                y = q.Val
+                y = q.val
             }
 
             sum := x + y + carry
             carry = sum/10
-            current.Next = ListNode.{sum%10}
-            current = current.Next 
+            current.next = ListNode.{sum%10}
+            current = current.next 
             ? p != null {
-                p = p.Next
+                p = p.next
             }
             ? q != null {
-                q = q.Next
+                q = q.next
             }
         }
         ? carry > 0
         {
-            current.Next = ListNode.{carry}
+            current.next = ListNode.{carry}
         } 
-        <- (head.Next)
+        <- (head.next)
     }
 }

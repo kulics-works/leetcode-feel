@@ -20,9 +20,9 @@ Solution
         }
         ? 
         {
-            result.Val = t1.Val + t2.Val
-            result.Left = mergeTrees.(t1.Left, t2.Left)
-            result.Right = mergeTrees.(t1.Right, t2.Right)
+            result.val = t1.val + t2.val
+            result.left = mergeTrees.(t1.left, t2.left)
+            result.right = mergeTrees.(t1.right, t2.right)
         }
         <- (result)
     }

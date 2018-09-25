@@ -6,9 +6,9 @@ Solution
     {
         ? root == null { <- (null) }
         <- (TreeNode.{...
-        Val = root.Val,
-        Left = invertTree.(root.Right),
-        Right = invertTree.(root.Left)
+        val = root.val,
+        left = invertTree.(root.right),
+        right = invertTree.(root.left)
         })
     }
 }

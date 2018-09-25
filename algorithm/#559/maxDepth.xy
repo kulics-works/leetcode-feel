@@ -2,7 +2,7 @@ Solution
 {
     .. XyLang\Library
 
-    maxDepth (root:Node)->(v:I32)
+    maxDepth (root:Node)->(v:i32)
     {
         ? root == null
         {
@@ -10,7 +10,7 @@ Solution
         }
 
         depth := 0
-        root.Children.@
+        root.children.@
         {
             temp := maxDepth.(it)
             ? temp > depth

@@ -2,12 +2,12 @@ Solution
 {
     .. XyLang\Library
 
-    lengthOfLongestSubstring (s:Str)->(length:I32)
+    lengthOfLongestSubstring (s:str)->(length:i32)
     {
         top := 0
-        temp := [:I32]
+        temp := [:i32]
 
-        haveIt (input:[]I32, it:I32)->(yes:Bool, index:I32)
+        haveIt (input:[]i32, it:i32)->(yes:bl, index:i32)
         {
             input.@ i -> v
             {
@@ -24,13 +24,13 @@ Solution
             (yes, index) := haveIt.(temp, v)
             ? yes
             {
-                temp = temp.Substring.(index+1)
+                temp = temp.subStr.(index+1)
             }
             temp += v
 
-            ? temp.Count > top
+            ? temp.count > top
             {
-                top = temp.Count
+                top = temp.count
             }
         }
         <- (top)

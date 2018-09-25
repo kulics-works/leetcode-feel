@@ -2,24 +2,24 @@ Solution
 {
     .. XyLang\Library
 
-    hammingDistance (x,y:I32)->(distance:I32) 
+    hammingDistance (x,y:i32)->(distance:i32) 
     {
         big := x
         ? big < y 
         {
             big = y 
         }
-        z := x.XOR.(y)
+        z := x.xor.(y)
         count := 0
         
         i := 1
         @ i <= big 
         {
-            ? i.AND.(z) ~= 0
+            ? i.and.(z) ~= 0
             {
                 count += 1
             }
-            i = i.LFT.(1)
+            i = i.lft.(1)
         }    
 
         <- (count)

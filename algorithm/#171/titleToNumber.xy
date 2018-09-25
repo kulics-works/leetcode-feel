@@ -2,7 +2,7 @@ Solution
 {
     .. XyLang\Library
 
-    titleToNumber (s:Str)->(v:I32)
+    titleToNumber (s:str)->(v:i32)
     {
         num := 0
         s.@

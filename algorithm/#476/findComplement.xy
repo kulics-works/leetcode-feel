@@ -2,13 +2,13 @@ Solution
 {
     .. XyLang\Library
 
-    findComplement (num:I32)->(v:I32)
+    findComplement (num:i32)->(v:i32)
     {
         i := 1
         @ i <= num 
         {
-            num = num.XOR.(i)
-            i = i.LFT.(1)
+            num = num.xor.(i)
+            i = i.lft.(1)
         }
         <- (num)
     }
