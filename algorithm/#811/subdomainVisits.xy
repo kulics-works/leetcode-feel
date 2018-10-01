@@ -2,7 +2,7 @@ Solution
 {
     .. XyLang\Library
 
-    subdomainVisits (cpdomains:[]str])->(v:[]str)
+    subdomainVisits (cpdomains:[]str)->(v:[]str)
     {
         results := [:str]
         dic := [:str->i32]
