@@ -14,7 +14,7 @@ Solution
             arr.@ i -> _
             {
                 records := #str.Join.(".", arr.[i<<])
-                dic.{records} += count
+                dic.[records] += count
             }
         }
         dic.@ k -> v
