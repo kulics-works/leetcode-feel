@@ -10,11 +10,11 @@ Solution
         {
             result = null
         }
-        ? t1 != null & t2 == null
+        ? t1 ~= null & t2 == null
         {
             result = t1
         }
-        ? t1 == null & t2 != null
+        ? t1 == null & t2 ~= null
         {
             result = t2
         }

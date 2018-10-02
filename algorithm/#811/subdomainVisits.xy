@@ -11,7 +11,7 @@ Solution
             temp := it.split.(" ")
             count := temp.[0].toI32.()
             arr := temp.[1].split.(".")
-            arr.@ i -> _
+            arr.@ i -> v
             {
                 records := #str.Join.(".", arr.[i<<])
                 dic.[records] += count

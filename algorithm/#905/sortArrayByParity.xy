@@ -8,7 +8,7 @@ Solution
         arr2 := [:i32]
         A.@
         {
-            ? it & 1 != 1 
+            ? it & 1 ~= 1 
             {
                 arr1 += it
             }

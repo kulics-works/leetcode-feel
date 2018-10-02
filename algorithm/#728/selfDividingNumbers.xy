@@ -15,7 +15,7 @@ Solution
                 '0' { <- @ }
                 _ { temp = i % v.toI32.() }
 
-                ? temp != 0 
+                ? temp ~= 0 
                 {
                     <- @
                 }

@@ -15,9 +15,9 @@ Solution
             arr.[i] = i - flag
         }
         flag = S.count * 2
-        [S.count-1>>0].@ i -> v
+        [S.count-1 >> 0].@ i
         {
-            ? v == C
+            ? S.[i] == C
             {
                 flag = i
             }
