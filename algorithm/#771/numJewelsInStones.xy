@@ -1,18 +1,17 @@
 Solution
 {
-    .. XyLang\Library
-
-    numJewelsInStones (J, S:str)->(num:i32)
-    {
-        count := 0
-        S.@
-        {
-            ? J.has.(it)
-            {
-                count += 1
-            }
-        }
-        <- (count)
-    }
+    XyLang\Library
 }
 
+numJewelsInStones (J, S:str)->(num:i32)
+{
+    count := 0
+    S.@
+    {
+        ? J.has.(it)
+        {
+            count += 1
+        }
+    }
+    <- (count)
+}

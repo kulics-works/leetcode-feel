@@ -1,46 +1,46 @@
 Solution
 {
-    .. XyLang\Library
-
-    findWords (words:[]str)->(v:[]str)
-    {
-        result := [:str]
-        words.@
-        {
-            str := it.toLower.()
-            line = 0
-            str.@ char
-            {
-                ? line1.has.(char)
-                {
-                    ? line == 0 | line == 1
-                    {
-                        line = 1
-                    }
-                    ? { <- @ }
-                }
-                ? line2.has.(char)
-                {
-                    ? line == 0 | line == 2
-                    {
-                        line = 2
-                    }
-                    ? { <- @ }
-                }
-                ?
-                {
-                    ? line == 0 | line == 3
-                    {
-                        line = 3
-                    }
-                    ? { <- @ }
-                }
-            }
-            result += it
-        }
-        <- (result)
-    }
-
-    line1 :== ['q'->false,'w'->false,'e'->false,'r'->false,'t'->false,'y'->false,'u'->false,'i'->false,'o'->false,'p'->false]
-    line2 :== ['a'->false,'s'->false,'d'->false,'f'->false,'g'->false,'h'->false,'j'->false,'k'->false,'l'->false]
+    XyLang\Library
 }
+
+findWords (words:[]str)->(v:[]str)
+{
+    result := [:str]
+    words.@
+    {
+        str := it.toLower.()
+        line = 0
+        str.@ char
+        {
+            ? line1.has.(char)
+            {
+                ? line == 0 | line == 1
+                {
+                    line = 1
+                }
+                ? { <- @ }
+            }
+            ? line2.has.(char)
+            {
+                ? line == 0 | line == 2
+                {
+                    line = 2
+                }
+                ? { <- @ }
+            }
+            ?
+            {
+                ? line == 0 | line == 3
+                {
+                    line = 3
+                }
+                ? { <- @ }
+            }
+        }
+        result += it
+    }
+    <- (result)
+}
+
+line1 :== ['q'->false,'w'->false,'e'->false,'r'->false,'t'->false,'y'->false,'u'->false,'i'->false,'o'->false,'p'->false]
+line2 :== ['a'->false,'s'->false,'d'->false,'f'->false,'g'->false,'h'->false,'j'->false,'k'->false,'l'->false]

@@ -1,9 +1,9 @@
 Solution
 {
-    .. XyLang\Library
+    XyLang\Library
+}
 
-    reverseString (s:str)->(v:str)
-    {
-        <- (s.reverse.())
-    }
+reverseString (s:str)->(v:str)
+{
+    <- (s.reverse.())
 }

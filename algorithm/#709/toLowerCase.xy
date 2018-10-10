@@ -1,9 +1,9 @@
 Solution
 {
-    .. XyLang\Library
+    XyLang\Library
+}
 
-    toLowerCase (str:str)->(v:str) 
-    {
-        <- (str.toLower.())
-    }
+toLowerCase (str:str)->(v:str) 
+{
+    <- (str.toLower.())
 }

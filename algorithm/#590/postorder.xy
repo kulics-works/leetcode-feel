@@ -1,19 +1,19 @@
 Solution
 {
-    .. XyLang\Library
+    XyLang\Library
+}
 
-    postorder (root:Node)->(v:[]i32)
+postorder (root:Node)->(v:[]i32)
+{
+    ? root == null
     {
-        ? root == null
-        {
-            <- ([]i32.{})
-        }
-        list := []i32.{}
-        root.children.@
-        {
-            list += postorder.(it)
-        }
-        list += root.val
-        <- (list)
+        <- ([]i32.{})
     }
+    list := []i32.{}
+    root.children.@
+    {
+        list += postorder.(it)
+    }
+    list += root.val
+    <- (list)
 }

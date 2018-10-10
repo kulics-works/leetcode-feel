@@ -1,26 +1,26 @@
 Solution
 {
-    .. XyLang\Library
+    XyLang\Library
+}
 
-    uniqueMorseRepresentations (words:[]str)->(v:i32)
+uniqueMorseRepresentations (words:[]str)->(v:i32)
+{
+    morse :=  ['a' -> ".-",'b' -> "-...",'c' -> "-.-.",'d' -> "-..",'e' -> ".",'f' -> "..-.",'g' -> "--.",
+                'h' -> "....",'i' -> "..",'j' -> ".---",'k' -> "-.-",'l' -> ".-..",'m' -> "--",'n' -> "-.",
+                'o' -> "---",'p' -> ".--.",'q' -> "--.-",'r' -> ".-.",'s' -> "...",'t' -> "-",
+                'u' -> "..-",'v' -> "...-",'w' -> ".--",'x' -> "-..-",'y' -> "-.--",'z' -> "--.."]
+    
+    countMap := [:str->bl]
+
+    words.@ 
     {
-        morse :=  ['a' -> ".-",'b' -> "-...",'c' -> "-.-.",'d' -> "-..",'e' -> ".",'f' -> "..-.",'g' -> "--.",
-                    'h' -> "....",'i' -> "..",'j' -> ".---",'k' -> "-.-",'l' -> ".-..",'m' -> "--",'n' -> "-.",
-                    'o' -> "---",'p' -> ".--.",'q' -> "--.-",'r' -> ".-.",'s' -> "...",'t' -> "-",
-                    'u' -> "..-",'v' -> "...-",'w' -> ".--",'x' -> "-..-",'y' -> "-.--",'z' -> "--.."]
-        
-        countMap := [:str->bl]
-
-        words.@ 
+        temp := ""
+        it.@ char
         {
-            temp := ""
-            it.@ char
-            {
-                temp += morse.[char]
-            }
-            countMap.[temp] = true
+            temp += morse.[char]
         }
-
-        <- (countMap.count)
+        countMap.[temp] = true
     }
+
+    <- (countMap.count)
 }

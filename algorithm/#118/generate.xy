@@ -1,24 +1,24 @@
 Solution
 {
-    .. XyLang\Library
+    XyLang\Library
+}
 
-    generate (numRows:i32)->(v:[][]i32)
+generate (numRows:i32)->(v:[][]i32)
+{
+    arr := [:[]i32]
+    [0<<numRows-1].@ i
     {
-        arr := [:[]i32]
-        [0<<numRows-1].@ i
+        temp := [1]
+        [1<<i].@ j
         {
-            temp := [1]
-            [1<<i].@ j
+            right := 0
+            ? j < i
             {
-                right := 0
-                ? j < i
-                {
-                    right = arr.[i-1].[j]
-                }
-                temp += arr.[i-1].[j-1] + right
+                right = arr.[i-1].[j]
             }
-            arr += temp
+            temp += arr.[i-1].[j-1] + right
         }
-        <- (arr)
+        arr += temp
     }
+    <- (arr)
 }

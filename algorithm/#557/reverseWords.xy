@@ -1,14 +1,14 @@
 Solution
 {
-    .. XyLang\Library
+    XyLang\Library
+}
 
-    reverseWords (s:str)->(v:str)
+reverseWords (s:str)->(v:str)
+{
+    result := ""
+    s.split.(' ').@ 
     {
-        result := ""
-        s.split.(' ').@ 
-        {
-            result += it.reverse.() + " "
-        }
-        <- (result)
+        result += it.reverse.() + " "
     }
+    <- (result)
 }

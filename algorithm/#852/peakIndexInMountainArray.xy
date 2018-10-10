@@ -1,21 +1,21 @@
 Solution
 {
-    .. XyLang\Library
+    XyLang\Library
+}
 
-    peakIndexInMountainArray (A:[]i32)->(v:i32)
+peakIndexInMountainArray (A:[]i32)->(v:i32)
+{
+    max := 0
+    A.@ i -> v
     {
-        max := 0
-        A.@ i -> v
+        ? v >= max 
         {
-            ? v >= max 
-            {
-                max = v
-            }
-            ?
-            {
-                <- (i-1)
-            }
+            max = v
         }
-        <- (0)
+        ?
+        {
+            <- (i-1)
+        }
     }
+    <- (0)
 }

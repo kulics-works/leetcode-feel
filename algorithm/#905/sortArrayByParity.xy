@@ -1,22 +1,22 @@
 Solution
 {
-    .. XyLang\Library
+    XyLang\Library
+}
 
-    sortArrayByParity (A:[]i32)->(v:i32)
+sortArrayByParity (A:[]i32)->(v:i32)
+{
+    arr1 := [:i32]
+    arr2 := [:i32]
+    A.@
     {
-        arr1 := [:i32]
-        arr2 := [:i32]
-        A.@
+        ? it & 1 ~= 1 
         {
-            ? it & 1 ~= 1 
-            {
-                arr1 += it
-            }
-            ? 
-            {
-                arr2 += it
-            }
+            arr1 += it
         }
-        <- (arr1 + arr2)
+        ? 
+        {
+            arr2 += it
+        }
     }
+    <- (arr1 + arr2)
 }

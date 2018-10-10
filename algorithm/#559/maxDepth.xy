@@ -1,23 +1,23 @@
 Solution
 {
-    .. XyLang\Library
+    XyLang\Library
+}
 
-    maxDepth (root:Node)->(v:i32)
+maxDepth (root:Node)->(v:i32)
+{
+    ? root == null
     {
-        ? root == null
-        {
-            <- (0)
-        }
-
-        depth := 0
-        root.children.@
-        {
-            temp := maxDepth.(it)
-            ? temp > depth
-            {
-                depth = temp
-            }
-        }
-        <- (depth+1)
+        <- (0)
     }
+
+    depth := 0
+    root.children.@
+    {
+        temp := maxDepth.(it)
+        ? temp > depth
+        {
+            depth = temp
+        }
+    }
+    <- (depth+1)
 }

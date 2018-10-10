@@ -1,15 +1,15 @@
 Solution
 {
-    .. XyLang\Library
+    XyLang\Library
+}
 
-    titleToNumber (s:str)->(v:i32)
+titleToNumber (s:str)->(v:i32)
+{
+    num := 0
+    s.@
     {
-        num := 0
-        s.@
-        {
-            num *= 26
-            num += it - 'A' + 1
-        }
-        <- (num)
+        num *= 26
+        num += it - 'A' + 1
     }
+    <- (num)
 }

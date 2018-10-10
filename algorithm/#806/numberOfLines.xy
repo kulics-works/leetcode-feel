@@ -1,23 +1,23 @@
 Solution
 {
-    .. XyLang\Library
+    XyLang\Library
+}
 
-    numberOfLines (widths:[]i32,S:str)->(v:[]i32)
-    {
-        count := 0
-        line := 1
+numberOfLines (widths:[]i32,S:str)->(v:[]i32)
+{
+    count := 0
+    line := 1
 
-        S.@ {
-            width := widths.[it-'a']
-            ? width + count > 100 {
-                line += 1
-                count = width
-            }
-            ?
-            {
-                count += width
-            }
+    S.@ {
+        width := widths.[it-'a']
+        ? width + count > 100 {
+            line += 1
+            count = width
         }
-        <- ([line,count])
+        ?
+        {
+            count += width
+        }
     }
+    <- ([line,count])
 }
