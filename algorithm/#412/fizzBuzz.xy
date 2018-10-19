@@ -5,9 +5,9 @@ Solution
 
 fizzBuzz (n:i32)->(v:[]str)
 {
-    arr := [:str]
+    arr := []str.{}
 
-    [1<<n].@ 
+    [1<=n].@ 
     {
         ? it % 15 == 0
         {

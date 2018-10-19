@@ -19,5 +19,5 @@ numberOfLines (widths:[]i32,S:str)->(v:[]i32)
             count += width
         }
     }
-    <- ([line,count])
+    <- ( {line,count})
 }

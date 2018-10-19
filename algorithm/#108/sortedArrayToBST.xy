@@ -13,7 +13,7 @@ sortedArrayToBST (nums:[]i32)->(v:TreeNode)
 
     <- (TreeNode.{...
         val = nums.[middle],
-        left = sortedArrayToBST.(nums.[<<middle-1]),
-        right = sortedArrayToBST.(nums.[middle+1<<])
+        left = sortedArrayToBST.(nums.[<middle]),
+        right = sortedArrayToBST.(nums.[middle+1<=])
     })
 }

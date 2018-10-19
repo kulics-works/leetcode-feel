@@ -11,7 +11,7 @@ twoSum (nums:[]i32)->(v:[]i32)
         temp := target - v
         ? hashmap.hasKey.(temp)
         {
-            <- ( [i, hashmap.[temp]] )
+            <- ( {i, hashmap.[temp]} )
         }
         ?
         {

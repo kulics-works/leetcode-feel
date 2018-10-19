@@ -25,7 +25,7 @@ addTwoNumbers (l1,l2:ListNode)->(v:ListNode)
         current = current.next 
         ? p ~= null {
             p = p.next
-        }
+        };
         ? q ~= null {
             q = q.next
         }

@@ -5,14 +5,14 @@ Solution
 
 findWords (words:[]str)->(v:[]str)
 {
-    result := [:str]
+    result := {:str}
     words.@
     {
         str := it.toLower.()
         line = 0
-        str.@ char
+        str.@ c
         {
-            ? line1.has.(char)
+            ? line1.has.(c)
             {
                 ? line == 0 | line == 1
                 {
@@ -20,7 +20,7 @@ findWords (words:[]str)->(v:[]str)
                 }
                 ? { <- @ }
             }
-            ? line2.has.(char)
+            ? line2.has.(c)
             {
                 ? line == 0 | line == 2
                 {
@@ -42,5 +42,5 @@ findWords (words:[]str)->(v:[]str)
     <- (result)
 }
 
-line1 :== ['q'->false,'w'->false,'e'->false,'r'->false,'t'->false,'y'->false,'u'->false,'i'->false,'o'->false,'p'->false]
-line2 :== ['a'->false,'s'->false,'d'->false,'f'->false,'g'->false,'h'->false,'j'->false,'k'->false,'l'->false]
+line1 :== {'q'->false,'w'->false,'e'->false,'r'->false,'t'->false,'y'->false,'u'->false,'i'->false,'o'->false,'p'->false}
+line2 :== {'a'->false,'s'->false,'d'->false,'f'->false,'g'->false,'h'->false,'j'->false,'k'->false,'l'->false}

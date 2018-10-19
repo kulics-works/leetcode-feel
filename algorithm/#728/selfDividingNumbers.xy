@@ -5,8 +5,8 @@ Solution
 
 selfDividingNumbers (left,right:i32)->(v:[]i32)
 {
-    arr := [:i32]
-    [left<<right].@ i
+    arr := []i32.{}
+    [left<=right].@ i
     {
         str := i.toStr.()
         str.@ v

@@ -16,7 +16,7 @@ shortestToChar (S:str, C:chr)->(v:[]i32)
         arr.[i] = i - flag
     }
     flag = S.count * 2
-    [S.count-1 >> 0].@ i
+    [S.count-1 >= 0].@ i
     {
         ? S.[i] == C
         {
