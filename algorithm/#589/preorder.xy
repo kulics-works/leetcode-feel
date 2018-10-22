@@ -13,7 +13,7 @@ preorder (root:Node)->(v:[]i32)
     list += root.val
     root.children.@
     {
-        list += preorder.(it)
+        list += preorder.(ea)
     }
     <- (list)
 }

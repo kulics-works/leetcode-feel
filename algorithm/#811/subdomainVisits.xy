@@ -9,7 +9,7 @@ subdomainVisits (cpdomains:[]str)->(v:[]str)
     dic := {:str->i32}
     cpdomains.@
     {
-        temp := it.split.(" ")
+        temp := ea.split.(" ")
         count := temp.[0].toI32.()
         arr := temp.[1].split.(".")
         arr.@ i -> v

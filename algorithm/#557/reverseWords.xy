@@ -8,7 +8,7 @@ reverseWords (s:str)->(v:str)
     result := ""
     s.split.(' ').@ 
     {
-        result += it.reverse.() + " "
+        result += ea.reverse.() + " "
     }
     <- (result)
 }

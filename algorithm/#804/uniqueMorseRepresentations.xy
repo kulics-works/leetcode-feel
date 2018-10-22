@@ -15,7 +15,7 @@ uniqueMorseRepresentations (words:[]str)->(v:i32)
     words.@ 
     {
         temp := ""
-        it.@ c
+        ea.@ c
         {
             temp += morse.[c]
         }

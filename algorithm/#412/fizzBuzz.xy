@@ -9,21 +9,21 @@ fizzBuzz (n:i32)->(v:[]str)
 
     [1<=n].@ 
     {
-        ? it % 15 == 0
+        ? ea % 15 == 0
         {
             arr += "FizzBuzz"
         }
-        ? it % 3 == 0 
+        ? ea % 3 == 0 
         {
             arr += "Fizz"
         }
-        ? it % 5 == 0
+        ? ea % 5 == 0
         {
             arr += "Buzz"
         }
         ?
         {
-            arr += it.toStr.()
+            arr += ea.toStr.()
         }
     }
     <- (arr)

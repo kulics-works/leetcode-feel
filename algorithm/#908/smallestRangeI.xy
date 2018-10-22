@@ -13,13 +13,13 @@ smallestRangeI (A:[]i32,K:i32)->(v:i32)
     min := A.[0]
     A.@
     {
-        ? it > max
+        ? ea > max
         {
-            max = it
+            max = ea
         }
-        ? it < min
+        ? ea < min
         {
-            min = it
+            min = ea
         }
     }
     ? max - min >= K * 2

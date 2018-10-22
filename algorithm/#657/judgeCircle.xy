@@ -10,7 +10,7 @@ judgeCircle (moves:str)->(yes:bl)
 
     moves.@ 
     {
-        it.?
+        ea.?
         "L" { x += 1 }
         "R" { x -= 1 }
         "U" { y += 1 }

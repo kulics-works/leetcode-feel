@@ -8,7 +8,7 @@ findWords (words:[]str)->(v:[]str)
     result := {:str}
     words.@
     {
-        str := it.toLower.()
+        str := ea.toLower.()
         line = 0
         str.@ c
         {
@@ -37,7 +37,7 @@ findWords (words:[]str)->(v:[]str)
                 ? { <- @ }
             }
         }
-        result += it
+        result += ea
     }
     <- (result)
 }

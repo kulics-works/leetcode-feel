@@ -9,13 +9,13 @@ sortArrayByParity (A:[]i32)->(v:i32)
     arr2 := []i32.{}
     A.@
     {
-        ? it & 1 ~= 1 
+        ? ea & 1 ~= 1 
         {
-            arr1 += it
+            arr1 += ea
         }
         ? 
         {
-            arr2 += it
+            arr2 += ea
         }
     }
     <- (arr1 + arr2)

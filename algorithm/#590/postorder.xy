@@ -12,7 +12,7 @@ postorder (root:Node)->(v:[]i32)
     list := []i32.{}
     root.children.@
     {
-        list += postorder.(it)
+        list += postorder.(ea)
     }
     list += root.val
     <- (list)
