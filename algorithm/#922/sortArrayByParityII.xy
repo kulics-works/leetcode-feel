@@ -21,5 +21,5 @@ sortArrayByParityII (A:[]i32)->(v:[]i32)
             b += 2
         }
     }
-    return arr
+    <- (arr)
 }
