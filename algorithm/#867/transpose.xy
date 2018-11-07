@@ -1,6 +1,6 @@
 Solution
 {
-    XyLang\Library
+    Library
 }
 transpose (A:[][]i32)->(v:[][]i32)
 {

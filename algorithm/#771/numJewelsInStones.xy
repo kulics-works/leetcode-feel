@@ -1,6 +1,6 @@
 Solution
 {
-    XyLang\Library
+    Library
 }
 
 numJewelsInStones (J, S:str)->(num:i32)

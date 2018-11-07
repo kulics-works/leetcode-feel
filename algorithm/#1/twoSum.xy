@@ -1,6 +1,6 @@
 Solution
 {
-    XyLang\Library
+    Library
 }
 
 twoSum (nums:[]i32)->(v:[]i32)

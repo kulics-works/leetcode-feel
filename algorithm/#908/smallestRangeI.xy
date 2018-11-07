@@ -1,6 +1,6 @@
 Solution
 {
-    XyLang\Library
+    Library
 }
 
 smallestRangeI (A:[]i32,K:i32)->(v:i32)

@@ -1,6 +1,6 @@
 Solution
 {
-    XyLang\Library
+    Library
 }
 
 sortArrayByParity (A:[]i32)->(v:i32)

@@ -1,6 +1,6 @@
 Solution
 {
-    XyLang\Library
+    Library
 }
 
 uniqueMorseRepresentations (words:[]str)->(v:i32)

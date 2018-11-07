@@ -1,6 +1,6 @@
 Solution
 {
-    XyLang\Library
+    Library
 }
 
 generate (numRows:i32)->(v:[][]i32)

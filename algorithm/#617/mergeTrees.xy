@@ -1,6 +1,6 @@
 Solution
 {
-    XyLang\Library
+    Library
 }
 
 mergeTrees (t1, t2:TreeNode)->(v:TreeNode)

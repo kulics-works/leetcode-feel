@@ -1,6 +1,6 @@
 Solution
 {
-    XyLang\Library
+    Library
 }
 
 addTwoNumbers (l1,l2:ListNode)->(v:ListNode)

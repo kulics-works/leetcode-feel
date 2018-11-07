@@ -1,6 +1,6 @@
 Solution
 {
-    XyLang\Library
+    Library
 }
 
 judgeCircle (moves:str)->(yes:bl) 

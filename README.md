@@ -1,2 +1,2 @@
-# xylang-leetcode
-use xylang to play leetcode
+# Xs-Leetcode
+use Xs to play Leetcode

@@ -1,6 +1,6 @@
 Solution
 {
-    XyLang\Library
+    Library
 }
 
 fizzBuzz (n:i32)->(v:[]str)

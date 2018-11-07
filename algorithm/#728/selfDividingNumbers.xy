@@ -1,6 +1,6 @@
 Solution
 {
-    XyLang\Library
+    Library
 }
 
 selfDividingNumbers (left,right:i32)->(v:[]i32)

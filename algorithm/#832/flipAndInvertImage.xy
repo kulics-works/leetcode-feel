@@ -1,6 +1,6 @@
 Solution
 {
-    XyLang\Library
+    Library
 }
 
 flipAndInvertImage (A:[][]i32)->(v:[][]i32)

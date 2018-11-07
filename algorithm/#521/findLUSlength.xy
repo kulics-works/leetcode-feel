@@ -1,6 +1,6 @@
 Solution
 {
-    XyLang\Library
+    Library
 }
 
 findLUSlength (a,b:str)->(v:i32)
