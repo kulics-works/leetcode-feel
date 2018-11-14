@@ -1,15 +1,12 @@
-Solution
-{
+Solution {
     Library
 }
 
-addTwoNumbers (l1,l2:ListNode)->(v:ListNode)
-{
+addTwoNumbers (l1,l2:ListNode)->(v:ListNode) {
     head := ListNode.{0}
     (p,q,current) := (l1,l2,head)
     carry := 0
-    @ p ~= null | q ~= null 
-    {
+    @ p ~= null | q ~= null {
         x := 0
         ? p ~= null {
             x = p.val
@@ -25,13 +22,12 @@ addTwoNumbers (l1,l2:ListNode)->(v:ListNode)
         current = current.next 
         ? p ~= null {
             p = p.next
-        };
+        }
         ? q ~= null {
             q = q.next
         }
     }
-    ? carry > 0
-    {
+    ? carry > 0 {
         current.next = ListNode.{carry}
     }
     <- (head.next)

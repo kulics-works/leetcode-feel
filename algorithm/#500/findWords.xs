@@ -1,40 +1,31 @@
-Solution
-{
+Solution {
     Library
 }
 
-findWords (words:[]str)->(v:[]str)
-{
+findWords (words:[]str)->(v:[]str) {
     result := {:str}
-    words.@
-    {
+    words.@ {
         str := ea.toLower.()
         line = 0
-        str.@ c
-        {
-            ? line1.has.(c)
-            {
-                ? line == 0 | line == 1
-                {
+        str.@ c {
+            ? line1.has.(c) {
+                ? line == 0 | line == 1 {
                     line = 1
+                } _ { 
+                    <- @ 
                 }
-                ? { <- @ }
-            }
-            ? line2.has.(c)
-            {
-                ? line == 0 | line == 2
-                {
+            } line2.has.(c) {
+                ? line == 0 | line == 2 {
                     line = 2
+                } _ { 
+                    <- @ 
                 }
-                ? { <- @ }
-            }
-            ?
-            {
-                ? line == 0 | line == 3
-                {
+            } _ {
+                ? line == 0 | line == 3 {
                     line = 3
+                } _ { 
+                    <- @ 
                 }
-                ? { <- @ }
             }
         }
         result += ea

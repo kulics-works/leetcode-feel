@@ -1,36 +1,28 @@
-Solution
-{
+Solution {
     Library
 }
 
-lengthOfLongestSubstring (s:str)->(length:i32)
-{
+lengthOfLongestSubstring (s:str)->(length:i32) {
     top := 0
     temp := {:i32}
 
-    haveIt (input:[]i32, it:i32)->(yes:bl, index:i32)
-    {
-        input.@ i -> v
-        {
-            ? v == it 
-            {
+    haveIt (input:[]i32, it:i32)->(yes:bl, index:i32) {
+        input.@ i -> v {
+            ? v == it {
                 <- (true, i)
             }
         }
         <- (false, 0)
     }
 
-    s.@ v 
-    {
+    s.@ v {
         (yes, index) := haveIt.(temp, v)
-        ? yes
-        {
+        ? yes {
             temp = temp.subStr.(index+1)
         }
         temp += v
 
-        ? temp.count > top
-        {
+        ? temp.count > top {
             top = temp.count
         }
     }

@@ -1,19 +1,14 @@
-Solution
-{
+Solution {
     Library
 }
 
-generate (numRows:i32)->(v:[][]i32)
-{
+generate (numRows:i32)->(v:[][]i32) {
     arr := {:[]i32}
-    [0<numRows].@ i
-    {
+    [0<numRows].@ i {
         temp := {1}
-        [1<=i].@ j
-        {
+        [1<=i].@ j {
             right := 0
-            ? j < i
-            {
+            ? j < i {
                 right = arr.[i-1].[j]
             }
             temp += arr.[i-1].[j-1] + right

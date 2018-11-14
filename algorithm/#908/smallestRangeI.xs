@@ -1,29 +1,21 @@
-Solution
-{
+Solution {
     Library
 }
 
-smallestRangeI (A:[]i32,K:i32)->(v:i32)
-{
-    ? A.count == 0 
-    {
+smallestRangeI (A:[]i32,K:i32)->(v:i32) {
+    ? A.count == 0 {
         <- (0)
     }
     max := A.[0]
     min := A.[0]
-    A.@
-    {
-        ? ea > max
-        {
+    A.@ {
+        ? ea > max {
             max = ea
-        }
-        ? ea < min
-        {
+        } ea < min {
             min = ea
         }
     }
-    ? max - min >= K * 2
-    {
+    ? max - min >= K * 2 {
         <- (max - min - K * 2)
     }
     <- (0)

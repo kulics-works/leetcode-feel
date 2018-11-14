@@ -1,9 +1,7 @@
-Solution
-{
+Solution {
     Library
 }
 
-toLowerCase (str:str)->(v:str) 
-{
+toLowerCase (str:str)->(v:str) {
     <- (str.toLower.())
 }

@@ -1,10 +1,8 @@
-Solution
-{
+Solution {
     Library
 }
 
-invertTree (root:TreeNode)->(v:TreeNode)
-{
+invertTree (root:TreeNode)->(v:TreeNode) {
     ? root == null { <- (null) }
     <- (TreeNode.{...
     val = root.val,

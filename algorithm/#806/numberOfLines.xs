@@ -1,22 +1,17 @@
-Solution
-{
+Solution {
     Library
 }
 
-numberOfLines (widths:[]i32,S:str)->(v:[]i32)
-{
+numberOfLines (widths:[]i32,S:str)->(v:[]i32) {
     count := 0
     line := 1
 
-    S.@ 
-    {
+    S.@ {
         width := widths.[ea-'a']
         ? width + count > 100 {
             line += 1
             count = width
-        }
-        ?
-        {
+        } _ {
             count += width
         }
     }
