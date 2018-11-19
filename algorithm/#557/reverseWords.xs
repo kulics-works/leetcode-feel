@@ -1,13 +1,10 @@
-Solution
-{
+Solution {
     Library
 }
 
-reverseWords (s:str)->(v:str)
-{
+reverseWords (s:str)->(v:str) {
     result := ""
-    s.split.(' ').@ 
-    {
+    s.split.(' ').@ {
         result += ea.reverse.() + " "
     }
     <- (result)

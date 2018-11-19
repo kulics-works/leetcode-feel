@@ -1,21 +1,16 @@
-Solution
-{
+Solution {
     Library
 }
 
-maxDepth (root:Node)->(v:i32)
-{
-    ? root == null
-    {
+maxDepth (root:Node)->(v:i32) {
+    ? root == null {
         <- (0)
     }
 
     depth := 0
-    root.children.@
-    {
+    root.children.@ {
         temp := maxDepth.(ea)
-        ? temp > depth
-        {
+        ? temp > depth {
             depth = temp
         }
     }
