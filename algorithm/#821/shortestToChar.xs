@@ -4,19 +4,19 @@ Solution {
 
 shortestToChar (S:str, C:chr)->(v:[]i32) {
     flag := -S.count
-    arr := []i32.{S.count}
-    S.@ i -> v {
+    arr := []i32{S.count}
+    @ [S] i -> v {
         ? v == C {
             flag = i
         }
-        arr.[i] = i - flag
+        arr[i] = i - flag
     }
     flag = S.count * 2
-    [S.count-1 >= 0].@ i {
-        ? S.[i] == C {
+    @ [S.count-1 >= 0] i {
+        ? S[i] == C {
             flag = i
         }
-        arr.[i] = min.(flag-i, arr.[i])
+        arr[i] = min(flag-i, arr[i])
     }
     <- (arr)
 }

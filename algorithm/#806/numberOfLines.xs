@@ -6,8 +6,8 @@ numberOfLines (widths:[]i32,S:str)->(v:[]i32) {
     count := 0
     line := 1
 
-    S.@ {
-        width := widths.[ea-'a']
+    @ [S] {
+        width := widths[ea-'a']
         ? width + count > 100 {
             line += 1
             count = width
@@ -15,5 +15,5 @@ numberOfLines (widths:[]i32,S:str)->(v:[]i32) {
             count += width
         }
     }
-    <- ( {line,count})
+    <- ( _{line,count})
 }

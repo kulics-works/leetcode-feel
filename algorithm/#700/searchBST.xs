@@ -8,8 +8,8 @@ searchBST (root:TreeNode, val:i32)->(v:TreeNode)  {
     } root.val == val {
         <- (root)
     } root.val > val {
-        <- (searchBST.(root.left, val))
+        <- (searchBST(root.left, val))
     } _ {
-        <- (searchBST.(root.right, val))
+        <- (searchBST(root.right, val))
     }
 }

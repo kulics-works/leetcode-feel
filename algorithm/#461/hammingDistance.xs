@@ -7,15 +7,15 @@ hammingDistance (x,y:i32)->(distance:i32) {
     ? big < y {
         big = y 
     }
-    z := x.xor.(y)
+    z := x.xor(y)
     count := 0
     
     i := 1
     @ i <= big {
-        ? i.and.(z) ~= 0 {
+        ? i.and(z) ~= 0 {
             count += 1
         }
-        i = i.lft.(1)
+        i = i.lft(1)
     }    
 
     <- (count)

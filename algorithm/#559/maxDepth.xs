@@ -8,8 +8,8 @@ maxDepth (root:Node)->(v:i32) {
     }
 
     depth := 0
-    root.children.@ {
-        temp := maxDepth.(ea)
+    @ [root.children] {
+        temp := maxDepth(ea)
         ? temp > depth {
             depth = temp
         }

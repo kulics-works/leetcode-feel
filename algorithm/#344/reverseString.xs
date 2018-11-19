@@ -3,5 +3,5 @@ Solution {
 }
 
 reverseString (s:str)->(v:str) {
-    <- (s.reverse.())
+    <- (s.reverse())
 }

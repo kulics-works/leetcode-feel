@@ -3,9 +3,9 @@ Solution {
 }
 
 sortArrayByParity (A:[]i32)->(v:i32) {
-    arr1 := []i32.{}
-    arr2 := []i32.{}
-    A.@ {
+    arr1 := []i32{}
+    arr2 := []i32{}
+    @ [A] {
         ? ea & 1 ~= 1 {
             arr1 += ea
         } _ {

@@ -3,14 +3,14 @@ Solution {
 }
 
 selfDividingNumbers (left,right:i32)->(v:[]i32) {
-    arr := []i32.{}
-    [left<=right].@ i {
-        str := i.toStr.()
-        str.@ v {
+    arr := []i32{}
+    @ [left<=right] i {
+        str := i.toStr()
+        @ [str] v {
             temp := 0
-            v.?
+            ? v ->
             '0' { <- @ }
-            _ { temp = i % v.toI32.() }
+            _ { temp = i % v.toI32() }
 
             ? temp ~= 0 {
                 <- @

@@ -3,9 +3,9 @@ Solution {
 }
 
 fizzBuzz (n:i32)->(v:[]str) {
-    arr := []str.{}
+    arr := []str{}
 
-    [1<=n].@  {
+    @ [1<=n]  {
         ? ea % 15 == 0 {
             arr += "FizzBuzz"
         } ea % 3 == 0 {
@@ -13,7 +13,7 @@ fizzBuzz (n:i32)->(v:[]str) {
         } ea % 5 == 0 {
             arr += "Buzz"
         } _ {
-            arr += ea.toStr.()
+            arr += ea.toStr()
         }
     }
     <- (arr)

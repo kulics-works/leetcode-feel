@@ -4,7 +4,7 @@ Solution {
 
 peakIndexInMountainArray (A:[]i32)->(v:i32) {
     max := 0
-    A.@ i -> v {
+    @ [A] i -> v {
         ? v >= max {
             max = v
         } _ {
