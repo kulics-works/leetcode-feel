@@ -8,7 +8,7 @@ uniqueMorseRepresentations (words:[]str)->(v:i32) {
                 'o' -> "---",'p' -> ".--.",'q' -> "--.-",'r' -> ".-.",'s' -> "...",'t' -> "-",
                 'u' -> "..-",'v' -> "...-",'w' -> ".--",'x' -> "-..-",'y' -> "-.--",'z' -> "--.."}
     
-    countMap := _{:str->bl}
+    countMap := [str]bl{}
 
     @ [words] {
         temp := ""

@@ -4,7 +4,7 @@ Solution {
 
 lengthOfLongestSubstring (s:str)->(length:i32) {
     top := 0
-    temp := _{:i32}
+    temp := []i32{}
 
     haveIt (input:[]i32, it:i32)->(yes:bl, index:i32) {
         @ [input] i -> v {

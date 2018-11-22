@@ -3,8 +3,8 @@ Solution {
 }
 
 subdomainVisits (cpdomains:[]str)->(v:[]str) {
-    results := _{:str}
-    dic := _{:str->i32}
+    results := []str{}
+    dic := [str]i32{}
     @ [cpdomains] {
         temp := ea.split(" ")
         count := temp[0].toI32()

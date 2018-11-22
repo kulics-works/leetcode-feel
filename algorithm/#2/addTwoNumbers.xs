@@ -4,7 +4,7 @@ Solution {
 
 addTwoNumbers (l1,l2:ListNode)->(v:ListNode) {
     head := ListNode{0}
-    (p,q,current) := (l1,l2,head)
+    _(p,q,current) := _(l1,l2,head)
     carry := 0
     @ p ~= null | q ~= null {
         x := 0

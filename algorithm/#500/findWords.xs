@@ -3,7 +3,7 @@ Solution {
 }
 
 findWords (words:[]str)->(v:[]str) {
-    result := _{:str}
+    result := []str{}
     @ [words] {
         str := ea.toLower()
         line = 0

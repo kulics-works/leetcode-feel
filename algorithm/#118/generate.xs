@@ -3,7 +3,7 @@ Solution {
 }
 
 generate (numRows:i32)->(v:[][]i32) {
-    arr := _{:[]i32}
+    arr := [][]i32{}
     @ [0<numRows] i {
         temp := _{1}
         @ [1<=i] j {
