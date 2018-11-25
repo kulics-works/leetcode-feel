@@ -2,11 +2,11 @@ Solution {
     Library
 }
 
-generate (numRows:i32)->(v:[][]i32) {
-    arr := [][]i32{}
-    @ [0<numRows] i {
+generate (numRows:i32)->(v:[[i32]]) {
+    arr := [[i32]]{}
+    @ i <- [0<numRows] {
         temp := _{1}
-        @ [1<=i] j {
+        @ j <- [1<=i] {
             right := 0
             ? j < i {
                 right = arr[i-1][j]

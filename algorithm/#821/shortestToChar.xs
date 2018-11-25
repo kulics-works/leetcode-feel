@@ -2,17 +2,17 @@ Solution {
     Library
 }
 
-shortestToChar (S:str, C:chr)->(v:[]i32) {
+shortestToChar (S:str, C:chr)->(v:[i32]) {
     flag := -S.count
-    arr := []i32{S.count}
-    @ [S] i -> v {
+    arr := [i32]{S.count}
+    @ i -> v <- S {
         ? v == C {
             flag = i
         }
         arr[i] = i - flag
     }
     flag = S.count * 2
-    @ [S.count-1 >= 0] i {
+    @ i <- [S.count-1 >= 0] {
         ? S[i] == C {
             flag = i
         }

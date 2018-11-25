@@ -3,8 +3,8 @@ Solution {
 }
 
 searchBST (root:TreeNode, val:i32)->(v:TreeNode)  {
-    ? root == null {
-        <- (null)
+    ? root == nil {
+        <- (nil)
     } root.val == val {
         <- (root)
     } root.val > val {

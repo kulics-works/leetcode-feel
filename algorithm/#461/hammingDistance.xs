@@ -11,7 +11,7 @@ hammingDistance (x,y:i32)->(distance:i32) {
     count := 0
     
     i := 1
-    @ i <= big {
+    @ ? i <= big {
         ? i.and(z) ~= 0 {
             count += 1
         }

@@ -6,13 +6,13 @@ addTwoNumbers (l1,l2:ListNode)->(v:ListNode) {
     head := ListNode{0}
     _(p,q,current) := _(l1,l2,head)
     carry := 0
-    @ p ~= null | q ~= null {
+    @ ? p ~= nil | q ~= nil {
         x := 0
-        ? p ~= null {
+        ? p ~= nil {
             x = p.val
         }
         y := 0
-        ? q ~= null {
+        ? q ~= nil {
             y = q.val
         }
 
@@ -20,10 +20,10 @@ addTwoNumbers (l1,l2:ListNode)->(v:ListNode) {
         carry = sum/10
         current.next = ListNode{sum%10}
         current = current.next 
-        ? p ~= null {
+        ? p ~= nil {
             p = p.next
         }
-        ? q ~= null {
+        ? q ~= nil {
             q = q.next
         }
     }

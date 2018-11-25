@@ -4,7 +4,7 @@ Solution {
 
 numJewelsInStones (J, S:str)->(num:i32) {
     count := 0
-    @ [S] {
+    @ S {
         ? J.has(ea) {
             count += 1
         }

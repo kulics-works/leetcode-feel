@@ -3,12 +3,12 @@ Solution {
 }
 
 maxDepth (root:Node)->(v:i32) {
-    ? root == null {
+    ? root == nil {
         <- (0)
     }
 
     depth := 0
-    @ [root.children] {
+    @ root.children {
         temp := maxDepth(ea)
         ? temp > depth {
             depth = temp

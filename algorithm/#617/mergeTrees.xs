@@ -5,11 +5,11 @@ Solution {
 mergeTrees (t1, t2:TreeNode)->(v:TreeNode) {
     result := TreeNode{}
 
-    ? t1 == null & t2 == null {
-        result = null
-    } t1 ~= null & t2 == null {
+    ? t1 == nil & t2 == nil {
+        result = nil
+    } t1 ~= nil & t2 == nil {
         result = t1
-    } t1 == null & t2 ~= null {
+    } t1 == nil & t2 ~= nil {
         result = t2
     } _ {
         result.val = t1.val + t2.val

@@ -2,7 +2,7 @@ Solution {
     Library
 }
 
-uniqueMorseRepresentations (words:[]str)->(v:i32) {
+uniqueMorseRepresentations (words:[str])->(v:i32) {
     morse :=  _{'a' -> ".-",'b' -> "-...",'c' -> "-.-.",'d' -> "-..",'e' -> ".",'f' -> "..-.",'g' -> "--.",
                 'h' -> "....",'i' -> "..",'j' -> ".---",'k' -> "-.-",'l' -> ".-..",'m' -> "--",'n' -> "-.",
                 'o' -> "---",'p' -> ".--.",'q' -> "--.-",'r' -> ".-.",'s' -> "...",'t' -> "-",
@@ -10,9 +10,9 @@ uniqueMorseRepresentations (words:[]str)->(v:i32) {
     
     countMap := [str]bl{}
 
-    @ [words] {
+    @ words {
         temp := ""
-        @ [ea] c {
+        @ c <- ea {
             temp += morse[c]
         }
         countMap[temp] = true

@@ -2,9 +2,9 @@ Solution {
     Library
 }
 
-sortedArrayToBST (nums:[]i32)->(v:TreeNode) {
+sortedArrayToBST (nums:[i32])->(v:TreeNode) {
     ? nums.count == 0 {
-        <- (null)
+        <- (nil)
     }
     middle := nums.count/2
 

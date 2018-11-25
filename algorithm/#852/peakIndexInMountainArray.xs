@@ -2,9 +2,9 @@ Solution {
     Library
 }
 
-peakIndexInMountainArray (A:[]i32)->(v:i32) {
+peakIndexInMountainArray (A:[i32])->(v:i32) {
     max := 0
-    @ [A] i -> v {
+    @ i -> v <- A {
         ? v >= max {
             max = v
         } _ {

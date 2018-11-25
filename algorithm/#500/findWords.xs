@@ -2,12 +2,12 @@ Solution {
     Library
 }
 
-findWords (words:[]str)->(v:[]str) {
-    result := []str{}
-    @ [words] {
+findWords (words:[str])->(v:[str]) {
+    result := [str]{}
+    @ words {
         str := ea.toLower()
         line = 0
-        @ [str] c {
+        @ c <- str {
             ? line1.has(c) {
                 ? line == 0 | line == 1 {
                     line = 1

@@ -4,10 +4,10 @@ Solution {
 
 lengthOfLongestSubstring (s:str)->(length:i32) {
     top := 0
-    temp := []i32{}
+    temp := [i32]{}
 
-    haveIt (input:[]i32, it:i32)->(yes:bl, index:i32) {
-        @ [input] i -> v {
+    haveIt (input:[i32], it:i32)->(yes:bl, index:i32) {
+        @ i -> v <- input {
             ? v == it  {
                 <- (true, i)
             }
@@ -15,8 +15,8 @@ lengthOfLongestSubstring (s:str)->(length:i32) {
         <- (false, 0)
     }
 
-    @ [s] v {
-        (yes, index) := haveIt(temp, v)
+    @ v <- s {
+        _(yes, index) := haveIt(temp, v)
         ? yes {
             temp = temp.subStr(index+1)
         }
