@@ -1,7 +1,5 @@
-Solution {
-    Library
-}
-
-reverseString (s:str)->(v:str) {
-    <- (s.reverse())
+Solution. -> {
+    reverseString(s: str) -> (v: str) {
+        <- (s.reverse())
+    }
 }

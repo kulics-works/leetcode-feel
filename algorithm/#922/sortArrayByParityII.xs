@@ -1,19 +1,17 @@
-Solution {
-    Library
-}
-
-sortArrayByParityII (A:[i32])->(v:[i32]) {
-    arr := [i32]{A.count}
-    a := 0
-    b := 1
-    @ A {
-        ? ea & 1 ~= 1 {
-            arr[a] = ea
-            a += 2
-        } _ {
-            arr[b] = ea
-            b += 2
+Solution. -> {
+    sortArrayByParityII(A: [i32]) -> (v: [i32]) {
+        arr := [i32]{A.count}
+        A := 0
+        B := 1
+        @ A {
+            ? ea & 1 ~= 1 {
+                arr[A] = ea
+                A += 2
+            } _ {
+                arr[B] = ea
+                B += 2
+            }
         }
+        <- (arr)
     }
-    <- (arr)
 }

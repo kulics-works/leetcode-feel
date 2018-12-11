@@ -1,34 +1,32 @@
-Solution {
-    Library
-}
+Solution. -> {
+    addTwoNumbers(l1: ListNode, l2: ListNode) -> (v: ListNode) {
+        head := ListNode{0}
+        _(P,Q,Current) := _(l1,l2,head)
+        Carry := 0
+        @ ? P ~= nil | Q ~= nil {
+            X := 0
+            ? P ~= nil {
+                X = P.val
+            }
+            Y := 0
+            ? Q ~= nil {
+                Y = Q.val
+            }
 
-addTwoNumbers (l1,l2:ListNode)->(v:ListNode) {
-    head := ListNode{0}
-    _(p,q,current) := _(l1,l2,head)
-    carry := 0
-    @ ? p ~= nil | q ~= nil {
-        x := 0
-        ? p ~= nil {
-            x = p.val
+            sum := X + Y + Carry
+            Carry = sum/10
+            Current.next = ListNode{sum%10}
+            Current = Current.next 
+            ? P ~= nil {
+                P = P.next
+            }
+            ? Q ~= nil {
+                Q = Q.next
+            }
         }
-        y := 0
-        ? q ~= nil {
-            y = q.val
+        ? Carry > 0 {
+            Current.next = ListNode{Carry}
         }
-
-        sum := x + y + carry
-        carry = sum/10
-        current.next = ListNode{sum%10}
-        current = current.next 
-        ? p ~= nil {
-            p = p.next
-        }
-        ? q ~= nil {
-            q = q.next
-        }
+        <- (head.next)
     }
-    ? carry > 0 {
-        current.next = ListNode{carry}
-    }
-    <- (head.next)
 }

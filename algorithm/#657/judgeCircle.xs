@@ -1,22 +1,20 @@
-Solution {
-    Library
-}
+Solution. -> {
+    judgeCircle(moves: str) -> (yes: bl) {
+        X := 0
+        Y := 0
 
-judgeCircle (moves:str)->(yes:bl) {
-    x := 0
-    y := 0
-
-    @ moves {
-        ? ea -> "L" { 
-            x += 1 
-        } "R" { 
-            x -= 1 
-        } "U" { 
-            y += 1 
-        } "D" { 
-            y -= 1 
+        @ moves {
+            ? ea -> "L" { 
+                X += 1 
+            } "R" { 
+                X -= 1 
+            } "U" { 
+                Y += 1 
+            } "D" { 
+                Y -= 1 
+            }
         }
+        
+        <- ( X == 0 & Y == 0 )
     }
-    
-    <- ( x == 0 & y == 0 )
 }

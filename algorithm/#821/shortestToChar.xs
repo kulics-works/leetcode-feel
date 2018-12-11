@@ -1,29 +1,27 @@
-Solution {
-    Library
-}
-
-shortestToChar (S:str, C:chr)->(v:[i32]) {
-    flag := -S.count
-    arr := [i32]{S.count}
-    @ i -> v <- S {
-        ? v == C {
-            flag = i
+Solution. -> {
+    shortestToChar(S: str, C: chr) -> (v: [i32]) {
+        Flag := -S.count
+        arr := [i32]{S.count}
+        @ i -> v <- S {
+            ? v == C {
+                Flag = i
+            }
+            arr[i] = i - Flag
         }
-        arr[i] = i - flag
-    }
-    flag = S.count * 2
-    @ i <- [S.count-1 >= 0] {
-        ? S[i] == C {
-            flag = i
+        Flag = S.count * 2
+        @ i <- [S.count-1 >= 0] {
+            ? S[i] == C {
+                Flag = i
+            }
+            arr[i] = min(Flag-i, arr[i])
         }
-        arr[i] = min(flag-i, arr[i])
+        <- (arr)
     }
-    <- (arr)
-}
 
-min (a,b:i32)->(v:i32) {
-    ? a < b {
-        <- (a)
+    min(a: i32, b: i32) -> (v: i32) {
+        ? a < b {
+            <- (a)
+        }
+        <- (b)
     }
-    <- (b)
 }

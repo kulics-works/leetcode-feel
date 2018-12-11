@@ -1,8 +1,6 @@
-Solution {
-    Library
-}
-
-deleteNode (node:ListNode)->() {
-    node.val = node.next.val
-    node.next = node.next.next
+Solution. -> {
+    deleteNode(node: ListNode) -> () {
+        node.val = node.next.val
+        node.next = node.next.next
+    }
 }

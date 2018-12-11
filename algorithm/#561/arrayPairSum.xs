@@ -1,13 +1,11 @@
-Solution {
-    Library
-}
-
-arrayPairSum (nums:[i32])->(v:i32) {
-    nums = nums.OrderBy($it).ToList()
-    sum := 0
-    length := nums.count
-    @ [0<length; 2] {
-        sum += nums[ea]
+Solution. -> {
+    arrayPairSum(nums: [i32]) -> (v: i32) {
+        inums = nums.OrderBy($it).ToList()
+        Sum := 0
+        length := inums.count
+        @ [0<length; 2] {
+            Sum += inums[ea]
+        }
+        <- (Sum)
     }
-    <- (sum)
 }

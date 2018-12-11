@@ -1,11 +1,9 @@
-Solution {
-    Library
-}
-
-reverseWords (s:str)->(v:str) {
-    result := ""
-    @ s.split(' ') {
-        result += ea.reverse() + " "
+Solution. -> {
+    reverseWords(s: str) -> (v: str) {
+        Result := ""
+        @ s.split(' ') {
+            Result += ea.reverse() + " "
+        }
+        <- (Result)
     }
-    <- (result)
 }

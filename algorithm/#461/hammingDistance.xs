@@ -1,22 +1,20 @@
-Solution {
-    Library
-}
-
-hammingDistance (x,y:i32)->(distance:i32) {
-    big := x
-    ? big < y {
-        big = y 
-    }
-    z := x.xor(y)
-    count := 0
-    
-    i := 1
-    @ ? i <= big {
-        ? i.and(z) ~= 0 {
-            count += 1
+Solution. -> {
+    hammingDistance(x: i32, y: i32) -> (distance: i32) {
+        Big := x
+        ? Big < y {
+            Big = y 
         }
-        i = i.lft(1)
-    }    
+        z := x.xor(y)
+        Count := 0
+        
+        I := 1
+        @ ? I <= Big {
+            ? I.and(z) ~= 0 {
+                Count += 1
+            }
+            I = I.lft(1)
+        }    
 
-    <- (count)
+        <- (Count)
+    }
 }

@@ -1,15 +1,13 @@
-Solution {
-    Library
-}
-
-preorder (root:Node)->(v:[i32]) {
-    ? root == nil {
-        <- ([i32]{})
+Solution. -> {
+    preorder(root: Node) -> (v: [i32]) {
+        ? root == nil {
+            <- ([i32]{})
+        }
+        list := [i32]{}
+        list += root.val
+        @ root.children {
+            list += preorder(ea)
+        }
+        <- (list)
     }
-    list := [i32]{}
-    list += root.val
-    @ root.children {
-        list += preorder(ea)
-    }
-    <- (list)
 }

@@ -1,7 +1,5 @@
-Solution {
-    Library
-}
-
-addDigits (num:i32)->(v:i32) {
-    <- ( 1 + (num-1)% 9 )
+Solution. -> {
+    addDigits(num: i32) -> (v: i32) {
+        <- ( 1 + (num-1)% 9 )
+    }
 }

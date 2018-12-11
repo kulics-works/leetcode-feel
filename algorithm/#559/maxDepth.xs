@@ -1,18 +1,16 @@
-Solution {
-    Library
-}
-
-maxDepth (root:Node)->(v:i32) {
-    ? root == nil {
-        <- (0)
-    }
-
-    depth := 0
-    @ root.children {
-        temp := maxDepth(ea)
-        ? temp > depth {
-            depth = temp
+Solution. -> {
+    maxDepth(root: Node) -> (v: i32) {
+        ? root == nil {
+            <- (0)
         }
+
+        Depth := 0
+        @ root.children {
+            temp := maxDepth(ea)
+            ? temp > Depth {
+                Depth = temp
+            }
+        }
+        <- (Depth+1)
     }
-    <- (depth+1)
 }
