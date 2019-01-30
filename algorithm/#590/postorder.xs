@@ -4,7 +4,7 @@ Solution. -> {
             <- ([i32]{})
         }
         list := [i32]{}
-        @ root.children {
+        @ ea <- root.children {
             list += postorder(ea)
         }
         list += root.val

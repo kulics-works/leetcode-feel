@@ -3,7 +3,7 @@ Solution. -> {
         arr := [i32]{A.count}
         A := 0
         B := 1
-        @ A {
+        @ ea <- A {
             ? ea & 1 ~= 1 {
                 arr[A] = ea
                 A += 2

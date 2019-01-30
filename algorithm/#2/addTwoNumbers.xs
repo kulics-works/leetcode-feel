@@ -1,7 +1,7 @@
 Solution. -> {
     addTwoNumbers(l1: ListNode, l2: ListNode) -> (v: ListNode) {
         head := ListNode{0}
-        _(P,Q,Current) := _(l1,l2,head)
+        (P, Q, Current) := (l1, l2, head)
         Carry := 0
         @ ? P ~= nil | Q ~= nil {
             X := 0

@@ -2,7 +2,7 @@ Solution. -> {
     generate(numRows: i32) -> (v: [[i32]]) {
         arr := [[i32]]{}
         @ i <- [0<numRows] {
-            temp := _{1}
+            temp := {1}
             @ j <- [1<=i] {
                 Right := 0
                 ? j < i {

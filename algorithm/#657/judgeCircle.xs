@@ -3,7 +3,7 @@ Solution. -> {
         X := 0
         Y := 0
 
-        @ moves {
+        @ ea <- moves {
             ? ea -> "L" { 
                 X += 1 
             } "R" { 

@@ -1,6 +1,8 @@
 Solution. -> {
     invertTree(root: TreeNode) -> (v: TreeNode) {
-        ? root == nil { <- (nil) }
+        ? root == nil { 
+            <- (nil) 
+        }
         <- (TreeNode{ <-
             val = root.val,
             left = invertTree(root.right),

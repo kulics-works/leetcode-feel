@@ -8,7 +8,7 @@ Solution. -> {
             <- (v)
         }
 
-        @ i -> v <- A {
+        @ [i]v <- A {
             A[i] = reverse(v)
         }
         <- (A)

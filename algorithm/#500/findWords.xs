@@ -1,10 +1,10 @@
 Solution. -> {
-    line1 :== _{'q'->false,'w'->false,'e'->false,'r'->false,'t'->false,'y'->false,'u'->false,'i'->false,'o'->false,'p'->false}
-    line2 :== _{'a'->false,'s'->false,'d'->false,'f'->false,'g'->false,'h'->false,'j'->false,'k'->false,'l'->false}
+    line1 :== {['q']false,['w']false,['e']false,['r']false,['t']false,['y']false,['u']false,['i']false,['o']false,['p']false}
+    line2 :== {['a']false,['s']false,['d']false,['f']false,['g']false,['h']false,['j']false,['k']false,['l']false}
 
     findWords(words: [str]) -> (v: [str]) {
         result := [str]{}
-        @ words {
+        @ ea <- words {
             str := ea.toLower()
             Line = 0
             @ c <- str {

@@ -4,7 +4,7 @@ Solution. -> {
         temp := [i32]{}
 
         haveIt(input: [i32], it: i32) -> (yes: bl, index: i32) {
-            @ i -> v <- input {
+            @ [i]v <- input {
                 ? v == it  {
                     <- (true, i)
                 }
@@ -13,7 +13,7 @@ Solution. -> {
         }
 
         @ v <- s {
-            _(yes, index) := haveIt(temp, v)
+            (yes, index) := haveIt(temp, v)
             ? yes {
                 temp = temp.subStr(index+1)
             }

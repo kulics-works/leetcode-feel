@@ -2,7 +2,7 @@ Solution. -> {
     shortestToChar(S: str, C: chr) -> (v: [i32]) {
         Flag := -S.count
         arr := [i32]{S.count}
-        @ i -> v <- S {
+        @ [i]v <- S {
             ? v == C {
                 Flag = i
             }

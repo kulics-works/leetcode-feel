@@ -5,7 +5,7 @@ Solution. -> {
         }
         Max := A[0]
         Min := A[0]
-        @ A {
+        @ ea <- A {
             ? ea > Max {
                 Max = ea
             } ea < Min {

@@ -5,7 +5,7 @@ Solution. -> {
         }
         list := [i32]{}
         list += root.val
-        @ root.children {
+        @ ea <- root.children {
             list += preorder(ea)
         }
         <- (list)

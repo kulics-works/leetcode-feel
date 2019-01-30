@@ -3,7 +3,7 @@ Solution. -> {
         Count := 0
         Line := 1
 
-        @ S {
+        @ ea <- S {
             width := widths[ea-'a']
             ? width + Count > 100 {
                 Line += 1
@@ -12,6 +12,6 @@ Solution. -> {
                 Count += width
             }
         }
-        <- ( _{Line,Count})
+        <- ({Line, Count})
     }
 }

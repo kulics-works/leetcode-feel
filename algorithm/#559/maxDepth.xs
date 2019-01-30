@@ -5,7 +5,7 @@ Solution. -> {
         }
 
         Depth := 0
-        @ root.children {
+        @ ea <- root.children {
             temp := maxDepth(ea)
             ? temp > Depth {
                 Depth = temp
