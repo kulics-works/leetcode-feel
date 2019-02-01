@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     searchBST(root: TreeNode, val: i32) -> (v: TreeNode)  {
         ? root == nil {
             <- (nil)

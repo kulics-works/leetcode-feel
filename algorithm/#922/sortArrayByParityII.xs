@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     sortArrayByParityII(A: [i32]) -> (v: [i32]) {
         arr := [i32]{A.count}
         A := 0

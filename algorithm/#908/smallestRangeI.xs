@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     smallestRangeI(A: [i32], K: i32) -> (v: i32) {
         ? A.count == 0 {
             <- (0)

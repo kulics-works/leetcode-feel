@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     lengthOfLongestSubstring(s: str) -> (length: i32) {
         Top := 0
         temp := [i32]{}

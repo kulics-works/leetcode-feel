@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     fizzBuzz(n: i32) -> (v: [str]) {
         arr := [str]{}
 

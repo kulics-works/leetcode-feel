@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     mergeTrees(t1: TreeNode, t2: TreeNode) -> (v: TreeNode) {
         Result := TreeNode{}
 

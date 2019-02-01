@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     arrayPairSum(nums: [i32]) -> (v: i32) {
         inums = nums.OrderBy({it->it}).ToList()
         Sum := 0

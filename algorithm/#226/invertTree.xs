@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     invertTree(root: TreeNode) -> (v: TreeNode) {
         ? root == nil { 
             <- (nil) 

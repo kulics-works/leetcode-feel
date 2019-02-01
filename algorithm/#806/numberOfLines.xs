@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     numberOfLines(widths: [i32], S: str) -> (v: [i32]) {
         Count := 0
         Line := 1

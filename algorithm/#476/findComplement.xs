@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     findComplement(num: i32) -> (v: i32) {
         I := 1
         Inum := num

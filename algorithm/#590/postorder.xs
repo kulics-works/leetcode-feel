@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     postorder(root: Node) -> (v: [i32]) {
         ? root == nil {
             <- ([i32]{})

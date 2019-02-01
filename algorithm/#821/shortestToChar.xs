@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     shortestToChar(S: str, C: chr) -> (v: [i32]) {
         Flag := -S.count
         arr := [i32]{S.count}

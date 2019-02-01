@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     subdomainVisits(cpdomains: [str]) -> (v: [str]) {
         results := [str]{}
         dic := [[str]i32]{}

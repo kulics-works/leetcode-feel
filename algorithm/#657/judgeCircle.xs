@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     judgeCircle(moves: str) -> (yes: bl) {
         X := 0
         Y := 0

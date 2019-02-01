@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     generate(numRows: i32) -> (v: [[i32]]) {
         arr := [[i32]]{}
         @ i <- [0<numRows] {

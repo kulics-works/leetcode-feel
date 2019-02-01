@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     titleToNumber(s: str) -> (v: i32) {
         num := 0
         @ i <- s {

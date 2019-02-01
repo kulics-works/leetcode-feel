@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     hammingDistance(x: i32, y: i32) -> (distance: i32) {
         Big := x
         ? Big < y {

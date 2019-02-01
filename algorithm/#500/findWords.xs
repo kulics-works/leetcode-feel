@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     line1 :== {['q']false,['w']false,['e']false,['r']false,['t']false,['y']false,['u']false,['i']false,['o']false,['p']false}
     line2 :== {['a']false,['s']false,['d']false,['f']false,['g']false,['h']false,['j']false,['k']false,['l']false}
 

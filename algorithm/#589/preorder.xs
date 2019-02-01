@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     preorder(root: Node) -> (v: [i32]) {
         ? root == nil {
             <- ([i32]{})

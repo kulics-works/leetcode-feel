@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     islandPerimeter(grid: [[i32]]) -> (v: i32) {
         ? grid.count == 0 {
             <- (0)

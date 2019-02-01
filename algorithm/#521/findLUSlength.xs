@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     findLUSlength(a: str, b: str) -> (v: i32) {
         la := a.count
         lb := b.count

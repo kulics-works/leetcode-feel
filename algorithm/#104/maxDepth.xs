@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     maxDepth(root: TreeNode) -> (v: i32) {
         ? root == nil { 
             <- (0) 

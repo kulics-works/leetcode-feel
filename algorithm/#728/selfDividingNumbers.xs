@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     selfDividingNumbers(left: i32, right: i32) -> (v: [i32]) {
         arr := [i32]{}
         @ i <- [left<=right] {

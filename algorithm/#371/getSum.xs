@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     getSum(a: i32, b: i32) -> (v: i32) {
         Ia := a
         Ib := b

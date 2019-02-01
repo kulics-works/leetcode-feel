@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     uniqueMorseRepresentations(words: [str]) -> (v: i32) {
         morse :=  {
             ['a']".-", ['b']"-...", ['c']"-.-.", ['d']"-..", ['e']".", ['f']"..-.", ['g']"--.",

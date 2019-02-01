@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     addTwoNumbers(l1: ListNode, l2: ListNode) -> (v: ListNode) {
         head := ListNode{0}
         (P, Q, Current) := (l1, l2, head)

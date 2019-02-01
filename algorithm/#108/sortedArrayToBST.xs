@@ -1,4 +1,4 @@
-Solution. -> {
+Solution -> {
     sortedArrayToBST(nums: [i32]) -> (v: TreeNode) {
         ? nums.count == 0 {
             <- (nil)
