@@ -1,6 +1,6 @@
 Solution -> {
-    deleteNode(node: ListNode) -> () {
-        node.val = node.next.val
-        node.next = node.next.next
+    DeleteNode(node: ListNode) -> () {
+        node.Val = node.Next.Val
+        node.Next = node.Next.Next
     }
 }

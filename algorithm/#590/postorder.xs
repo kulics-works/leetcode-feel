@@ -1,13 +1,13 @@
 Solution -> {
-    postorder(root: Node) -> (v: [i32]) {
+    Postorder(root: Node) -> (v: [I32]) {
         ? root == nil {
-            <- ([i32]{})
+            <- ([I32]())
         }
-        list := [i32]{}
-        @ ea <- root.children {
-            list += postorder(ea)
+        list := [I32]()
+        @ ea <- root.Children {
+            list += Postorder(ea)
         }
-        list += root.val
+        list += root.Val
         <- (list)
     }
 }

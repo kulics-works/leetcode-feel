@@ -1,5 +1,5 @@
 Solution -> {
-    canWinNim(n: i32) -> (v: bl) {
+    CanWinNim(n: I32) -> (v: Bl) {
         <- (n % 4 == 0)
     }
 }

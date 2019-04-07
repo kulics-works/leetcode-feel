@@ -1,17 +1,17 @@
 Solution -> {
-    selfDividingNumbers(left: i32, right: i32) -> (v: [i32]) {
-        arr := [i32]{}
+    SelfDividingNumbers(left: I32, right: I32) -> (v: [I32]) {
+        arr := [I32]()
         @ i <- [left<=right] {
-            str := i.toStr()
+            str := i.ToStr()
             @ v <- str {
-                Temp := 0
+                temp := 0
                 ? v -> '0' { 
                     <- @ 
                 } _ { 
-                    Temp = i % v.toI32() 
+                    temp = i % v.ToI32() 
                 }
 
-                ? Temp ~= 0 {
+                ? temp ~= 0 {
                     <- @
                 }
             }

@@ -1,9 +1,9 @@
 Solution -> {
-    peakIndexInMountainArray(A: [i32]) -> (v: i32) {
-        Max := 0
-        @ [i]v <- A {
-            ? v >= Max {
-                Max = v
+    PeakIndexInMountainArray(a: [I32]) -> (v: I32) {
+        max := 0
+        @ [i]v <- a {
+            ? v >= max {
+                max = v
             } _ {
                 <- (i-1)
             }

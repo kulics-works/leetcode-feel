@@ -1,6 +1,6 @@
 Solution -> {
-    fizzBuzz(n: i32) -> (v: [str]) {
-        arr := [str]{}
+    FizzBuzz(n: I32) -> (v: [Str]) {
+        arr := [Str]()
 
         @ ea <- [1<=n] {
             ? ea % 15 == 0 {
@@ -10,7 +10,7 @@ Solution -> {
             } ea % 5 == 0 {
                 arr += "Buzz"
             } _ {
-                arr += ea.toStr()
+                arr += ea.ToStr()
             }
         }
         <- (arr)

@@ -1,5 +1,5 @@
 Solution -> {
-    reverseString(s: str) -> (v: str) {
-        <- (s.reverse())
+    ReverseString(s: Str) -> (v: Str) {
+        <- (s.Reverse())
     }
 }

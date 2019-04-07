@@ -1,5 +1,5 @@
 Solution -> {
-    titleToNumber(s: str) -> (v: i32) {
+    TitleToNumber(s: Str) -> (v: I32) {
         num := 0
         @ i <- s {
             num *= 26

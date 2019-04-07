@@ -1,12 +1,12 @@
 Solution -> {
-    transpose(A: [[i32]]) -> (v: [[i32]]) {
-        l1 := A.count
-        l2 := A[0].count
-        result := [[i32]]{}
+    Transpose(a: [[I32]]) -> (v: [[I32]]) {
+        l1 := a.Len
+        l2 := a[0].Len
+        result := [[I32]]()
         @ i <- [0<l2] {
-            temp := [i32]{}
+            temp := [I32]()
             @ j <- [0<l1] {
-                temp += A[j][i]
+                temp += a[j][i]
             }
             result += temp 
         }

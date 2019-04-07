@@ -1,13 +1,13 @@
 Solution -> {
-    searchBST(root: TreeNode, val: i32) -> (v: TreeNode)  {
+    SearchBST(root: TreeNode, val: I32) -> (v: TreeNode)  {
         ? root == nil {
             <- (nil)
-        } root.val == val {
+        } root.Val == val {
             <- (root)
-        } root.val > val {
-            <- (searchBST(root.left, val))
+        } root.Val > val {
+            <- (SearchBST(root.Left, val))
         } _ {
-            <- (searchBST(root.right, val))
+            <- (SearchBST(root.Right, val))
         }
     }
 }

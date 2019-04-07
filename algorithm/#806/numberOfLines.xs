@@ -1,17 +1,17 @@
 Solution -> {
-    numberOfLines(widths: [i32], S: str) -> (v: [i32]) {
-        Count := 0
-        Line := 1
+    NumberOfLines(widths: [I32], s: Str) -> (v: [I32]) {
+        count := 0
+        line := 1
 
-        @ ea <- S {
+        @ ea <- s {
             width := widths[ea-'a']
-            ? width + Count > 100 {
-                Line += 1
-                Count = width
+            ? width + count > 100 {
+                line += 1
+                count = width
             } _ {
-                Count += width
+                count += width
             }
         }
-        <- ({Line, Count})
+        <- ({line, count})
     }
 }

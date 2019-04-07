@@ -1,24 +1,24 @@
 Solution -> {
-    shortestToChar(S: str, C: chr) -> (v: [i32]) {
-        Flag := -S.count
-        arr := [i32]{S.count}
-        @ [i]v <- S {
-            ? v == C {
-                Flag = i
+    ShortestToChar(s: Str, c: Chr) -> (v: [I32]) {
+        flag := -(s.Len)
+        arr := [I32](s.Len)
+        @ [i]v <- s {
+            ? v == c {
+                flag = i
             }
-            arr[i] = i - Flag
+            arr[i] = i - flag
         }
-        Flag = S.count * 2
-        @ i <- [S.count-1 >= 0] {
-            ? S[i] == C {
-                Flag = i
+        flag = s.Len * 2
+        @ i <- [s.Len-1 >= 0] {
+            ? s[i] == c {
+                flag = i
             }
-            arr[i] = min(Flag-i, arr[i])
+            arr[i] = Min(flag-i, arr[i])
         }
         <- (arr)
     }
 
-    min(a: i32, b: i32) -> (v: i32) {
+    Min(a: I32, b: I32) -> (v: I32) {
         ? a < b {
             <- (a)
         }

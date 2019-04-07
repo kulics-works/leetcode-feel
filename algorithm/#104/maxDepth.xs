@@ -1,16 +1,16 @@
 Solution -> {
-    maxDepth(root: TreeNode) -> (v: i32) {
+    MaxDepth(root: TreeNode) -> (v: I32) {
         ? root == nil { 
             <- (0) 
         }
 
-        L := 1 + maxDepth(root.left)
-        R := 1 + maxDepth(root.right)
+        l := 1 + MaxDepth(root.Left)
+        r := 1 + MaxDepth(root.Right)
 
-        ? L > R { 
-            <- (L)
+        ? l > r { 
+            <- (l)
         } _ { 
-            <- (R) 
+            <- (r) 
         }
     }
 }

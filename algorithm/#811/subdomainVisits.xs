@@ -1,18 +1,18 @@
 Solution -> {
-    subdomainVisits(cpdomains: [str]) -> (v: [str]) {
-        results := [str]{}
-        dic := [[str]i32]{}
+    SubdomainVisits(cpdomains: [Str]) -> (v: [Str]) {
+        results := [Str]()
+        dic := [[Str]I32]()
         @ ea <- cpdomains {
-            temp := ea.split(" ")
-            count := temp[0].toI32()
-            arr := temp[1].split(".")
+            temp := ea.Split(" ")
+            count := temp[0].ToI32()
+            arr := temp[1].Split(".")
             @ [i]v <- arr {
-                records := arr[i<=].join(".")
+                records := arr[i<=].Join(".")
                 dic[records] += count
             }
         }
         @ [k]v <- dic {
-            results += v.toStr() + " " + k
+            results += v.ToStr() + " " + k
         }
         <- (results)
     }

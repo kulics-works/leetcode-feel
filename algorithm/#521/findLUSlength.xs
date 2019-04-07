@@ -1,7 +1,7 @@
 Solution -> {
-    findLUSlength(a: str, b: str) -> (v: i32) {
-        la := a.count
-        lb := b.count
+    FindLUSlength(a: Str, b: Str) -> (v: I32) {
+        la := a.Len
+        lb := b.Len
 
         ? a == b {
             <- (-1)

@@ -1,12 +1,12 @@
 Solution -> {
-    preorder(root: Node) -> (v: [i32]) {
+    Preorder(root: Node) -> (v: [I32]) {
         ? root == nil {
-            <- ([i32]{})
+            <- ([I32]())
         }
-        list := [i32]{}
-        list += root.val
-        @ ea <- root.children {
-            list += preorder(ea)
+        list := [I32]()
+        list += root.Val
+        @ ea <- root.Children {
+            list += Preorder(ea)
         }
         <- (list)
     }

@@ -1,9 +1,9 @@
 Solution -> {
-    lengthOfLongestSubstring(s: str) -> (length: i32) {
-        Top := 0
-        temp := [i32]{}
+    LengthOfLongestSubstring(s: Str) -> (length: I32) {
+        top := 0
+        temp := [I32]()
 
-        haveIt(input: [i32], it: i32) -> (yes: bl, index: i32) {
+        haveIt(input: [I32], it: I32) -> (yes: Bl, index: I32) {
             @ [i]v <- input {
                 ? v == it  {
                     <- (true, i)
@@ -15,14 +15,14 @@ Solution -> {
         @ v <- s {
             (yes, index) := haveIt(temp, v)
             ? yes {
-                temp = temp.subStr(index+1)
+                temp = temp.SubStr(index+1)
             }
             temp += v
 
-            ? temp.count > Top {
-                Top = temp.count
+            ? temp.Len > top {
+                top = temp.Len
             }
         }
-        <- (Top)
+        <- (top)
     }
 }

@@ -1,8 +1,8 @@
 Solution -> {
-    sortArrayByParity(A: [i32]) -> (v: i32) {
-        arr1 := [i32]{}
-        arr2 := [i32]{}
-        @ ea <- A {
+    SortArrayByParity(a: [I32]) -> (v: I32) {
+        arr1 := [I32]()
+        arr2 := [I32]()
+        @ ea <- a {
             ? ea & 1 ~= 1 {
                 arr1 += ea
             } _ {

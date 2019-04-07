@@ -1,9 +1,9 @@
 Solution -> {
-    reverseWords(s: str) -> (v: str) {
-        Result := ""
-        @ ea <- s.split(' ') {
-            Result += ea.reverse() + " "
+    ReverseWords(s: Str) -> (v: Str) {
+        result := ""
+        @ ea <- s.Split(' ') {
+            result += ea.Reverse() + " "
         }
-        <- (Result)
+        <- (result)
     }
 }

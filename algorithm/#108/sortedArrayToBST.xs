@@ -1,14 +1,14 @@
 Solution -> {
-    sortedArrayToBST(nums: [i32]) -> (v: TreeNode) {
-        ? nums.count == 0 {
+    SortedArrayToBST(nums: [I32]) -> (v: TreeNode) {
+        ? nums.Len == 0 {
             <- (nil)
         }
-        middle := nums.count/2
+        middle := nums.Len/2
 
-        <- (TreeNode{ <-
-            val = nums[middle],
-            left = sortedArrayToBST(nums[<middle]),
-            right = sortedArrayToBST(nums[middle+1<=])
+        <- (TreeNode{
+            Val = nums[middle],
+            Left = SortedArrayToBST(nums[<middle]),
+            Right = SortedArrayToBST(nums[middle+1<=])
         })
     }
 }

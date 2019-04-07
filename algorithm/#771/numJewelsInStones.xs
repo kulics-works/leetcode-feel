@@ -1,11 +1,11 @@
 Solution -> {
-    numJewelsInStones(J: str, S: str) -> (num: i32) {
-        Count := 0
-        @ ea <- S {
-            ? J.has(ea) {
-                Count += 1
+    NumJewelsInStones(j: Str, s: Str) -> (num: I32) {
+        count := 0
+        @ ea <- s {
+            ? j.Has(ea) {
+                count += 1
             }
         }
-        <- (Count)
+        <- (count)
     }
 }

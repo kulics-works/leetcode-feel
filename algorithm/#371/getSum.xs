@@ -1,12 +1,12 @@
 Solution -> {
-    getSum(a: i32, b: i32) -> (v: i32) {
-        Ia := a
-        Ib := b
-        @ ? Ib ~= 0 {
-            carry := Ia.and(Ib)
-            Ia = Ia.xor(Ib)
-            Ib = carry.lft(1)
+    GetSum(a: I32, b: I32) -> (v: I32) {
+        ia := a
+        ib := b
+        @ ? ib ~= 0 {
+            carry := ia.And(ib)
+            ia = ia.Xor(ib)
+            ib = carry.Lft(1)
         }
-        <- (Ia)
+        <- (ia)
     }
 }

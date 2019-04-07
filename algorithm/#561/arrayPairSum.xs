@@ -1,11 +1,11 @@
 Solution -> {
-    arrayPairSum(nums: [i32]) -> (v: i32) {
-        inums = nums.OrderBy({it->it}).ToList()
-        Sum := 0
-        length := inums.count
-        @ ea <- [0<length; 2] {
-            Sum += inums[ea]
+    ArrayPairSum(nums: [I32]) -> (v: I32) {
+        iNums = nums.OrderBy({it->it}).ToList()
+        sum := 0
+        length := iNums.Len
+        @ ea <- [0<length, 2] {
+            sum += iNums[ea]
         }
-        <- (Sum)
+        <- (sum)
     }
 }

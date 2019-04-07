@@ -1,16 +1,16 @@
 Solution -> {
-    maxDepth(root: Node) -> (v: i32) {
+    MaxDepth(root: Node) -> (v: I32) {
         ? root == nil {
             <- (0)
         }
 
-        Depth := 0
-        @ ea <- root.children {
-            temp := maxDepth(ea)
-            ? temp > Depth {
-                Depth = temp
+        depth := 0
+        @ ea <- root.Children {
+            temp := MaxDepth(ea)
+            ? temp > depth {
+                depth = temp
             }
         }
-        <- (Depth+1)
+        <- (depth+1)
     }
 }

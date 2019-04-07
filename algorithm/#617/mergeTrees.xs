@@ -1,18 +1,18 @@
 Solution -> {
-    mergeTrees(t1: TreeNode, t2: TreeNode) -> (v: TreeNode) {
-        Result := TreeNode{}
+    MergeTrees(t1: TreeNode, t2: TreeNode) -> (v: TreeNode) {
+        result := TreeNode()
 
         ? t1 == nil & t2 == nil {
-            Result = nil
+            result = nil
         } t1 ~= nil & t2 == nil {
-            Result = t1
+            result = t1
         } t1 == nil & t2 ~= nil {
-            Result = t2
+            result = t2
         } _ {
-            Result.val = t1.val + t2.val
-            Result.left = mergeTrees(t1.left, t2.left)
-            Result.right = mergeTrees(t1.right, t2.right)
+            result.Val = t1.Val + t2.Val
+            result.Left = MergeTrees(t1.Left, t2.Left)
+            result.Right = MergeTrees(t1.Right, t2.Right)
         }
-        <- (Result)
+        <- (result)
     }
 }

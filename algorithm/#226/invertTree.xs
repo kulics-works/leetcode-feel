@@ -1,12 +1,12 @@
 Solution -> {
-    invertTree(root: TreeNode) -> (v: TreeNode) {
+    InvertTree(root: TreeNode) -> (v: TreeNode) {
         ? root == nil { 
             <- (nil) 
         }
         <- (TreeNode{ <-
-            val = root.val,
-            left = invertTree(root.right),
-            right = invertTree(root.left)
+            Val = root.Val,
+            Left = InvertTree(root.Right),
+            Right = InvertTree(root.Left)
         })
     }
 }

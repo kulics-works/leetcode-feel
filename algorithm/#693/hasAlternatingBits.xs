@@ -1,5 +1,5 @@
 Solution -> {
-    hasAlternatingBits(n: i32) -> (v: bl) {
-        <- ( (n + n.rht(1) + 1).and(n + n.rht(1)) == 0 )
+    HasAlternatingBits(n: I32) -> (v: Bl) {
+        <- ( (n + n.Rht(1) + 1).And(n + n.Rht(1)) == 0 )
     }
 }

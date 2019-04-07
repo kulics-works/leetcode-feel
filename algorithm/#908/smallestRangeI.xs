@@ -1,19 +1,19 @@
 Solution -> {
-    smallestRangeI(A: [i32], K: i32) -> (v: i32) {
-        ? A.count == 0 {
+    SmallestRangeI(a: [I32], k: I32) -> (v: I32) {
+        ? a.Len == 0 {
             <- (0)
         }
-        Max := A[0]
-        Min := A[0]
-        @ ea <- A {
-            ? ea > Max {
-                Max = ea
-            } ea < Min {
-                Min = ea
+        max := a[0]
+        min := a[0]
+        @ ea <- a {
+            ? ea > max {
+                max = ea
+            } ea < min {
+                min = ea
             }
         }
-        ? Max - Min >= K * 2 {
-            <- (Max - Min - K * 2)
+        ? max - min >= k * 2 {
+            <- (max - min - k * 2)
         }
         <- (0)
     }

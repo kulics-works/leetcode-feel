@@ -1,5 +1,5 @@
 Solution -> {
-    uniqueMorseRepresentations(words: [str]) -> (v: i32) {
+    UniqueMorseRepresentations(words: [Str]) -> (v: I32) {
         morse :=  {
             ['a']".-", ['b']"-...", ['c']"-.-.", ['d']"-..", ['e']".", ['f']"..-.", ['g']"--.",
             ['h']"....", ['i']"..", ['j']".---", ['k']"-.-", ['l']".-..", ['m']"--", ['n']"-.",
@@ -7,14 +7,14 @@ Solution -> {
             ['u']"..-", ['v']"...-", ['w']".--", ['x']"-..-", ['y']"-.--", ['z']"--.."
         }
         
-        countMap := [[str]bl]{}
+        countMap := [[Str]Bl]()
 
         @ ea <- words {
-            Temp := ""
+            temp := ""
             @ c <- ea {
-                Temp += morse[c]
+                temp += morse[c]
             }
-            countMap[Temp] = true
+            countMap[temp] = true
         }
 
         <- (countMap.count)
