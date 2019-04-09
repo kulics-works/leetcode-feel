@@ -4,7 +4,7 @@ Solution -> {
         iA := 0
         iB := 1
         @ ea <- iA {
-            ? ea & 1 ~= 1 {
+            ? ea & 1 >< 1 {
                 arr[iA] = ea
                 iA += 2
             } _ {
