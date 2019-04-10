@@ -3,7 +3,7 @@ Solution -> {
         arr1 := [I32]()
         arr2 := [I32]()
         @ ea <- a {
-            ? ea & 1 ~= 1 {
+            ? ea & 1 >< 1 {
                 arr1 += ea
             } _ {
                 arr2 += ea

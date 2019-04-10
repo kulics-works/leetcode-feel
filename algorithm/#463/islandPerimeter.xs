@@ -9,10 +9,10 @@ Solution -> {
             @ j <- [0<grid[i].Len] {
                 ? grid[i][j] == 1 {
                     count += 1
-                    ? i ~= 0 & grid[i-1][j] == 1 {
+                    ? i >< 0 & grid[i-1][j] == 1 {
                         repeat += 1
                     }
-                    ? j ~= 0 & grid[i][j-1] == 1 {
+                    ? j >< 0 & grid[i][j-1] == 1 {
                         repeat += 1
                     }
                 }

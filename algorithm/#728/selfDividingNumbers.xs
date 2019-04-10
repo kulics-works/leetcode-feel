@@ -11,7 +11,7 @@ Solution -> {
                     temp = i % v.ToI32() 
                 }
 
-                ? temp ~= 0 {
+                ? temp >< 0 {
                     <- @
                 }
             }

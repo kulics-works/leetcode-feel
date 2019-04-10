@@ -9,7 +9,7 @@ Solution -> {
         
         i := 1
         @ i <= big {
-            ? i.And(z) ~= 0 {
+            ? i.And(z) >< 0 {
                 count += 1
             }
             i = i.Lft(1)

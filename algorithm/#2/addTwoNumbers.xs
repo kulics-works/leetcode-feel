@@ -3,13 +3,14 @@ Solution -> {
         head := ListNode(0)
         (p, q, current) := (l1, l2, head)
         carry := 0
-        @ p ~= nil | q ~= nil {
+
+        @ p >< nil | q >< nil {
             x := 0
-            ? p ~= nil {
+            ? p >< nil {
                 x = p.Val
             }
             y := 0
-            ? q ~= nil {
+            ? q >< nil {
                 y = q.Val
             }
 
@@ -17,10 +18,10 @@ Solution -> {
             carry = sum/10
             current.Next = ListNode(sum%10)
             current = current.Next 
-            ? p ~= nil {
+            ? p >< nil {
                 p = p.Next
             }
-            ? q ~= nil {
+            ? q >< nil {
                 q = q.Next
             }
         }
