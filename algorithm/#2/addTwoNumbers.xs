@@ -3,7 +3,8 @@ Solution -> {
         head := ListNode(0)
         (p, q, current) := (l1, l2, head)
         carry := 0
-        @ ? p >< Nil | q >< Nil {
+
+        @ p >< Nil | q >< Nil {
             x := 0
             ? p >< Nil {
                 x = p.Val
