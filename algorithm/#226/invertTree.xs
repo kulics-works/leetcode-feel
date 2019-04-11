@@ -1,7 +1,7 @@
 Solution -> {
     InvertTree(root: TreeNode) -> (v: TreeNode) {
-        ? root == nil { 
-            <- (nil) 
+        ? root == Nil { 
+            <- (Nil) 
         }
         <- (TreeNode{ <-
             Val = root.Val,

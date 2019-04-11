@@ -1,6 +1,6 @@
 Solution -> {
-    Line1 :== {['q']false,['w']false,['e']false,['r']false,['t']false,['y']false,['u']false,['i']false,['o']false,['p']false}
-    Line2 :== {['a']false,['s']false,['d']false,['f']false,['g']false,['h']false,['j']false,['k']false,['l']false}
+    Line1 :== {['q']False,['w']False,['e']False,['r']False,['t']False,['y']False,['u']False,['i']False,['o']False,['p']False}
+    Line2 :== {['a']False,['s']False,['d']False,['f']False,['g']False,['h']False,['j']False,['k']False,['l']False}
 
     FindWords(words: [Str]) -> (v: [Str]) {
         result := [Str]()

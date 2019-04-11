@@ -14,7 +14,7 @@ Solution -> {
             @ c <- ea {
                 temp += morse[c]
             }
-            countMap[temp] = true
+            countMap[temp] = True
         }
 
         <- (countMap.count)

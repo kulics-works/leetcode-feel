@@ -1,6 +1,6 @@
 Solution -> {
     Preorder(root: Node) -> (v: [I32]) {
-        ? root == nil {
+        ? root == Nil {
             <- ([I32]())
         }
         list := [I32]()

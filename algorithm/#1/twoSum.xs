@@ -9,6 +9,6 @@ Solution -> {
                 hashmap[v] = i
             }
         }
-        <- (nil)
+        <- (Nil)
     }
 }
