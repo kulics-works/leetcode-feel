@@ -7,7 +7,7 @@ HammingDistance(x: I32, y: I32) -> (distance: I32) {
     count := 0
     
     i := 1
-    @ ? i <= big {
+    @ i <= big {
         ? i.And(z) >< 0 {
             count += 1
         }

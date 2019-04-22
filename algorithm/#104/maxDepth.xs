@@ -1,5 +1,5 @@
 MaxDepth(root: TreeNode) -> (v: I32) {
-    ? root == nil { 
+    ? root == Nil { 
         <- (0) 
     }
 

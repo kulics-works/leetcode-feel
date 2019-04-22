@@ -1,11 +1,11 @@
 MergeTrees(t1: TreeNode, t2: TreeNode) -> (v: TreeNode) {
     result := TreeNode()
 
-    ? t1 == nil & t2 == nil {
-        result = nil
-    } t1 >< nil & t2 == nil {
+    ? t1 == Nil & t2 == Nil {
+        result = Nil
+    } t1 >< Nil & t2 == Nil {
         result = t1
-    } t1 == nil & t2 >< nil {
+    } t1 == Nil & t2 >< Nil {
         result = t2
     } _ {
         result.Val = t1.Val + t2.Val

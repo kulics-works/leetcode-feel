@@ -5,10 +5,10 @@ LengthOfLongestSubstring(s: Str) -> (length: I32) {
     haveIt(input: [I32], it: I32) -> (yes: Bl, index: I32) {
         @ [i]v <- input {
             ? v == it  {
-                <- (true, i)
+                <- (True, i)
             }
         }
-        <- (false, 0)
+        <- (False, 0)
     }
 
     @ v <- s {

@@ -8,5 +8,5 @@ TwoSum(nums: [I32]) -> (v: [I32]) {
             hashmap[v] = i
         }
     }
-    <- (nil)
+    <- (Nil)
 }
