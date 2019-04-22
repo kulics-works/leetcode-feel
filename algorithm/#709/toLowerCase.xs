@@ -1,5 +1,3 @@
-Solution -> {
-    ToLowerCase(str: Str) -> (v: Str) {
-        <- (str.ToLower())
-    }
+ToLowerCase(str: Str) -> (v: Str) {
+    <- (str.ToLower())
 }
