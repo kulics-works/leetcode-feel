@@ -4,8 +4,8 @@ IslandPerimeter(grid: [[I32]]) -> (v: I32) {
     }
     count := 0
     repeat := 0
-    @ i <- [0<grid.Len] {
-        @ j <- [0<grid[i].Len] {
+    [0 < grid.Len] @ i {
+        [0 < grid[i].Len] @ j {
             ? grid[i][j] == 1 {
                 count += 1
                 ? i >< 0 & grid[i-1][j] == 1 {

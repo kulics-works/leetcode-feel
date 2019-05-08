@@ -1,8 +1,8 @@
 SortArrayByParityII(a: [I32]) -> (v: [I32]) {
-    arr := [I32](a.Len)
+    arr := New<[I32]>(a.Len)
     iA := 0
     iB := 1
-    @ ea <- iA {
+    iA @ ea {
         ? ea & 1 >< 1 {
             arr[iA] = ea
             iA += 2

@@ -1,6 +1,6 @@
 SortedArrayToBST(nums: [I32]) -> (v: TreeNode) {
     ? nums.Len == 0 {
-        <- (Nil)
+        <- (())
     }
     middle := nums.Len/2
 

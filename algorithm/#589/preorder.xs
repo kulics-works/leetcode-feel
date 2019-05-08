@@ -1,10 +1,10 @@
 Preorder(root: Node) -> (v: [I32]) {
-    ? root == Nil {
-        <- ([I32]())
+    ? root == () {
+        <- ([I32]{})
     }
-    list := [I32]()
+    list := [I32]{}
     list += root.Val
-    @ ea <- root.Children {
+    root.Children @ ea {
         list += Preorder(ea)
     }
     <- (list)

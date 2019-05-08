@@ -1,6 +1,6 @@
 PeakIndexInMountainArray(a: [I32]) -> (v: I32) {
     max := 0
-    @ [i]v <- a {
+    a @ [i]v {
         ? v >= max {
             max = v
         } _ {

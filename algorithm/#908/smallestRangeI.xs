@@ -4,7 +4,7 @@ SmallestRangeI(a: [I32], k: I32) -> (v: I32) {
     }
     max := a[0]
     min := a[0]
-    @ ea <- a {
+    a @ ea {
         ? ea > max {
             max = ea
         } ea < min {

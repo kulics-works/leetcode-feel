@@ -2,11 +2,11 @@ Line1 :== {['q']False,['w']False,['e']False,['r']False,['t']False,['y']False,['u
 Line2 :== {['a']False,['s']False,['d']False,['f']False,['g']False,['h']False,['j']False,['k']False,['l']False}
 
 FindWords(words: [Str]) -> (v: [Str]) {
-    result := [Str]()
-    @ ea <- words {
+    result := [Str]{}
+    words @ ea {
         str := ea.ToLower()
         line = 0
-        @ c <- str {
+        str @ c {
             ? Line1.Has(c) {
                 ? line == 0 | line == 1 {
                     line = 1

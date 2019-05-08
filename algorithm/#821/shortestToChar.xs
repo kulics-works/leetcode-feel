@@ -1,14 +1,14 @@
 ShortestToChar(s: Str, c: Chr) -> (v: [I32]) {
     flag := -(s.Len)
-    arr := [I32](s.Len)
-    @ [i]v <- s {
+    arr := New<[I32]>(s.Len)
+    s @ [i]v {
         ? v == c {
             flag = i
         }
         arr[i] = i - flag
     }
     flag = s.Len * 2
-    @ i <- [s.Len-1 >= 0] {
+    [s.Len-1 >= 0] @ i {
         ? s[i] == c {
             flag = i
         }

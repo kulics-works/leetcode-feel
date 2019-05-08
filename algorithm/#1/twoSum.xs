@@ -1,6 +1,6 @@
 TwoSum(nums: [I32]) -> (v: [I32]) {
-    hashmap := [[I32]I32]()
-    @ [i]v <- nums {
+    hashmap := [[I32]I32]{}
+    nums @ [i]v {
         temp := target - v
         ? hashmap.HasKey(temp) {
             <- ( [I32]{i, hashmap[temp]} )
@@ -8,5 +8,5 @@ TwoSum(nums: [I32]) -> (v: [I32]) {
             hashmap[v] = i
         }
     }
-    <- (Nil)
+    <- (())
 }

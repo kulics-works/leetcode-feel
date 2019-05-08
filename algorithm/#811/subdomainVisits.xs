@@ -1,16 +1,16 @@
 SubdomainVisits(cpdomains: [Str]) -> (v: [Str]) {
-    results := [Str]()
-    dic := [[Str]I32]()
-    @ ea <- cpdomains {
+    results := [Str]{}
+    dic := [[Str]I32]{}
+    cpdomains @ ea {
         temp := ea.Split(" ")
         count := temp[0].ToI32()
         arr := temp[1].Split(".")
-        @ [i]v <- arr {
+        arr @ [i]v {
             records := arr[i<=].Join(".")
             dic[records] += count
         }
     }
-    @ [k]v <- dic {
+    dic @ [k]v {
         results += v.ToStr() + " " + k
     }
     <- (results)

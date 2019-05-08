@@ -6,10 +6,10 @@ UniqueMorseRepresentations(words: [Str]) -> (v: I32) {
         ['u']"..-", ['v']"...-", ['w']".--", ['x']"-..-", ['y']"-.--", ['z']"--.."
     }
     
-    countMap := [[Str]Bl]()
-    @ ea <- words {
+    countMap := [[Str]Bl]{}
+    words @ ea {
         temp := ""
-        @ c <- ea {
+        ea @ c {
             temp += morse[c]
         }
         countMap[temp] = True

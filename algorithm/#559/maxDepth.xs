@@ -1,10 +1,10 @@
 MaxDepth(root: Node) -> (v: I32) {
-    ? root == Nil {
+    ? root == () {
         <- (0)
     }
 
     depth := 0
-    @ ea <- root.Children {
+    root.Children @ ea {
         temp := MaxDepth(ea)
         ? temp > depth {
             depth = temp

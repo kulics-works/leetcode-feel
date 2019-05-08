@@ -1,8 +1,8 @@
 Generate(numRows: I32) -> (v: [[I32]]) {
     arr := [[I32]]{}
-    @ i <- [0<numRows] {
+    [0 < numRows] @ i {
         temp := {1}
-        @ j <- [1<=i] {
+        [1 <= i] @ j {
             right := 0
             ? j < i {
                 right = arr[i-1][j]

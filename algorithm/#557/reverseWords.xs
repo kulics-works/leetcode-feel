@@ -1,6 +1,6 @@
 ReverseWords(s: Str) -> (v: Str) {
     result := ""
-    @ ea <- s.Split(' ') {
+    s.Split(' ') @ ea {
         result += ea.Reverse() + " "
     }
     <- (result)

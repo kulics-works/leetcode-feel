@@ -1,6 +1,6 @@
 TitleToNumber(s: Str) -> (v: I32) {
     num := 0
-    @ i <- s {
+    s @ i {
         num *= 26
         num += i - 'A' + 1
     }

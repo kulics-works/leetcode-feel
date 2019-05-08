@@ -1,6 +1,6 @@
 SearchBST(root: TreeNode, val: I32) -> (v: TreeNode)  {
-    ? root == Nil {
-        <- (Nil)
+    ? root == () {
+        <- (())
     } root.Val == val {
         <- (root)
     } root.Val > val {

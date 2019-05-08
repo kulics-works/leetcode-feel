@@ -1,7 +1,7 @@
 FizzBuzz(n: I32) -> (v: [Str]) {
-    arr := [Str]()
+    arr := [Str]{}
 
-    @ ea <- [1<=n] {
+    [1<=n] @ ea {
         ? ea % 15 == 0 {
             arr += "FizzBuzz"
         } ea % 3 == 0 {

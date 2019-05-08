@@ -1,10 +1,10 @@
 SelfDividingNumbers(left: I32, right: I32) -> (v: [I32]) {
-    arr := [I32]()
-    @ i <- [left<=right] {
+    arr := [I32]{}
+    [left <= right] @ i {
         str := i.ToStr()
-        @ v <- str {
+        str @ v {
             temp := 0
-            ? v -> '0' { 
+            v ? '0' { 
                 <- @ 
             } _ { 
                 temp = i % v.ToI32() 
