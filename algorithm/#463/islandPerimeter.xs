@@ -1,4 +1,4 @@
-IslandPerimeter(grid: [[I32]]) -> (v: I32) {
+IslandPerimeter(grid: [][]I32) -> (v: I32) {
     ? grid.Len == 0 {
         <- (0)
     }

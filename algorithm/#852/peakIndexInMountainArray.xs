@@ -1,4 +1,4 @@
-PeakIndexInMountainArray(a: [I32]) -> (v: I32) {
+PeakIndexInMountainArray(a: []I32) -> (v: I32) {
     max := 0
     a @ [i]v {
         ? v >= max {

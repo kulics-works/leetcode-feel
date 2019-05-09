@@ -1,4 +1,4 @@
-MaxDepth(root: TreeNode) -> (v: I32) {
+MaxDepth(root: ^TreeNode) -> (v: I32) {
     ? root == () { 
         <- (0) 
     }

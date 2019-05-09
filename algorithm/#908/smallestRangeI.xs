@@ -1,4 +1,4 @@
-SmallestRangeI(a: [I32], k: I32) -> (v: I32) {
+SmallestRangeI(a: []I32, k: I32) -> (v: I32) {
     ? a.Len == 0 {
         <- (0)
     }

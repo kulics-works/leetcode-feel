@@ -1,5 +1,5 @@
-SelfDividingNumbers(left: I32, right: I32) -> (v: [I32]) {
-    arr := [I32]{}
+SelfDividingNumbers(left: I32, right: I32) -> (v: []I32) {
+    arr := []I32{}
     [left <= right] @ i {
         str := i.ToStr()
         str @ v {

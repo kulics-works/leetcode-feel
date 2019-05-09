@@ -1,5 +1,5 @@
-SortArrayByParityII(a: [I32]) -> (v: [I32]) {
-    arr := New<[I32]>(a.Len)
+SortArrayByParityII(a: []I32) -> (v: []I32) {
+    arr := New<[]I32>(a.Len)
     iA := 0
     iB := 1
     iA @ ea {

@@ -1,8 +1,8 @@
 LengthOfLongestSubstring(s: Str) -> (length: I32) {
     top := 0
-    temp := [I32]{}
+    temp := []I32{}
 
-    haveIt(input: [I32], it: I32) -> (yes: Bl, index: I32) {
+    haveIt(input: []I32, it: I32) -> (yes: Bl, index: I32) {
         input @ [i]v {
             ? v == it  {
                 <- (True, i)

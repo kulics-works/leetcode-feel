@@ -1,4 +1,4 @@
-MergeTrees(t1: TreeNode, t2: TreeNode) -> (v: TreeNode) {
+MergeTrees(t1: ^TreeNode, t2: ^TreeNode) -> (v: ^TreeNode) {
     result := TreeNode{}
 
     ? t1 == () & t2 == () {

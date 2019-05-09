@@ -1,8 +1,8 @@
-Postorder(root: Node) -> (v: [I32]) {
+Postorder(root: ^Node) -> (v: []I32) {
     ? root == () {
-        <- ([I32]{})
+        <- ([]I32{})
     }
-    list := [I32]{}
+    list := []I32{}
     root.Children @ ea {
         list += Postorder(ea)
     }

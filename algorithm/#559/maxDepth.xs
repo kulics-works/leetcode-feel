@@ -1,4 +1,4 @@
-MaxDepth(root: Node) -> (v: I32) {
+MaxDepth(root: ^Node) -> (v: I32) {
     ? root == () {
         <- (0)
     }

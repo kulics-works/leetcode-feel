@@ -1,5 +1,5 @@
-AddTwoNumbers(l1: ListNode!, l2: ListNode!) -> (v: ListNode!) {
-    head := ListNode(0)
+AddTwoNumbers(l1: ^ListNode, l2: ^ListNode) -> (v: ^ListNode) {
+    head := New<ListNode>(0)
     (p, q, current) := (l1, l2, head)
     carry := 0
 
@@ -15,7 +15,7 @@ AddTwoNumbers(l1: ListNode!, l2: ListNode!) -> (v: ListNode!) {
 
         sum := x + y + carry
         carry = sum/10
-        current.Next = ListNode(sum%10)
+        current.Next = New<ListNode>(sum%10)
         current = current.Next 
         ? p >< () {
             p = p.Next

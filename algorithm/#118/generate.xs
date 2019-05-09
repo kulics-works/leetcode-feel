@@ -1,5 +1,5 @@
-Generate(numRows: I32) -> (v: [[I32]]) {
-    arr := [[I32]]{}
+Generate(numRows: I32) -> (v: [][]I32) {
+    arr := [][]I32{}
     [0 < numRows] @ i {
         temp := {1}
         [1 <= i] @ j {

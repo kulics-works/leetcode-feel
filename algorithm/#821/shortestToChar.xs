@@ -1,6 +1,6 @@
-ShortestToChar(s: Str, c: Chr) -> (v: [I32]) {
+ShortestToChar(s: Str, c: Chr) -> (v: []I32) {
     flag := -(s.Len)
-    arr := New<[I32]>(s.Len)
+    arr := New<[]I32>(s.Len)
     s @ [i]v {
         ? v == c {
             flag = i

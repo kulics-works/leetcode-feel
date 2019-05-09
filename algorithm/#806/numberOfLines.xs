@@ -1,4 +1,4 @@
-NumberOfLines(widths: [I32], s: Str) -> (v: [I32]) {
+NumberOfLines(widths: []I32, s: Str) -> (v: []I32) {
     count := 0
     line := 1
 

@@ -1,4 +1,4 @@
-SortedArrayToBST(nums: [I32]) -> (v: TreeNode) {
+SortedArrayToBST(nums: []I32) -> (v: ^TreeNode) {
     ? nums.Len == 0 {
         <- (())
     }
