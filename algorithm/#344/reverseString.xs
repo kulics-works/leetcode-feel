@@ -1,3 +1,3 @@
-ReverseString(s: Str) -> (v: Str) {
-    <- (s.Reverse())
+Reverse String(s: Str) -> (v: Str) {
+    <- (s.reverse())
 }

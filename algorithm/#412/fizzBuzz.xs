@@ -1,16 +1,16 @@
-FizzBuzz(n: I32) -> (v: []Str) {
-    arr := []Str{}
+Fizz Buzz(n: Int) -> (v: []Str) {
+    Arr := []Str{}
 
     [1 <= n] @ ea {
         ? ea % 15 == 0 {
-            arr += "FizzBuzz"
+            Arr += "FizzBuzz"
         } ea % 3 == 0 {
-            arr += "Fizz"
+            Arr += "Fizz"
         } ea % 5 == 0 {
-            arr += "Buzz"
+            Arr += "Buzz"
         } _ {
-            arr += ea.ToStr()
+            Arr += ea.to Str()
         }
     }
-    <- (arr)
+    <- (Arr)
 }

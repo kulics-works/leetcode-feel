@@ -1,3 +1,3 @@
-CanWinNim(n: I32) -> (v: Bl) {
+Can Win Nim(n: Int) -> (v: Bool) {
     <- (n % 4 == 0)
 }

@@ -1,16 +1,16 @@
-MergeTrees(t1: ^TreeNode, t2: ^TreeNode) -> (v: ^TreeNode) {
-    result := TreeNode{}
+Merge Trees(t1: ^TreeNode, t2: ^TreeNode) -> (v: ^TreeNode) {
+    Result := TreeNode{}
 
     ? t1 == () & t2 == () {
-        result = ()
+        Result = ()
     } t1 >< () & t2 == () {
-        result = t1
+        Result = t1
     } t1 == () & t2 >< () {
-        result = t2
+        Result = t2
     } _ {
-        result.Val = t1.Val + t2.Val
-        result.Left = MergeTrees(t1.Left, t2.Left)
-        result.Right = MergeTrees(t1.Right, t2.Right)
+        Result.val = t1.val + t2.val
+        Result.left = Merge Trees(t1.left, t2.left)
+        Result.right = Merge Trees(t1.right, t2.right)
     }
-    <- (result)
+    <- (Result)
 }

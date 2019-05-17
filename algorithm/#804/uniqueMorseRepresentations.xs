@@ -1,19 +1,19 @@
-UniqueMorseRepresentations(words: []Str) -> (v: I32) {
-    morse :=  {
+Unique Morse Representations(words: []Str) -> (v: Int) {
+    Morse :=  {
         ['a']".-", ['b']"-...", ['c']"-.-.", ['d']"-..", ['e']".", ['f']"..-.", ['g']"--.",
         ['h']"....", ['i']"..", ['j']".---", ['k']"-.-", ['l']".-..", ['m']"--", ['n']"-.",
         ['o']"---", ['p']".--.", ['q']"--.-", ['r']".-.", ['s']"...", ['t']"-",
         ['u']"..-", ['v']"...-", ['w']".--", ['x']"-..-", ['y']"-.--", ['z']"--.."
     }
     
-    countMap := [Str]Bl{}
+    CountMap := [Str]Bool{}
     words @ ea {
-        temp := ""
+        Temp := ""
         ea @ c {
-            temp += morse[c]
+            Temp += Morse[c]
         }
-        countMap[temp] = True
+        CountMap[Temp] = True
     }
 
-    <- (countMap.count)
+    <- (CountMap.count)
 }

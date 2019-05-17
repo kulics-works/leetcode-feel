@@ -1,13 +1,13 @@
-Transpose(a: [][]I32) -> (v: [][]I32) {
-    l1 := a.Len
-    l2 := a[0].Len
-    result := [][]I32{}
-    [0 < l2] @ i {
-        temp := []I32{}
-        [0 < l1] @ j {
+Transpose(a: [][]Int) -> (v: [][]Int) {
+    L1 := a.len
+    L2 := a[0].len
+    Result := [][]Int{}
+    [0 < L2] @ i {
+        temp := []Int{}
+        [0 < L1] @ j {
             temp += a[j][i]
         }
-        result += temp 
+        Result += temp 
     }
-    <- (result)
+    <- (Result)
 }

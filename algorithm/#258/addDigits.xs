@@ -1,3 +1,3 @@
-AddDigits(num: I32) -> (v: I32) {
+Add Digits(num: Int) -> (v: Int) {
     <- ( 1 + (num-1)% 9 )
 }

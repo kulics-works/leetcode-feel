@@ -1,14 +1,14 @@
-MaxDepth(root: ^TreeNode) -> (v: I32) {
+Max Depth(root: ^TreeNode) -> (v: Int) {
     ? root == () { 
         <- (0) 
     }
 
-    l := 1 + MaxDepth(root.Left)
-    r := 1 + MaxDepth(root.Right)
+    L := 1 + Max Depth(root.left)
+    R := 1 + Max Depth(root.right)
 
-    ? l > r { 
-        <- (l)
+    ? L > R { 
+        <- (L)
     } _ { 
-        <- (r) 
+        <- (R) 
     }
 }

@@ -1,11 +1,11 @@
-TwoSum(nums: []I32) -> (v: []I32) {
-    hashmap := [I32]I32{}
+Two Sum(nums: []Int) -> (v: []Int) {
+    Hashmap := [Int]Int{}
     nums @ [i]v {
-        temp := target - v
-        ? hashmap.HasKey(temp) {
-            <- ( []I32{i, hashmap[temp]} )
+        Temp := target - v
+        ? Hashmap.has key(Temp) {
+            <- ( []Int{i, Hashmap[Temp]} )
         } _ {
-            hashmap[v] = i
+            Hashmap[v] = i
         }
     }
     <- (())

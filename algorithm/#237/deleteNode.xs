@@ -1,4 +1,4 @@
-DeleteNode(node: ^ListNode) -> () {
-    node.Val = node.Next.Val
-    node.Next = node.Next.Next
+Delete Node(node: ^ListNode) -> () {
+    node.val = node.next.val
+    node.next = node.vext.next
 }

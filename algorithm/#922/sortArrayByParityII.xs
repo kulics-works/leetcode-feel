@@ -1,15 +1,15 @@
-SortArrayByParityII(a: []I32) -> (v: []I32) {
-    arr := New<[]I32>(a.Len)
-    iA := 0
-    iB := 1
-    iA @ ea {
+Sort Array By Parity II(a: []Int) -> (v: []Int) {
+    Arr := <[]Int>(a.len)
+    IA := 0
+    IB := 1
+    IA @ ea {
         ? ea & 1 >< 1 {
-            arr[iA] = ea
-            iA += 2
+            Arr[IA] = ea
+            IA += 2
         } _ {
-            arr[iB] = ea
-            iB += 2
+            Arr[IB] = ea
+            IB += 2
         }
     }
-    <- (arr)
+    <- (Arr)
 }

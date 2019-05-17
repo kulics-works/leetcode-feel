@@ -1,15 +1,15 @@
-Generate(numRows: I32) -> (v: [][]I32) {
-    arr := [][]I32{}
+Generate(numRows: Int) -> (v: [][]Int) {
+    Arr := [][]Int{}
     [0 < numRows] @ i {
-        temp := {1}
+        Temp := {1}
         [1 <= i] @ j {
-            right := 0
+            Right := 0
             ? j < i {
-                right = arr[i-1][j]
+                Right = Arr[i-1][j]
             }
-            temp += arr[i-1][j-1] + right
+            Temp += Arr[i-1][j-1] + Right
         }
-        arr += temp
+        Arr += Temp
     }
-    <- (arr)
+    <- (Arr)
 }

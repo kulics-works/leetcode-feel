@@ -1,18 +1,18 @@
-HammingDistance(x: I32, y: I32) -> (distance: I32) {
-    big := x
-    ? big < y {
-        big = y 
+Hamming Distance(x: Int, y: Int) -> (distance: Int) {
+    Big := x
+    ? Big < y {
+        Big = y 
     }
-    z := x.Xor(y)
-    count := 0
+    Z := x.xor(y)
+    Count := 0
     
-    i := 1
-    @ i <= big {
-        ? i.And(z) >< 0 {
-            count += 1
+    I := 1
+    @ I <= Big {
+        ? I.and(Z) >< 0 {
+            Count += 1
         }
-        i = i.Lft(1)
+        I = I.lft(1)
     }    
 
-    <- (count)
+    <- (Count)
 }

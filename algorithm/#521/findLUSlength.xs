@@ -1,11 +1,11 @@
-FindLUSlength(a: Str, b: Str) -> (v: I32) {
-    la := a.Len
-    lb := b.Len
+Find LUS length(a: Str, b: Str) -> (v: Int) {
+    LA := a.len
+    LB := b.len
 
     ? a == b {
         <- (-1)
-    } la > lb {
-        <- (la)
+    } LA > LB {
+        <- (LA)
     }
-    <- (lb)
+    <- (LB)
 }

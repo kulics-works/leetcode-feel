@@ -1,20 +1,20 @@
-SelfDividingNumbers(left: I32, right: I32) -> (v: []I32) {
-    arr := []I32{}
+Self Dividing Numbers(left: Int, right: Int) -> (v: []Int) {
+    Arr := []Int{}
     [left <= right] @ i {
-        str := i.ToStr()
-        str @ v {
-            temp := 0
+        TempStr := i.to Str()
+        TempStr @ v {
+            Temp := 0
             v ? '0' { 
                 <- @ 
             } _ { 
-                temp = i % v.ToI32() 
+                Temp = i % v.to Int() 
             }
 
-            ? temp >< 0 {
+            ? Temp >< 0 {
                 <- @
             }
         }
-        arr += i
+        Arr += i
     }
-    <- (arr)
+    <- (Arr)
 }

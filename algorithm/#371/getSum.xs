@@ -1,10 +1,10 @@
-GetSum(a: I32, b: I32) -> (v: I32) {
-    ia := a
-    ib := b
-    @ ib >< 0 {
-        carry := ia.And(ib)
-        ia = ia.Xor(ib)
-        ib = carry.Lft(1)
+Get Sum(a: Int, b: Int) -> (v: Int) {
+    IA := a
+    IB := b
+    @ IB >< 0 {
+        Carry := IA.and(IB)
+        IA = IA.xor(IB)
+        IB = Carry.lft(1)
     }
-    <- (ia)
+    <- (IA)
 }

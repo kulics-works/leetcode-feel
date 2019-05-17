@@ -1,11 +1,11 @@
-SearchBST(root: ^TreeNode, val: I32) -> (v: TreeNode)  {
+Search BST(root: ^TreeNode, val: Int) -> (v: TreeNode)  {
     ? root == () {
         <- (())
-    } root.Val == val {
+    } root.val == val {
         <- (root)
-    } root.Val > val {
-        <- (SearchBST(root.Left, val))
+    } root.val > val {
+        <- (Search BST(root.left, val))
     } _ {
-        <- (SearchBST(root.Right, val))
+        <- (Search BST(root.right, val))
     }
 }

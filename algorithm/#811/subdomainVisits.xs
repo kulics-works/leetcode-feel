@@ -1,17 +1,17 @@
-SubdomainVisits(cpdomains: []Str) -> (v: []Str) {
-    results := []Str{}
-    dic := [Str]I32{}
+Subdomain Visits(cpdomains: []Str) -> (v: []Str) {
+    Result := []Str{}
+    TempDic := [Str]Int{}
     cpdomains @ ea {
-        temp := ea.Split(" ")
-        count := temp[0].ToI32()
-        arr := temp[1].Split(".")
+        temp := ea.split(" ")
+        count := temp[0].to Int()
+        arr := temp[1].split(".")
         arr @ [i]v {
-            records := arr[i<=].Join(".")
-            dic[records] += count
+            records := arr[i<=].join(".")
+            TempDic[records] += count
         }
     }
-    dic @ [k]v {
-        results += v.ToStr() + " " + k
+    TempDic @ [k]v {
+        Result += v.to Str() + " " + k
     }
-    <- (results)
+    <- (Result)
 }

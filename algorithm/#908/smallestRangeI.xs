@@ -1,18 +1,18 @@
-SmallestRangeI(a: []I32, k: I32) -> (v: I32) {
-    ? a.Len == 0 {
+Smallest Range I(a: []Int, k: Int) -> (v: Int) {
+    ? a.len == 0 {
         <- (0)
     }
-    max := a[0]
-    min := a[0]
+    Max := a[0]
+    Min := a[0]
     a @ ea {
-        ? ea > max {
-            max = ea
-        } ea < min {
-            min = ea
+        ? ea > Max {
+            Max = ea
+        } ea < Min {
+            Min = ea
         }
     }
-    ? max - min >= k * 2 {
-        <- (max - min - k * 2)
+    ? Max - Min >= k * 2 {
+        <- (Max - Min - k * 2)
     }
     <- (0)
 }

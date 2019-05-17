@@ -1,32 +1,32 @@
-AddTwoNumbers(l1: ^ListNode, l2: ^ListNode) -> (v: ^ListNode) {
-    head := New<ListNode>(0)
-    (p, q, current) := (l1, l2, head)
-    carry := 0
+Add Two Numbers(l1: ^ListNode, l2: ^ListNode) -> (v: ^ListNode) {
+    Head := <ListNode>(0)
+    (P, Q, Current) := (l1, l2, Head)
+    Carry := 0
 
-    @ p >< () | q >< () {
-        x := 0
-        ? p >< () {
-            x = p.Val
+    @ P >< () | Q >< () {
+        X := 0
+        ? P >< () {
+            X = P.val
         }
-        y := 0
-        ? q >< () {
-            y = q.Val
+        Y := 0
+        ? Q >< () {
+            Y = Q.val
         }
 
-        sum := x + y + carry
-        carry = sum/10
-        current.Next = New<ListNode>(sum%10)
-        current = current.Next 
-        ? p >< () {
-            p = p.Next
+        Sum := X + Y + Carry
+        Carry = Sum/10
+        Current.next = <ListNode>( Sum % 10 )
+        Current = Current.next 
+        ? P >< () {
+            P = P.next
         }
-        ? q >< () {
-            q = q.Next
+        ? Q >< () {
+            Q = Q.next
         }
     }
 
-    ? carry > 0 {
-        current.Next = ListNode(carry)
+    ? Carry > 0 {
+        Current.next = <ListNode>(Carry)
     }
-    <- (head.Next)
+    <- (Head.next)
 }

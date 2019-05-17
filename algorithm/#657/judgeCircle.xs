@@ -1,18 +1,18 @@
-JudgeCircle(moves: Str) -> (yes: Bl) {
-    x := 0
-    y := 0
+Judge Circle(moves: Str) -> (yes: Bool) {
+    X := 0
+    Y := 0
 
     moves @ ea {
         ea ? "L" { 
-            x += 1 
+            X += 1 
         } "R" { 
-            x -= 1 
+            X -= 1 
         } "U" { 
-            y += 1 
+            Y += 1 
         } "D" { 
-            y -= 1 
+            Y -= 1 
         }
     }
     
-    <- ( x == 0 & y == 0 )
+    <- ( X == 0 & Y == 0 )
 }

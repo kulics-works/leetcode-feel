@@ -1,19 +1,19 @@
-Line1 :== {['q']False,['w']False,['e']False,['r']False,['t']False,['y']False,['u']False,['i']False,['o']False,['p']False}
-Line2 :== {['a']False,['s']False,['d']False,['f']False,['g']False,['h']False,['j']False,['k']False,['l']False}
+Line1 := {['q']False,['w']False,['e']False,['r']False,['t']False,['y']False,['u']False,['i']False,['o']False,['p']False}
+Line2 := {['a']False,['s']False,['d']False,['f']False,['g']False,['h']False,['j']False,['k']False,['l']False}
 
-FindWords(words: []Str) -> (v: []Str) {
-    result := []Str{}
+Find Words(words: []Str) -> (v: []Str) {
+    Result := []Str{}
     words @ ea {
-        str := ea.ToLower()
+        LowerStr := ea.to Lower()
         line = 0
-        str @ c {
-            ? Line1.Has(c) {
+        LowerStr @ c {
+            ? Line1.has(c) {
                 ? line == 0 | line == 1 {
                     line = 1
                 } _ { 
                     <- @ 
                 }
-            } Line2.Has(c) {
+            } Line2.has(c) {
                 ? line == 0 | line == 2 {
                     line = 2
                 } _ { 
@@ -27,7 +27,7 @@ FindWords(words: []Str) -> (v: []Str) {
                 }
             }
         }
-        result += ea
+        Result += ea
     }
-    <- (result)
+    <- (Result)
 }

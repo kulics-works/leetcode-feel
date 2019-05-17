@@ -1,8 +1,8 @@
-TitleToNumber(s: Str) -> (v: I32) {
-    num := 0
+Title To Number(s: Str) -> (v: Int) {
+    Num := 0
     s @ i {
-        num *= 26
-        num += i - 'A' + 1
+        Num *= 26
+        Num += i - 'A' + 1
     }
-    <- (num)
+    <- (Num)
 }

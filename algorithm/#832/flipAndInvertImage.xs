@@ -1,14 +1,14 @@
-FlipAndInvertImage(a: [][]I32) -> (v: [][]I32) {
-    reverse(numbers: []I32) -> (v: []I32) {
-        v := []I32{}
-        [numbers.Len-1 >= 0] @ i {
-            v += 1 - numbers[i]
+Flip And Invert Image(a: [][]Int) -> (v: [][]Int) {
+    Reverse(numbers: []Int) -> (v: []Int) {
+        V := []Int{}
+        [numbers.len-1 >= 0] @ i {
+            V += 1 - numbers[i]
         }
-        <- (v)
+        <- (V)
     }
 
     a @ [i]v {
-        a[i] = reverse(v)
+        a[i] = Reverse(v)
     }
     <- (a)
 }

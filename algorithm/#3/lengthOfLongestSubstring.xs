@@ -1,8 +1,8 @@
-LengthOfLongestSubstring(s: Str) -> (length: I32) {
-    top := 0
-    temp := []I32{}
+Length Of Longest Substring(s: Str) -> (length: Int) {
+    Top := 0
+    Temp := []Int{}
 
-    haveIt(input: []I32, it: I32) -> (yes: Bl, index: I32) {
+    Have it(input: []Int, it: Int) -> (yes: Bool, index: Int) {
         input @ [i]v {
             ? v == it  {
                 <- (True, i)
@@ -12,15 +12,15 @@ LengthOfLongestSubstring(s: Str) -> (length: I32) {
     }
 
     s @ v {
-        (yes, index) := haveIt(temp, v)
-        ? yes {
-            temp = temp.SubStr(index+1)
+        (Yes, Index) := Have it(Temp, v)
+        ? Yes {
+            Temp = Temp.sub Str(Index + 1)
         }
-        temp += v
+        Temp += v
 
-        ? temp.Len > top {
-            top = temp.Len
+        ? Temp.len > Top {
+            Top = Temp.len
         }
     }
-    <- (top)
+    <- (Top)
 }

@@ -1,14 +1,14 @@
-MaxDepth(root: ^Node) -> (v: I32) {
+Max Depth(root: ^Node) -> (v: Int) {
     ? root == () {
         <- (0)
     }
 
-    depth := 0
-    root.Children @ ea {
-        temp := MaxDepth(ea)
-        ? temp > depth {
-            depth = temp
+    Depth := 0
+    root.children @ ea {
+        Temp := Max Depth(ea)
+        ? Temp > Depth {
+            Depth = Temp
         }
     }
-    <- (depth+1)
+    <- (Depth+1)
 }

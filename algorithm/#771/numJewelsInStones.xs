@@ -1,9 +1,9 @@
-NumJewelsInStones(j: Str, s: Str) -> (num: I32) {
-    count := 0
+Num Jewels In Stones(j: Str, s: Str) -> (num: Int) {
+    Count := 0
     s @ ea {
-        ? j.Has(ea) {
-            count += 1
+        ? j.has(ea) {
+            Count += 1
         }
     }
-    <- (count)
+    <- (Count)
 }

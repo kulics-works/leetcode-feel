@@ -1,8 +1,8 @@
-PeakIndexInMountainArray(a: []I32) -> (v: I32) {
-    max := 0
+Peak Index In Mountain Array(a: []Int) -> (v: Int) {
+    Max := 0
     a @ [i]v {
-        ? v >= max {
-            max = v
+        ? v >= Max {
+            Max = v
         } _ {
             <- (i-1)
         }

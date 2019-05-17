@@ -1,15 +1,15 @@
-NumberOfLines(widths: []I32, s: Str) -> (v: []I32) {
-    count := 0
-    line := 1
+Number Of Lines(widths: []Int, s: Str) -> (v: []Int) {
+    Count := 0
+    Line := 1
 
     s @ ea {
-        width := widths[ea-'a']
-        ? width + count > 100 {
-            line += 1
-            count = width
+        Width := widths[ea-'a']
+        ? Width + Count > 100 {
+            Line += 1
+            Count = Width
         } _ {
-            count += width
+            Count += Width
         }
     }
-    <- ({line, count})
+    <- ({Line, Count})
 }

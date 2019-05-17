@@ -1,3 +1,3 @@
-ToLowerCase(str: Str) -> (v: Str) {
-    <- (str.ToLower())
+To Lower Case(str: Str) -> (v: Str) {
+    <- (str.to Lower())
 }

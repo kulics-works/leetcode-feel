@@ -1,10 +1,10 @@
-InvertTree(root: ^TreeNode) -> (v: ^TreeNode) {
+Invert Tree(root: ^TreeNode) -> (v: ^TreeNode) {
     ? root == () { 
         <- (()) 
     }
     <- (TreeNode{
-        Val = root.Val,
-        Left = InvertTree(root.Right),
-        Right = InvertTree(root.Left)
+        val = root.val,
+        left = Invert Tree(root.right),
+        right = Invert Tree(root.left)
     })
 }

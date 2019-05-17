@@ -1,23 +1,23 @@
-ShortestToChar(s: Str, c: Chr) -> (v: []I32) {
-    flag := -(s.Len)
-    arr := New<[]I32>(s.Len)
+Shortest To Char(s: Str, c: Chr) -> (v: []Int) {
+    Flag := -(s.Len)
+    Arr := <[]Int>(s.len)
     s @ [i]v {
         ? v == c {
-            flag = i
+            Flag = i
         }
-        arr[i] = i - flag
+        Arr[i] = i - Flag
     }
-    flag = s.Len * 2
-    [s.Len-1 >= 0] @ i {
+    Flag = s.len * 2
+    [s.len-1 >= 0] @ i {
         ? s[i] == c {
-            flag = i
+            Flag = i
         }
-        arr[i] = Min(flag-i, arr[i])
+        Arr[i] = Min(Flag-i, Arr[i])
     }
-    <- (arr)
+    <- (Arr)
 }
 
-Min(a: I32, b: I32) -> (v: I32) {
+Min(a: Int, b: Int) -> (v: Int) {
     ? a < b {
         <- (a)
     }

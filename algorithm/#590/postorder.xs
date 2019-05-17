@@ -1,11 +1,11 @@
-Postorder(root: ^Node) -> (v: []I32) {
+Postorder(root: ^Node) -> (v: []Int) {
     ? root == () {
-        <- ([]I32{})
+        <- ([]Int{})
     }
-    list := []I32{}
-    root.Children @ ea {
-        list += Postorder(ea)
+    List := []Int{}
+    root.children @ ea {
+        List += Postorder(ea)
     }
-    list += root.Val
-    <- (list)
+    List += root.val
+    <- (List)
 }

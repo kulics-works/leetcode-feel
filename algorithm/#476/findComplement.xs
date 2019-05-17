@@ -1,9 +1,9 @@
-FindComplement(num: I32) -> (v: I32) {
-    i := 1
-    iNum := num
-    @ i <= iNum {
-        iNum = iNum.Xor(i)
-        i = i.Lft(1)
+Find Complement(num: Int) -> (v: Int) {
+    I := 1
+    Num := num
+    @ I <= Num {
+        Num = Num.xor(I)
+        I = I.lft(1)
     }
-    <- (iNum)
+    <- (Num)
 }
