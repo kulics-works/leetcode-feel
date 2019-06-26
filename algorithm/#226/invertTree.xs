@@ -1,6 +1,6 @@
-Invert Tree(root: ^TreeNode) -> (v: ^TreeNode) {
-    ? root == () { 
-        <- (()) 
+Invert Tree(root: ?TreeNode) -> (v: ?TreeNode) {
+    ? root == Nil { 
+        <- (Nil) 
     }
     <- (TreeNode{
         val = root.val,

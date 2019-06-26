@@ -1,5 +1,5 @@
-Preorder(root: ^Node) -> (v: []Int) {
-    ? root == () {
+Preorder(root: ?Node) -> (v: []Int) {
+    ? root == Nil {
         <- ([]Int{})
     }
     List := []Int{}

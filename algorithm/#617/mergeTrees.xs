@@ -1,11 +1,11 @@
-Merge Trees(t1: ^TreeNode, t2: ^TreeNode) -> (v: ^TreeNode) {
-    Result := TreeNode{}
+Merge Trees(t1: ?TreeNode, t2: ?TreeNode) -> (v: ?TreeNode) {
+    ?Result := TreeNode{}
 
-    ? t1 == () & t2 == () {
-        Result = ()
-    } t1 >< () & t2 == () {
+    ? t1 == Nil & t2 == Nil {
+        Result = Nil
+    } t1 >< Nil & t2 == Nil {
         Result = t1
-    } t1 == () & t2 >< () {
+    } t1 == Nil & t2 >< Nil {
         Result = t2
     } _ {
         Result.val = t1.val + t2.val

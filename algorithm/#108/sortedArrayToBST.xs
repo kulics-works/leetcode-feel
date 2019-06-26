@@ -1,6 +1,6 @@
-Sorted Array To BST(nums: []Int) -> (v: ^TreeNode) {
+Sorted Array To BST(nums: []Int) -> (v: ?TreeNode) {
     ? nums.len == 0 {
-        <- (())
+        <- (Nil)
     }
     Middle := nums.len / 2
 

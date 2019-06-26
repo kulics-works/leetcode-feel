@@ -8,5 +8,5 @@ Two Sum(nums: []Int) -> (v: []Int) {
             Hashmap[v] = i
         }
     }
-    <- (())
+    <- (Nil)
 }

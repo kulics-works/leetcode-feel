@@ -1,5 +1,5 @@
-Postorder(root: ^Node) -> (v: []Int) {
-    ? root == () {
+Postorder(root: ?Node) -> (v: []Int) {
+    ? root == Nil {
         <- ([]Int{})
     }
     List := []Int{}

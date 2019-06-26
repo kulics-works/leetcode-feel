@@ -1,5 +1,5 @@
-Max Depth(root: ^TreeNode) -> (v: Int) {
-    ? root == () { 
+Max Depth(root: ?TreeNode) -> (v: Int) {
+    ? root == Nil { 
         <- (0) 
     }
 

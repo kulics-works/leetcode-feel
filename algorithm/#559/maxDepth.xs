@@ -1,5 +1,5 @@
-Max Depth(root: ^Node) -> (v: Int) {
-    ? root == () {
+Max Depth(root: ?Node) -> (v: Int) {
+    ? root == Nil {
         <- (0)
     }
 
