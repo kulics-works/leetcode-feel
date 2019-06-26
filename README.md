@@ -1,2 +1,2 @@
-# Xs-Leetcode
-use Xs to play Leetcode
+# Lite-Leetcode
+use lite to play Leetcode
