@@ -24,7 +24,7 @@ Add Two Numbers(l1: ^ListNode, l2: ^ListNode) -> (v: ^ListNode) {
             Q = Q.next
         }
     }
-313213123
+
     ? Carry > 0 {
         Current.next = <ListNode>(Carry)
     }
