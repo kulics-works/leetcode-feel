@@ -1,14 +1,16 @@
-Max Depth(root: ?TreeNode) -> (v: Int) {
+"algorithm" {
+}
+MaxDepth(root: ?TreeNode -> v: Int) {
     ? root == Nil { 
-        <- (0) 
+        <- 0
     }
 
-    L := 1 + Max Depth(root.left)
-    R := 1 + Max Depth(root.right)
+    L := 1 + MaxDepth(root.left)
+    R := 1 + MaxDepth(root.right)
 
     ? L > R { 
-        <- (L)
-    } _ { 
-        <- (R) 
+        <- L
+    } _ {
+        <- R
     }
 }

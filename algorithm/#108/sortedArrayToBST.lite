@@ -1,12 +1,14 @@
-Sorted Array To BST(nums: []Int) -> (v: ?TreeNode) {
+"algorithm" {
+}
+SortedArrayToBST(nums: []Int -> v: ?TreeNode) {
     ? nums.len == 0 {
-        <- (Nil)
+        <- Nil
     }
     Middle := nums.len / 2
 
-    <- (TreeNode{
+    <- TreeNode{
         val = nums[Middle],
-        left = Sorted Array To BST(nums[<Middle]),
-        right = Sorted Array To BST(nums[Middle+1<=])
-    })
+        left = SortedArrayToBST(nums[<Middle]),
+        right = SortedArrayToBST(nums[Middle+1<=])
+    }
 }

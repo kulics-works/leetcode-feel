@@ -1,14 +1,16 @@
-Max Depth(root: ?Node) -> (v: Int) {
+"algorithm" {
+}
+MaxDepth(root: ?Node -> v: Int) {
     ? root == Nil {
-        <- (0)
+        <- 0
     }
 
     Depth := 0
     root.children @ ea {
-        Temp := Max Depth(ea)
+        Temp := MaxDepth(ea)
         ? Temp > Depth {
             Depth = Temp
         }
     }
-    <- (Depth+1)
+    <- Depth+1
 }

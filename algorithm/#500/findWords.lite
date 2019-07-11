@@ -1,10 +1,12 @@
+"algorithm" {
+}
 Line1 := {['q']False,['w']False,['e']False,['r']False,['t']False,['y']False,['u']False,['i']False,['o']False,['p']False}
 Line2 := {['a']False,['s']False,['d']False,['f']False,['g']False,['h']False,['j']False,['k']False,['l']False}
 
-Find Words(words: []Str) -> (v: []Str) {
+FindWords(words: []Str -> v: []Str) {
     Result := []Str{}
     words @ ea {
-        LowerStr := ea.to Lower()
+        LowerStr := ea.toLower()
         line = 0
         LowerStr @ c {
             ? Line1.has(c) {
@@ -29,5 +31,5 @@ Find Words(words: []Str) -> (v: []Str) {
         }
         Result += ea
     }
-    <- (Result)
+    <- Result
 }

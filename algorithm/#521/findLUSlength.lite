@@ -1,11 +1,13 @@
-Find LUS length(a: Str, b: Str) -> (v: Int) {
+"algorithm" {
+}
+FindLUSlength(a: Str, b: Str -> v: Int) {
     LA := a.len
     LB := b.len
 
     ? a == b {
-        <- (-1)
+        <- -1
     } LA > LB {
-        <- (LA)
+        <- LA
     }
-    <- (LB)
+    <- LB
 }

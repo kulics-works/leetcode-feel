@@ -1,6 +1,8 @@
-Smallest Range I(a: []Int, k: Int) -> (v: Int) {
+"algorithm" {
+}
+SmallestRangeI(a: []Int, k: Int -> v: Int) {
     ? a.len == 0 {
-        <- (0)
+        <- 0
     }
     Max := a[0]
     Min := a[0]
@@ -12,7 +14,7 @@ Smallest Range I(a: []Int, k: Int) -> (v: Int) {
         }
     }
     ? Max - Min >= k * 2 {
-        <- (Max - Min - k * 2)
+        <- Max - Min - k * 2
     }
-    <- (0)
+    <- 0
 }

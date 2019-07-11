@@ -1,3 +1,5 @@
-Can Win Nim(n: Int) -> (v: Bool) {
-    <- (n % 4 == 0)
+"algorithm" {
+}
+CanWinNim(n: Int -> v: Bool) {
+    <- n % 4 == 0
 }

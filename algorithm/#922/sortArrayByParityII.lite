@@ -1,4 +1,6 @@
-Sort Array By Parity II(a: []Int) -> (v: []Int) {
+"algorithm" {
+}
+SortArrayByParityII(a: []Int -> v: []Int) {
     Arr := <[]Int>(a.len)
     IA := 0
     IB := 1
@@ -11,5 +13,5 @@ Sort Array By Parity II(a: []Int) -> (v: []Int) {
             IB += 2
         }
     }
-    <- (Arr)
+    <- Arr
 }

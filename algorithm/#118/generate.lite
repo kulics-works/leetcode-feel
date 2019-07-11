@@ -1,4 +1,6 @@
-Generate(numRows: Int) -> (v: [][]Int) {
+"algorithm" {
+}
+Generate(numRows: Int -> v: [][]Int) {
     Arr := [][]Int{}
     [0 < numRows] @ i {
         Temp := {1}
@@ -11,5 +13,5 @@ Generate(numRows: Int) -> (v: [][]Int) {
         }
         Arr += Temp
     }
-    <- (Arr)
+    <- Arr
 }

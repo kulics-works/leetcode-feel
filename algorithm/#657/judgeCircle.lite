@@ -1,4 +1,6 @@
-Judge Circle(moves: Str) -> (yes: Bool) {
+"algorithm" {
+}
+JudgeCircle(moves: Str -> yes: Bool) {
     X := 0
     Y := 0
 
@@ -14,5 +16,5 @@ Judge Circle(moves: Str) -> (yes: Bool) {
         }
     }
     
-    <- ( X == 0 & Y == 0 )
+    <- X == 0 & Y == 0
 }

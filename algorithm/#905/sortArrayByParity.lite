@@ -1,4 +1,6 @@
-Sort Array By Parity(a: []Int) -> (v: Int) {
+"algorithm" {
+}
+SortArrayByParity(a: []Int -> v: Int) {
     Arr1 := []Int{}
     Arr2 := []Int{}
     a @ ea {
@@ -8,5 +10,5 @@ Sort Array By Parity(a: []Int) -> (v: Int) {
             Arr2 += ea
         }
     }
-    <- (Arr1 + Arr2)
+    <- Arr1 + Arr2
 }

@@ -1,8 +1,10 @@
-Title To Number(s: Str) -> (v: Int) {
+"algorithm" {
+}
+TitleToNumber(s: Str -> v: Int) {
     Num := 0
     s @ i {
         Num *= 26
         Num += i - 'A' + 1
     }
-    <- (Num)
+    <- Num
 }

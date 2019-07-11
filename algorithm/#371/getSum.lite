@@ -1,4 +1,6 @@
-Get Sum(a: Int, b: Int) -> (v: Int) {
+"algorithm" {
+}
+GetSum(a: Int, b: Int -> v: Int) {
     IA := a
     IB := b
     @ IB >< 0 {
@@ -6,5 +8,5 @@ Get Sum(a: Int, b: Int) -> (v: Int) {
         IA = IA.xor(IB)
         IB = Carry.lft(1)
     }
-    <- (IA)
+    <- IA
 }

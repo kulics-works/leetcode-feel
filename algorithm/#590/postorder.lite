@@ -1,11 +1,13 @@
-Postorder(root: ?Node) -> (v: []Int) {
+"algorithm" {
+}
+Postorder(root: ?Node -> v: []Int) {
     ? root == Nil {
-        <- ([]Int{})
+        <- []Int{}
     }
     List := []Int{}
     root.children @ ea {
         List += Postorder(ea)
     }
     List += root.val
-    <- (List)
+    <- List
 }

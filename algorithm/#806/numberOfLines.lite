@@ -1,4 +1,6 @@
-Number Of Lines(widths: []Int, s: Str) -> (v: []Int) {
+"algorithm" {
+}
+NumberOfLines(widths: []Int, s: Str -> v: []Int) {
     Count := 0
     Line := 1
 
@@ -11,5 +13,5 @@ Number Of Lines(widths: []Int, s: Str) -> (v: []Int) {
             Count += Width
         }
     }
-    <- ({Line, Count})
+    <- {Line, Count}
 }

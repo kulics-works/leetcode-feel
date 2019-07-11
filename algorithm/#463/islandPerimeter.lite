@@ -1,6 +1,8 @@
-Island Perimeter(grid: [][]Int) -> (v: Int) {
+"algorithm" {
+}
+IslandPerimeter(grid: [][]Int -> v: Int) {
     ? grid.len == 0 {
-        <- (0)
+        <- 0
     }
     Count := 0
     Repeat := 0
@@ -17,5 +19,5 @@ Island Perimeter(grid: [][]Int) -> (v: Int) {
             }
         }
     }
-    <- (Count * 4 - Repeat * 2)
+    <- Count * 4 - Repeat * 2
 }

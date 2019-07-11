@@ -1,3 +1,5 @@
-To Lower Case(str: Str) -> (v: Str) {
-    <- (str.to Lower())
+"algorithm" {
+}
+ToLowerCase(str: Str -> v: Str) {
+    <- str.toLower()
 }

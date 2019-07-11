@@ -1,4 +1,6 @@
-Transpose(a: [][]Int) -> (v: [][]Int) {
+"algorithm" {
+}
+Transpose(a: [][]Int -> v: [][]Int) {
     L1 := a.len
     L2 := a[0].len
     Result := [][]Int{}
@@ -9,5 +11,5 @@ Transpose(a: [][]Int) -> (v: [][]Int) {
         }
         Result += temp 
     }
-    <- (Result)
+    <- Result
 }

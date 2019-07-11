@@ -1,3 +1,5 @@
-Add Digits(num: Int) -> (v: Int) {
-    <- ( 1 + (num-1)% 9 )
+"algorithm" {
+}
+AddDigits(num: Int -> v: Int) {
+    <- 1 + (num-1)% 9
 }

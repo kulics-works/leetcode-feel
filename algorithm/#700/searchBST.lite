@@ -1,11 +1,13 @@
-Search BST(root: ?TreeNode, val: Int) -> (v: TreeNode)  {
+"algorithm" {
+}
+SearchBST(root: ?TreeNode, val: Int -> v: TreeNode) {
     ? root == Nil {
-        <- (Nil)
+        <- Nil
     } root.val == val {
-        <- (root)
+        <- root
     } root.val > val {
-        <- (Search BST(root.left, val))
+        <- SearchBST(root.left, val)
     } _ {
-        <- (Search BST(root.right, val))
+        <- SearchBST(root.right, val)
     }
 }

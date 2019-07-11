@@ -1,13 +1,15 @@
-Self Dividing Numbers(left: Int, right: Int) -> (v: []Int) {
+"algorithm" {
+}
+SelfDividingNumbers(left: Int, right: Int -> v: []Int) {
     Arr := []Int{}
     [left <= right] @ i {
-        TempStr := i.to Str()
+        TempStr := i.toStr()
         TempStr @ v {
             Temp := 0
             v ? '0' { 
                 <- @ 
             } _ { 
-                Temp = i % v.to Int() 
+                Temp = i % v.toInt() 
             }
 
             ? Temp >< 0 {
@@ -16,5 +18,5 @@ Self Dividing Numbers(left: Int, right: Int) -> (v: []Int) {
         }
         Arr += i
     }
-    <- (Arr)
+    <- Arr
 }

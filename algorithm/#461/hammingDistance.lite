@@ -1,4 +1,6 @@
-Hamming Distance(x: Int, y: Int) -> (distance: Int) {
+"algorithm" {
+}
+HammingDistance(x: Int, y: Int -> distance: Int) {
     Big := x
     ? Big < y {
         Big = y 
@@ -14,5 +16,5 @@ Hamming Distance(x: Int, y: Int) -> (distance: Int) {
         I = I.lft(1)
     }    
 
-    <- (Count)
+    <- Count
 }
