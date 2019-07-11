@@ -1,3 +1,5 @@
+"algorithm" {
+}
 InvertTree(root: ?TreeNode -> v: ?TreeNode) {
     ? root == Nil { 
         <- Nil
