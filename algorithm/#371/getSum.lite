@@ -4,9 +4,9 @@ GetSum(a: Int, b: Int -> v: Int) {
     IA := a
     IB := b
     @ IB >< 0 {
-        Carry := IA.and(IB)
-        IA = IA.xor(IB)
-        IB = Carry.lft(1)
+        Carry := IA && IB
+        IA = IA ^^ IB
+        IB = Carry << 1
     }
     <- IA
 }

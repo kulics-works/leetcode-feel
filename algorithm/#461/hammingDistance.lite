@@ -5,15 +5,15 @@ HammingDistance(x: Int, y: Int -> distance: Int) {
     ? Big < y {
         Big = y 
     }
-    Z := x.xor(y)
+    Z := x ^^ y
     Count := 0
     
     I := 1
     @ I <= Big {
-        ? I.and(Z) >< 0 {
+        ? I && Z >< 0 {
             Count += 1
         }
-        I = I.lft(1)
+        I = I << 1
     }    
 
     <- Count
