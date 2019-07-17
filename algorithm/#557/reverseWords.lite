@@ -1,6 +1,6 @@
 "algorithm" {
 }
-ReverseWords(s: Str -> v: Str) {
+ReverseWords(s: str -> v: str) {
     Result := ""
     s.split(' ') @ ea {
         Result += ea.reverse() + " "

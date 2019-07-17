@@ -1,7 +1,7 @@
 "algorithm" {
 }
-MaxDepth(root: ?Node -> v: Int) {
-    ? root == Nil {
+MaxDepth(root: ?Node -> v: int) {
+    ? root == nil {
         <- 0
     }
 

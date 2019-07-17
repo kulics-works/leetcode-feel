@@ -1,6 +1,6 @@
 "algorithm" {
 }
-NumJewelsInStones(j: Str, s: Str -> num: Int) {
+NumJewelsInStones(j: str, s: str -> num: int) {
     Count := 0
     s @ ea {
         ? j.has(ea) {

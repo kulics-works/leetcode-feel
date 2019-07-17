@@ -3,11 +3,11 @@
 MergeTrees(t1: ?TreeNode, t2: ?TreeNode -> v: ?TreeNode) {
     Result: ?TreeNode = TreeNode{}
 
-    ? t1 == Nil & t2 == Nil {
-        Result = Nil
-    } t1 >< Nil & t2 == Nil {
+    ? t1 == nil & t2 == nil {
+        Result = nil
+    } t1 >< nil & t2 == nil {
         Result = t1
-    } t1 == Nil & t2 >< Nil {
+    } t1 == nil & t2 >< nil {
         Result = t2
     } _ {
         Result.val = t1.val + t2.val

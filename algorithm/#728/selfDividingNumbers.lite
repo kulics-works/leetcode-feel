@@ -1,15 +1,15 @@
 "algorithm" {
 }
-SelfDividingNumbers(left: Int, right: Int -> v: []Int) {
-    Arr := []Int{}
+SelfDividingNumbers(left: int, right: int -> v: []int) {
+    Arr := []int{}
     [left <= right] @ i {
-        TempStr := i.toStr()
+        TempStr := i.to_str()
         TempStr @ v {
             Temp := 0
             v ? '0' { 
                 <- @ 
             } _ { 
-                Temp = i % v.toInt() 
+                Temp = i % v.to_i32() 
             }
 
             ? Temp >< 0 {

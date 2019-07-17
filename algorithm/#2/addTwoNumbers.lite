@@ -5,13 +5,13 @@ AddTwoNumbers(l1: ?ListNode, l2: ?ListNode -> v: ?ListNode) {
     (P, Q, Current) := (l1, l2, Head)
     Carry := 0
 
-    @ P >< Nil | Q >< Nil {
+    @ P >< nil | Q >< nil {
         X := 0
-        ? P >< Nil {
+        ? P >< nil {
             X = P.val
         }
         Y := 0
-        ? Q >< Nil {
+        ? Q >< nil {
             Y = Q.val
         }
 
@@ -19,10 +19,10 @@ AddTwoNumbers(l1: ?ListNode, l2: ?ListNode -> v: ?ListNode) {
         Carry = Sum/10
         Current.next = <ListNode>( Sum % 10 )
         Current = Current.next 
-        ? P >< Nil {
+        ? P >< nil {
             P = P.next
         }
-        ? Q >< Nil {
+        ? Q >< nil {
             Q = Q.next
         }
     }

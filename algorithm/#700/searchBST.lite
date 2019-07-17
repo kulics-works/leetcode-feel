@@ -1,8 +1,8 @@
 "algorithm" {
 }
-SearchBST(root: ?TreeNode, val: Int -> v: TreeNode) {
-    ? root == Nil {
-        <- Nil
+SearchBST(root: ?TreeNode, val: int -> v: TreeNode) {
+    ? root == nil {
+        <- nil
     } root.val == val {
         <- root
     } root.val > val {

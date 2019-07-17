@@ -1,22 +1,22 @@
 "algorithm" {
 }
-LengthOfLongestSubstring(s: Str -> length: Int) {
+LengthOfLongestSubstring(s: str -> length: int) {
     Top := 0
-    Temp := []Int{}
+    Temp := []int{}
 
-    HaveIt(input: []Int, it: Int -> yes: Bool, index: Int) {
+    HaveIt(input: []int, it: int -> yes: bool, index: int) {
         input @ [i]v {
             ? v == it  {
-                <- True, i
+                <- true, i
             }
         }
-        <- False, 0
+        <- false, 0
     }
 
     s @ v {
         (Yes, Index) := HaveIt(Temp, v)
         ? Yes {
-            Temp = Temp.subStr(Index + 1)
+            Temp = Temp.sub_str(Index + 1)
         }
         Temp += v
 

@@ -1,10 +1,10 @@
 "algorithm" {
 }
-Preorder(root: ?Node -> v: []Int) {
-    ? root == Nil {
-        <- []Int{}
+Preorder(root: ?Node -> v: []int) {
+    ? root == nil {
+        <- []int{}
     }
-    List := []Int{}
+    List := []int{}
     List += root.val
     root.children @ ea {
         List += Preorder(ea)

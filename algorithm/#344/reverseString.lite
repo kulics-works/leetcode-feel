@@ -1,5 +1,5 @@
 "algorithm" {
 }
-ReverseString(s: Str -> v: Str) {
+ReverseString(s: str -> v: str) {
     <- s.reverse()
 }

@@ -1,6 +1,6 @@
 "algorithm" {
 }
-GetSum(a: Int, b: Int -> v: Int) {
+GetSum(a: int, b: int -> v: int) {
     IA := a
     IB := b
     @ IB >< 0 {

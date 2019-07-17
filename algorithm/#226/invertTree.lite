@@ -1,8 +1,8 @@
 "algorithm" {
 }
 InvertTree(root: ?TreeNode -> v: ?TreeNode) {
-    ? root == Nil { 
-        <- Nil
+    ? root == nil { 
+        <- nil
     }
     <- TreeNode{
         val = root.val,

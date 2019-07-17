@@ -1,11 +1,11 @@
 "algorithm" {
 }
-SubdomainVisits(cpdomains: []Str -> v: []Str) {
-    Result := []Str{}
-    TempDic := [Str]Int{}
+SubdomainVisits(cpdomains: []str -> v: []str) {
+    Result := []str{}
+    TempDic := [str]int{}
     cpdomains @ ea {
         temp := ea.split(" ")
-        count := temp[0].toInt()
+        count := temp[0].to_i32()
         arr := temp[1].split(".")
         arr @ [i]v {
             records := arr[i<=].join(".")
@@ -13,7 +13,7 @@ SubdomainVisits(cpdomains: []Str -> v: []Str) {
         }
     }
     TempDic @ [k]v {
-        Result += v.toStr() + " " + k
+        Result += v.to_str() + " " + k
     }
     <- Result
 }

@@ -1,6 +1,6 @@
 "algorithm" {
 }
-UniqueMorseRepresentations(words: []Str -> v: Int) {
+UniqueMorseRepresentations(words: []str -> v: int) {
     Morse :=  {
         ['a']".-", ['b']"-...", ['c']"-.-.", ['d']"-..", ['e']".", ['f']"..-.", ['g']"--.",
         ['h']"....", ['i']"..", ['j']".---", ['k']"-.-", ['l']".-..", ['m']"--", ['n']"-.",
@@ -8,13 +8,13 @@ UniqueMorseRepresentations(words: []Str -> v: Int) {
         ['u']"..-", ['v']"...-", ['w']".--", ['x']"-..-", ['y']"-.--", ['z']"--.."
     }
     
-    CountMap := [Str]Bool{}
+    CountMap := [str]bool{}
     words @ ea {
         Temp := ""
         ea @ c {
             Temp += Morse[c]
         }
-        CountMap[Temp] = True
+        CountMap[Temp] = true
     }
 
     <- CountMap.count

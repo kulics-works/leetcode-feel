@@ -1,6 +1,6 @@
 "algorithm" {
 }
-FindComplement(num: Int -> v: Int) {
+FindComplement(num: int -> v: int) {
     I := 1
     Num := num
     @ I <= Num {

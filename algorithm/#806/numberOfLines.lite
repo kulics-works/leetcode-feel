@@ -1,6 +1,6 @@
 "algorithm" {
 }
-NumberOfLines(widths: []Int, s: Str -> v: []Int) {
+NumberOfLines(widths: []int, s: str -> v: []int) {
     Count := 0
     Line := 1
 

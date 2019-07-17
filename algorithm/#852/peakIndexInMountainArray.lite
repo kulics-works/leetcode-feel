@@ -1,6 +1,6 @@
 "algorithm" {
 }
-PeakIndexInMountainArray(a: []Int -> v: Int) {
+PeakIndexInMountainArray(a: []int -> v: int) {
     Max := 0
     a @ [i]v {
         ? v >= Max {

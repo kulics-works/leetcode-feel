@@ -1,7 +1,7 @@
 "algorithm" {
 }
-FizzBuzz(n: Int -> v: []Str) {
-    Arr := []Str{}
+FizzBuzz(n: int -> v: []str) {
+    Arr := []str{}
 
     [1 <= n] @ ea {
         ? ea % 15 == 0 {
@@ -11,7 +11,7 @@ FizzBuzz(n: Int -> v: []Str) {
         } ea % 5 == 0 {
             Arr += "Buzz"
         } _ {
-            Arr += ea.toStr()
+            Arr += ea.to_str()
         }
     }
     <- Arr

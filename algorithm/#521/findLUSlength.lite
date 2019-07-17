@@ -1,6 +1,6 @@
 "algorithm" {
 }
-FindLUSlength(a: Str, b: Str -> v: Int) {
+FindLUSlength(a: str, b: str -> v: int) {
     LA := a.len
     LB := b.len
 
