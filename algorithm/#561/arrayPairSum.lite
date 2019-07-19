@@ -1,9 +1,9 @@
 "algorithm" {
 }
-ArrayPairSum(nums: []int -> v: int) {
-    Nums := nums.orderBy{it->it}.toList()
-    Sum := 0
-    Length := Nums.len
+ArrayPairSum(nums []int -> v int) {
+    Nums = nums.orderBy{it->it}.toList()
+    Sum = 0
+    Length = Nums.len
     [0 < Length, 2] @ ea {
         Sum += Nums[ea]
     }

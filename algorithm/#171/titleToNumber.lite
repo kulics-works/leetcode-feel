@@ -1,7 +1,7 @@
 "algorithm" {
 }
-TitleToNumber(s: str -> v: int) {
-    Num := 0
+TitleToNumber(s str -> v int) {
+    Num = 0
     s @ i {
         Num *= 26
         Num += i - 'A' + 1

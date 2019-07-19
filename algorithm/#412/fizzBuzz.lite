@@ -1,7 +1,7 @@
 "algorithm" {
 }
-FizzBuzz(n: int -> v: []str) {
-    Arr := []str{}
+FizzBuzz(n int -> v []str) {
+    Arr = []str{}
 
     [1 <= n] @ ea {
         ? ea % 15 == 0 {

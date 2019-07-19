@@ -1,5 +1,5 @@
 "algorithm" {
 }
-CanWinNim(n: int -> v: bool) {
+CanWinNim(n int -> v bool) {
     <- n % 4 == 0
 }

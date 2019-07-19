@@ -1,11 +1,11 @@
 "algorithm" {
 }
-Generate(numRows: int -> v: [][]int) {
-    Arr := [][]int{}
+Generate(numRows int -> v [][]int) {
+    Arr = [][]int{}
     [0 < numRows] @ i {
-        Temp := {1}
+        Temp = {1}
         [1 <= i] @ j {
-            Right := 0
+            Right = 0
             ? j < i {
                 Right = Arr[i-1][j]
             }
