@@ -2,9 +2,9 @@
 }
 SelfDividingNumbers(left int, right int -> v []int) {
     Arr = []int{}
-    [left <= right] @ i {
+    i @ [left <= right] {
         TempStr = i.to_str()
-        TempStr @ v {
+        v @ TempStr {
             Temp = 0
             v ? '0' { 
                 <- @ 

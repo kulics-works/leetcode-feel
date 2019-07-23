@@ -2,7 +2,7 @@
 }
 NumJewelsInStones(j str, s str -> num int) {
     Count = 0
-    s @ ea {
+    ea @ s {
         ? j.has(ea) {
             Count += 1
         }

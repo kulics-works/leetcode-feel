@@ -2,9 +2,9 @@
 }
 Generate(numRows int -> v [][]int) {
     Arr = [][]int{}
-    [0 < numRows] @ i {
+    i @ [0 < numRows] {
         Temp = {1}
-        [1 <= i] @ j {
+        j @ [1 <= i] {
             Right = 0
             ? j < i {
                 Right = Arr[i-1][j]

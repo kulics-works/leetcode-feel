@@ -3,7 +3,7 @@
 FizzBuzz(n int -> v []str) {
     Arr = []str{}
 
-    [1 <= n] @ ea {
+    ea @ [1 <= n] {
         ? ea % 15 == 0 {
             Arr += "FizzBuzz"
         } ea % 3 == 0 {

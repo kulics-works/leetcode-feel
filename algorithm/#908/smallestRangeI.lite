@@ -6,7 +6,7 @@ SmallestRangeI(a []int, k int -> v int) {
     }
     Max = a[0]
     Min = a[0]
-    a @ ea {
+    ea @ a {
         ? ea > Max {
             Max = ea
         } ea < Min {

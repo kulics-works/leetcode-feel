@@ -6,7 +6,7 @@ MaxDepth(root ?Node -> v int) {
     }
 
     Depth = 0
-    root.children @ ea {
+    ea @ root.children {
         Temp = MaxDepth(ea)
         ? Temp > Depth {
             Depth = Temp

@@ -9,7 +9,7 @@ FlipAndInvertImage(a [][]int -> v [][]int) {
         <- V
     }
 
-    a @ [i]v {
+    [i]v @ a {
         a[i] = Reverse(v)
     }
     <- a

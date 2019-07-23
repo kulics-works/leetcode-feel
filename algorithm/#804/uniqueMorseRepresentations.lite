@@ -9,9 +9,9 @@ UniqueMorseRepresentations(words []str -> v int) {
     }
     
     CountMap = [str]bool{}
-    words @ ea {
+    ea @ words {
         Temp = ""
-        ea @ c {
+        c @ ea {
             Temp += Morse[c]
         }
         CountMap[Temp] = true

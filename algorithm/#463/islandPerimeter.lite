@@ -6,8 +6,8 @@ IslandPerimeter(grid [][]int -> v int) {
     }
     Count = 0
     Repeat = 0
-    [0 < grid.len] @ i {
-        [0 < grid[i].len] @ j {
+    i @ [0 < grid.len] {
+        j @ [0 < grid[i].len] {
             ? grid[i][j] == 1 {
                 Count += 1
                 ? i >< 0 & grid[i-1][j] == 1 {

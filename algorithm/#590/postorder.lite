@@ -5,7 +5,7 @@ Postorder(root ?Node -> v []int) {
         <- []int{}
     }
     List = []int{}
-    root.children @ ea {
+    ea @ root.children {
         List += Postorder(ea)
     }
     List += root.val

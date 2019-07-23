@@ -2,7 +2,7 @@
 }
 ReverseWords(s str -> v str) {
     Result = ""
-    s.split(' ') @ ea {
+    ea @ s.split(' ') {
         Result += ea.reverse() + " "
     }
     <- Result

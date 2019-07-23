@@ -2,7 +2,7 @@
 }
 TitleToNumber(s str -> v int) {
     Num = 0
-    s @ i {
+    i @ s {
         Num *= 26
         Num += i - 'A' + 1
     }

@@ -4,7 +4,7 @@ JudgeCircle(moves str -> yes bool) {
     X = 0
     Y = 0
 
-    moves @ ea {
+    ea @ moves {
         ea ? "L" { 
             X += 1 
         } "R" { 

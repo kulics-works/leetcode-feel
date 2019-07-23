@@ -3,16 +3,16 @@
 SubdomainVisits(cpdomains []str -> v []str) {
     Result = []str{}
     TempDic = [str]int{}
-    cpdomains @ ea {
+    ea @ cpdomains {
         temp = ea.split(" ")
         count = temp[0].to_i32()
         arr = temp[1].split(".")
-        arr @ [i]v {
+        [i]v @ arr {
             records = arr[i<=].join(".")
             TempDic[records] += count
         }
     }
-    TempDic @ [k]v {
+    [k]v @ TempDic {
         Result += v.to_str() + " " + k
     }
     <- Result
