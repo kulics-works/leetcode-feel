@@ -4,9 +4,9 @@ Transpose(a [][]int -> v [][]int) {
     L1 = a.len
     L2 = a[0].len
     Result = [][]int{}
-    i @ [0 < L2] {
+    i @ 0 ..< L2 {
         temp = []int{}
-        j @ [0 < L1] {
+        j @ 0 ..< L1 {
             temp += a[j][i]
         }
         Result += temp 
