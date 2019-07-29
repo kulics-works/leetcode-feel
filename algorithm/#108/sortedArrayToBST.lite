@@ -7,8 +7,8 @@ SortedArrayToBST(nums []int -> v ?TreeNode) {
     Middle = nums.len / 2
 
     <- TreeNode{
-        val = nums[Middle],
-        left = SortedArrayToBST(nums[<Middle]),
-        right = SortedArrayToBST(nums[Middle+1<=])
+        val = nums.(Middle),
+        left = SortedArrayToBST(nums.(..<Middle)),
+        right = SortedArrayToBST(nums.(Middle+1..<=))
     }
 }

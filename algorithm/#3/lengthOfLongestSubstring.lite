@@ -5,7 +5,7 @@ LengthOfLongestSubstring(s str -> length int) {
     Temp = []int{}
 
     HaveIt(input []int, it int -> yes bool, index int) {
-        [i]v @ input {
+        i:v @ input {
             ? v == it  {
                 <- true, i
             }

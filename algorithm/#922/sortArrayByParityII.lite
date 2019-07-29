@@ -1,15 +1,15 @@
 "algorithm" {
 }
 SortArrayByParityII(a []int -> v []int) {
-    Arr = <[]int>(a.len)
+    Arr = [[]int](a.len)
     IA = 0
     IB = 1
     ea @ IA {
         ? ea & 1 >< 1 {
-            Arr[IA] = ea
+            Arr.(IA) = ea
             IA += 2
         } _ {
-            Arr[IB] = ea
+            Arr.(IB) = ea
             IB += 2
         }
     }

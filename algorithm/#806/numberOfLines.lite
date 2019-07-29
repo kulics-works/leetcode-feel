@@ -5,7 +5,7 @@ NumberOfLines(widths []int, s str -> v []int) {
     Line = 1
 
     ea @ s {
-        Width = widths[ea-'a']
+        Width = widths.(ea-'a')
         ? Width + Count > 100 {
             Line += 1
             Count = Width
