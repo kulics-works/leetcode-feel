@@ -1,6 +1,6 @@
 "algorithm" {
 }
-JudgeCircle(moves str -> yes bool) {
+JudgeCircle : (moves str -> yes bool) {
     X = 0
     Y = 0
 

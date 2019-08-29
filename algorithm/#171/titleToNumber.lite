@@ -1,6 +1,6 @@
 "algorithm" {
 }
-TitleToNumber(s str -> v int) {
+TitleToNumber : (s str -> v int) {
     Num = 0
     i @ s {
         Num *= 26

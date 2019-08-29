@@ -1,6 +1,6 @@
 "algorithm" {
 }
-IslandPerimeter(grid [][]int -> v int) {
+IslandPerimeter : (grid [][]int -> v int) {
     ? grid.len == 0 {
         <- 0
     }

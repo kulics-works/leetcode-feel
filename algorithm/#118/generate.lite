@@ -1,6 +1,6 @@
 "algorithm" {
 }
-Generate(numRows int -> v [][]int) {
+Generate : (numRows int -> v [][]int) {
     Arr = [][]int{}
     i @ 0 ..< numRows {
         Temp = {1}

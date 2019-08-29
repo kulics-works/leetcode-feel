@@ -1,10 +1,10 @@
 "algorithm" {
 }
-LengthOfLongestSubstring(s str -> length int) {
+LengthOfLongestSubstring : (s str -> length int) {
     Top = 0
     Temp = []int{}
 
-    HaveIt(input []int, it int -> yes bool, index int) {
+    HaveIt : (input []int, it int -> yes bool, index int) {
         i:v @ input {
             ? v == it  {
                 <- true, i

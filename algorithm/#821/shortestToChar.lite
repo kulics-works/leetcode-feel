@@ -1,6 +1,6 @@
 "algorithm" {
 }
-ShortestToChar(s str, c Chr -> v []int) {
+ShortestToChar : (s str, c Chr -> v []int) {
     Flag = -(s.len)
     Arr = [[]int](s.len)
     i:v @ s {
@@ -19,7 +19,7 @@ ShortestToChar(s str, c Chr -> v []int) {
     <- Arr
 }
 
-Min(a int, b int -> v int) {
+Min : (a int, b int -> v int) {
     ? a < b {
         <- a
     }

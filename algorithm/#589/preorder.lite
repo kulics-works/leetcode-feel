@@ -1,6 +1,6 @@
 "algorithm" {
 }
-Preorder(root ?Node -> v []int) {
+Preorder : (root ?Node -> v []int) {
     ? root == nil {
         <- []int{}
     }

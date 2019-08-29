@@ -1,6 +1,6 @@
 "algorithm" {
 }
-MaxDepth(root ?TreeNode -> v int) {
+MaxDepth : (root ?TreeNode -> v int) {
     ? root == nil { 
         <- 0
     }

@@ -1,6 +1,6 @@
 "algorithm" {
 }
-SortArrayByParity(a []int -> v int) {
+SortArrayByParity : (a []int -> v int) {
     Arr1 = []int{}
     Arr2 = []int{}
     ea @ a {

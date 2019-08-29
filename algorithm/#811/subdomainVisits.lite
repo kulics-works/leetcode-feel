@@ -1,6 +1,6 @@
 "algorithm" {
 }
-SubdomainVisits(cpdomains []str -> v []str) {
+SubdomainVisits : (cpdomains []str -> v []str) {
     Result = []str{}
     TempDic = []str:int{}
     ea @ cpdomains {

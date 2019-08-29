@@ -1,6 +1,6 @@
 "algorithm" {
 }
-Transpose(a [][]int -> v [][]int) {
+Transpose : (a [][]int -> v [][]int) {
     L1 = a.len
     L2 = a.(0).len
     Result = [][]int{}

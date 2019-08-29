@@ -1,6 +1,6 @@
 "algorithm" {
 }
-SmallestRangeI(a []int, k int -> v int) {
+SmallestRangeI : (a []int, k int -> v int) {
     ? a.len == 0 {
         <- 0
     }

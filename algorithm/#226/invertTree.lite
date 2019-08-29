@@ -1,12 +1,12 @@
 "algorithm" {
 }
-InvertTree(root ?TreeNode -> v ?TreeNode) {
+InvertTree : (root ?TreeNode -> v ?TreeNode) {
     ? root == nil { 
         <- nil
     }
     <- TreeNode{
-        val = root.val,
-        left = InvertTree(root.right),
+        val = root.val
+        left = InvertTree(root.right)
         right = InvertTree(root.left)
     }
 }

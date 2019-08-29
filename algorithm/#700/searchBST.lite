@@ -1,6 +1,6 @@
 "algorithm" {
 }
-SearchBST(root ?TreeNode, val int -> v TreeNode) {
+SearchBST : (root ?TreeNode, val int -> v TreeNode) {
     ? root == nil {
         <- nil
     } root.val == val {

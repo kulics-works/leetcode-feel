@@ -1,6 +1,6 @@
 "algorithm" {
 }
-AddTwoNumbers(l1 ?ListNode, l2 ?ListNode -> v ?ListNode) {
+AddTwoNumbers : (l1 ?ListNode, l2 ?ListNode -> v ?ListNode) {
     Head = [ListNode](0)
     P, Q, Current = l1, l2, Head
     Carry = 0
@@ -17,7 +17,7 @@ AddTwoNumbers(l1 ?ListNode, l2 ?ListNode -> v ?ListNode) {
 
         Sum = X + Y + Carry
         Carry = Sum/10
-        Current.next = [ListNode]( Sum % 10 )
+        Current.next = [ListNode]( Sum \ 10 )
         Current = Current.next 
         ? P >< nil {
             P = P.next

@@ -1,6 +1,6 @@
 "algorithm" {
 }
-TwoSum(nums []int -> v []int) {
+TwoSum : (nums []int -> v []int) {
     Hashmap = []int:int{}
     i:v @ nums {
         Temp = target - v

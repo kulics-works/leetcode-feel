@@ -1,6 +1,6 @@
 "algorithm" {
 }
-HammingDistance(x int, y int -> distance int) {
+HammingDistance : (x int, y int -> distance int) {
     Big = x
     ? Big < y {
         Big = y 

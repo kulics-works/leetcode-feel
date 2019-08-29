@@ -1,14 +1,14 @@
 "algorithm" {
 }
-FizzBuzz(n int -> v []str) {
+FizzBuzz : (n int -> v []str) {
     Arr = []str{}
 
     ea @ 1 ..<= n {
-        ? ea % 15 == 0 {
+        ? ea \ 15 == 0 {
             Arr += "FizzBuzz"
-        } ea % 3 == 0 {
+        } ea \ 3 == 0 {
             Arr += "Fizz"
-        } ea % 5 == 0 {
+        } ea \ 5 == 0 {
             Arr += "Buzz"
         } _ {
             Arr += ea.to_str()
