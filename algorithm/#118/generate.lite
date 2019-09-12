@@ -1,7 +1,7 @@
 "algorithm" {
 }
-Generate : (numRows int -> v [][]int) {
-    Arr = [][]int{}
+Generate : (numRows int -> v [[int;];]) {
+    Arr = [[int;];]{}
     i @ 0 ..< numRows {
         Temp = {1}
         j @ 1 ..<= i {
