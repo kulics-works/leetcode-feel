@@ -7,8 +7,8 @@ SubdomainVisits : (cpdomains [str;] -> v [str;]) {
         temp = ea.split(" ")
         count = temp.(0).to_i32()
         arr = temp.(1).split(".")
-        i:v @ arr {
-            records = arr.(i..<=).join(".")
+        (i)v @ arr {
+            records = arr.(i++).join(".")
             TempDic.(records) += count
         }
     }
