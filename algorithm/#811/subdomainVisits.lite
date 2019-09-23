@@ -1,8 +1,8 @@
 "algorithm" {
 }
-SubdomainVisits : (cpdomains [str;] -> v [str;]) {
-    Result = [str;]{}
-    TempDic = [str=>int]{}
+SubdomainVisits : (cpdomains []str -> v []str) {
+    Result = []str{}
+    TempDic = []str=>int{}
     ea @ cpdomains {
         temp = ea.split(" ")
         count = temp.(0).to_i32()

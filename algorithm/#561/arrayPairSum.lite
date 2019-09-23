@@ -1,6 +1,6 @@
 "algorithm" {
 }
-ArrayPairSum : (nums [int;] -> v int) {
+ArrayPairSum : (nums []int -> v int) {
     Nums = nums.orderBy{it->it}.toList()
     Sum = 0
     Length = Nums.len
