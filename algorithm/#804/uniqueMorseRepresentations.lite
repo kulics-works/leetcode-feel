@@ -1,6 +1,6 @@
 "algorithm" {
 }
-UniqueMorseRepresentations : (words [;str] -> v int) {
+UniqueMorseRepresentations : (words [..str] -> v int) {
     Morse =  {
         'a'=>".-"; 'b'=>"-..."; 'c'=>"-.-."; 'd'=>"-.."; 'e'=>"."; 'f'=>"..-."; 'g'=>"--."
         'h'=>"...."; 'i'=>".."; 'j'=>".---"; 'k'=>"-.-"; 'l'=>".-.."; 'm'=>"--"; 'n'=>"-."

@@ -1,7 +1,7 @@
 "algorithm" {
 }
-SubdomainVisits : (cpdomains [;str] -> v [;str]) {
-    Result = [;str]{}
+SubdomainVisits : (cpdomains [..str] -> v [..str]) {
+    Result = [..str]{}
     TempDic = [str=>int]{}
     ea @ cpdomains {
         temp = ea.split(" ")

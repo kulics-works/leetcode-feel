@@ -1,7 +1,7 @@
 "algorithm" {
 }
-SortArrayByParityII : (a [;int] -> v [;int]) {
-    Arr = [;int](a.len)
+SortArrayByParityII : (a [..int] -> v [..int]) {
+    Arr = [..int](a.len)
     IA = 0
     IB = 1
     ea @ IA {
