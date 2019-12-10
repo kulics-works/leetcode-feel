@@ -23,7 +23,7 @@ findMedianSortedArrays : (nums1 [..int], nums2 [..int]->v num) {
             }
 
             ? (m + n) \ 2 == 1 {
-                <- maxLeft
+                <- maxLeft.[num]
             }
 
             minRight = 0
