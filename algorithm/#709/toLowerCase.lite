@@ -1,5 +1,3 @@
-"algorithm" {
-}
 ToLowerCase : (str str -> v str) {
     <- str.to_lower()
 }

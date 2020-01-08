@@ -1,5 +1,3 @@
-"algorithm" {
-}
 FindComplement : (num int -> v int) {
     I = 1
     Num = num

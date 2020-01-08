@@ -1,5 +1,3 @@
-"algorithm" {
-}
 GetSum : (a int, b int -> v int) {
     IA = a
     IB = b
