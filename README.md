@@ -1,2 +1,2 @@
-# Lite-Leetcode
-use lite to play Leetcode
+# Leetcode in K
+use K to play Leetcode
