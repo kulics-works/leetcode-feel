@@ -11,5 +11,5 @@ NumberOfLines : (widths []int, s str -> v []int) {
             Count += Width
         }
     }
-    <- {Line, Count}
+    <- {Line; Count}
 }
