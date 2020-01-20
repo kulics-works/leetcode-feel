@@ -18,7 +18,7 @@ convert : (s str, numRows int->v str) {
             n -= 1
         }
     }
-    @ i = 1 ^ numRows-1.. {
+    @ i = 1 ~ numRows-1.. {
         res[0] += res[i]
     }
     <- res[0].to_str()

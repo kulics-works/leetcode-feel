@@ -6,7 +6,7 @@ SubdomainVisits : (cpdomains []str -> v []str) {
         count = temp[0].to_i32()
         arr = temp[1].split(".")
         @ [i]v = arr.. {
-            records = arr[i^].join(".")
+            records = arr[i~_].join(".")
             TempDic[records] += count
         }
     }
