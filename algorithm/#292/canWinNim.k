@@ -1,3 +1,3 @@
 CanWinNim : (n int -> v bool) {
-    <- n \ 4 == 0
+    <- n % 4 == 0
 }

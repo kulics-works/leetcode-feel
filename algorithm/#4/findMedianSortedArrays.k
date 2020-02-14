@@ -24,7 +24,7 @@ findMedianSortedArrays : (nums1 []int, nums2 []int->v num) {
                 maxLeft = max(nums1[i-1], nums2[j-1])
             }
 
-            ? (m + n) \ 2 == 1 {
+            ? (m + n) % 2 == 1 {
                 <- maxLeft num!
             }
 

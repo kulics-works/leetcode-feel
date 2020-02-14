@@ -7,7 +7,7 @@ SelfDividingNumbers : (left int, right int -> v []int) {
             ? v == '0' { 
                 ~@
             } _ { 
-                Temp = i \ v.to_i32() 
+                Temp = i % v.to_i32() 
             }
 
             ? Temp >< 0 {

@@ -15,7 +15,7 @@ AddTwoNumbers : (l1 ?ListNode, l2 ?ListNode -> v ?ListNode) {
 
         Sum = X + Y + Carry
         Carry = Sum/10
-        Current.next = ListNode{val=Sum \ 10}
+        Current.next = ListNode{val=Sum % 10}
         Current = Current.next 
         ? P >< nil {
             P = P.next
