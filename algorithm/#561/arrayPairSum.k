@@ -1,8 +1,8 @@
 ArrayPairSum : (nums []int -> v int) {
-    Nums = nums.orderBy{it->it}.toList()
-    Sum = 0
-    Length = Nums.len
-    @ ea = 0 ~(2) Length-1.. {
+    Nums! = nums.orderBy{it->it}.toList()
+    Sum! = 0
+    Length! = Nums.len
+    @ ea : 0 ~(2) Length-1.. {
         Sum += Nums[ea]
     }
     <- Sum

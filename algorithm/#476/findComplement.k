@@ -1,6 +1,6 @@
 FindComplement : (num int -> v int) {
-    I = 1
-    Num = num
+    I! = 1
+    Num! = num
     @ I <= Num {
         Num = Num ^^ I
         I = I << 1

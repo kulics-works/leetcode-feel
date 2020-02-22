@@ -1,9 +1,9 @@
 SelfDividingNumbers : (left int, right int -> v []int) {
-    Arr = []int{}
-    @ i = left ~ right.. {
-        TempStr = i.to_str()
-        @ v = TempStr.. {
-            Temp = 0
+    Arr! = []int{}
+    @ i : left ~ right.. {
+        TempStr! = i.to_str()
+        @ v : TempStr.. {
+            Temp! = 0
             ? v == '0' { 
                 ~@
             } _ { 

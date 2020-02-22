@@ -1,8 +1,8 @@
 SortArrayByParityII : (a []int -> v []int) {
-    Arr = []int(a.len)
-    IA = 0
-    IB = 1
-    @ ea = IA.. {
+    Arr! = []int(a.len)
+    IA! = 0
+    IB! = 1
+    @ ea : IA.. {
         ? ea & 1 >< 1 {
             Arr[IA] = ea
             IA += 2

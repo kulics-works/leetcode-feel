@@ -3,9 +3,9 @@ MaxDepth : (root ?Node -> v int) {
         <- 0
     }
 
-    Depth = 0
-    @ ea = root.children.. {
-        Temp = MaxDepth(ea)
+    Depth! = 0
+    @ ea : root.children.. {
+        Temp! = MaxDepth(ea)
         ? Temp > Depth {
             Depth = Temp
         }

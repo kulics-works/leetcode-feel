@@ -1,12 +1,12 @@
 HammingDistance : (x int, y int -> distance int) {
-    Big = x
+    Big! = x
     ? Big < y {
         Big = y 
     }
-    Z = x ^^ y
-    Count = 0
+    Z! = x ^^ y
+    Count! = 0
     
-    I = 1
+    I! = 1
     @ I <= Big {
         ? I && Z >< 0 {
             Count += 1

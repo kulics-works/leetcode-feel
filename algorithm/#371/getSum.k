@@ -1,8 +1,8 @@
 GetSum : (a int, b int -> v int) {
-    IA = a
-    IB = b
+    IA! = a
+    IB! = b
     @ IB >< 0 {
-        Carry = IA && IB
+        Carry! = IA && IB
         IA = IA ^^ IB
         IB = Carry << 1
     }

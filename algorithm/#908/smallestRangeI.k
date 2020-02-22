@@ -2,9 +2,9 @@ SmallestRangeI : (a []int, k int -> v int) {
     ? a.len == 0 {
         <- 0
     }
-    Max = a[0]
-    Min = a[0]
-    @ ea = a.. {
+    Max! = a[0]
+    Min! = a[0]
+    @ ea : a.. {
         ? ea > Max {
             Max = ea
         } ea < Min {

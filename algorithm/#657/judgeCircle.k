@@ -1,8 +1,8 @@
 JudgeCircle : (moves str -> yes bool) {
-    X = 0
-    Y = 0
+    X! = 0
+    Y! = 0
 
-    @ ea = moves {
+    @ ea : moves {
         ea ? "L" { 
             X += 1 
         } "R" { 

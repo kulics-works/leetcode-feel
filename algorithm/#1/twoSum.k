@@ -1,7 +1,7 @@
 TwoSum : (nums []int -> v []int) {
-    Hashmap = [int]int{}
-    @ [i]v = nums.. {
-        Temp = target - v
+    Hashmap : [int]int{}
+    @ [i]v : nums.. {
+        Temp : target - v
         ? Hashmap.has_key(Temp) {
             <- []int{i; Hashmap[Temp]}
         } _ {

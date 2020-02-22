@@ -1,7 +1,7 @@
 FizzBuzz : (n int -> v []str) {
-    Arr = []str{}
+    Arr! = []str{}
 
-    @ ea = 1 ~ n.. {
+    @ ea : 1 ~ n.. {
         ? ea % 15 == 0 {
             Arr += "FizzBuzz"
         } ea % 3 == 0 {
