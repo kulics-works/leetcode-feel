@@ -1,6 +1,6 @@
 SortArrayByParity : (a []int -> v int) {
-    Arr1! = []int{}
-    Arr2! = []int{}
+    Arr1! : []int{}
+    Arr2! : []int{}
     @ ea : a.. {
         ? ea & 1 >< 1 {
             Arr1 += ea

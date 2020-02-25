@@ -2,7 +2,7 @@ Postorder : (root ?Node -> v []int) {
     ? root == nil {
         <- []int{}
     }
-    List! = []int{}
+    List! : []int{}
     @ ea : root.children.. {
         List += Postorder(ea)
     }

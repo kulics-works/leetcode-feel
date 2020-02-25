@@ -1,5 +1,5 @@
 TitleToNumber : (s str -> v int) {
-    Num! = 0
+    Num! : 0
     @ i : s.. {
         Num *= 26
         Num += i - 'A' + 1

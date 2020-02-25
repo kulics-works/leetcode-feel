@@ -1,6 +1,6 @@
 ShortestToChar : (s str, c Chr -> v []int) {
-    Flag! = -(s.len)
-    Arr! = []int(s.len)
+    Flag! : -(s.len)
+    Arr! : []int(s.len)
     @ [i]v : s.. {
         ? v == c {
             Flag = i

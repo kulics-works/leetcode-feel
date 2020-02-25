@@ -6,9 +6,9 @@ UniqueMorseRepresentations : (words []str -> v int) {
         ['u']"..-"; ['v']"...-"; ['w']".--"; ['x']"-..-"; ['y']"-.--"; ['z']"--.."
     }
     
-    CountMap! = [str]bool{}
+    CountMap! : [str]bool{}
     @ ea : words.. {
-        Temp! = ""
+        Temp! : ""
         @ c : ea.. {
             Temp += Morse[c]
         }

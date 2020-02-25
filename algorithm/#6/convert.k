@@ -2,9 +2,9 @@ convert : (s str, numRows int->v str) {
     ? numRows == 1 {
         <- s
     }
-    res! = [][]byte(numRows)
-    direct! = true
-    n! = 0
+    res! : [][]byte(numRows)
+    direct! : true
+    n! : 0
     @ v : s.. {
         res[n] += v
         ? n == numRows-1 {

@@ -2,7 +2,7 @@ Preorder : (root ?Node -> v []int) {
     ? root == nil {
         <- []int{}
     }
-    List! = []int{}
+    List! : []int{}
     List += root.val
     @ ea : root.children.. {
         List += Preorder(ea)

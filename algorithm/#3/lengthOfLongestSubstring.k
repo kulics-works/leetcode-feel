@@ -1,6 +1,6 @@
 LengthOfLongestSubstring : (s str -> length int) {
-    Top! = 0
-    Temp! = []int{}
+    Top! : 0
+    Temp! : []int{}
 
     HaveIt : (input []int, it int -> yes bool, index int) {
         @ [i]v : input.. {

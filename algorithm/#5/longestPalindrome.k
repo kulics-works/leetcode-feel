@@ -2,7 +2,7 @@ longestPalindrome : (s str->v str) {
     ? s.len < 1 {
         <- ""
     }
-    start!, end! = 0, 0
+    start!, end! : 0, 0
     @ i : 0 ~ s.len-1.. {
         len1 : expandAroundCenter(s, i, i)
         len2 : expandAroundCenter(s, i, i + 1)
@@ -17,7 +17,7 @@ longestPalindrome : (s str->v str) {
 
 # 中心扩展校验回文
 expandAroundCenter : (s str, left int, right int->v int) {
-    L!, R! = left, right
+    L!, R! : left, right
     @ L >= 0 & R < s.len & s[L] == s[R] {
         L -= 1
         R += 1

@@ -1,21 +1,21 @@
 findMedianSortedArrays : (nums1 []int, nums2 []int->v num) {
-    m!, n! = nums1.len, nums2.len
+    m!, n! : nums1.len, nums2.len
     # 判断大小，通过置换保证算法一致性
     ? m > n {
         nums1, nums2 = nums2, nums1
         m, n = n, m
     }
     # 将两个数组分别分两块，中位数必然是其中两个边界，只需要比大小即可
-    iMin!, iMax!, halfLen! = 0, m, (m + n + 1) / 2
+    iMin!, iMax!, halfLen! : 0, m, (m + n + 1) / 2
     @ iMin <= iMax {
-        i! = (iMin + iMax) / 2
-        j! = halfLen - i
+        i! : (iMin + iMax) / 2
+        j! : halfLen - i
         ? i < iMax & nums2[j-1] > nums1[i] {
             iMin = i + 1
         } i > iMin & nums1[i-1] > nums2[j] {
             iMax = i - 1
         } _ {
-            maxLeft! = 0
+            maxLeft! : 0
             ? i == 0 { 
                 maxLeft = nums2[j-1]
             } j == 0 {
@@ -28,7 +28,7 @@ findMedianSortedArrays : (nums1 []int, nums2 []int->v num) {
                 <- maxLeft num!
             }
 
-            minRight! = 0
+            minRight! : 0
             ? i == m {
                 minRight = nums2[j]
             } j == n {

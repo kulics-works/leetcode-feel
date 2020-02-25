@@ -3,8 +3,8 @@ MaxDepth : (root ?TreeNode -> v int) {
         <- 0
     }
 
-    L! = 1 + MaxDepth(root.left)
-    R! = 1 + MaxDepth(root.right)
+    L! : 1 + MaxDepth(root.left)
+    R! : 1 + MaxDepth(root.right)
 
     ? L > R { 
         <- L
