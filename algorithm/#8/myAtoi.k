@@ -1,3 +1,4 @@
+demo.{}
 myAtoi : (str str -> v int) {
     automaton : NewAutomaton()
     @ ch : str.. {
@@ -29,10 +30,10 @@ Automaton : (->$) {
     Sign = 1
 
     Map = [str][]str{
-        [START]  []str{START; SIGNED; IN_NUM; END}
-        [SIGNED]  []str{END; END; IN_NUM; END}
-        [IN_NUM]  []str{END; END; IN_NUM; END}
-        [END]  []str{END; END; END; END}
+        [START] = []str{START; SIGNED; IN_NUM; END}
+        [SIGNED] = []str{END; END; IN_NUM; END}
+        [IN_NUM] = []str{END; END; IN_NUM; END}
+        [END] = []str{END; END; END; END}
     }
 } & $ {
     State str
