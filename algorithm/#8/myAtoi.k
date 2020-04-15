@@ -1,4 +1,3 @@
-demo.{}
 myAtoi : (str str -> v int) {
     automaton : NewAutomaton()
     @ ch : str.. {
