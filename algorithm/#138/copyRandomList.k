@@ -1,0 +1,25 @@
+#=
+Definition for a Node.
+Node : $ {
+    Val int
+    Next ?Node
+    Random ?Node
+}
+=#
+tempmap : [?Node]?Node{}
+copyRandomList : (head ?Node->v Node) {
+    ? head == nil {
+        <- nil
+    }
+    ? tempmap.has_key(head) {
+        tempmap[head]
+    }
+
+    newNode : Node{Val=head.Val}?
+
+    tempmap[head] = newNode
+
+    newNode.Next = copyRandomList(head.Next)
+    newNode.Random = copyRandomList(head.Random)
+    <- newNode
+}
