@@ -1,0 +1,33 @@
+#=
+Definition for singly-linked list.
+ListNode : $ {
+    Val int
+    Next ?ListNode
+}
+=#
+rotateRight : (head ?ListNode, k int->v ?ListNode) {
+    ? head == nil {
+        <- nil
+    }
+    ? head.Next == nil {
+        <- head
+    }
+    arr! : []?ListNode{}
+    temp! : head
+    @ temp >< nil {
+        arr.add(temp)
+        ? temp.Next >< nil {
+            temp = temp.Next
+        } _ {
+            temp = nil
+        }
+    }
+    ? k % arr.len == 0 {
+        <- head
+    } k > arr.len {
+        k = k % arr.len
+    } 
+    arr[arr.len-1].Next = arr[0]
+    arr[arr.len-1-k].Next = nil
+    <- arr[arr.len-k]
+}
