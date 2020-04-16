@@ -1,0 +1,14 @@
+maxArea : (height []int->v int) {
+    topValue! : 0
+    l, r : 0, height.len-1
+    @ l < r {
+        value : min(height[l], height[r]) * (r-l)
+        topValue = max(value, topValue)
+        ? height[l] > height[r] {
+            r -= 1
+        } _ {
+            l += 1
+        }
+    }
+    <- topValue
+}
