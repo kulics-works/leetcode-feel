@@ -1,0 +1,22 @@
+#=
+Definition for a binary tree node.
+TreeNode : $ {
+    Val int
+    Left ?TreeNode
+    Right ?TreeNode
+}
+=#
+isBalanced : (root ?TreeNode->v bool) {
+    ? root == nil {
+        <- true
+    }
+    <- abs(height(root.Left) - height(root.Right)) < 2 &
+     isBalanced(root.Left) & isBalanced(root.Right)
+}       
+
+height : (root ?TreeNode->v int) {
+    ? root == nil {
+        <- -1
+    }
+    <- 1 + max(height(root.Left), height(root.Right))
+}
