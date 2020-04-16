@@ -1,0 +1,24 @@
+#=
+Definition for singly-linked list.
+ListNode : $ {
+    Val int
+    Next ?ListNode
+}
+=#
+removeNthFromEnd : (head ?ListNode, n int->v ?ListNode) {
+    ? head == nil {
+        <- nil
+    }
+    temp! : ListNode{Next=head}
+    temp1! : temp
+    temp2! : temp
+    @ i : 1 ~ n + 1.. {
+        temp1 = temp1.Next
+    }
+    @ temp1 >< nil {
+        temp1 = temp1.Next
+        temp2 = temp2.Next
+    }
+    temp2.Next = temp2.Next.Next
+    <- temp.Next
+}
