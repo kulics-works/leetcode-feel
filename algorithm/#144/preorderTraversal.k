@@ -6,17 +6,17 @@ TreeNode : $ {
     Right ?TreeNode
 }
 =#
-inorderTraversal : (root ?TreeNode->v []int) {
+preorderTraversal : (root ?TreeNode->v []int) {
     ? root == nil {
         <- nil
     }
     arr : []int{}
-    temp! : inorderTraversal(root.Left)
+    arr.add(root.Val)
+    temp! : preorderTraversal(root.Left)
     ? temp >< nil {
         arr.add(temp..)
     }
-    arr.add(root.Val)
-    temp = inorderTraversal(root.Right)
+    temp = preorderTraversal(root.Right)
     ? temp >< nil {
         arr.add(temp..)
     }
