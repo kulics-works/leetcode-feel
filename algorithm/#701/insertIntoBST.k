@@ -1,0 +1,27 @@
+#=
+Definition for a binary tree node.
+TreeNode : $ {
+    Val int
+    Left ?TreeNode
+    Right ?TreeNode
+}
+=#
+insertIntoBST : (root ?TreeNode, val int->v ?TreeNode) {
+    ? root == nil {
+        <- nil
+    }
+    ? root.Val < val {
+        ? root.Right == nil {
+            root.Right = TreeNode{Val=val}?
+        } _ {
+            insertIntoBST(root.Right, val)
+        }
+    } root.Val > val {
+        ? root.Left == nil {
+            root.Left = TreeNode{Val=val}?
+        } _ {
+            insertIntoBST(root.Left, val)
+        }
+    }
+    <- root
+}
