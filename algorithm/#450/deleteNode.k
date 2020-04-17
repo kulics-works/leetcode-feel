@@ -1,0 +1,45 @@
+#=
+Definition for a binary tree node.
+TreeNode : $ {
+    Val int
+    Left ?TreeNode
+    Right ?TreeNode
+}
+=#
+deleteNode : (root ?TreeNode, key int->v ?TreeNode) {
+    ? root == nil {
+        <- nil
+    }
+    ? root.Val < key {
+        root.Right = deleteNode(root.Right, key)
+    } root.Val > key {
+        root.Left = deleteNode(root.Left, key)
+    } _ {
+        ? root.Left == nil & root.Right == nil {
+            root = nil
+        } root.Right >< nil {
+            root.Val = rightMin(root)
+            root.Right = deleteNode(root.Right, root.Val)
+        } _ {
+            root.Val = leftMax(root)
+            root.Left = deleteNode(root.Left, root.Val)
+        }
+    }
+    <- root
+}
+
+rightMin : (root ?TreeNode->v int) {
+    root = root.Right
+    @ root.Left >< nil {
+        root = root.Left
+    }
+    <- root.Val
+}
+
+leftMax : (root ?TreeNode->v int) {
+    root = root.Left
+    @ root.Right >< nil {
+        root = root.Right
+    }
+    <- root.Val
+}
