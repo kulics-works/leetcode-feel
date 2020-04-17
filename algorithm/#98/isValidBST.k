@@ -1,0 +1,33 @@
+#=
+Definition for a binary tree node.
+TreeNode : $ {
+    Val int
+    Left ?TreeNode
+    Right ?TreeNode
+}
+=#
+isValidBST : (root ?TreeNode->v bool) {
+    c : compare{lastVal=-2147483649}
+    <- c.isValidBST(root)
+}
+
+compare : $ me {
+    lastVal i64
+
+    isValidBST : (root ?TreeNode->v bool) {
+        ? root == nil {
+            <- true
+        }
+        ? ~me.isValidBST(root.Left) {
+            <- false
+        }
+        ? root.Val int64! <= me.lastVal {
+            <- false
+        }
+        me.lastVal = root.Val int64!
+        ? ~me.isValidBST(root.Right) {
+            <- false
+        }
+        <- true
+    }
+}
