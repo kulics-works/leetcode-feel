@@ -4,7 +4,7 @@ Preorder : (root ?Node -> v []int) {
     }
     List! : []int{}
     List += root.val
-    @ ea : root.children.. {
+    @ ea : root.children {
         List += Preorder(ea)
     }
     <- List

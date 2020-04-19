@@ -1,6 +1,6 @@
 myAtoi : (str str -> v int) {
     automaton : NewAutomaton()
-    @ ch : str.. {
+    @ ch : str {
         automaton.Get(ch)
     }
     <- automaton.Sign * (automaton.Ans int!)

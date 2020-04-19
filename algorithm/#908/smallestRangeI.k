@@ -4,7 +4,7 @@ SmallestRangeI : (a []int, k int -> v int) {
     }
     Max! : a[0]
     Min! : a[0]
-    @ ea : a.. {
+    @ ea : a {
         ? ea > Max {
             Max = ea
         } ea < Min {

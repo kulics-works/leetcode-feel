@@ -1,6 +1,6 @@
 defangIPaddr : (address str->v str) {
     newAddress! []byte
-    @ i : address.. {
+    @ i : address {
         ? i == '.' {
             newAddress += {'['; '.'; ']'}
         } _ {

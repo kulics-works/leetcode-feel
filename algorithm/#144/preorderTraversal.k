@@ -14,11 +14,11 @@ preorderTraversal : (root ?TreeNode->v []int) {
     arr.add(root.Val)
     temp! : preorderTraversal(root.Left)
     ? temp >< nil {
-        arr.add(temp..)
+        arr.add(temp)
     }
     temp = preorderTraversal(root.Right)
     ? temp >< nil {
-        arr.add(temp..)
+        arr.add(temp)
     }
     <- arr
 }

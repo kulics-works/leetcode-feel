@@ -3,10 +3,10 @@ Line2 : {['a']=false;['s']=false;['d']=false;['f']=false;['g']=false;['h']=false
 
 FindWords : (words []str -> v []str) {
     Result! : []str{}
-    @ ea : words.. {
+    @ ea : words {
         LowerStr! : ea.to_lower()
         line! : 0
-        @ c : LowerStr.. {
+        @ c : LowerStr {
             ? Line1.has(c) {
                 ? line == 0 | line == 1 {
                     line = 1

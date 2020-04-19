@@ -13,11 +13,11 @@ postorderTraversal : (root ?TreeNode->v []int) {
     arr : []int{}
     temp! : postorderTraversal(root.Left)
     ? temp >< nil {
-        arr.add(temp..)
+        arr.add(temp)
     }
     temp = postorderTraversal(root.Right)
     ? temp >< nil {
-        arr.add(temp..)
+        arr.add(temp)
     }
     arr.add(root.Val)
     <- arr

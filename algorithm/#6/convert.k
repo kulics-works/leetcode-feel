@@ -5,7 +5,7 @@ convert : (s str, numRows int->v str) {
     res! : [][]byte(numRows)
     direct! : true
     n! : 0
-    @ v : s.. {
+    @ v : s {
         res[n] += v
         ? n == numRows-1 {
             direct = false
@@ -18,7 +18,7 @@ convert : (s str, numRows int->v str) {
             n -= 1
         }
     }
-    @ i : 1 ~ numRows-1.. {
+    @ i : 1 ~ numRows-1 {
         res[0] += res[i]
     }
     <- res[0].to_str()

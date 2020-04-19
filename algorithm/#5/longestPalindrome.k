@@ -3,7 +3,7 @@ longestPalindrome : (s str->v str) {
         <- ""
     }
     start!, end! : 0, 0
-    @ i : 0 ~ s.len-1.. {
+    @ i : 0 ~ s.len-1 {
         len1 : expandAroundCenter(s, i, i)
         len2 : expandAroundCenter(s, i, i + 1)
         length : max(len1, len2)

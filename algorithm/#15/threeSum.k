@@ -2,12 +2,12 @@ threeSum : (nums []int->v [][]int) {
     nums.sort()
     arr : [][]int{}
     length : nums.len
-    @ i : 0 ~ length-1.. {
+    @ i : 0 ~ length-1 {
         ? nums[i]>0 {
             ~@
         }
         ? i>0 & nums[i] == nums[i-1] {
-            ..@
+            ->@
         }
         l, r : i+1, length-1
         @ l < r {
