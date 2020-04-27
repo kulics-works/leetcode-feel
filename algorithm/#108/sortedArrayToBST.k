@@ -6,7 +6,7 @@ SortedArrayToBST : (nums []int -> v ?TreeNode) {
 
     <- TreeNode{
         val = nums[Middle]
-        left = SortedArrayToBST(nums[_~Middle])
-        right = SortedArrayToBST(nums[Middle+1~_])
+        left = SortedArrayToBST(nums[..Middle])
+        right = SortedArrayToBST(nums[Middle+1..])
     }
 }

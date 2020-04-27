@@ -10,12 +10,12 @@ romanToInt : (s str->v int) {
         ? s.len < length {
             ->@
         }
-        i : s[_~length]
+        i : s[..length]
         @ i == v {
             res += hashmap[v]
-            s = s[length~_]
+            s = s[length..]
             ? s.len >= length {
-                i = s[_~length]
+                i = s[..length]
             } _ {
                 i = ""
             }

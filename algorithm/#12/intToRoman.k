@@ -7,7 +7,7 @@ intToRoman : (num int->v str) {
     @ v : weight {
         i : num / v
         ? i > 0 {
-            @ j : 0 ~ i-1 {
+            @ j : 0 .. i-1 {
                 res += hashmap[v]
             }
             num %= v

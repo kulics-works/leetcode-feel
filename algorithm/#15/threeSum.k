@@ -2,7 +2,7 @@ threeSum : (nums []int->v [][]int) {
     nums.sort()
     arr : [][]int{}
     length : nums.len
-    @ i : 0 ~ length-1 {
+    @ i : 0 .. length-1 {
         ? nums[i]>0 {
             ~@
         }

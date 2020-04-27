@@ -8,7 +8,7 @@ ShortestToChar : (s str, c Chr -> v []int) {
         Arr[i] = i - Flag
     }
     Flag = s.len * 2
-    @ i : s.len-1 ~~ 0 {
+    @ i : s.len-1 ... 0 {
         ? s[i] == c {
             Flag = i
         }

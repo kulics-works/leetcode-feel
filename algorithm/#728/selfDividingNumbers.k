@@ -1,6 +1,6 @@
 SelfDividingNumbers : (left int, right int -> v []int) {
     Arr! : []int{}
-    @ i : left ~ right {
+    @ i : left .. right {
         TempStr! : i.to_str()
         @ v : TempStr {
             Temp! : 0
