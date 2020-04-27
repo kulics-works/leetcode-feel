@@ -7,7 +7,7 @@ lengthOfLIS : (nums []int->v int) {
     dp[0] = 1
     @ i : 1 .. nums.len {
         maxValue! : 0
-        @ j : 0 .. i-1 {
+        @ j : 0 ..< i {
             ? nums[i] > nums[j] {
                 maxValue = max(maxValue, dp[j])
             }

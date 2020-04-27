@@ -8,7 +8,7 @@ longestCommonPrefix : (strs []str->v str) {
         <- strs[0]
     }
     longest = strs[0]
-    @ i : 0 .. strs.len-2 {
+    @ i : 0 ..< strs.len-1 {
         head! : 0
         strlen : min(strs[i].len, strs[i+1].len)
         ? strlen == 0 {
