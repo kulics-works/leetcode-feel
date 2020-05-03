@@ -1,0 +1,54 @@
+fourSum : (nums []int, target int->v [][]int) {
+    nums.sort()
+    arr : [][]int{}
+    length : nums.len
+    ? length < 4 {
+        <- arr
+    }
+    ? nums[0] + nums[1] + nums[2] + nums[3] > target |
+    nums[length-1] + nums[length-2] + nums[length-3] + nums[length-4] < target {
+        <- arr
+    }
+    @ i : 0 ..< length-3 {
+        ? i>0 & nums[i] == nums[i-1] {
+            ->@
+        }
+        ? nums[i] + nums[i+1] + nums[i+2] + nums[i+3] > target {
+            ~@
+        }
+        ? nums[i] + nums[length-3] + nums[length-2] + nums[length-1] < target {
+            ->@
+        }
+        @ j : i+1 ..< length-2 {
+            ? j > i + 1 && nums[j] == nums[j - 1] {
+                ->@
+            }
+            ? nums[i] + nums[j] + nums[j+1] + nums[j+2] > target {
+                ~@
+            }
+            ? nums[i] + nums[j] + nums[length-2] + nums[length-1] < target {
+                ->@
+            }
+            l, r : j+1, length-1
+            @ l < r {
+                sum : nums[i] + nums[j] + nums[l] + nums[r]
+                ? sum == target {
+                    arr.add({nums[i]; nums[j]; nums[l]; nums[r]})
+                    @ l < r & nums[l] == nums[l+1] {
+                        l += 1
+                    }
+                    @ l < r & nums[r] == nums[r-1] {
+                        r -= 1
+                    }
+                    l += 1
+                    r -= 1
+                } sum < target {
+                    l += 1
+                } sum > target {
+                    r -= 1
+                }
+            }
+        }
+    }
+    <- arr
+}

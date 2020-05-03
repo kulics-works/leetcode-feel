@@ -2,7 +2,7 @@ threeSum : (nums []int->v [][]int) {
     nums.sort()
     arr : [][]int{}
     length : nums.len
-    @ i : 0 ..< length {
+    @ i : 0 ..< length-1 {
         ? nums[i]>0 {
             ~@
         }
@@ -13,7 +13,7 @@ threeSum : (nums []int->v [][]int) {
         @ l < r {
             sum : nums[l] + nums[r] + nums[i]
             ? sum == 0 {
-                arr.add([]int{nums[l], nums[r], nums[i]})
+                arr.add({nums[l]; nums[r]; nums[i]})
                 @ l < r & nums[l] == nums[l+1] {
                     l += 1
                 }
