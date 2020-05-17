@@ -1,2 +1,2 @@
-# Leetcode in K
-use K to play Leetcode
+# Leetcode in Feel
+use Feel to play Leetcode
