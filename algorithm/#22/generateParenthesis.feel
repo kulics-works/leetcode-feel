@@ -1,0 +1,22 @@
+generateParenthesis : (n int->v []str) {
+    ? n == 0 {
+        <- nil
+    }
+    #: 当n=1时，只有一组括号
+    result : [][]str{ []str{""}; []str{"()"} }
+    @ i : 2 .. n {
+        temp : []str{}
+        @ j : 0 ..< i {
+            str1 : result[j]
+            str2 : result[i - 1 - j]
+            @ s1 : str1 {
+                @ s2 : str2 {
+                    el : "(" + s1 + ")" + s2
+                    temp += el
+                }
+            }
+        }
+        result += temp
+    }
+    <- result[n]
+}
