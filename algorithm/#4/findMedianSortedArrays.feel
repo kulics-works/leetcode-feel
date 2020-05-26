@@ -1,4 +1,4 @@
-findMedianSortedArrays : (nums1 []int, nums2 []int->v num) {
+findMedianSortedArrays : (nums1 [list int], nums2 [list int]->v num) {
     m!, n! : nums1.len, nums2.len
     #: 判断大小，通过置换保证算法一致性
     ? m > n {

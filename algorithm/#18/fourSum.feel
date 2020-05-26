@@ -1,6 +1,6 @@
-fourSum : (nums []int, target int->v [][]int) {
+fourSum : (nums [list int], target int->v [list [list int]]) {
     nums.sort()
-    arr : [][]int{}
+    arr : [list [list int]]{}
     length : nums.len
     ? length < 4 {
         <- arr

@@ -1,5 +1,5 @@
-SortArrayByParityII : (a []int -> v []int) {
-    Arr! : []int(a.len)
+SortArrayByParityII : (a [list int] -> v [list int]) {
+    Arr! : [list int](a.len)
     IA! : 0
     IB! : 1
     @ ea : IA {

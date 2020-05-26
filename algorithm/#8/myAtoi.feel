@@ -1,5 +1,6 @@
 myAtoi : (str str -> v int) {
-    automaton : NewAutomaton()
+    automaton : Automaton{}
+    automaton.init()
     @ ch : str {
         automaton.Get(ch)
     }
@@ -24,19 +25,9 @@ GetCol : (c chr -> v int) {
     <- 3
 }
 
-Automaton : (->$) {
-    State = START
-    Sign = 1
-
-    Map = [str][]str{
-        [START] = []str{START; SIGNED; IN_NUM; END}
-        [SIGNED] = []str{END; END; IN_NUM; END}
-        [IN_NUM] = []str{END; END; IN_NUM; END}
-        [END] = []str{END; END; END; END}
-    }
-} & $ {
+Automaton : $ {
     State str
-    Map [str][]str
+    Map [dict str [list str]]
     Sign int
     Ans i64
     
@@ -56,5 +47,17 @@ Automaton : (->$) {
                 Sign = -1
             }
         } 
+    }
+
+    init : (->) {
+        State = START
+        Sign = 1
+
+        Map = {
+            [START] = {START; SIGNED; IN_NUM; END}
+            [SIGNED] = {END; END; IN_NUM; END}
+            [IN_NUM] = {END; END; IN_NUM; END}
+            [END] = {END; END; END; END}
+        }
     }
 }

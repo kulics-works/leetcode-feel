@@ -1,5 +1,5 @@
 climbStairs : (n int->v int) {
-    dp : []int(n)
+    dp : [list int](n)
     @ i : 0 ..< n {
         ? i == 0 {
             dp[i] = 1

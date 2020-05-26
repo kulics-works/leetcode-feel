@@ -1,8 +1,8 @@
 uniquePaths : (m int, n int->v int) {
     #: 动态创建一个二维路径答案表
-    dp : [][]int(n)
+    dp : [list [list int]](n)
     @ i : 0 ..< n {
-        dp[i] = []int(m)
+        dp[i] = [list int](m)
     }
     
     @ i : 0 ..< n {

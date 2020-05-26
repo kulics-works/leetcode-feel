@@ -1,5 +1,5 @@
-SelfDividingNumbers : (left int, right int -> v []int) {
-    Arr! : []int{}
+SelfDividingNumbers : (left int, right int -> v [list int]) {
+    Arr! : [list int]{}
     @ i : left .. right {
         TempStr! : i.to_str()
         @ v : TempStr {

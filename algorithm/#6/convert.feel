@@ -2,7 +2,7 @@ convert : (s str, numRows int->v str) {
     ? numRows == 1 {
         <- s
     }
-    res! : [][]byte(numRows)
+    res! : [list [list byte]](numRows)
     direct! : true
     n! : 0
     @ v : s {

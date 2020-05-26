@@ -1,5 +1,5 @@
 isValid : (s str->v bool) {
-    result : [>]int{}
+    result : [stack int]{}
     @ v : s {
         ? v : '(' {
             result.put(0)

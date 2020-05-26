@@ -5,14 +5,14 @@ ListNode : $ {
     Next ?ListNode
 }
 =#
-mergeKLists : (lists []?ListNode) ?ListNode {
+mergeKLists : (lists [list ?ListNode]) ?ListNode {
     ? lists.len == 0 {
         <- nil
     }
     <- merge(lists, 0, lists.len-1)
 }
 
-merge : (lists []?ListNode, left int, right int) ?ListNode {
+merge : (lists [list ?ListNode], left int, right int) ?ListNode {
     ? left == right {
         <- lists[left]
     }

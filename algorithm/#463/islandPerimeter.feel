@@ -1,4 +1,4 @@
-IslandPerimeter : (grid [][]int -> v int) {
+IslandPerimeter : (grid [list [list int]] -> v int) {
     ? grid.len == 0 {
         <- 0
     }

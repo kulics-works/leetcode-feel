@@ -1,6 +1,6 @@
-FlipAndInvertImage : (a [][]int -> v [][]int) {
-    Reverse : (numbers []int -> v []int) {
-        V! : []int{}
+FlipAndInvertImage : (a [list [list int]] -> v [list [list int]]) {
+    Reverse : (numbers [list int] -> v [list int]) {
+        V! : [list int]{}
         @ i : numbers.len-1 ... 0 {
             V += 1 - numbers[i]
         }

@@ -1,6 +1,6 @@
-threeSum : (nums []int->v [][]int) {
+threeSum : (nums [list int]->v [list [list int]]) {
     nums.sort()
-    arr : [][]int{}
+    arr : [list [list int]]{}
     length : nums.len
     @ i : 0 ..< length-1 {
         ? nums[i]>0 {
