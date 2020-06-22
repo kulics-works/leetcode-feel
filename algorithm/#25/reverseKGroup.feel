@@ -5,6 +5,7 @@ ListNode : $ {
     Next! ?ListNode
 }
 =#
+
 reverseKGroup : (head ?ListNode, k int->v ?ListNode) {
     ? head == nil | head.Next == nil {
         <- head
@@ -22,7 +23,7 @@ reverseKGroup : (head ?ListNode, k int->v ?ListNode) {
 }
 
 reverseList : (head ?ListNode, tail ?ListNode->v ?ListNode) {
-    prev! ?ListNode = nil
+    prev! ?ListNode : nil
     curr! : head
     @ curr >< tail {
         nextTemp : curr.Next
