@@ -1,0 +1,9 @@
+removeElement : (nums [list int], val int -> len int) {
+    length : nums.len
+    @ i : length-1 ... 0 {
+        ? nums[i] == val {
+            nums.remove(i)
+        }
+    }
+    <- nums.len
+}
