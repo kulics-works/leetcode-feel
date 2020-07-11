@@ -1,17 +1,17 @@
-threeSum : (nums [list int]->v [list [list int]]) {
+threeSum := (nums: [list int]->v: [list [list int]]) {
     nums.sort()
-    arr : [list [list int]]{}
-    length : nums.len
-    @ i : 0 ..< length-1 {
+    arr := [list [list int]]{}
+    length := nums.len
+    @ i := 0 ..< length-1 {
         ? nums[i]>0 {
             ~@
         }
         ? i>0 & nums[i] == nums[i-1] {
             ->@
         }
-        l, r : i+1, length-1
+        l, r := i+1, length-1
         @ l < r {
-            sum : nums[l] + nums[r] + nums[i]
+            sum := nums[l] + nums[r] + nums[i]
             ? sum == 0 {
                 arr.add({nums[l]; nums[r]; nums[i]})
                 @ l < r & nums[l] == nums[l+1] {

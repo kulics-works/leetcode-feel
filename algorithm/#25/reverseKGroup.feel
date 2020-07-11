@@ -1,32 +1,32 @@
 #=
 Definition for singly-linked list.
-ListNode : $ {
-    Val! int
-    Next! ?ListNode
+ListNode := $ {
+    !Val: int
+    !Next: ?ListNode
 }
 =#
 
-reverseKGroup : (head ?ListNode, k int->v ?ListNode) {
+reverseKGroup := (head: ?ListNode, k: int->v: ?ListNode) {
     ? head == nil | head.Next == nil {
         <- head
     }
-    tail! : head
-    @ i : 0 ..< k {
+    !tail := head
+    @ i := 0 ..< k {
         ? tail == nil {
             <- head
         }
         tail = tail.Next
     }
-    newhead : reverse(head, tail)
+    newhead := reverse(head, tail)
     head.Next = reverseKGroup(tail, k)
     <- newhead
 }
 
-reverseList : (head ?ListNode, tail ?ListNode->v ?ListNode) {
-    prev! ?ListNode : nil
-    curr! : head
+reverseList := (head: ?ListNode, tail: ?ListNode->v: ?ListNode) {
+    !prev: ?ListNode = nil
+    !curr := head
     @ curr >< tail {
-        nextTemp : curr.Next
+        nextTemp := curr.Next
         curr.Next = prev
         prev = curr
         curr = nextTemp

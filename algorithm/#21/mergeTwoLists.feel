@@ -1,11 +1,11 @@
 #=
 Definition for singly-linked list.
-ListNode : $ {
-    Val int
-    Next ?ListNode
+ListNode := $ {
+    !Val: int
+    !Next: ?ListNode
 }
 =#
-mergeTwoLists : (l1 ?ListNode, l2 ?ListNode->v ?ListNode) {
+mergeTwoLists := (l1: ?ListNode, l2: ?ListNode->v: ?ListNode) {
     ? l1 == nil {
         <- l2
     }

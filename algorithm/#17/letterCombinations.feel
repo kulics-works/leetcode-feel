@@ -1,22 +1,22 @@
-letterCombinations : (digits str->v [list str]) {
+letterCombinations := (digits: str->v: [list str]) {
     ? digits.len >< 0 {
         backtrack("", digits)
     }
     <- output
 }
 
-backtrack : (combination str, next str->) {
+backtrack := (combination: str, next: str->) {
     ? next.len == 0 {
         output += combination
     } _ {
-        @ v : phone[next[0]] {
+        @ v := phone[next[0]] {
             backtrack(combination + v, next[1..])
         }
     }
 }
 
-output! : [list str]{}
-dict! : {
+!output := [list str]{}
+!dict := {
     ["2"] = "abc"
     ["3"] = "def"
     ["4"] = "ghi"

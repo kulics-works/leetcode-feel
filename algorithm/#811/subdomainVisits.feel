@@ -1,16 +1,16 @@
-SubdomainVisits : (cpdomains [list str] -> v [list str]) {
-    Result! : [list str]{}
-    TempDic! : [dict str int]{}
-    @ ea : cpdomains {
-        temp! : ea.split(" ")
-        count! : temp[0].to_i32()
-        arr! : temp[1].split(".")
-        @ [i]v : arr {
-            records : arr[i..].join(".")
+SubdomainVisits := (cpdomains: [list str] -> v: [list str]) {
+    !Result := [list str]{}
+    !TempDic := [dict str int]{}
+    @ ea := cpdomains {
+        !temp := ea.split(" ")
+        !count := temp[0].to_i32()
+        !arr := temp[1].split(".")
+        @ [i]v := arr {
+            records := arr[i..].join(".")
             TempDic[records] += count
         }
     }
-    @ [k]v : TempDic {
+    @ [k]v := TempDic {
         Result += v.to_str() + " " + k
     }
     <- Result

@@ -1,4 +1,4 @@
-InvertTree : (root ?TreeNode -> v ?TreeNode) {
+InvertTree := (root: ?TreeNode -> v: ?TreeNode) {
     ? root == nil { 
         <- nil
     }

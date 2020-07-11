@@ -1,7 +1,7 @@
-isValid : (s str->v bool) {
-    result : [stack int]{}
-    @ v : s {
-        ? v : '(' {
+isValid := (s: str->v: bool) {
+    result := [stack int]{}
+    @ v := s {
+        ? [v] '(' {
             result.put(0)
         } ')' {
             ? ~result.is_empty() & result.peek() == 0 {

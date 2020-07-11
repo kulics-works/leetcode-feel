@@ -1,4 +1,4 @@
-isPalindrome : (x int->v bool) {
+isPalindrome := (x: int->v: bool) {
     #: 特殊情况：
     #: 如上所述，当 x < 0 时，x 不是回文数。
     #: 同样地，如果数字的最后一位是 0，为了使该数字为回文，
@@ -8,7 +8,7 @@ isPalindrome : (x int->v bool) {
         <- false
     }
 
-    revertedNumber! : 0
+    !revertedNumber := 0
     @ x > revertedNumber {
         revertedNumber = revertedNumber * 10 + x % 10
         x /= 10

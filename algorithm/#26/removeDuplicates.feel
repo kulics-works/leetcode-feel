@@ -1,5 +1,5 @@
-removeDuplicates : (nums [list int] -> len int) {
-    @ i : nums.len-1 ..> 0 {
+removeDuplicates := (nums: [list int] -> len: int) {
+    @ i := nums.len-1 ..> 0 {
         ? nums[i] == nums[i-1] {
             nums.remove(i)
         }

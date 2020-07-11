@@ -1,12 +1,12 @@
-minPathSum : (grid [list [list int]]->v int) {
-    m, n : grid.len, grid[0].len
-    dp : [list [list int]](m)
-    @ i : 0 ..< m {
+minPathSum := (grid: [list [list int]]->v: int) {
+    m, n := grid.len, grid[0].len
+    dp := [list [list int]](m)
+    @ i := 0 ..< m {
         dp[i] = [list int](n)
     }
 
-    @ i : 0 ..< m {
-        @ j : 0 ..< n {
+    @ i := 0 ..< m {
+        @ j := 0 ..< n {
             ? i == 0 & j == 0 {
                 dp[i][j] = grid[i][j]
             } i == 0 {

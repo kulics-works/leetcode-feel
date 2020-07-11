@@ -1,17 +1,17 @@
-generateParenthesis : (n int->v [list str]) {
+generateParenthesis := (n: int->v: [list str]) {
     ? n == 0 {
         <- nil
     }
     #: 当n=1时，只有一组括号
-    result : { {""}; {"()"} }
-    @ i : 2 .. n {
-        temp : [list str]{}
-        @ j : 0 ..< i {
-            str1 : result[j]
-            str2 : result[i - 1 - j]
-            @ s1 : str1 {
-                @ s2 : str2 {
-                    el : "(" + s1 + ")" + s2
+    result := { {""}; {"()"} }
+    @ i := 2 .. n {
+        temp := [list str]{}
+        @ j := 0 ..< i {
+            str1 := result[j]
+            str2 := result[i - 1 - j]
+            @ s1 := str1 {
+                @ s2 := str2 {
+                    el := "(" + s1 + ")" + s2
                     temp += el
                 }
             }

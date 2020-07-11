@@ -1,14 +1,14 @@
-ShortestToChar : (s str, c Chr -> v [list int]) {
-    Flag! : -(s.len)
-    Arr! : [list int](s.len)
-    @ [i]v : s {
+ShortestToChar := (s: str, c: Chr -> v: [list int]) {
+    !Flag := -(s.len)
+    !Arr := [list int](s.len)
+    @ [i]v := s {
         ? v == c {
             Flag = i
         }
         Arr[i] = i - Flag
     }
     Flag = s.len * 2
-    @ i : s.len-1 ... 0 {
+    @ i := s.len-1 ... 0 {
         ? s[i] == c {
             Flag = i
         }
@@ -17,7 +17,7 @@ ShortestToChar : (s str, c Chr -> v [list int]) {
     <- Arr
 }
 
-Min : (a int, b int -> v int) {
+Min := (a: int, b: int -> v: int) {
     ? a < b {
         <- a
     }
