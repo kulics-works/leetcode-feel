@@ -8,7 +8,7 @@ romanToInt := (s: str->v: int) {
     @ v := weight {
         length := v.len
         ? s.len < length {
-            ->@
+            @
         }
         i := s[..length]
         @ i == v {

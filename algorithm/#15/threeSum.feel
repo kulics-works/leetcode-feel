@@ -7,7 +7,7 @@ threeSum := (nums: [list int]->v: [list [list int]]) {
             ~@
         }
         ? i>0 & nums[i] == nums[i-1] {
-            ->@
+            @
         }
         l, r := i+1, length-1
         @ l < r {
