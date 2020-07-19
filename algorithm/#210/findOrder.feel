@@ -14,7 +14,7 @@ findOrder := (numCourses: int, prerequisites: [list [list int]]->order: [list in
 		}
 	}
 	#: bfs
-    order := [list int](numCourses)
+    order := [list int](0)
 	@ queue.len > 0 {
 		cur := queue[0]
 		queue.removeAt(0)
