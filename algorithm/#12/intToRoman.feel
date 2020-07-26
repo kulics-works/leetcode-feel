@@ -4,10 +4,10 @@ intToRoman := (num: int->v: str) {
                 [9]="IX"; [5]="V"; [4]="IV"; [1]="I"}
     weight := {1000;900;500;400;100;90;50;40;10;9;5;4;1}
     !res := ""
-    @ v := weight {
+    weight @ v {
         i := num / v
-        ? i > 0 {
-            @ j := 0 ..< i {
+        i > 0 ? {
+            0 ..< i @ j {
                 res += hashmap[v]
             }
             num %= v

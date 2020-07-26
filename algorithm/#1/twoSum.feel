@@ -1,8 +1,8 @@
 TwoSum := (nums: [list int] -> v: [list int]) {
     Hashmap := [dict int int]{}
-    @ [i]v := nums {
+    [i]v @ nums {
         Temp := target - v
-        ? Hashmap.has_key(Temp) {
+        Hashmap.has_key(Temp) ? {
             <- [list int]{i; Hashmap[Temp]}
         } _ {
             Hashmap[v] = i

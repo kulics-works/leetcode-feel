@@ -2,20 +2,20 @@
 Definition for singly-linked list.
 ListNode := $ {
     !Val: int
-    !Next: ?ListNode
+    !Next: ListNode?
 }
 =#
-removeNthFromEnd := (head: ?ListNode, n: int->v: ?ListNode) {
-    ? head == nil {
+removeNthFromEnd := (head: ListNode?, n: int->v: ListNode?) {
+    head == nil ? {
         <- nil
     }
     !temp := ListNode{Next=head}
     !temp1 := temp
     !temp2 := temp
-    @ i := 1 .. n + 1 {
+    1 .. n + 1 @ i {
         temp1 = temp1.Next
     }
-    @ temp1 >< nil {
+    temp1 >< nil @ {
         temp1 = temp1.Next
         temp2 = temp2.Next
     }

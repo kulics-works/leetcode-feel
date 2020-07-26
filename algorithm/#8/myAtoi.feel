@@ -1,10 +1,10 @@
 myAtoi := (str: str -> v: int) {
     automaton := Automaton{}
     automaton.init()
-    @ ch := str {
+    str @ ch {
         automaton.Get(ch)
     }
-    <- automaton.Sign * (automaton.Ans: int!)
+    <- automaton.Sign * (automaton.Ans!: int)
 }
 
 START := "start"
@@ -13,35 +13,33 @@ IN_NUM := "in_number"
 END := "end"
 
 GetCol := (c: chr -> v: int) {
-    ? c == ' ' {
+    c == ' ' ? {
         <- 0
-    }
-    ? c == '+' | c == '-' {
+    } c == '+' | c == '-' ? {
         <- 1
-    } 
-    ? c >= '0' & c <= '9' {
+    } c >= '0' & c <= '9' ? {
         <- 2
     }
     <- 3
 }
 
 Automaton := $ {
-    State: str
-    Map: [dict str [list str]]
-    Sign: int
-    Ans: i64
+    !State: str
+    !Map: [dict str [list str]]
+    !Sign: int
+    !Ans: i64
     
     Get := (c: chr ->) {
         State = Map[State][GetCol(c)]
-        ? State == IN_NUM {
+        State == IN_NUM ? {
             Ans = Ans * 10 + c - '0'
-            ? Sign == 1 {
+            Sign == 1 ? {
                 Ans = min(Ans, 2147483647)
             } _ {
                 Ans = min(Ans, 2147483648)
             }
-        } State == SIGNED {
-            ? c == '+' {
+        } State == SIGNED ? {
+            c == '+' ? {
                 Sign = 1
             } _ {
                 Sign = -1
