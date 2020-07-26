@@ -1,34 +1,34 @@
 findOrder := (numCourses: int, prerequisites: [list [list int]]->order: [list int]) {
     #: get the indegree for each course
-    indegrees := [list int](numCourses)
-	adjecency := [list [list int]](numCourses)
-	@ p := prerequisites {
+    !indegrees := [list int](numCourses)
+	!adjecency := [list [list int]](numCourses)
+	prerequisites @ p {
 		indegrees[p[1]] += 1
 		adjecency[p[0]].add(p[1])
 	}
     #: put courses with indegree == 0 to queue
     queue := [list int](0)
-	@ [courseIdx]indegree := indegrees {
+	indegrees @ [courseIdx]indegree {
 		? indegree == 0 {
 			queue.add(courseIdx)
 		}
 	}
 	#: bfs
     order := [list int](0)
-	@ queue.len > 0 {
+	queue.len > 0 @ {
 		cur := queue[0]
 		queue.removeAt(0)
 		numCourses -= 1
         order.add(cur)
         #: remove the pre == cur
-		@ cur := adjecency[cur] {
+		adjecency[cur] @ cur {
 			indegrees[cur] -= 1
-			? indegrees[cur] == 0 {
+			indegrees[cur] == 0 ? {
 				queue.add(cur)
 			}
 		}
 	}
-	? numCourses == 0 {
+	numCourses == 0 ? {
         <- order
     } _ {
         <- nil

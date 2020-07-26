@@ -2,17 +2,17 @@
 Definition for singly-linked list.
 ListNode := $ {
     !Val: int
-    !Next: ?ListNode
+    !Next: ListNode?
 }
 =#
 
-reverseKGroup := (head: ?ListNode, k: int->v: ?ListNode) {
-    ? head == nil | head.Next == nil {
+reverseKGroup := (head: ListNode?, k: int->v: ListNode?) {
+    head == nil | head.Next == nil ? {
         <- head
     }
     !tail := head
-    @ i := 0 ..< k {
-        ? tail == nil {
+    0 ..< k @ i {
+        tail == nil ? {
             <- head
         }
         tail = tail.Next
@@ -22,10 +22,10 @@ reverseKGroup := (head: ?ListNode, k: int->v: ?ListNode) {
     <- newhead
 }
 
-reverseList := (head: ?ListNode, tail: ?ListNode->v: ?ListNode) {
-    !prev: ?ListNode = nil
+reverseList := (head: ListNode?, tail: ListNode?->v: ListNode?) {
+    !prev: ListNode? = nil
     !curr := head
-    @ curr >< tail {
+    curr >< tail @ {
         nextTemp := curr.Next
         curr.Next = prev
         prev = curr

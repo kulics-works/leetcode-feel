@@ -2,16 +2,16 @@
 Definition for a Node.
 Node := $ {
     !Val: int
-    !Next: ?Node
-    !Random: ?Node
+    !Next: Node?
+    !Random: Node?
 }
 =#
-!tempmap := [dict ?Node ?Node]{}
-copyRandomList := (head: ?Node->v: Node) {
-    ? head == nil {
+!tempmap := [dict Node? Node?]{}
+copyRandomList := (head: Node?->v: Node) {
+    head == nil ? {
         <- nil
     }
-    ? tempmap.has_key(head) {
+    tempmap.has_key(head) ? {
         tempmap[head]
     }
 

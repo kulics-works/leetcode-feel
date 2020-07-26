@@ -2,22 +2,22 @@
 Definition for a binary tree node.
 TreeNode := $ {
     !Val: int
-    !Left: ?TreeNode
-    !Right: ?TreeNode
+    !Left: TreeNode?
+    !Right: TreeNode?
 }
 =#
-preorderTraversal := (root: ?TreeNode->v: [list int]) {
-    ? root == nil {
+preorderTraversal := (root: TreeNode?->v: [list int]) {
+    root == nil ? {
         <- nil
     }
     arr := [list int]{}
     arr.add(root.Val)
     !temp := preorderTraversal(root.Left)
-    ? temp >< nil {
+    temp >< nil ? {
         arr.add(temp)
     }
     temp = preorderTraversal(root.Right)
-    ? temp >< nil {
+    temp >< nil ? {
         arr.add(temp)
     }
     <- arr

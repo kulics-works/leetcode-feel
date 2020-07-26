@@ -2,24 +2,24 @@
 Definition for a binary tree node.
 TreeNode := $ {
     !Val: int
-    !Left: ?TreeNode
-    !Right: ?TreeNode
+    !Left: TreeNode?
+    !Right: TreeNode?
 }
 =#
-levelOrder := (root: ?TreeNode->v: [list [list int]])  {
+levelOrder := (root: TreeNode?->v: [list [list int]])  {
     levels = [list [list int]]{}
-    ? root == nil {
+    root == nil ? {
         <- levels
     }
     helper(root, 0)
     <- levels
 }
 
-helper := (root: ?TreeNode, level: int) {
-    ? root == nil {
+helper := (root: TreeNode?, level: int) {
+    root == nil ? {
         <-
     }
-    ? levels.len == level {
+    levels.len == level ? {
         levels.add([list int]{})
     }
     levels[level].add(root.Val)
