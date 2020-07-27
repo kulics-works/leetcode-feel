@@ -1,14 +1,14 @@
 lengthOfLIS := (nums: [list int]->v: int) {
-    ? nums.len == 0 {
+    nums.len == 0 ? {
         <- 0
     }
     dp := [list int](nums.len)
     !maxLength := 1
     dp[0] = 1
-    @ i := 1 .. nums.len {
+    1 .. nums.len @ i {
         !maxValue := 0
-        @ j := 0 ..< i {
-            ? nums[i] > nums[j] {
+        0 ..< i @ j {
+            nums[i] > nums[j] ? {
                 maxValue = max(maxValue, dp[j])
             }
         }

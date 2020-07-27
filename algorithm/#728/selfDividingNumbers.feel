@@ -1,16 +1,16 @@
 SelfDividingNumbers := (left: int, right: int -> v: [list int]) {
     !Arr := [list int]{}
-    @ i := left .. right {
+    left .. right @ i {
         !TempStr := i.to_str()
-        @ v := TempStr {
+        TempStr @ v {
             !Temp := 0
-            ? v == '0' { 
+            v == '0' ? { 
                 ~@
             } _ { 
                 Temp = i % v.to_i32() 
             }
 
-            ? Temp >< 0 {
+            Temp >< 0 ? {
                 ~@
             }
         }

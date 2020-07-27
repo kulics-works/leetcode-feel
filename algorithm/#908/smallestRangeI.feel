@@ -1,17 +1,17 @@
 SmallestRangeI := (a: [list int], k: int -> v: int) {
-    ? a.len == 0 {
+    a.len == 0 ? {
         <- 0
     }
     !Max := a[0]
     !Min := a[0]
-    @ ea := a {
-        ? ea > Max {
+    a @ ea {
+        ea > Max ? {
             Max = ea
-        } ea < Min {
+        } ea < Min ? {
             Min = ea
         }
     }
-    ? Max - Min >= k * 2 {
+    Max - Min >= k * 2 ? {
         <- Max - Min - k * 2
     }
     <- 0

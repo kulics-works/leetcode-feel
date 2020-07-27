@@ -1,9 +1,9 @@
-Postorder := (root: ?Node -> v: [list int]) {
-    ? root == nil {
+Postorder := (root: Node? -> v: [list int]) {
+    root == nil ? {
         <- [list int]{}
     }
     !List := [list int]{}
-    @ ea := root.children {
+    root.children @ ea {
         List += Postorder(ea)
     }
     List += root.val

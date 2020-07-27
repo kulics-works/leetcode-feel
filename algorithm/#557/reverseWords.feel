@@ -1,6 +1,6 @@
 ReverseWords := (s: str -> v: str) {
     !Result := ""
-    @ ea := s.split(' ') {
+    s.split(' ') @ ea {
         Result += ea.reverse() + " "
     }
     <- Result

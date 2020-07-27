@@ -1,11 +1,11 @@
-MergeTrees := (t1: ?TreeNode, t2: ?TreeNode -> v: ?TreeNode) {
-    !Result: ?TreeNode = TreeNode{}
+MergeTrees := (t1: TreeNode?, t2: TreeNode? -> v: TreeNode?) {
+    !Result := TreeNode{}?
 
-    ? t1 == nil & t2 == nil {
+    t1 == nil & t2 == nil ? {
         Result = nil
-    } t1 >< nil & t2 == nil {
+    } t1 >< nil & t2 == nil ? {
         Result = t1
-    } t1 == nil & t2 >< nil {
+    } t1 == nil & t2 >< nil ? {
         Result = t2
     } _ {
         Result.val = t1.val + t2.val

@@ -1,5 +1,5 @@
-InvertTree := (root: ?TreeNode -> v: ?TreeNode) {
-    ? root == nil { 
+InvertTree := (root: TreeNode? -> v: TreeNode?) {
+    root == nil ? { 
         <- nil
     }
     <- TreeNode{
