@@ -7,9 +7,9 @@ UniqueMorseRepresentations := (words: [list str] -> v: int) {
     }
     
     !CountMap := [dict str bool]{}
-    @ ea := words {
+    words @ ea {
         !Temp := ""
-        @ c := ea {
+        ea @ c {
             Temp += Morse[c]
         }
         CountMap[Temp] = true

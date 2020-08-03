@@ -1,24 +1,24 @@
 convert := (s: str, numRows: int->v: str) {
-    ? numRows == 1 {
+    numRows == 1 ? {
         <- s
     }
     !res := [list [list byte]](numRows)
     !direct := true
     !n := 0
-    @ v := s {
+    s @ v {
         res[n] += v
-        ? n == numRows-1 {
+        n == numRows-1 ? {
             direct = false
-        } n == 0 {
+        } n == 0 ? {
             direct = true
         }
-        ? direct {
+        direct ? {
             n += 1
         } _ {
             n -= 1
         }
     }
-    @ i := 1 ..< numRows {
+    1 ..< numRows @ i {
         res[0] += res[i]
     }
     <- res[0].to_str()

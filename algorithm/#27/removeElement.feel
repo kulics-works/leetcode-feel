@@ -1,7 +1,7 @@
 removeElement := (nums: [list int], val: int -> len: int) {
     length := nums.len
-    @ i := length-1 ... 0 {
-        ? nums[i] == val {
+    length-1 ... 0 @ i {
+        nums[i] == val ? {
             nums.remove(i)
         }
     }

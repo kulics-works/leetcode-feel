@@ -1,13 +1,13 @@
 FlipAndInvertImage := (a: [list [list int]] -> v: [list [list int]]) {
     Reverse := (numbers: [list int] -> v: [list int]) {
         !V := [list int]{}
-        @ i := numbers.len-1 ... 0 {
+        numbers.len-1 ... 0 @ i {
             V += 1 - numbers[i]
         }
         <- V
     }
 
-    @ [i]v := a {
+    a @ [i]v {
         a[i] = Reverse(v)
     }
     <- a

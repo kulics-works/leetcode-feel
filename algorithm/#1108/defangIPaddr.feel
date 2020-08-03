@@ -1,7 +1,7 @@
 defangIPaddr := (address: str->v: str) {
     !newAddress: [list byte]
-    @ i := address {
-        ? i == '.' {
+    address @ i {
+        i == '.' ? {
             newAddress += {'['; '.'; ']'}
         } _ {
             newAddress += i

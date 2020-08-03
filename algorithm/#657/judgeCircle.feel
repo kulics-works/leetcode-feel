@@ -2,14 +2,14 @@ JudgeCircle := (moves: str -> yes: bool) {
     !X := 0
     !Y := 0
 
-    @ ea := moves {
-        ? [ea] "L" { 
+    moves @ ea {
+        [ea] "L" ? { 
             X += 1 
-        } "R" { 
+        } "R" ? { 
             X -= 1 
-        } "U" { 
+        } "U" ? { 
             Y += 1 
-        } "D" { 
+        } "D" ? { 
             Y -= 1 
         }
     }

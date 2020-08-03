@@ -2,29 +2,29 @@
 Definition for singly-linked list.
 ListNode := $ {
     !Val: int
-    !Next: ?ListNode
+    !Next: ListNode?
 }
 =#
-rotateRight := (head: ?ListNode, k: int->v: ?ListNode) {
-    ? head == nil {
+rotateRight := (head: ListNode?, k: int->v: ListNode?) {
+    head == nil ? {
         <- nil
     }
-    ? head.Next == nil {
+    head.Next == nil ? {
         <- head
     }
-    !arr := [list ?ListNode]{}
+    !arr := [list ListNode?]{}
     !temp := head
-    @ temp >< nil {
+    temp >< nil @ {
         arr.add(temp)
-        ? temp.Next >< nil {
+        temp.Next >< nil ? {
             temp = temp.Next
         } _ {
             temp = nil
         }
     }
-    ? k % arr.len == 0 {
+    k % arr.len == 0 ? {
         <- head
-    } k > arr.len {
+    } k > arr.len ? {
         k = k % arr.len
     } 
     arr[arr.len-1].Next = arr[0]

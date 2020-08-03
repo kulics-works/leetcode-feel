@@ -5,8 +5,8 @@ ListNode := $ {
     !Next: ?ListNode
 }
 =#
-swapPairs := (head: ?ListNode->v: ?ListNode) {
-    ? head == nil | head.Next == nil {
+swapPairs := (head: ListNode?->v: ListNode?) {
+    head == nil | head.Next == nil ? {
         <- head
     }
     node1 := head

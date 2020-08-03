@@ -1,15 +1,15 @@
 letterCombinations := (digits: str->v: [list str]) {
-    ? digits.len >< 0 {
+    digits.len >< 0 ? {
         backtrack("", digits)
     }
     <- output
 }
 
 backtrack := (combination: str, next: str->) {
-    ? next.len == 0 {
+    next.len == 0 ? {
         output += combination
     } _ {
-        @ v := phone[next[0]] {
+        phone[next[0]] @ v {
             backtrack(combination + v, next[1..])
         }
     }

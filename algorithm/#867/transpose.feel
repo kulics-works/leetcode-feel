@@ -2,9 +2,9 @@ Transpose := (a: [list [list int]] -> v: [list [list int]]) {
     !L1 := a.len
     !L2 := a[0].len
     !Result := [list [list int]]{}
-    @ i := 0 ..> L2 {
+    0 ..> L2 @ i {
         !temp := [list int]{}
-        @ j := 0 ..> L1 {
+        0 ..> L1 @ j {
             temp += a[j][i]
         }
         Result += temp 

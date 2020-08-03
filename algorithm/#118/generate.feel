@@ -1,10 +1,10 @@
 Generate := (numRows: int -> v: [list [list int]]) {
     !Arr := [list [list int]]{}
-    @ i := 0 .. numRows {
+    0 .. numRows @ i {
         !Temp := {1}
-        @ j := 1 .. i {
+        1 .. i @ j {
             !Right := 0
-            ? j < i {
+            j < i ? {
                 Right = Arr[i-1][j]
             }
             Temp += Arr[i-1][j-1] + Right
