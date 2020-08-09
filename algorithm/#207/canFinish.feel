@@ -1,10 +1,10 @@
 canFinish := (numCourses: int, prerequisites: [list [list int]]->can: bool) {
     #: get the indegree for each course
     !indegrees := [list int](numCourses)
-	!adjecency := [list [list int]](numCourses)
+	!edges := [list [list int]](numCourses)
 	prerequisites @ p {
-		indegrees[p[1]] += 1
-		adjecency[p[0]].add(p[1])
+		indegrees[p[0]] += 1
+		edges[p[1]].add(p[0])
 	}
     #: put courses with indegree == 0 to queue
     queue := [list int](0)
@@ -19,10 +19,10 @@ canFinish := (numCourses: int, prerequisites: [list [list int]]->can: bool) {
 		queue.removeAt(0)
 		numCourses -= 1
         #: remove the pre == cur
-		adjecency[cur] @ cur {
-			indegrees[cur] -= 1
-			indegrees[cur] == 0 ? {
-				queue.add(cur)
+		edges[cur] @ v {
+			indegrees[v] -= 1
+			indegrees[v] == 0 ? {
+				queue.add(v)
 			}
 		}
 	}
