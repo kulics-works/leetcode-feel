@@ -6,11 +6,11 @@ TreeNode := $ {
     !Right: TreeNode?
 }
 =#
-preorderTraversal := (root: TreeNode?->v: [list int]) {
+preorderTraversal := (root: TreeNode?->v: list int) {
     root == nil ? {
         <- nil
     }
-    arr := [list int]{}
+    arr := list int{}
     arr.add(root.Val)
     !temp := preorderTraversal(root.Left)
     temp >< nil ? {

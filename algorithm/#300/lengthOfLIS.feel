@@ -1,8 +1,8 @@
-lengthOfLIS := (nums: [list int]->v: int) {
+lengthOfLIS := (nums: list int->v: int) {
     nums.len == 0 ? {
         <- 0
     }
-    dp := [list int](nums.len)
+    dp := list int(nums.len)
     !maxLength := 1
     dp[0] = 1
     1 .. nums.len @ i {

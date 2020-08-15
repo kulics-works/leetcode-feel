@@ -1,4 +1,4 @@
-SortedArrayToBST := (nums: [list int] -> v: TreeNode?) {
+SortedArrayToBST := (nums: list int -> v: TreeNode?) {
     nums.len == 0 ? {
         <- nil
     }

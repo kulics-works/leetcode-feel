@@ -1,5 +1,5 @@
-FizzBuzz := (n: int -> v: [list str]) {
-    !Arr := [list str]{}
+FizzBuzz := (n: int -> v: list str) {
+    !Arr := list str{}
 
     1 .. n @ ea {
         ea % 15 == 0 ? {

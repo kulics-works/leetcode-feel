@@ -1,6 +1,6 @@
-SubdomainVisits := (cpdomains: [list str] -> v: [list str]) {
-    !Result := [list str]{}
-    !TempDic := [dict str int]{}
+SubdomainVisits := (cpdomains: list str -> v: list str) {
+    !Result := list str{}
+    !TempDic := dict str int{}
     cpdomains @ ea {
         !temp := ea.split(" ")
         !count := temp[0].to_i32()

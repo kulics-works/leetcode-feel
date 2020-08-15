@@ -1,6 +1,6 @@
-SortArrayByParity := (a: [list int] -> v: int) {
-    !Arr1 := [list int]{}
-    !Arr2 := [list int]{}
+SortArrayByParity := (a: list int -> v: int) {
+    !Arr1 := list int{}
+    !Arr2 := list int{}
     a @ ea {
         ea & 1 >< 1 ? {
             Arr1 += ea

@@ -1,4 +1,4 @@
-threeSumClosest := (nums: [list int], target: int->v: int) {
+threeSumClosest := (nums: list int, target: int->v: int) {
     length := nums.len
     nums.sort()
     !closs := nums[0]+nums[1]+nums[2]

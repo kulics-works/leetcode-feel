@@ -1,4 +1,4 @@
-letterCombinations := (digits: str->v: [list str]) {
+letterCombinations := (digits: str->v: list str) {
     digits.len >< 0 ? {
         backtrack("", digits)
     }
@@ -15,7 +15,7 @@ backtrack := (combination: str, next: str->) {
     }
 }
 
-!output := [list str]{}
+!output := list str{}
 !dict := {
     ["2"] = "abc"
     ["3"] = "def"

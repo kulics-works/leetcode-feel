@@ -1,5 +1,5 @@
 climbStairs := (n: int->v: int) {
-    dp := [list int](n)
+    dp := list int(n)
     0 ..< n @ i {
         i == 0 ? {
             dp[i] = 1

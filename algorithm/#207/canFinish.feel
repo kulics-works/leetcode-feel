@@ -1,13 +1,13 @@
-canFinish := (numCourses: int, prerequisites: [list [list int]]->can: bool) {
+canFinish := (numCourses: int, prerequisites: list (list int)->can: bool) {
     #: get the indegree for each course
-    !indegrees := [list int](numCourses)
-	!edges := [list [list int]](numCourses)
+    !indegrees := list int(numCourses)
+	!edges := list (list int)(numCourses)
 	prerequisites @ p {
 		indegrees[p[0]] += 1
 		edges[p[1]].add(p[0])
 	}
     #: put courses with indegree == 0 to queue
-    queue := [list int](0)
+    queue := list int(0)
 	indegrees @ [courseIdx]indegree {
 		? indegree == 0 {
 			queue.add(courseIdx)

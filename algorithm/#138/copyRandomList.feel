@@ -6,7 +6,7 @@ Node := $ {
     !Random: Node?
 }
 =#
-!tempmap := [dict Node? Node?]{}
+!tempmap := dict Node? Node?{}
 copyRandomList := (head: Node?->v: Node) {
     head == nil ? {
         <- nil

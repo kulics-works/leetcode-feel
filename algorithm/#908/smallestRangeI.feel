@@ -1,4 +1,4 @@
-SmallestRangeI := (a: [list int], k: int -> v: int) {
+SmallestRangeI := (a: list int, k: int -> v: int) {
     a.len == 0 ? {
         <- 0
     }

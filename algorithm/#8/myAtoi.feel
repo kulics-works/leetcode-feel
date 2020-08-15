@@ -25,7 +25,7 @@ GetCol := (c: chr -> v: int) {
 
 Automaton := $ {
     !State: str
-    !Map: [dict str [list str]]
+    !Map: dict str (list str)
     !Sign: int
     !Ans: i64
     

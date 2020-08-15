@@ -1,4 +1,4 @@
-NumberOfLines := (widths: [list int], s: str -> v: [list int]) {
+NumberOfLines := (widths: list int, s: str -> v: list int) {
     !Count := 0
     !Line := 1
 

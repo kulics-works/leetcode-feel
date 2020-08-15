@@ -1,6 +1,6 @@
-ShortestToChar := (s: str, c: Chr -> v: [list int]) {
+ShortestToChar := (s: str, c: Chr -> v: list int) {
     !Flag := -(s.len)
-    !Arr := [list int](s.len)
+    !Arr := list int(s.len)
     s @ [i]v {
         v == c ? {
             Flag = i

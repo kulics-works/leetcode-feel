@@ -1,4 +1,4 @@
-PeakIndexInMountainArray := (a: [list int] -> v: int) {
+PeakIndexInMountainArray := (a: list int -> v: int) {
     !Max := 0
     a @ [i]v {
         v >= Max ? {

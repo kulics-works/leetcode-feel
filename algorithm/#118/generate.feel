@@ -1,5 +1,5 @@
-Generate := (numRows: int -> v: [list [list int]]) {
-    !Arr := [list [list int]]{}
+Generate := (numRows: int -> v: list (list int)) {
+    !Arr := list (list int){}
     0 .. numRows @ i {
         !Temp := {1}
         1 .. i @ j {

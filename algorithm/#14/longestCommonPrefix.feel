@@ -1,4 +1,4 @@
-longestCommonPrefix := (strs: [list str]->v: str) {
+longestCommonPrefix := (strs: list str->v: str) {
     !longest := ""
     length := strs.len
     [length] 0 ? {

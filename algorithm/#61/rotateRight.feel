@@ -12,7 +12,7 @@ rotateRight := (head: ListNode?, k: int->v: ListNode?) {
     head.Next == nil ? {
         <- head
     }
-    !arr := [list ListNode?]{}
+    !arr := list ListNode?{}
     !temp := head
     temp >< nil @ {
         arr.add(temp)

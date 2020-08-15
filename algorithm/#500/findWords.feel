@@ -1,8 +1,8 @@
 Line1 := {['q']=false;['w']=false;['e']=false;['r']=false;['t']=false;['y']=false;['u']=false;['i']=false;['o']=false;['p']=false}
 Line2 := {['a']=false;['s']=false;['d']=false;['f']=false;['g']=false;['h']=false;['j']=false;['k']=false;['l']=false}
 
-FindWords := (words: [list str] -> v: [list str]) {
-    !Result := [list str]{}
+FindWords := (words: list str -> v: list str) {
+    !Result := list str{}
     words @ ea {
         !LowerStr := ea.to_lower()
         !line := 0

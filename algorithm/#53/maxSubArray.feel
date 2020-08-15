@@ -1,4 +1,4 @@
-maxSubArray := (nums: [list int]->v: int) {
+maxSubArray := (nums: list int->v: int) {
     !currentSum := nums[0]
     !maxSum := nums[0]
     1 ..< nums.len @ i {

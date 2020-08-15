@@ -6,8 +6,8 @@ TreeNode := $ {
     !Right: TreeNode?
 }
 =#
-levelOrder := (root: TreeNode?->v: [list [list int]])  {
-    levels = [list [list int]]{}
+levelOrder := (root: TreeNode?->v: list (list int))  {
+    levels = list (list int){}
     root == nil ? {
         <- levels
     }
@@ -20,11 +20,11 @@ helper := (root: TreeNode?, level: int) {
         <-
     }
     levels.len == level ? {
-        levels.add([list int]{})
+        levels.add(list int{})
     }
     levels[level].add(root.Val)
     helper(root.Left, level+1)
     helper(root.Right, level+1)
 }
 
-!levels: [list [list int]]
+!levels: list (list int)

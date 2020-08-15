@@ -1,4 +1,4 @@
-UniqueMorseRepresentations := (words: [list str] -> v: int) {
+UniqueMorseRepresentations := (words: list str -> v: int) {
     Morse := {
         ['a']=".-"; ['b']="-..."; ['c']="-.-."; ['d']="-.."; ['e']="."; ['f']="..-."; ['g']="--."
         ['h']="...."; ['i']=".."; ['j']=".---"; ['k']="-.-"; ['l']=".-.."; ['m']="--"; ['n']="-."
@@ -6,7 +6,7 @@ UniqueMorseRepresentations := (words: [list str] -> v: int) {
         ['u']="..-"; ['v']="...-"; ['w']=".--"; ['x']="-..-"; ['y']="-.--"; ['z']="--.."
     }
     
-    !CountMap := [dict str bool]{}
+    !CountMap := dict str bool{}
     words @ ea {
         !Temp := ""
         ea @ c {
