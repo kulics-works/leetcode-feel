@@ -1,13 +1,13 @@
-#=
+++
 Definition for a binary tree node.
-TreeNode := $ {
+TreeNode = $ {
     !Val: int
     !Left: TreeNode?
     !Right: TreeNode?
 }
-=#
-levelOrder := (root: TreeNode?->v: list (list int))  {
-    levels = list (list int){}
+++
+levelOrder = (root: TreeNode?->v: list`(list`int))  {
+    levels = list`(list`int){}
     root == nil ? {
         <- levels
     }
@@ -15,7 +15,7 @@ levelOrder := (root: TreeNode?->v: list (list int))  {
     <- levels
 }
 
-helper := (root: TreeNode?, level: int) {
+helper = (root: TreeNode?, level: int) {
     root == nil ? {
         <-
     }
@@ -27,4 +27,4 @@ helper := (root: TreeNode?, level: int) {
     helper(root.Right, level+1)
 }
 
-!levels: list (list int)
+!levels: list`(list`int)

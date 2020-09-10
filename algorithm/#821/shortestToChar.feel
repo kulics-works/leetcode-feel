@@ -1,6 +1,6 @@
-ShortestToChar := (s: str, c: Chr -> v: list int) {
-    !Flag := -(s.len)
-    !Arr := list int(s.len)
+ShortestToChar = (s: str, c: Chr -> v: list`int) {
+    !Flag = -(s.len)
+    !Arr = list`int(s.len)
     s @ [i]v {
         v == c ? {
             Flag = i
@@ -17,7 +17,7 @@ ShortestToChar := (s: str, c: Chr -> v: list int) {
     <- Arr
 }
 
-Min := (a: int, b: int -> v: int) {
+Min = (a: int, b: int -> v: int) {
     a < b ? {
         <- a
     }

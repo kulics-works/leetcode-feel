@@ -1,9 +1,9 @@
-defangIPaddr := (address: str->v: str) {
-    !newAddress: list byte
+defangIPaddr = (address: str->v: str) {
+    !newAddress: list`byte
     address @ i {
         i == '.' ? {
             newAddress += {'['; '.'; ']'}
-        } _ {
+        } | _ {
             newAddress += i
         }
     }

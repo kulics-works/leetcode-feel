@@ -1,10 +1,10 @@
-TwoSum := (nums: list int -> v: list int) {
-    Hashmap := dict int int{}
+TwoSum = (nums: list`int -> v: list`int) {
+    Hashmap = dict`int`int{}
     nums @ [i]v {
-        Temp := target - v
+        Temp = target - v
         Hashmap.has_key(Temp) ? {
-            <- list int{i; Hashmap[Temp]}
-        } _ {
+            <- list`int{i; Hashmap[Temp]}
+        } | _ {
             Hashmap[v] = i
         }
     }

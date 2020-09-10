@@ -1,15 +1,15 @@
-#=
+++
 Definition for singly-linked list.
-ListNode := $ {
+ListNode = $ {
     !Val: int
     !Next: ListNode?
 }
-=#
-reverseList := (head: ListNode?->v: ListNode?) {
+++
+reverseList = (head: ListNode?->v: ListNode?) {
     !prev: ListNode?
-    !curr := head
+    !curr = head
     curr >< nil @ {
-        nextTemp : curr.Next
+        nextTemp = curr.Next
         curr.Next = prev
         prev = curr
         curr = nextTemp

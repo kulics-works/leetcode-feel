@@ -1,26 +1,26 @@
-findOrder := (numCourses: int, prerequisites: list (list int)->order: list int) {
-    #: get the indegree for each course
-    !indegrees := list int(numCourses)
-	!edges := list (list int)(numCourses)
+findOrder = (numCourses: int, prerequisites: list`(list`int)->order: list`int) {
+    -- get the indegree for each course
+    !indegrees = list`int(numCourses)
+	!edges = list`(list`int)(numCourses)
 	prerequisites @ p {
 		indegrees[p[0]] += 1
 		edges[p[1]].add(p[0])
 	}
-    #: put courses with indegree == 0 to queue
-    queue := list int(0)
+    -- put courses with indegree == 0 to queue
+    queue = list`int(0)
 	indegrees @ [courseIdx]indegree {
 		? indegree == 0 {
 			queue.add(courseIdx)
 		}
 	}
-	#: bfs
-    order := list int(0)
+	-- bfs
+    order = list`int(0)
 	queue.len > 0 @ {
-		cur := queue[0]
+		cur = queue[0]
 		queue.removeAt(0)
 		numCourses -= 1
         order.add(cur)
-        #: remove the pre == cur
+        -- remove the pre == cur
 		edges[cur] @ v {
 			indegrees[v] -= 1
 			indegrees[v] == 0 ? {
@@ -30,7 +30,7 @@ findOrder := (numCourses: int, prerequisites: list (list int)->order: list int) 
 	}
 	numCourses == 0 ? {
         <- order
-    } _ {
+    } | _ {
         <- nil
     }
 }

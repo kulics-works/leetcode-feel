@@ -1,5 +1,5 @@
-ReverseWords := (s: str -> v: str) {
-    !Result := ""
+ReverseWords = (s: str -> v: str) {
+    !Result = ""
     s.split(' ') @ ea {
         Result += ea.reverse() + " "
     }

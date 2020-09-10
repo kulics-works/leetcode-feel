@@ -1,28 +1,28 @@
-#=
+++
 Definition for singly-linked list.
-ListNode := $ {
+ListNode = $ {
     !Val: int
     !Next: ListNode?
 }
-=#
-mergeKLists := (lists: list ListNode?->v: ListNode?) {
+++
+mergeKLists = (lists: list`ListNode?->v: ListNode?) {
     lists.len == 0 ? {
         <- nil
     }
     <- merge(lists, 0, lists.len-1)
 }
 
-merge := (lists: list ListNode?, left: int, right: int->v: ListNode?) {
+merge = (lists: list`ListNode?, left: int, right: int->v: ListNode?) {
     left == right ? {
         <- lists[left]
     }
-    middle := left + (right-left) / 2
-    list1 := merge(lists, left, middle)
-    list2 := merge(lists, middle+1, right)
+    middle = left + (right-left) / 2
+    list1 = merge(lists, left, middle)
+    list2 = merge(lists, middle+1, right)
     <- mergeTwoLists(list1, list2)
 }
 
-mergeTwoLists := (l1: ListNode?, l2: ListNode?->v: ListNode?) {
+mergeTwoLists = (l1: ListNode?, l2: ListNode?->v: ListNode?) {
     l1 == nil ? {
         <- l2
     }
@@ -32,7 +32,7 @@ mergeTwoLists := (l1: ListNode?, l2: ListNode?->v: ListNode?) {
     l1.Val > l2.Val ? {
         l2.Next = mergeTwoLists(l1, l2.Next)
         <- l2
-    } _ {
+    } | _ {
         l1.Next = mergeTwoLists(l2, l1.Next)
         <- l1
     }

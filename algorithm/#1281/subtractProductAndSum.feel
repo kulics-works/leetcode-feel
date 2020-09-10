@@ -1,5 +1,5 @@
-subtractProductAndSum := (n: int->v: int) {
-    !num, !sum, !mul := 0, 0, 1 
+subtractProductAndSum = (n: int->v: int) {
+    !num, !sum, !mul = 0, 0, 1 
     n > 0 @ {
         num = n % 10
         mul = mul * num

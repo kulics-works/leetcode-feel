@@ -1,9 +1,9 @@
-Generate := (numRows: int -> v: list (list int)) {
-    !Arr := list (list int){}
+Generate = (numRows: int -> v: list`(list`int)) {
+    !Arr = list`(list`int){}
     0 .. numRows @ i {
-        !Temp := {1}
+        !Temp = {1}
         1 .. i @ j {
-            !Right := 0
+            !Right = 0
             j < i ? {
                 Right = Arr[i-1][j]
             }

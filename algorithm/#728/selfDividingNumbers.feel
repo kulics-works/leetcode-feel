@@ -1,12 +1,12 @@
-SelfDividingNumbers := (left: int, right: int -> v: list int) {
-    !Arr := list int{}
+SelfDividingNumbers = (left: int, right: int -> v: list`int) {
+    !Arr = list`int{}
     left .. right @ i {
-        !TempStr := i.to_str()
+        !TempStr = i.to_str()
         TempStr @ v {
-            !Temp := 0
+            !Temp = 0
             v == '0' ? { 
                 ~@
-            } _ { 
+            } | _ { 
                 Temp = i % v.to_i32() 
             }
 

@@ -1,13 +1,13 @@
-#=
+++
 Definition for a Node.
-Node := $ {
+Node = $ {
     !Val: int
     !Next: Node?
     !Random: Node?
 }
-=#
-!tempmap := dict Node? Node?{}
-copyRandomList := (head: Node?->v: Node) {
+++
+!tempmap = dict`Node?`Node?{}
+copyRandomList = (head: Node?->v: Node) {
     head == nil ? {
         <- nil
     }
@@ -15,7 +15,7 @@ copyRandomList := (head: Node?->v: Node) {
         tempmap[head]
     }
 
-    newNode := Node{Val=head.Val}?
+    newNode = Node{Val=head.Val}?
 
     tempmap[head] = newNode
 

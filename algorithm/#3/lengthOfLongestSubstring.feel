@@ -1,8 +1,8 @@
-LengthOfLongestSubstring := (s: str -> length: int) {
-    !Top := 0
-    !Temp := list int{}
+LengthOfLongestSubstring = (s: str -> length: int) {
+    !Top = 0
+    !Temp = list`int{}
 
-    HaveIt := (input: list int, it: int -> yes: bool, index: int) {
+    HaveIt = (input: list`int, it: int -> yes: bool, index: int) {
         input @ [i]v {
             v == it ? {
                 <- true, i
@@ -12,7 +12,7 @@ LengthOfLongestSubstring := (s: str -> length: int) {
     }
 
     s @ v {
-        Yes, Index := HaveIt(Temp, v)
+        Yes, Index = HaveIt(Temp, v)
         Yes ? {
             Temp = Temp.sub_str(Index + 1)
         }

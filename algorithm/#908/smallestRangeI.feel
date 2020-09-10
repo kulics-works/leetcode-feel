@@ -1,13 +1,13 @@
-SmallestRangeI := (a: list int, k: int -> v: int) {
+SmallestRangeI = (a: list`int, k: int -> v: int) {
     a.len == 0 ? {
         <- 0
     }
-    !Max := a[0]
-    !Min := a[0]
+    !Max = a[0]
+    !Min = a[0]
     a @ ea {
         ea > Max ? {
             Max = ea
-        } ea < Min ? {
+        } | ea < Min ? {
             Min = ea
         }
     }

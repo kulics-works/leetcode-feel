@@ -1,18 +1,18 @@
-#=
+++
 Definition for a binary tree node.
-TreeNode := $ {
+TreeNode = $ {
     !Val: int
     !Left: TreeNode?
     !Right: TreeNode?
 }
-=#
-preorderTraversal := (root: TreeNode?->v: list int) {
+++
+preorderTraversal = (root: TreeNode?->v: list`int) {
     root == nil ? {
         <- nil
     }
-    arr := list int{}
+    arr = list`int{}
     arr.add(root.Val)
-    !temp := preorderTraversal(root.Left)
+    !temp = preorderTraversal(root.Left)
     temp >< nil ? {
         arr.add(temp)
     }
