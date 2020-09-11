@@ -7,7 +7,7 @@ findMedianSortedArrays = (!nums1: list`int, !nums2: list`int->v: num) {
     }
     -- 将两个数组分别分两块，中位数必然是其中两个边界，只需要比大小即可
     !iMin, !iMax, !halfLen = 0, m, (m + n + 1) / 2
-    iMin <= iMax @ v {
+    iMin <= iMax @ {
         !i = (iMin + iMax) / 2
         !j = halfLen - i
         i < iMax && nums2[j-1] > nums1[i] ? {
