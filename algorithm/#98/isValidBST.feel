@@ -21,10 +21,10 @@ compare = $ me {
         ~~me.isValidBST(root.Left) ? {
             <- false
         }
-        root.Val!: int64 <= me.lastVal ? {
+        root.Val !! int64 <= me.lastVal ? {
             <- false
         }
-        me.lastVal = root.Val!: int64
+        me.lastVal = root.Val !! int64
         ~~me.isValidBST(root.Right) ? {
             <- false
         }

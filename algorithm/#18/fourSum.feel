@@ -42,9 +42,11 @@ fourSum = (nums: list`int, target: int->v: list`(list`int)) {
                     }
                     l += 1
                     r -= 1
-                } | sum < target ? {
+                }
+                | sum < target ? {
                     l += 1
-                } | sum > target ? {
+                }
+                | sum > target ? {
                     r -= 1
                 }
             }

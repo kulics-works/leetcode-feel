@@ -4,7 +4,7 @@ myAtoi = (str: str -> v: int) {
     str @ ch {
         automaton.Get(ch)
     }
-    <- automaton.Sign * (automaton.Ans!: int)
+    <- automaton.Sign * (automaton.Ans !! int)
 }
 
 START   = "start"
@@ -15,9 +15,11 @@ END     = "end"
 GetCol = (c: chr -> v: int) {
     c == ' ' ? {
         <- 0
-    } | c == '+' || c == '-' ? {
+    }
+    | c == '+' || c == '-' ? {
         <- 1
-    } | c >= '0' && c <= '9' ? {
+    }
+    | c >= '0' && c <= '9' ? {
         <- 2
     }
     <- 3
@@ -35,13 +37,16 @@ Automaton = $ {
             Ans = Ans * 10 + c - '0'
             Sign == 1 ? {
                 Ans = min(Ans, 2147483647)
-            } | _ {
+            }
+            | ? {
                 Ans = min(Ans, 2147483648)
             }
-        } | State == SIGNED ? {
+        }
+        | State == SIGNED ? {
             c == '+' ? {
                 Sign = 1
-            } | _ {
+            }
+            | ? {
                 Sign = -1
             }
         } 

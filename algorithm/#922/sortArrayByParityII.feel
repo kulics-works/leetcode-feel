@@ -6,7 +6,8 @@ SortArrayByParityII = (a: list`int -> v: list`int) {
         ea && 1 >< 1 ? {
             Arr[IA] = ea
             IA += 2
-        } | _ {
+        }
+        | ? {
             Arr[IB] = ea
             IB += 2
         }

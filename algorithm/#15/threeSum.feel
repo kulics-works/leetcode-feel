@@ -22,9 +22,11 @@ threeSum = (nums: list`int->v: list`(list`int)) {
                 }
                 l += 1
                 r -= 1
-            } | sum < 0 ? {
+            }
+            | sum < 0 ? {
                 l += 1
-            } | sum > 0 ? {
+            }
+            | sum > 0 ? {
                 r -= 1
             }
         }

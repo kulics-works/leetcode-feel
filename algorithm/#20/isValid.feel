@@ -1,37 +1,40 @@
 isValid = (s: str->v: bool) {
     result = stack`int{}
     s @ v {
-        v => 
-            | '(' ? {
-                result.put(0)
+        v ==
+        | '(' ? {
+            result.put(0)
+        }
+        | ')' ? {
+            ~~result.is_empty() && result.peek() == 0 ? {
+                result.pop()
             }
-            | ')' ? {
-                ~~result.is_empty() && result.peek() == 0 ? {
-                    result.pop()
-                } | _ {
-                    <- false
-                }
+            | ? {
+                <- false
             }
-            | '{' ? {
-                result.put(1)
+        }
+        | '{' ? {
+            result.put(1)
+        }
+        | '}' ? {
+            ~~result.is_empty() && result.peek() == 1 ? {
+                result.pop()
             }
-            | '}' ? {
-                ~~result.is_empty() && result.peek() == 1 ? {
-                    result.pop()
-                } | _ {
-                    <- false
-                }
+            | ? {
+                <- false
             }
-            | '[' ? {
-                result.put(2)
+        }
+        | '[' ? {
+            result.put(2)
+        }
+        | ']' ? {
+            ~~result.is_empty() && result.peek() == 2 ? {
+                result.pop()
             }
-            | ']' ? {
-                ~~result.is_empty() && result.peek() == 2 ? {
-                    result.pop()
-                } | _ {
-                    <- false
-                }
+            | ? {
+                <- false
             }
+        }
     }
     <- ~result.is_empty()
 }

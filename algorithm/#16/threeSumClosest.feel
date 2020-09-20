@@ -8,9 +8,11 @@ threeSumClosest = (nums: list`int, target: int->v: int) {
             sum = nums[i]+nums[l]+nums[r]
             abs(sum-target) < abs(closs-target) ? {
                 closs = sum
-            } | sum > target ? {
+            }
+            | sum > target ? {
                 r -= 1
-            } | _ {
+            }
+            | ? {
                 l += 1
             }
         }

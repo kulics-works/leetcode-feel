@@ -13,13 +13,16 @@ insertIntoBST = (root: TreeNode?, val: int->v: TreeNode?) {
     root.Val < val ? {
         root.Right == nil ? {
             root.Right = TreeNode{Val=val}
-        } | _ {
+        }
+        | ? {
             insertIntoBST(root.Right, val)
         }
-    } | root.Val > val ? {
+    }
+    | root.Val > val ? {
         root.Left == nil ? {
             root.Left = TreeNode{Val=val}
-        } | _ {
+        }
+        | ? {
             insertIntoBST(root.Left, val)
         }
     }

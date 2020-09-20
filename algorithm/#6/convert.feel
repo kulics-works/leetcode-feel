@@ -9,12 +9,14 @@ convert = (s: str, numRows: int->v: str) {
         res[n] += v
         n == numRows-1 ? {
             direct = false
-        } | n == 0 ? {
+        }
+        | n == 0 ? {
             direct = true
         }
         direct ? {
             n += 1
-        } | _ {
+        }
+        | ? {
             n -= 1
         }
     }

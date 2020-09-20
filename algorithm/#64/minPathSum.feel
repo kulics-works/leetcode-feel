@@ -9,11 +9,14 @@ minPathSum = (grid: list`(list`int)->v: int) {
         0 ..< n @ j {
             i == 0 && j == 0 ? {
                 dp[i][j] = grid[i][j]
-            } | i == 0 ? {
+            }
+            | i == 0 ? {
                 dp[i][j] = dp[i][j-1] + grid[i][j]
-            } | j == 0 ? {
+            }
+            | j == 0 ? {
                 dp[i][j] = dp[i-1][j] + grid[i][j]
-            } | _ {
+            }
+            | ? {
                 dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]
             }
         }

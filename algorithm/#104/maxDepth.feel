@@ -8,7 +8,8 @@ MaxDepth = (root: TreeNode? -> v: int) {
 
     L > R ? { 
         <- L
-    } | _ {
+    }
+    | ? {
         <- R
     }
 }

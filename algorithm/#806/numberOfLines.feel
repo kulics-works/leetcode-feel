@@ -7,7 +7,8 @@ NumberOfLines = (widths: list`int, s: str -> v: list`int) {
         Width + Count > 100 ? {
             Line += 1
             Count = Width
-        } | _ {
+        }
+        | ? {
             Count += Width
         }
     }

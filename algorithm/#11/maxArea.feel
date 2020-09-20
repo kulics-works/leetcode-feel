@@ -6,7 +6,8 @@ maxArea = (height: list`int->v: int) {
         topValue = max(value, topValue)
         height[l] > height[r] ? {
             r -= 1
-        } | _ {
+        }
+        | ? {
             l += 1
         }
     }

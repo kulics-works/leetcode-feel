@@ -4,7 +4,8 @@ SortArrayByParity = (a: list`int -> v: int) {
     a @ ea {
         ea & 1 >< 1 ? {
             Arr1 += ea
-        } | _ {
+        }
+        | ? {
             Arr2 += ea
         }
     }

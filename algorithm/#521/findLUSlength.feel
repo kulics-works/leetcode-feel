@@ -4,7 +4,8 @@ FindLUSlength = (a: str, b: str -> v: int) {
 
     a == b ? {
         <- -1
-    } | LA > LB ? {
+    }
+    | LA > LB ? {
         <- LA
     }
     <- LB

@@ -10,19 +10,24 @@ FindWords = (words: list`str -> v: list`str) {
             Line1.has(c) ? {
                 line == 0 || line == 1 ? {
                     line = 1
-                } | _ { 
+                }
+                | ? { 
                     ~@
                 }
-            } | Line2.has(c) ? {
+            }
+            | Line2.has(c) ? {
                 line == 0 || line == 2 ? {
                     line = 2
-                } | _ { 
+                }
+                | ? { 
                     ~@
                 }
-            } | _ {
+            }
+            | ? {
                 line == 0 || line == 3 ? {
                     line = 3
-                } | _ { 
+                }
+                | ? { 
                     ~@
                 }
             }

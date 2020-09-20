@@ -3,7 +3,8 @@ defangIPaddr = (address: str->v: str) {
     address @ i {
         i == '.' ? {
             newAddress += {'['; '.'; ']'}
-        } | _ {
+        }
+        | ? {
             newAddress += i
         }
     }

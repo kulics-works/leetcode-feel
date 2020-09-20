@@ -11,7 +11,8 @@ minTimeToVisitAllPoints = (points: list`(list`int)->v: int) {
         }
         lx > ly ? {
             length += lx
-        } | _ {
+        }
+        | ? {
             length += ly
         }
     }

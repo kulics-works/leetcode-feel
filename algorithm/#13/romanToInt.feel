@@ -16,7 +16,8 @@ romanToInt = (s: str->v: int) {
             s = s[length..]
             s.len >= length ? {
                 i = s[..length]
-            } | _ {
+            }
+            | ? {
                 i = ""
             }
         }

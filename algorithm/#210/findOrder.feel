@@ -30,7 +30,8 @@ findOrder = (numCourses: int, prerequisites: list`(list`int)->order: list`int) {
 	}
 	numCourses == 0 ? {
         <- order
-    } | _ {
+    }
+	| ? {
         <- nil
     }
 }

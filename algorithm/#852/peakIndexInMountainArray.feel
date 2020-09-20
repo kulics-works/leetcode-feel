@@ -3,7 +3,8 @@ PeakIndexInMountainArray = (a: list`int -> v: int) {
     a @ [i]v {
         v >= Max ? {
             Max = v
-        } | _ {
+        }
+        | ? {
             <- i-1
         }
     }

@@ -3,9 +3,11 @@ climbStairs = (n: int->v: int) {
     0 ..< n @ i {
         i == 0 ? {
             dp[i] = 1
-        } | i == 1 ? {
+        }
+        | i == 1 ? {
             dp[i] = dp[i-1] + 1
-        } | _ {
+        }
+        | ? {
             dp[i] = dp[i-1] + dp[i-2]
         }
     }

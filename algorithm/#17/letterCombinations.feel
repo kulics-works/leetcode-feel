@@ -8,7 +8,8 @@ letterCombinations = (digits: str->v: list`str) {
 backtrack = (combination: str, next: str->) {
     next.len == 0 ? {
         output += combination
-    } | _ {
+    }
+    | ? {
         phone[next[0]] @ v {
             backtrack(combination + v, next[1..])
         }
