@@ -2,7 +2,7 @@ ArrayPairSum = (nums: list`int -> v: int) {
     !Nums = nums.orderBy{it->it}.toList()
     !Sum = 0
     !Length = Nums.len
-    0 ..<(2) Length @ ea {
+    0 ~ 2 ..< Length @ ea {
         Sum += Nums[ea]
     }
     <- Sum
