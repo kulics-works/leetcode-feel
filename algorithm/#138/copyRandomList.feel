@@ -1,25 +1,24 @@
-++
-Definition for a Node.
-Node = $ {
-    !Val: int
-    !Next: Node?
-    !Random: Node?
-}
-++
-!tempmap = dict`Node?`Node?{}
-copyRandomList = (head: Node?->v: Node) {
-    head == nil ? {
+` Definition for a Node. `
+Node = $ (
+    val: Int,
+    next: Node?,
+    random: Node?
+)
+
+tempmap = (Node?, Node?)Dict_of()
+CopyRandomList = (head: Node?->v: Node?) {
+    ? head == nil {
         <- nil
     }
-    tempmap.has_key(head) ? {
+    ? tempmap.Contains(head) {
         tempmap[head]
     }
 
-    newNode = Node{Val=head.Val}?
+    newNode: Node? = Node$(head.val, nil, nil)
 
     tempmap[head] = newNode
 
-    newNode.Next = copyRandomList(head.Next)
-    newNode.Random = copyRandomList(head.Random)
+    newNode.next = CopyRandomList(head.next)
+    newNode.random = CopyRandomList(head.random)
     <- newNode
 }

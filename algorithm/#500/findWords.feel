@@ -1,38 +1,42 @@
-Line1 = {['q']=false;['w']=false;['e']=false;['r']=false;['t']=false;['y']=false;['u']=false;['i']=false;['o']=false;['p']=false}
-Line2 = {['a']=false;['s']=false;['d']=false;['f']=false;['g']=false;['h']=false;['j']=false;['k']=false;['l']=false}
+Line1 = Dict_of(
+        Pair_of('q', false), Pair_of('w', false), Pair_of('e', false)
+        Pair_of('r', false), Pair_of('t', false), Pair_of('y', false),
+        Pair_of('u', false), Pair_of('i', false), Pair_of('o', false),
+        Pair_of('p', false)
+    )
+Line2 = Dict_of(
+        Pair_of('a', false), Pair_of('s', false), Pair_of('d', false), 
+        Pair_of('f', false), Pair_of('g', false), Pair_of('h', false), 
+        Pair_of('j', false), Pair_of('k', false), Pair_of('l', false)
+    )
 
-FindWords = (words: list`str -> v: list`str) {
-    !Result = list`str{}
-    words @ ea {
-        !LowerStr = ea.to_lower()
-        !line = 0
-        LowerStr @ c {
-            Line1.has(c) ? {
-                line == 0 || line == 1 ? {
+FindWords = (words: (Str)List -> v: (Str)List) {
+    ret = (Str)List_of()
+    @ words => ea {
+        lower_str = ea.To_lower()
+        line = 0
+        @ lower_str => c {
+            ? Line1.Contains(c) {
+                ? line == 0 || line == 1 {
                     line = 1
-                }
-                | ? { 
+                } | { 
                     ~@
                 }
-            }
-            | Line2.has(c) ? {
-                line == 0 || line == 2 ? {
+            } | Line2.Contains(c) {
+                ? line == 0 || line == 2 {
                     line = 2
-                }
-                | ? { 
+                } | { 
                     ~@
                 }
-            }
-            | ? {
-                line == 0 || line == 3 ? {
+            } | {
+                ? line == 0 || line == 3 {
                     line = 3
-                }
-                | ? { 
+                } | { 
                     ~@
                 }
             }
         }
-        Result += ea
+        ret += ea
     }
-    <- Result
+    <- ret
 }

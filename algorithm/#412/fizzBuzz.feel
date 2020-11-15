@@ -1,19 +1,16 @@
-FizzBuzz = (n: int -> v: list`str) {
-    !Arr = list`str{}
+FizzBuzz = (n: Int -> v: (Str)List) {
+    arr = (Str)List_of()
 
-    1 .. n @ ea {
-        ea % 15 == 0 ? {
-            Arr += "FizzBuzz"
-        }
-        | ea % 3 == 0 ? {
-            Arr += "Fizz"
-        }
-        | ea % 5 == 0 ? {
-            Arr += "Buzz"
-        }
-        | ? {
-            Arr += ea.to_str()
+    @ 1 ... n => ea {
+        ? ea % 15 == 0 {
+            arr += "FizzBuzz"
+        } | ea % 3 == 0 {
+            arr += "Fizz"
+        } | ea % 5 == 0 {
+            arr += "Buzz"
+        } | {
+            arr += ea.To_Str()
         }
     }
-    <- Arr
+    <- arr
 }

@@ -1,25 +1,18 @@
-ShortestToChar = (s: str, c: Chr -> v: list`int) {
-    !Flag = -(s.len)
-    !Arr = list`int(s.len)
-    s @ [i]v {
-        v == c ? {
-            Flag = i
+ShortestToChar = (s: Str, c: Chr -> v: (Int)List) {
+    flag = -s.Size()
+    ret = (Int)New_List(s.Size())
+    @ s => [i]v {
+        ? v == c {
+            flag = i
         }
-        Arr[i] = i - Flag
+        ret[i] = i - flag
     }
-    Flag = s.len * 2
-    s.len-1 ... 0 @ i {
-        s[i] == c ? {
-            Flag = i
+    flag = s.Size() * 2
+    @ s.Size() - 1 ... 0 ~ -1 => i {
+        ? s[i] == c {
+            flag = i
         }
-        Arr[i] = Min(Flag-i, Arr[i])
+        ret[i] = Min(flag - i, ret[i])
     }
-    <- Arr
-}
-
-Min = (a: int, b: int -> v: int) {
-    a < b ? {
-        <- a
-    }
-    <- b
+    <- ret
 }

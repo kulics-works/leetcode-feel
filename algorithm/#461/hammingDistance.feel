@@ -1,18 +1,18 @@
-HammingDistance = (x: int, y: int -> distance: int) {
-    !Big = x
-    Big < y ? {
-        Big = y 
+HammingDistance = (x: Int, y: Int -> distance: Int) {
+    big = x
+    ? big < y {
+        big = y 
     }
-    !Z = x ^^^ y
-    !Count = 0
+    z = x ^^^ y
+    count = 0
     
-    !I = 1
-    I <= Big @ {
-        I &&& Z >< 0 ? {
-            Count += 1
+    i = 1
+    @ i <= big {
+        ? i &&& z <> 0 {
+            count += 1
         }
-        I = I <<< 1
+        i = i <<< 1
     }    
 
-    <- Count
+    <- count
 }

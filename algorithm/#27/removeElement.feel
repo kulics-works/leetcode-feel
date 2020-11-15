@@ -1,9 +1,9 @@
-removeElement = (nums: list`int, val: int -> len: int) {
-    length = nums.len
-    length-1 ... 0 @ i {
-        nums[i] == val ? {
-            nums.remove(i)
+removeElement = (nums: (Int)List, val: Int -> len: Int) {
+    length = nums.Size()
+    @ length - 1 ... 0 ~ -1 => i {
+        ? nums[i] == val {
+            nums.Remove(i)
         }
     }
-    <- nums.len
+    <- nums.Size()
 }

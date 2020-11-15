@@ -1,15 +1,15 @@
-Generate = (numRows: int -> v: list`(list`int)) {
-    !Arr = list`(list`int){}
-    0 .. numRows @ i {
-        !Temp = {1}
-        1 .. i @ j {
-            !Right = 0
-            j < i ? {
-                Right = Arr[i-1][j]
+Generate = (numRows: Int -> v: ((Int)List)List) {
+    arr = ((Int)List)List_of()
+    @ 0 .. numRows => i {
+        temp = List_of(1)
+        @ 1 ... i => j {
+            right = 0
+            ? j < i {
+                right = arr[i - 1][j]
             }
-            Temp += Arr[i-1][j-1] + Right
+            temp += arr[i - 1][j - 1] + right
         }
-        Arr += Temp
+        arr += temp
     }
-    <- Arr
+    <- arr
 }

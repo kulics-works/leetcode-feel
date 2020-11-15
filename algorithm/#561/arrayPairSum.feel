@@ -1,9 +1,9 @@
-ArrayPairSum = (nums: list`int -> v: int) {
-    !Nums = nums.orderBy{it->it}.toList()
-    !Sum = 0
-    !Length = Nums.len
-    0 ~ 2 ..< Length @ ea {
-        Sum += Nums[ea]
+ArrayPairSum = (nums: (Int)List -> v: Int) {
+    nums = nums.OrderBy((it){it}).To_List()
+    sum = 0
+    length = nums.Size()
+    @ 0 .. length ~ 2 => ea {
+        sum += nums[ea]
     }
-    <- Sum
+    <- sum
 }

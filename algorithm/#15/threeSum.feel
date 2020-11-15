@@ -1,32 +1,30 @@
-threeSum = (nums: list`int->v: list`(list`int)) {
-    nums.sort()
-    arr = list`(list`int){}
-    length = nums.len
-    0 ..< length-1 @ i {
-        nums[i] > 0 ? {
+ThreeSum = (nums: (Int)List->v: ((Int)List))List) {
+    nums.Sort()
+    arr = ((Int)List)List_of()
+    length = nums.Size()
+    @ 0 .. length - 1 => i {
+        ? nums[i] > 0 {
             ~@
         }
-        i > 0 && nums[i] == nums[i-1] ? {
+        ? i > 0 && nums[i] == nums[i - 1] {
             @
         }
-        l, r = i+1, length-1
-        l < r @ {
+        l, r = i + 1, length - 1
+        @ l < r {
             sum = nums[l] + nums[r] + nums[i]
-            sum == 0 ? {
-                arr.add({nums[l]; nums[r]; nums[i]})
-                l < r && nums[l] == nums[l+1] @ {
+            ? sum == 0 {
+                arr.Append(List_of(nums[l], nums[r], nums[i]))
+                @ l < r && nums[l] == nums[l + 1] {
                     l += 1
                 }
-                l < r && nums[r] == nums[r-1] @ {
+                @ l < r && nums[r] == nums[r - 1] {
                     r -= 1
                 }
                 l += 1
                 r -= 1
-            }
-            | sum < 0 ? {
+            } | sum < 0 {
                 l += 1
-            }
-            | sum > 0 ? {
+            } | sum > 0 {
                 r -= 1
             }
         }

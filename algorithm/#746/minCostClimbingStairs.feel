@@ -1,12 +1,12 @@
-minCostClimbingStairs = (cost: list`int->v: int) {
-    cost.len == 0 ? {
+MinCostClimbingStairs = (cost: (Int)List->v: Int) {
+    ? cost.Size() == 0 {
         <- 0
     }
-    dp = list`int(cost.len)
+    dp = (Int)List(cost.Size())
     dp[0] = cost[0]
     dp[1] = cost[1]
-    2 .. cost.len @ i {
-        dp[i] = cost[i] + min(dp[i-1], dp[i-2])
+    @ 2 .. cost.Size() => i {
+        dp[i] = cost[i] + Min(dp[i - 1], dp[i - 2])
     }
-    <- min(dp[cost.len-1], dp[cost.len-2])
+    <- Min(dp[cost.Size() - 1], dp[cost.Size() - 2])
 }

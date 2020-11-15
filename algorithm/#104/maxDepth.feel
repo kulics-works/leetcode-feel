@@ -1,15 +1,10 @@
-MaxDepth = (root: TreeNode? -> v: int) {
-    root == nil ? { 
+MaxDepth = (root: TreeNode? -> v: Int) {
+    ? root == nil { 
         <- 0
     }
 
-    !L = 1 + MaxDepth(root.left)
-    !R = 1 + MaxDepth(root.right)
+    l = 1 + MaxDepth(root.left)
+    r = 1 + MaxDepth(root.right)
 
-    L > R ? { 
-        <- L
-    }
-    | ? {
-        <- R
-    }
+    <- Min(l, r)
 }

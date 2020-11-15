@@ -1,17 +1,16 @@
-uniquePaths = (m: int, n: int->v: int) {
-    -- 动态创建一个二维路径答案表
-    dp = list`(list`int)(n)
-    0 ..< n @ i {
-        dp[i] = list`int(m)
+UniquePaths = (m: Int, n: Int->v: Int) {
+    ` 动态创建一个二维路径答案表 `
+    dp = ((Int)List)New_List(n)
+    @ 0 .. n => i {
+        dp[i] = (Int)New_List(m)
     }
     
-    0 ..< n @ i {
-        0 ..< m @ j {
-            -- 最上一行或者最左一列
-            i == 0 || j == 0 ? {
+    @ 0 .. n => i {
+        @ 0 .. m => j {
+            ` 最上一行或者最左一列 `
+            ? i == 0 || j == 0 {
                 dp[i][j] = 1
-            }
-            | ? {
+            } | {
                 dp[i][j] = dp[i-1][j] + dp[i][j-1]
             }
         }

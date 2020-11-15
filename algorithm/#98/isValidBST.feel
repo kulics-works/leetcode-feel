@@ -1,31 +1,28 @@
-++
-Definition for a binary tree node.
-TreeNode : $ {
-    !Val: int
-    !Left: TreeNode?
-    !Right: TreeNode?
-}
-++
-isValidBST = (root: TreeNode?->v: bool) {
-    c = compare{lastVal=-2147483649}
-    <- c.isValidBST(root)
+` Definition for a binary tree node. `
+TreeNode = $ (
+    val: Int,
+    left: TreeNode?,
+    right: TreeNode?
+)
+
+IsValidBST = (root: TreeNode?->v: Bool) {
+    c = Compare$(-2147483649)
+    <- c.IsValidBST(root)
 }
 
-compare = $ me {
-    lastVal: i64
-
-    isValidBST = (root: TreeNode?->v: bool) {
-        root == nil ? {
+Compare = $ (lastVal: I64) {
+    IsValidBST = (root: TreeNode?->v: Bool) {
+        ? root == nil {
             <- true
         }
-        ~~me.isValidBST(root.Left) ? {
+        ? ~~this.IsValidBST(root.Left) {
             <- false
         }
-        root.Val !! int64 <= me.lastVal ? {
+        ? root.Val :> I64 <= this.lastVal {
             <- false
         }
-        me.lastVal = root.Val !! int64
-        ~~me.isValidBST(root.Right) ? {
+        this.lastVal = root.Val :> I64
+        ? ~~this.IsValidBST(root.right) {
             <- false
         }
         <- true

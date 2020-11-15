@@ -1,29 +1,28 @@
-letterCombinations = (digits: str->v: list`str) {
-    digits.len >< 0 ? {
-        backtrack("", digits)
+LetterCombinations = (digits: Str->v: (Str)List) {
+    ? digits.Size() <> 0 {
+        Backtrack("", digits)
     }
     <- output
 }
 
-backtrack = (combination: str, next: str->) {
-    next.len == 0 ? {
+Backtrack = (combination: Str, next: Str->) {
+    ? next.Size() == 0 {
         output += combination
-    }
-    | ? {
-        phone[next[0]] @ v {
-            backtrack(combination + v, next[1..])
+    } | {
+        @ phone[next[0]] => v {
+            Backtrack(combination + v, next[1..])
         }
     }
 }
 
-!output = list`str{}
-!dict = {
-    ["2"] = "abc"
-    ["3"] = "def"
-    ["4"] = "ghi"
-    ["5"] = "jkl"
-    ["6"] = "mno"
-    ["7"] = "pqrs"
-    ["8"] = "tuv"
-    ["9"] = "wxyz"
-}
+output = (Str)List_of()
+dict = Dict_of(
+    Pair_of("2", "abc"),
+    Pair_of("3", "def"),
+    Pair_of("4", "ghi"),
+    Pair_of("5", "jkl"),
+    Pair_of("6", "mno"),
+    Pair_of("7", "pqrs"),
+    Pair_of("8", "tuv"),
+    Pair_of("9", "wxyz")
+)

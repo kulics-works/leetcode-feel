@@ -1,24 +1,23 @@
-++
-Definition for a binary tree node.
-TreeNode = $ {
-    !Val: int
-    !Left: TreeNode?
-    !Right: TreeNode?
-}
-++
-postorderTraversal = (root: TreeNode?->v: list`int) {
-    root == nil ? {
+` Definition for a binary tree node. `
+TreeNode = $ (
+    val: Int,
+    left: TreeNode?,
+    right: TreeNode?
+)
+
+PostorderTraversal = (root: TreeNode?->v: (Int)List) {
+    ? root == nil {
         <- nil
     }
-    arr = list`int{}
-    !temp = postorderTraversal(root.Left)
-    temp >< nil ? {
-        arr.add(temp)
+    arr = (Int)List_of()
+    temp = PostorderTraversal(root.left)
+    ? temp <> nil {
+        arr.Append(temp)
     }
-    temp = postorderTraversal(root.Right)
-    temp >< nil ? {
-        arr.add(temp)
+    temp = PostorderTraversal(root.right)
+    ? temp <> nil {
+        arr.Append(temp)
     }
-    arr.add(root.Val)
+    arr.Append(root.val)
     <- arr
 }

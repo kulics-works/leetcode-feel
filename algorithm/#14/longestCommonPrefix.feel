@@ -1,30 +1,27 @@
-longestCommonPrefix = (strs: list str->v: str) {
-    !longest = ""
-    length = strs.len
-    length ==
-    | 0 ? {
+LongestCommonPrefix = (strs: (Str)List->v: Str) {
+    longest = ""
+    length = strs.Size()
+    ? length == 0 {
         <- longest
-    }
-    | 1 ? {
+    } | == 1 {
         <- strs[0]
     }
     longest = strs[0]
-    0 ..< strs.len-1 @ i {
-        !head = 0
-        strlen = min(strs[i].len, strs[i+1].len)
-        strlen == 0 ? {
+    @ 0 .. strs.Size() - 1 => i {
+        head = 0
+        strlen = Min(strs[i].Size(), strs[i+1].Size())
+        ? strlen == 0 {
             <- ""
         }
-        head < strlen && strs[i][head] == strs[i+1][head] @ {
+        @ head < strlen && strs[i][head] == strs[i+1][head] {
             head += 1
         }
-        head > 0 ? {
+        ? head > 0 {
             temp = strs[i][..head]
-            temp.len < longest.len ? {
+            ? temp.Size() < longest.Size() {
                 longest = temp
             }
-        }
-        | ? {
+        } | {
             longest = ""
             ~@
         }

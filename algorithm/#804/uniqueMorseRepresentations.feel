@@ -1,19 +1,24 @@
-UniqueMorseRepresentations = (words: list`str -> v: int) {
-    Morse = {
-        ['a']=".-"; ['b']="-..."; ['c']="-.-."; ['d']="-.."; ['e']="."; ['f']="..-."; ['g']="--."
-        ['h']="...."; ['i']=".."; ['j']=".---"; ['k']="-.-"; ['l']=".-.."; ['m']="--"; ['n']="-."
-        ['o']="---"; ['p']=".--."; ['q']="--.-"; ['r']=".-."; ['s']="..."; ['t']="-"
-        ['u']="..-"; ['v']="...-"; ['w']=".--"; ['x']="-..-"; ['y']="-.--"; ['z']="--.."
-    }
+UniqueMorseRepresentations = (words: (Str)List -> v: Int) {
+    Morse = Dict_of(
+        Pair_of('a', ".-"), Pair_of('b', "-...."), Pair_of('c', "-.-."),
+        Pair_of('d', "-..."), Pair_of('e', "."), Pair_of('f', "...-."), 
+        Pair_of('g', "--."), Pair_of('h', "......"), Pair_of('i', "..."),
+        Pair_of('j', ".---"), Pair_of('k', "-.-"), Pair_of('l', ".-..."),
+        Pair_of('m', "--"), Pair_of('n', "-."), Pair_of('o', "---"),
+        Pair_of('p', ".--."), Pair_of('q', "--.-"), Pair_of('r', ".-."), 
+        Pair_of('s', "...."), Pair_of('t', "-"), Pair_of('u', "...-"),
+        Pair_of('v', "....-"), Pair_of('w', ".--"), Pair_of('x', "-...-"),
+        Pair_of('y', "-.--"), Pair_of('z', "--...")
+    )
     
-    !CountMap = dict`str`bool{}
-    words @ ea {
-        !Temp = ""
-        ea @ c {
-            Temp += Morse[c]
+    ret = (Str, Bool)Dict_of()
+    @ words => ea {
+        temp = ""
+        @ ea => c {
+            temp += Morse[c]
         }
-        CountMap[Temp] = true
+        ret[temp] = true
     }
 
-    <- CountMap.count
+    <- ret.count
 }

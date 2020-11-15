@@ -1,32 +1,32 @@
 AddTwoNumbers = (l1: ListNode?, l2: ListNode? -> v: ListNode?) {
-    Head = ListNode{val=0}
-    !P, !Q, !Current = l1, l2, Head
-    !Carry = 0
+    Head = ListNode$(val = 0)
+    p, q, current = l1, l2, Head
+    carry = 0
 
-    P >< nil || Q >< nil @ {
-        !X = 0
-        P >< nil ? {
-            X = P.val
+    @ p <> nil || q <> nil {
+        x = 0
+        ? p <> nil {
+            x = p.val
         }
-        !Y = 0
-        Q >< nil ? {
-            Y = Q.val
+        y = 0
+        ? q <> nil {
+            y = q.val
         }
 
-        !Sum = X + Y + Carry
-        Carry = Sum/10
-        Current.next = ListNode{val=Sum % 10}
-        Current = Current.next 
-        P >< nil ? {
-            P = P.next
+        sum = x + y + carry
+        carry = sum / 10
+        current.next = ListNode$(val = sum % 10)
+        current = current.next 
+        p <> nil ? {
+            p = p.next
         }
-        Q >< nil ? {
-            Q = Q.next
+        q <> nil ? {
+            q = q.next
         }
     }
 
-    Carry > 0 ? {
-        Current.next = ListNode{val=Carry}
+    carry > 0 ? {
+        current.next = ListNode$(val = carry)
     }
     <- Head.next
 }

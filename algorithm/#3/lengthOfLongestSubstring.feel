@@ -1,26 +1,26 @@
-LengthOfLongestSubstring = (s: str -> length: int) {
-    !Top = 0
-    !Temp = list`int{}
+LengthOfLongestSubstring = (s: Str -> length: Int) {
+    top = 0
+    temp = (Int)List_of()
 
-    HaveIt = (input: list`int, it: int -> yes: bool, index: int) {
-        input @ [i]v {
-            v == it ? {
+    HaveIt = (input: (Int)List, it: Int -> yes: Bool, index: Int) {
+        @ input => [i]v {
+            ? v == it {
                 <- true, i
             }
         }
         <- false, 0
     }
 
-    s @ v {
-        Yes, Index = HaveIt(Temp, v)
-        Yes ? {
-            Temp = Temp.sub_str(Index + 1)
+    @ s => v {
+        yes, index = HaveIt(temp, v)
+        ? yes {
+            temp = temp.Sub_str(index + 1)
         }
-        Temp += v
+        temp += v
 
-        Temp.len > Top ? {
-            Top = Temp.len
+        temp.Size() > top ? {
+            top = temp.Size()
         }
     }
-    <- Top
+    <- top
 }

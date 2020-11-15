@@ -1,13 +1,14 @@
-Transpose = (a: list`(list`int) -> v: list`(list`int)) {
-    !L1 = a.len
-    !L2 = a[0].len
-    !Result = list`(list`int){}
-    0 ..> L2 @ i {
-        !temp = list`int{}
-        0 ..> L1 @ j {
-            temp += a[j][i]
-        }
-        Result += temp 
+Transpose = (a: ((Int)List)List -> v: ((Int)List)List) {
+    l1 = a.Size()
+    l2 = a[0].Size()
+    ret = ((Int)List)List_of()
+    @ 0 .. l2 => i {
+        ret[i] = (Int)New_List(l1)
     }
-    <- Result
+    @ 0 .. l2 => i {
+        @ 0 .. l1 => j {
+            ret[i][j] = a[j][i]
+        }
+    }
+    <- ret
 }

@@ -1,21 +1,20 @@
-SelfDividingNumbers = (left: int, right: int -> v: list`int) {
-    !Arr = list`int{}
-    left .. right @ i {
-        !TempStr = i.to_str()
-        TempStr @ v {
-            !Temp = 0
-            v == '0' ? { 
+SelfDividingNumbers = (left: Int, right: Int -> v: (Int)List) {
+    ret = (Int)List_of()
+    @ left ... right => i {
+        temp_Str = i.To_Str()
+        @ temp_Str => v {
+            temp = 0
+            ? v == '0' { 
                 ~@
-            }
-            | ? { 
-                Temp = i % v.to_i32() 
+            } | { 
+                temp = i % v.To_I32() 
             }
 
-            Temp >< 0 ? {
+            ? temp <> 0 {
                 ~@
             }
         }
-        Arr += i
+        ret += i
     }
-    <- Arr
+    <- ret
 }

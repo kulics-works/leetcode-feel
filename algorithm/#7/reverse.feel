@@ -1,8 +1,8 @@
-reverse = (x: int -> v: int) {
-    !y = 0
-	x >< 0 @ {
+Reverse = (x: Int -> v: Int) {
+    y = 0
+	@ x <> 0 {
 		y = y * 10 + x % 10
-		y <= int.MinValue || y >= int.MaxValue ? {
+		? y <= Int.MinValue || y >= Int.MaxValue {
 			<- 0
 		}
 		x /= 10

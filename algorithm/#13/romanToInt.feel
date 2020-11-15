@@ -1,23 +1,31 @@
-romanToInt = (s: str->v: int) {
-    -- 使用哈希表，按照从大到小顺序排列
-    hashmap = {["M"]=1000; ["CM"]=900; ["D"]=500; ["CD"]=400
-                    ["C"]=100; ["XC"]=90; ["L"]=50; ["XL"]=40; ["X"]=10
-                    ["IX"]=9; ["V"]=5; ["IV"]=4; ["I"]=1}
-    weight = {"M";"CM";"D";"CD";"C";"XC";"L";"XL";"X";"IX";"V";"IV";"I"}
-    !res = 0
-    weight @ v {
-        length = v.len
-        s.len < length ? {
+RomanToInt = (s: Str->v: Int) {
+    ` 使用哈希表，按照从大到小顺序排列 `
+    hashmap = Dict_of(
+                Pair_of("M", 1000), Pair_of("CM", 900),
+                Pair_of("D", 500), Pair_of("CD", 400),
+                Pair_of("C", 100), Pair_of("XC", 90),
+                Pair_of("L", 50), Pair_of("XL", 40),
+                Pair_of("X", 10), Pair_of("IX", 9),
+                Pair_of("V", 5), Pair_of("IV", 4),
+                Pair_of("I", 1)
+            )
+    weight = List_of(
+                "M", "CM", "D", "CD", "C", "XC", "L",
+                "XL", "X", "IX", "V", "IV", "I"
+            )
+    res = 0
+    @ weight => v {
+        length = v.Size()
+        ? s.Size() < length {
             @
         }
         i = s[..length]
-        i == v @ {
+        @ i == v {
             res += hashmap[v]
             s = s[length..]
-            s.len >= length ? {
+            ? s.Size() >= length {
                 i = s[..length]
-            }
-            | ? {
+            } | {
                 i = ""
             }
         }

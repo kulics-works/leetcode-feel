@@ -1,16 +1,15 @@
-NumberOfLines = (widths: list`int, s: str -> v: list`int) {
-    !Count = 0
-    !Line = 1
+NumberOfLines = (widths: (Int)List, s: Str -> v: (Int)List) {
+    count = 0
+    line = 1
 
-    s @ ea {
-        !Width = widths[ea-'a']
-        Width + Count > 100 ? {
-            Line += 1
-            Count = Width
-        }
-        | ? {
-            Count += Width
+    @ s => ea {
+        width = widths[ea - 'a']
+        ? width + count > 100 {
+            line += 1
+            count = width
+        } | {
+            count += width
         }
     }
-    <- {Line; Count}
+    <- List_of(line, count)
 }

@@ -1,28 +1,28 @@
-canFinish = (numCourses: int, prerequisites: list`(list`int)->can: bool) {
-    -- get the indegree for each course
-    !indegrees = list`int(numCourses)
-	!edges = list`(list`int)(numCourses)
-	prerequisites @ p {
+CanFinish = (numCourses: Int, prerequisites: ((Int)List)List->can: Bool) {
+    ` get the indegree for each course `
+    indegrees = (Int)New_List(numCourses)
+	edges = ((Int)List)New_List(numCourses)
+	@ prerequisites => p {
 		indegrees[p[0]] += 1
-		edges[p[1]].add(p[0])
+		edges[p[1]].Append(p[0])
 	}
-    -- put courses with indegree == 0 to queue
-    queue = list`int(0)
-	indegrees @ [courseIdx]indegree {
+    ` put courses with indegree == 0 to queue `
+    queue = (Int)New_List(0)
+	@ indegrees => [courseIdx]indegree {
 		? indegree == 0 {
-			queue.add(courseIdx)
+			queue.Append(courseIdx)
 		}
 	}
-	-- bfs
-	queue.len > 0 @ {
+	` bfs `
+	@ queue.Size() > 0 {
 		cur = queue[0]
-		queue.removeAt(0)
+		queue.RemoveAt(0)
 		numCourses -= 1
-        -- remove the pre == cur
-		edges[cur] @ v {
+        ` remove the pre == cur `
+		@ edges[cur] => v {
 			indegrees[v] -= 1
-			indegrees[v] == 0 ? {
-				queue.add(v)
+			? indegrees[v] == 0 {
+				queue.Append(v)
 			}
 		}
 	}

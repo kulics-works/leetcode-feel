@@ -1,9 +1,9 @@
-maxSubArray = (nums: list`int->v: int) {
-    !currentSum = nums[0]
-    !maxSum = nums[0]
-    1 ..< nums.len @ i {
-        currentSum = max(nums[i], currentSum+nums[i])
-        maxSum = max(maxSum, currentSum)
+maxSubArray = (nums: (Int)List->v: Int) {
+    currentSum = nums[0]
+    maxSum = nums[0]
+    @ 1 .. nums.Size() => i {
+        currentSum = Max(nums[i], currentSum + nums[i])
+        maxSum = Max(maxSum, currentSum)
     }
     <- maxSum
 }

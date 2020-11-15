@@ -1,12 +1,11 @@
-FindLUSlength = (a: str, b: str -> v: int) {
-    LA = a.len
-    LB = b.len
+FindLUSlength = (a: Str, b: Str -> v: Int) {
+    la = a.Size()
+    lb = b.Size()
 
-    a == b ? {
+    ? a == b {
         <- -1
+    } | la > lb {
+        <- la
     }
-    | LA > LB ? {
-        <- LA
-    }
-    <- LB
+    <- lb
 }

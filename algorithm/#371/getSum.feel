@@ -1,10 +1,10 @@
-GetSum = (a: int, b: int -> v: int) {
-    !IA = a
-    !IB = b
-    IB >< 0 @ {
-        !Carry = IA &&& IB
-        IA = IA ^^^ IB
-        IB = Carry <<< 1
+GetSum = (a: Int, b: Int -> v: Int) {
+    ia = a
+    ib = b
+    @ ib <> 0 {
+        carry = ia &&& ib
+        ia = ia ^^^ ib
+        ib = carry <<< 1
     }
-    <- IA
+    <- ia
 }

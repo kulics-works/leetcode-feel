@@ -1,17 +1,16 @@
-++
-Definition for singly-linked list.
-ListNode = $ {
-    !Val: int
-    !Next: ?ListNode
+` Definition for singly-linked list. `
+ListNode = $ (
+    val: Int,
+    next: ListNode?
 }
-++
-swapPairs = (head: ListNode?->v: ListNode?) {
-    head == nil || head.Next == nil ? {
+
+SwapPairs = (head: ListNode?->v: ListNode?) {
+    ? head == nil || head.next == nil {
         <- head
     }
     node1 = head
-    node2 = head.Next
-    node1.Next = swapPairs(node2.Next)
-    node2.Next = node1
+    node2 = head.next
+    node1.next = SwapPairs(node2.next)
+    node2.next = node1
     <- node2
 }

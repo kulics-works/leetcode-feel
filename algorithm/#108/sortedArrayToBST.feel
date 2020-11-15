@@ -1,12 +1,12 @@
-SortedArrayToBST = (nums: list`int -> v: TreeNode?) {
-    nums.len == 0 ? {
+SortedArrayToBST = (nums: (Int)List -> v: TreeNode?) {
+    ? nums.Size() == 0 {
         <- nil
     }
-    Middle = nums.len / 2
+    Middle = nums.Size() / 2
 
-    <- TreeNode{
-        val = nums[Middle]
-        left = SortedArrayToBST(nums[..Middle])
-        right = SortedArrayToBST(nums[Middle+1..])
-    }
+    <- TreeNode$(
+        nums[Middle],
+        SortedArrayToBST(nums[..Middle]),
+        SortedArrayToBST(nums[Middle + 1..])
+    )
 }

@@ -1,49 +1,44 @@
-++
-Definition for a binary tree node.
-TreeNode = $ {
-    !Val: int
-    !Left: TreeNode?
-    !Right: TreeNode?
-}
-++
-deleteNode = (root: TreeNode?, key: int->v: TreeNode?) {
-    root == nil ? {
+` Definition for a binary tree node. `
+TreeNode = $ (
+    val: Int,
+    left: TreeNode?,
+    right: TreeNode?
+)
+
+DeleteNode = (root: TreeNode?, key: Int->v: TreeNode?) {
+    ? root == nil {
         <- nil
     }
-    root.Val < key ? {
-        root.Right = deleteNode(root.Right, key)
-    }
-    | root.Val > key ? {
-        root.Left = deleteNode(root.Left, key)
-    }
-    | ? {
-        root.Left == nil && root.Right == nil ? {
+    ? root.val < key {
+        root.right = DeleteNode(root.right, key)
+    } | root.val > key {
+        root.left = DeleteNode(root.left, key)
+    } | {
+        ? root.left == nil && root.right == nil {
             root = nil
-        }
-        | root.Right >< nil ? {
-            root.Val = rightMin(root)
-            root.Right = deleteNode(root.Right, root.Val)
-        }
-        | ? {
-            root.Val = leftMax(root)
-            root.Left = deleteNode(root.Left, root.Val)
+        } | root.right <> nil {
+            root.val = RightMin(root)
+            root.right = DeleteNode(root.right, root.val)
+        } | {
+            root.val = LeftMax(root)
+            root.left = DeleteNode(root.left, root.val)
         }
     }
     <- root
 }
 
-rightMin = (root: TreeNode?->v: int) {
-    root = root.Right
-    root.Left >< nil @ {
-        root = root.Left
+RightMin = (root: TreeNode?->v: Int) {
+    root = root.right
+    @ root.left <> nil {
+        root = root.left
     }
-    <- root.Val
+    <- root.val
 }
 
-leftMax = (root: TreeNode?->v: int) {
-    root = root.Left
-    root.Right >< nil @ {
-        root = root.Right
+LeftMax = (root: TreeNode?->v: Int) {
+    root = root.left
+    @ root.right <> nil {
+        root = root.right
     }
-    <- root.Val
+    <- root.val
 }

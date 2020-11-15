@@ -1,11 +1,11 @@
-Postorder = (root: Node? -> v: list`int) {
-    root == nil ? {
-        <- list int{}
+Postorder = (root: Node? -> v: (Int)List) {
+    ? root == nil {
+        <- (Int)List_of()
     }
-    !List = list`int{}
-    root.children @ ea {
-        List += Postorder(ea)
+    list = (Int)List_of()
+    @ root.children => ea {
+        list += Postorder(ea)
     }
-    List += root.val
-    <- List
+    list += root.val
+    <- list
 }

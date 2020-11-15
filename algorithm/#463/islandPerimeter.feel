@@ -1,21 +1,21 @@
-IslandPerimeter = (grid: list`(list`int) -> v: int) {
-    grid.len == 0 ? {
+IslandPerimeter = (grid: ((Int)List)List -> v: Int) {
+    ? grid.Size() == 0 {
         <- 0
     }
-    !Count = 0
-    !Repeat = 0
-    0 ..< grid.len @ i{
-        0 ..< grid[i].len @ j {
-            grid[i][j] == 1 ? {
-                Count += 1
-                i >< 0 && grid[i-1][j] == 1 ? {
-                    Repeat += 1
+    count = 0
+    repeat = 0
+    @ 0 .. grid.Size() => i {
+        @ 0 .. grid[i].Size() => j {
+            ? grid[i][j] == 1 {
+                count += 1
+                ? i <> 0 && grid[i - 1][j] == 1 {
+                    repeat += 1
                 }
-                j >< 0 && grid[i][j-1] == 1 ? {
-                    Repeat += 1
+                ? j <> 0 && grid[i][j - 1] == 1 {
+                    repeat += 1
                 }
             }
         }
     }
-    <- Count * 4 - Repeat * 2
+    <- count * 4 - repeat * 2
 }

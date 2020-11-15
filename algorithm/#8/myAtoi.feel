@@ -1,10 +1,9 @@
-myAtoi = (str: str -> v: int) {
-    automaton = Automaton{}
-    automaton.init()
-    str @ ch {
+MyAtoi = (str: Str -> v: Int) {
+    automaton = NewAutomaton()
+    @ str => ch {
         automaton.Get(ch)
     }
-    <- automaton.Sign * (automaton.Ans !! int)
+    <- automaton.sign * (automaton.ans :> Int)
 }
 
 START   = "start"
@@ -12,55 +11,51 @@ SIGNED  = "signed"
 IN_NUM  = "in_number"
 END     = "end"
 
-GetCol = (c: chr -> v: int) {
-    c == ' ' ? {
+GetCol = (c: Chr -> v: Int) {
+    ? c == ' ' {
         <- 0
-    }
-    | c == '+' || c == '-' ? {
+    } | c == '+' || c == '-' {
         <- 1
-    }
-    | c >= '0' && c <= '9' ? {
+    } | c >= '0' && c <= '9' {
         <- 2
     }
     <- 3
 }
 
-Automaton = $ {
-    !State: str
-    !Map: dict`str`(list`str)
-    !Sign: int
-    !Ans: i64
-    
-    Get = (c: chr ->) {
-        State = Map[State][GetCol(c)]
-        State == IN_NUM ? {
-            Ans = Ans * 10 + c - '0'
-            Sign == 1 ? {
-                Ans = min(Ans, 2147483647)
+Automaton = $ (
+    state: Str
+    map: (Str, (Str)List)Dict
+    sign: Int
+    ans: I64
+) {
+    Get = (c: Chr ->) {
+        state = map[state][GetCol(c)]
+        ? state == IN_NUM {
+            ans = ans * 10 + c - '0'
+            ? sign == 1 {
+                ans = Min(ans, 2147483647)
+            } | {
+                ans = Min(ans, 2147483648)
             }
-            | ? {
-                Ans = min(Ans, 2147483648)
-            }
-        }
-        | State == SIGNED ? {
-            c == '+' ? {
-                Sign = 1
-            }
-            | ? {
-                Sign = -1
+        } | state == SIGNED {
+            ? c == '+' {
+                sign = 1
+            } | {
+                sign = -1
             }
         } 
     }
+}
 
-    init = (->) {
-        State = START
-        Sign = 1
-
-        Map = {
-            [START] = {START; SIGNED; IN_NUM; END}
-            [SIGNED] = {END; END; IN_NUM; END}
-            [IN_NUM] = {END; END; IN_NUM; END}
-            [END] = {END; END; END; END}
-        }
-    }
+NewAutomaton = (->v: Automaton) {
+    <- Automaton(
+        state = START,
+        sign = 1,
+        map = Dict_of(
+            Pair_of(START, List_of(START, SIGNED, IN_NUM, END)),
+            Pair_of(SIGNED, List_of(END, END, IN_NUM, END)),
+            Pair_of(IN_NUM, List_of(END, END, IN_NUM, END)),
+            Pair_of(END, List_of(END, END, END, END))
+        )
+    )
 }

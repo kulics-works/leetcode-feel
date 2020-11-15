@@ -1,40 +1,38 @@
-++
-Definition for singly-linked list.
-ListNode = $ {
-    !Val: int
-    !Next: ListNode?
-}
-++
-mergeKLists = (lists: list`ListNode?->v: ListNode?) {
-    lists.len == 0 ? {
-        <- nil
-    }
-    <- merge(lists, 0, lists.len-1)
+` Definition for singly-linked list. `
+ListNode = $ (
+    val: Int,
+    next: ListNode?
 }
 
-merge = (lists: list`ListNode?, left: int, right: int->v: ListNode?) {
-    left == right ? {
+MergeKLists = (lists: (ListNode)List->v: ListNode?) {
+    ? lists.Size() == 0 {
+        <- nil
+    }
+    <- Merge(lists, 0, lists.Size()-1)
+}
+
+Merge = (lists: (ListNode)List, left: Int, right: Int->v: ListNode?) {
+    ? left == right {
         <- lists[left]
     }
     middle = left + (right-left) / 2
-    list1 = merge(lists, left, middle)
-    list2 = merge(lists, middle+1, right)
-    <- mergeTwoLists(list1, list2)
+    list1 = Merge(lists, left, middle)
+    list2 = Merge(lists, middle+1, right)
+    <- MergeTwoLists(list1, list2)
 }
 
-mergeTwoLists = (l1: ListNode?, l2: ListNode?->v: ListNode?) {
-    l1 == nil ? {
+MergeTwoLists = (l1: ListNode?, l2: ListNode?->v: ListNode?) {
+    ? l1 == nil {
         <- l2
     }
-    l2 == nil ? {
+    ? l2 == nil {
         <- l1
     }
-    l1.Val > l2.Val ? {
-        l2.Next = mergeTwoLists(l1, l2.Next)
+    ? l1.val > l2.val {
+        l2.next = MergeTwoLists(l1, l2.next)
         <- l2
-    }
-    | ? {
-        l1.Next = mergeTwoLists(l2, l1.Next)
+    } | {
+        l1.next = MergeTwoLists(l2, l1.next)
         <- l1
     }
 }

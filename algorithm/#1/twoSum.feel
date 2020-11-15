@@ -1,13 +1,12 @@
-TwoSum = (nums: list`int -> v: list`int) {
-    Hashmap = dict`int`int{}
-    nums @ [i]v {
+TwoSum = (nums: (Int)List -> v: (Int)List) {
+    Hashmap = (Int, Int)Dict_of()
+    @ nums => [i]v {
         Temp = target - v
-        Hashmap.has_key(Temp) ? {
-            <- list`int{i; Hashmap[Temp]}
-        }
-        | ? {
+        ? Hashmap.Contains(Temp) {
+            <- (Int)List_of(i, Hashmap[Temp])
+        } | {
             Hashmap[v] = i
         }
     }
-    <- nil
+    <- (Int)List_of()
 }

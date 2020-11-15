@@ -1,40 +1,31 @@
-isValid = (s: str->v: bool) {
-    result = stack`int{}
-    s @ v {
-        v ==
-        | '(' ? {
-            result.put(0)
-        }
-        | ')' ? {
-            ~~result.is_empty() && result.peek() == 0 ? {
-                result.pop()
-            }
-            | ? {
+IsValid = (s: Str->v: Bool) {
+    result = (Int)Stack_of()
+    @ s => v {
+        ? v == '(' {
+            result.Put(0)
+        } | == ')' {
+            ? ~~result.Is_empty() && result.Peek() == 0 {
+                result.Pop()
+            } | {
                 <- false
             }
-        }
-        | '{' ? {
-            result.put(1)
-        }
-        | '}' ? {
-            ~~result.is_empty() && result.peek() == 1 ? {
-                result.pop()
-            }
-            | ? {
+        } | == '{' {
+            result.Put(1)
+        } | '}' {
+            ? ~~result.Is_empty() && result.Peek() == 1 {
+                result.Pop()
+            } | {
                 <- false
             }
-        }
-        | '[' ? {
-            result.put(2)
-        }
-        | ']' ? {
-            ~~result.is_empty() && result.peek() == 2 ? {
-                result.pop()
-            }
-            | ? {
+        } | '[' {
+            result.Put(2)
+        } | ']' {
+            ? ~~result.Is_empty() && result.Peek() == 2 {
+                result.Pop()
+            } | {
                 <- false
             }
         }
     }
-    <- ~result.is_empty()
+    <- ~result.Is_empty()
 }

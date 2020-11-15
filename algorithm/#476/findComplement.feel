@@ -1,9 +1,9 @@
-FindComplement = (num: int -> v: int) {
-    !I = 1
-    !Num = num
-    I <= Num @ {
-        Num = Num ^^^ I
-        I = I <<< 1
+FindComplement = (num: Int -> v: Int) {
+    i = 1
+    find_num = num
+    @ i <= find_num {
+        find_num = find_num ^^^ i
+        i = i <<< 1
     }
-    <- Num
+    <- find_num
 }

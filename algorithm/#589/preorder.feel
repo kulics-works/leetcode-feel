@@ -1,11 +1,11 @@
-Preorder = (root: Node? -> v: list`int) {
-    root == nil ? {
-        <- list`int{}
+Preorder = (root: Node? -> v: (Int)List) {
+    ? root == nil {
+        <- (Int)List_of()
     }
-    !List = list`int{}
-    List += root.val
-    root.children @ ea {
-        List += Preorder(ea)
+    list = (Int)List_of()
+    list += root.val
+    @ root.children => ea {
+        list += Preorder(ea)
     }
-    <- List
+    <- list
 }

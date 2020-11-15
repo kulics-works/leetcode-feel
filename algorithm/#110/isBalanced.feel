@@ -1,22 +1,21 @@
-++
-Definition for a binary tree node.
-TreeNode = $ {
-    !Val: int
-    !Left: TreeNode?
-    !Right: TreeNode?
-}
-++
-isBalanced = (root: TreeNode?->v: bool) {
-    root == nil ? {
+` Definition for a binary tree node. `
+TreeNode = $ (
+    val: Int,
+    left: TreeNode?,
+    right: TreeNode?
+)
+
+IsBalanced = (root: TreeNode?->v: Bool) {
+    ? root == nil {
         <- true
     }
-    <- abs(height(root.Left) - height(root.Right)) < 2 &&
-     isBalanced(root.Left) && isBalanced(root.Right)
+    <- Abs(Height(root.left) - Height(root.right)) < 2 &&
+     IsBalanced(root.left) && IsBalanced(root.right)
 }       
 
-height = (root: TreeNode?->v: int) {
-    root == nil ? {
+Height = (root: TreeNode?->v: Int) {
+    ? root == nil {
         <- -1
     }
-    <- 1 + max(height(root.Left), height(root.Right))
+    <- 1 + Max(Height(root.left), Height(root.right))
 }

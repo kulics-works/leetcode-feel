@@ -1,52 +1,50 @@
-fourSum = (nums: list`int, target: int->v: list`(list`int)) {
-    nums.sort()
-    arr = list`(list`int){}
-    length = nums.len
-    length < 4 ? {
+FourSum = (nums: (Int)List, target: Int->v: ((Int)List)List) {
+    nums.Sort()
+    arr = ((Int)List)List_of()
+    length = nums.Size()
+    ? length < 4 {
         <- arr
     }
-    nums[0] + nums[1] + nums[2] + nums[3] > target ||
-    nums[length-1] + nums[length-2] + nums[length-3] + nums[length-4] < target ? {
+    ? nums[0] + nums[1] + nums[2] + nums[3] > target ||
+    nums[length - 1] + nums[length - 2] + nums[length - 3] + nums[length - 4] < target {
         <- arr
     }
-    0 ..< length-3 @ i {
-        i > 0 && nums[i] == nums[i-1] ? {
+    @ 0 .. length - 3 => i {
+        ? i > 0 && nums[i] == nums[i - 1] {
             @
         }
-        nums[i] + nums[i+1] + nums[i+2] + nums[i+3] > target ? {
+        ? nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] > target {
             ~@
         }
-        nums[i] + nums[length-3] + nums[length-2] + nums[length-1] < target ? {
+        ? nums[i] + nums[length - 3] + nums[length - 2] + nums[length - 1] < target {
             @
         }
-        i+1 ..< length-2 @ j {
-            j > i + 1 && nums[j] == nums[j - 1] ? {
+        @ i + 1 .. length - 2 => j {
+            ? j > i + 1 && nums[j] == nums[j - 1] {
                 @
             }
-            nums[i] + nums[j] + nums[j+1] + nums[j+2] > target ? {
+            ? nums[i] + nums[j] + nums[j + 1] + nums[j + 2] > target {
                 ~@
             }
-            nums[i] + nums[j] + nums[length-2] + nums[length-1] < target ? {
+            ? nums[i] + nums[j] + nums[length - 2] + nums[length - 1] < target {
                 @
             }
-            !l, !r = j+1, length-1
-            l < r @ {
+            l, r = j + 1, length - 1
+            @ l < r {
                 sum = nums[i] + nums[j] + nums[l] + nums[r]
-                sum == target ? {
-                    arr.add({nums[i]; nums[j]; nums[l]; nums[r]})
-                    l < r && nums[l] == nums[l+1] @ {
+                ? sum == target {
+                    arr.Append(List_of(nums[i], nums[j], nums[l], nums[r]))
+                    @ l < r && nums[l] == nums[l + 1] {
                         l += 1
                     }
-                    l < r && nums[r] == nums[r-1] @ {
+                    @ l < r && nums[r] == nums[r - 1] {
                         r -= 1
                     }
                     l += 1
                     r -= 1
-                }
-                | sum < target ? {
+                } | sum < target {
                     l += 1
-                }
-                | sum > target ? {
+                } | sum > target {
                     r -= 1
                 }
             }

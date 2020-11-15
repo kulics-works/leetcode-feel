@@ -1,11 +1,10 @@
-PeakIndexInMountainArray = (a: list`int -> v: int) {
-    !Max = 0
-    a @ [i]v {
-        v >= Max ? {
-            Max = v
-        }
-        | ? {
-            <- i-1
+PeakIndexInMountainArray = (a: (Int)List -> v: Int) {
+    max = 0
+    @ a => [i]v {
+        ? v >= max {
+            max = v
+        } | {
+            <- i - 1
         }
     }
     <- 0
