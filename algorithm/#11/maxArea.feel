@@ -1,10 +1,10 @@
-MaxArea = (height: (Int)List->v: Int) {
-    topValue = 0
-    l, r = 0, height.Size() - 1
+MaxArea := (height : List[Int]->v : Int) {
+    topValue := 0
+    l, r := 0, height.Size() - 1
     @ l < r {
-        value = Min(height[l], height[r]) * (r-l)
+        value = Min(height.(l), height.(r)) * (r - l)
         topValue = Max(value, topValue)
-        ? height[l] > height[r] {
+        ? height.(l) > height.(r) {
             r -= 1
         } | {
             l += 1

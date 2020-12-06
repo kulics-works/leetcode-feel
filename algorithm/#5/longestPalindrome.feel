@@ -1,24 +1,24 @@
-LongestPalindrome = (s: Str->v: Str) {
+LongestPalindrome := (s : Str->v : Str) {
     ? s.Size() < 1 {
         <- ""
     }
-    start, end = 0, 0
-    @ 0 .. s.Size() => i {
-        len1 = ExpandAroundCenter(s, i, i)
-        len2 = ExpandAroundCenter(s, i, i + 1)
-        length = Max(len1, len2)
+    start, end := 0, 0
+    @ i := 0.Up_until(s.Size())... {
+        len1 := ExpandAroundCenter(s, i, i)
+        len2 := ExpandAroundCenter(s, i, i + 1)
+        length := Max(len1, len2)
         ? length > end - start {
             start = i - (length - 1) / 2
             end = i + length / 2
         }
     }
-    <- s[start..end]
+    <- s.Slice(start, end)
 }
 
-` 中心扩展校验回文 `
-ExpandAroundCenter = (s: Str, left: Int, right: Int->v: Int) {
-    l, r = left, right
-    @ l >= 0 && r < s.Size() && s[l] == s[r] {
+// 中心扩展校验回文
+ExpandAroundCenter := (s : Str, left : Int, right : Int->v : Int) {
+    l, r := left, right
+    @ l >= 0 && r < s.Size() && s.(l) == s.(r) {
         l -= 1
         r += 1
     }

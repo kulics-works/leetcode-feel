@@ -1,16 +1,16 @@
-SubdomainVisits = (cpdomains: (Str)List -> v: (Str)List) {
-    ret = (Str)List_of()
-    temp_dict = (Str, Int)Dict_of()
-    @ cpdomains => ea {
-        temp = ea.Split(" ")
-        count = temp[0].To_I32()
-        arr = temp[1].Split(".")
-        @ arr => [i]v {
-            records = arr[i..].Join(".")
+SubdomainVisits := (cpdomains : List[Str] -> v : List[Str]) {
+    ret := List_of[Str]()
+    temp_dict := Dict_of[Str, Int]()
+    @ ea := cpdomains... {
+        temp := ea.Split(" ")
+        count := temp.(0).To_I32()
+        arr := temp.(1).Split(".")
+        @ i, v := arr... {
+            records := arr.Slice(i, nil).Join(".")
             temp_dict[records] += count
         }
     }
-    @ temp_dict => [k]v {
+    @ k, v := temp_dict... {
         ret += v.To_Str() + " " + k
     }
     <- ret

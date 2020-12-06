@@ -1,6 +1,6 @@
-TitleToNumber = (s: Str -> v: Int) {
-    num = 0
-    @ s => i {
+TitleToNumber := (s : Str -> v : Int) {
+    num := 0
+    @ i := s... {
         num *= 26
         num += i - 'A' + 1
     }

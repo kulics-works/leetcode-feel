@@ -1,11 +1,11 @@
-` Definition for a binary tree node. `
-TreeNode = $ (
-    val: Int,
-    left: TreeNode?,
-    right: TreeNode?
-)
+// Definition for a binary tree node.
+TreeNode := $ (
+    val : Int,
+    left : ?TreeNode,
+    right : ?TreeNode
+) {}
 
-IsBalanced = (root: TreeNode?->v: Bool) {
+IsBalanced := (root : ?TreeNode->v : Bool) {
     ? root == nil {
         <- true
     }
@@ -13,7 +13,7 @@ IsBalanced = (root: TreeNode?->v: Bool) {
      IsBalanced(root.left) && IsBalanced(root.right)
 }       
 
-Height = (root: TreeNode?->v: Int) {
+Height := (root : ?TreeNode->v : Int) {
     ? root == nil {
         <- -1
     }

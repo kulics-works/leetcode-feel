@@ -1,5 +1,5 @@
-MergeTrees = (t1: TreeNode?, t2: TreeNode? -> v: TreeNode?) {
-    ret: TreeNode? = nil
+MergeTrees := (t1 : ?TreeNode, t2 : ?TreeNode -> v : ?TreeNode) {
+    ret : ?TreeNode = nil
 
     ? t1 == nil && t2 == nil {
         ret = nil

@@ -1,6 +1,6 @@
-IsValid = (s: Str->v: Bool) {
-    result = (Int)Stack_of()
-    @ s => v {
+IsValid := (s : Str->v : Bool) {
+    result := Stack_of[Int]()
+    @ v := s... {
         ? v == '(' {
             result.Put(0)
         } | == ')' {

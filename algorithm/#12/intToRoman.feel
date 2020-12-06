@@ -1,5 +1,5 @@
-IntToRoman = (num: Int->v: Str) {
-    hashmap = Dict_of(
+IntToRoman := (num : Int->v : Str) {
+    hashmap := Dict_of(
                 Pair_of(1000, "M"), Pair_of(900, "CM"),
                 Pair_of(500, "D"), Pair_of(400, "CD"), 
                 Pair_of(100, "C"), Pair_of(90, "XC"),
@@ -8,16 +8,14 @@ IntToRoman = (num: Int->v: Str) {
                 Pair_of(5, "V"), Pair_of(4, "IV"),
                 Pair_of(1, "I")
             )
-    weight = List_of(
-                1000, 900, 500, 400, 100,
-                90, 50, 40, 10, 9, 5, 4, 1
-            )
-    res = ""
-    @ weight => v {
-        i = num / v
+    weight := List_of(1000, 900, 500, 400, 100,
+                90, 50, 40, 10, 9, 5, 4, 1)
+    res := ""
+    @ v := weight... {
+        i := num / v
         ? i > 0 {
-            @ 0 .. i => j {
-                res += hashmap[v]
+            @ j := 0.Up_until(i)... {
+                res += hashmap.(v)
             }
             num %= v
         }

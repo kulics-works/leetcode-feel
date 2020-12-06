@@ -1,22 +1,22 @@
-` Definition for a Node. `
-Node = $ (
-    val: Int,
-    next: Node?,
-    random: Node?
-)
+// Definition for a Node.
+Node := $(
+    val : Int,
+    next : ?Node,
+    random : ?Node
+) {}
 
-tempmap = (Node?, Node?)Dict_of()
-CopyRandomList = (head: Node?->v: Node?) {
+tempmap := Dict_of[?Node, ?Node]()
+CopyRandomList := (head : ?Node->v : ?Node) {
     ? head == nil {
         <- nil
     }
     ? tempmap.Contains(head) {
-        tempmap[head]
+        tempmap.(head)
     }
 
-    newNode: Node? = Node$(head.val, nil, nil)
+    newNode : ?Node = Node$(head.val, nil, nil)
 
-    tempmap[head] = newNode
+    tempmap.(head) = newNode
 
     newNode.next = CopyRandomList(head.next)
     newNode.random = CopyRandomList(head.random)

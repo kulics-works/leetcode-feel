@@ -1,6 +1,6 @@
-defangIPaddr = (address: Str->v: Str) {
-    newAddress: (Byte)List
-    @ address => i {
+defangIPaddr := (address : Str->v : Str) {
+    newAddress : List[Byte]
+    @ i := address... {
         ? i == '.' {
             newAddress.Append('[', '.', ']')
         } | {

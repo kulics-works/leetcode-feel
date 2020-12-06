@@ -1,6 +1,6 @@
-FindComplement = (num: Int -> v: Int) {
-    i = 1
-    find_num = num
+FindComplement := (num : Int -> v : Int) {
+    i := 1
+    find_num := num
     @ i <= find_num {
         find_num = find_num ^^^ i
         i = i <<< 1

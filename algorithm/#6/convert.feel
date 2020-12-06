@@ -1,12 +1,12 @@
-Convert = (s: Str, numRows: Int->v: Str) {
+Convert := (s : Str, numRows : Int->v : Str) {
     ? numRows == 1 {
         <- s
     }
-    res = ((Byte)List)List(numRows)
-    direct = true
-    n = 0
-    @ s => v {
-        res[n] += v
+    res := List[List[Byte]]$(numRows)
+    direct := true
+    n := 0
+    @ v := s... {
+        res.(n) += v
         ? n == numRows - 1 {
             direct = false
         } | n == 0 {
@@ -18,8 +18,8 @@ Convert = (s: Str, numRows: Int->v: Str) {
             n -= 1
         }
     }
-    @ 1 .. numRows => i {
-        res[0] += res[i]
+    @ i := 1.Up_until(numRows)... {
+        res.(0) += res.(i)
     }
-    <- res[0].To_Str()
+    <- res.(0).To_Str()
 }

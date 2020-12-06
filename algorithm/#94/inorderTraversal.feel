@@ -1,16 +1,16 @@
-` Definition for a binary tree node. `
-TreeNode = $ (
-    val: Int,
-    left: TreeNode?,
-    right: TreeNode?
-)
+// Definition for a binary tree node.
+TreeNode := $ (
+    val : Int,
+    left : ?TreeNode,
+    right : ?TreeNode
+) {}
 
-InorderTraversal = (root: TreeNode?->v: (Int)List) {
+InorderTraversal := (root : ?TreeNode->v : List[Int]) {
     ? root == nil {
         <- nil
     }
-    arr = (Int)List_of()
-    temp = InorderTraversal(root.left)
+    arr := List_of[Int]()
+    temp := InorderTraversal(root.left)
     ? temp <> nil {
         arr.Append(temp)
     }

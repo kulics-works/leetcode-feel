@@ -1,10 +1,10 @@
-` Definition for singly-linked list. `
+// Definition for singly-linked list.
 ListNode = $ (
-    val: Int,
-    next: ListNode?
-}
+    val : Int,
+    next : ?ListNode
+) {}
 
-MergeTwoLists = (l1: ListNode?, l2: ListNode?->v: ListNode?) {
+MergeTwoLists := (l1 : ?ListNode, l2 : ?ListNode->v : ?ListNode) {
     ? l1 == nil {
         <- l2
     }

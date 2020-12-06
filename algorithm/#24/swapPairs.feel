@@ -1,15 +1,15 @@
-` Definition for singly-linked list. `
+// Definition for singly-linked list.
 ListNode = $ (
-    val: Int,
-    next: ListNode?
-}
+    val : Int,
+    next : ?ListNode
+) {}
 
-SwapPairs = (head: ListNode?->v: ListNode?) {
+SwapPairs := (head : ?ListNode->v : ?ListNode) {
     ? head == nil || head.next == nil {
         <- head
     }
-    node1 = head
-    node2 = head.next
+    node1 := head
+    node2 := head.next
     node1.next = SwapPairs(node2.next)
     node2.next = node1
     <- node2

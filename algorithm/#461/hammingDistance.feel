@@ -1,12 +1,12 @@
-HammingDistance = (x: Int, y: Int -> distance: Int) {
-    big = x
+HammingDistance := (x : Int, y : Int -> distance : Int) {
+    big := x
     ? big < y {
         big = y 
     }
-    z = x ^^^ y
-    count = 0
+    z := x ^^^ y
+    count := 0
     
-    i = 1
+    i := 1
     @ i <= big {
         ? i &&& z <> 0 {
             count += 1

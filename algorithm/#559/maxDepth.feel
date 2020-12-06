@@ -1,11 +1,11 @@
-MaxDepth = (root: ?Node -> v: Int) {
+MaxDepth := (root : ?Node -> v : Int) {
     ? root == nil {
         <- 0
     }
 
-    depth = 0
-    @ root.children => ea {
-        temp = MaxDepth(ea)
+    depth := 0
+    @ it := root.children... {
+        temp = MaxDepth(it)
         ? temp > depth {
             depth = temp
         }

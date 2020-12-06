@@ -1,13 +1,13 @@
-Generate = (numRows: Int -> v: ((Int)List)List) {
-    arr = ((Int)List)List_of()
-    @ 0 .. numRows => i {
-        temp = List_of(1)
-        @ 1 ... i => j {
-            right = 0
+Generate := (numRows : Int -> v : List[List[Int]]) {
+    arr := List_of[List[Int]]()
+    @ i := 0.Up_until(numRows)... {
+        temp := List_of(1)
+        @ j := 1.Up_to(i)... {
+            right := 0
             ? j < i {
-                right = arr[i - 1][j]
+                right = arr.(i - 1).(j)
             }
-            temp += arr[i - 1][j - 1] + right
+            temp += arr.(i - 1).(j - 1) + right
         }
         arr += temp
     }

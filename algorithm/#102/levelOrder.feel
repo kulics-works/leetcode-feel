@@ -1,12 +1,12 @@
-` Definition for a binary tree node. `
-TreeNode = $ (
-    val: Int,
-    left: TreeNode?,
-    right: TreeNode?
-)
+// Definition for a binary tree node.
+TreeNode := $ (
+    val : Int,
+    left : ?TreeNode,
+    right : ?TreeNode
+) {}
 
-LevelOrder = (root: TreeNode?->v: ((Int)List)List)  {
-    levels = ((Int)List)List_of()
+LevelOrder := (root : ?TreeNode->v : List[List[Int]])  {
+    levels := List_of[List[Int]]()
     ? root == nil {
         <- levels
     }
@@ -14,16 +14,16 @@ LevelOrder = (root: TreeNode?->v: ((Int)List)List)  {
     <- levels
 }
 
-Helper = (root: TreeNode?, level: Int) {
+Helper := (root : ?TreeNode, level : Int) {
     ? root == nil {
         <-
     }
     ? levels.Size() == level {
-        levels.Append((Int)List_of())
+        levels.Append(List_of[Int]())
     }
-    levels[level].Append(root.val)
+    levels.(level).Append(root.val)
     Helper(root.left, level + 1)
     Helper(root.right, level + 1)
 }
 
-levels = ((Int)List)List_of()
+levels := List_of[List[Int]]()

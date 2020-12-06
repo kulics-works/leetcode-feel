@@ -1,8 +1,8 @@
-GetSum = (a: Int, b: Int -> v: Int) {
-    ia = a
-    ib = b
+GetSum := (a : Int, b : Int -> v : Int) {
+    ia := a
+    ib := b
     @ ib <> 0 {
-        carry = ia &&& ib
+        carry := ia &&& ib
         ia = ia ^^^ ib
         ib = carry <<< 1
     }

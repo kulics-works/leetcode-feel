@@ -1,22 +1,22 @@
-LetterCombinations = (digits: Str->v: (Str)List) {
+LetterCombinations := (digits : Str->v : List[Str]) {
     ? digits.Size() <> 0 {
         Backtrack("", digits)
     }
     <- output
 }
 
-Backtrack = (combination: Str, next: Str->) {
+Backtrack := (combination : Str, next : Str->) {
     ? next.Size() == 0 {
-        output += combination
+        output.Append(combination)
     } | {
-        @ phone[next[0]] => v {
-            Backtrack(combination + v, next[1..])
+        @ v := phone.(next.(0))... {
+            Backtrack(combination + v, next.Slice(1, nil))
         }
     }
 }
 
-output = (Str)List_of()
-dict = Dict_of(
+output := List_of[Str]()
+dict := Dict_of(
     Pair_of("2", "abc"),
     Pair_of("3", "def"),
     Pair_of("4", "ghi"),

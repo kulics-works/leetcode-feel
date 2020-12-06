@@ -1,9 +1,9 @@
-NumberOfLines = (widths: (Int)List, s: Str -> v: (Int)List) {
-    count = 0
-    line = 1
+NumberOfLines := (widths : List[Int], s : Str -> v : List[Int]) {
+    count := 0
+    line := 1
 
-    @ s => ea {
-        width = widths[ea - 'a']
+    @ it := s... {
+        width := widths.(it - 'a')
         ? width + count > 100 {
             line += 1
             count = width

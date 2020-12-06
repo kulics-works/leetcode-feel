@@ -1,13 +1,13 @@
-ClimbStairs = (n: Int->v: Int) {
-    dp = (Int)New_List(n)
-    @ 0 .. n => i {
+ClimbStairs := (n : Int->v : Int) {
+    dp := List[Int]$(n)
+    @ i := 0.Up_until(n)... {
         ? i == 0 {
-            dp[i] = 1
+            dp.(i) = 1
         } | i == 1 {
-            dp[i] = dp[i - 1] + 1
+            dp.(i) = dp.(i - 1) + 1
         } | {
-            dp[i] = dp[i - 1] + dp[i - 2]
+            dp.(i) = dp.(i - 1) + dp.(i - 2)
         }
     }
-    <- dp[n - 1]
+    <- dp.(n - 1)
 }

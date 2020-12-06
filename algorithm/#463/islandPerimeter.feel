@@ -1,17 +1,17 @@
-IslandPerimeter = (grid: ((Int)List)List -> v: Int) {
+IslandPerimeter := (grid : List[List[Int]] -> v : Int) {
     ? grid.Size() == 0 {
         <- 0
     }
-    count = 0
-    repeat = 0
-    @ 0 .. grid.Size() => i {
-        @ 0 .. grid[i].Size() => j {
-            ? grid[i][j] == 1 {
+    count := 0
+    repeat := 0
+    @ i := 0.Up_until(grid.Size())... {
+        @ j := 0.Up_until(grid.(i).Size())... {
+            ? grid.(i).(j) == 1 {
                 count += 1
-                ? i <> 0 && grid[i - 1][j] == 1 {
+                ? i <> 0 && grid.(i - 1).(j) == 1 {
                     repeat += 1
                 }
-                ? j <> 0 && grid[i][j - 1] == 1 {
+                ? j <> 0 && grid.(i).(j - 1) == 1 {
                     repeat += 1
                 }
             }

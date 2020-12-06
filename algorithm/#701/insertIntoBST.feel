@@ -1,11 +1,11 @@
-` Definition for a binary tree node. `
-TreeNode = $ (
-    val: Int,
-    left: TreeNode?,
-    right: TreeNode?
-)
+// Definition for a binary tree node.
+TreeNode := $ (
+    val : Int,
+    left : ?TreeNode,
+    right : ?TreeNode
+) {}
 
-InsertIntoBST = (root: TreeNode?, val: Int->v: TreeNode?) {
+InsertIntoBST := (root : ?TreeNode, val : Int->v : ?TreeNode) {
     ? root == nil {
         <- nil
     }

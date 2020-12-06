@@ -1,17 +1,17 @@
-` Definition for singly-linked list. `
+// Definition for singly-linked list.
 ListNode = $ (
-    val: Int,
-    next: ListNode?
-}
+    val : Int,
+    next : ?ListNode
+} {}
 
-RemoveNthFromEnd = (head: ListNode?, n: Int->v: ListNode?) {
+RemoveNthFromEnd := (head : ?ListNode, n : Int->v : ?ListNode) {
     ? head == nil {
         <- nil
     }
-    temp = ListNode$(0, head)
-    temp1 = temp
-    temp2 = temp
-    @ 1 ... n + 1 => i {
+    temp := ListNode$(0, head)
+    temp1 := temp
+    temp2 := temp
+    @ i := 1.Up_to(n + 1)... {
         temp1 = temp1.next
     }
     @ temp1 <> nil {

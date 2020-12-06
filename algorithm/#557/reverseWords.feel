@@ -1,7 +1,7 @@
-ReverseWords = (s: Str -> v: Str) {
-    ret = ""
-    @ s.Split(' ') => ea {
-        ret += ea.Reverse() + " "
+ReverseWords := (s : Str -> v : Str) {
+    ret := ""
+    @ it := s.Split(' ')... {
+        ret += it.Reverse() + " "
     }
     <- ret
 }

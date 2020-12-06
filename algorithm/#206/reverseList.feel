@@ -1,14 +1,14 @@
-` Definition for singly-linked list. `
+// Definition for singly-linked list.
 ListNode = $ (
-    val: Int,
-    next: ListNode?
-}
+    val : Int,
+    next : ?ListNode
+) {}
 
-ReverseList = (head: ListNode?->v: ListNode?) {
-    prev: ListNode?
-    curr = head
+ReverseList := (head : ?ListNode->v : ?ListNode) {
+    prev : ?ListNode
+    curr := head
     @ curr <> nil {
-        nextTemp = curr.next
+        nextTemp := curr.next
         curr.next = prev
         prev = curr
         curr = nextTemp

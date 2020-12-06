@@ -1,30 +1,30 @@
-` Definition for singly-linked list. `
+// Definition for singly-linked list.
 ListNode = $ (
-    val: Int,
-    next: ListNode?
-}
+    val : Int,
+    next : ?ListNode
+) {}
 
-ReverseKGroup = (head: ListNode?, k: Int->v: ListNode?) {
+ReverseKGroup := (head : ?ListNode, k : Int->v : ?ListNode) {
     ? head == nil || head.next == nil {
         <- head
     }
-    tail = head
-    @ 0 .. k => i {
+    tail := head
+    @ i := 0.Up_until(k)... {
         ? tail == nil {
             <- head
         }
         tail = tail.next
     }
-    newhead = ReverseList(head, tail)
+    newhead := ReverseList(head, tail)
     head.next = ReverseKGroup(tail, k)
     <- newhead
 }
 
-ReverseList = (head: ListNode?, tail: ListNode?->v: ListNode?) {
-    prev: ListNode? = nil
-    curr = head
+ReverseList := (head : ?ListNode, tail : ?ListNode->v : ?ListNode) {
+    prev : ?ListNode = nil
+    curr := head
     @ curr <> tail {
-        nextTemp = curr.next
+        nextTemp := curr.next
         curr.next = prev
         prev = curr
         curr = nextTemp

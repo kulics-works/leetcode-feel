@@ -1,22 +1,22 @@
-GenerateParenthesis = (n: Int->v: (Str)List) {
+GenerateParenthesis := (n : Int->v : List[Str]) {
     ? n == 0 {
         <- nil
     }
-    ` 当n=1时，只有一组括号 `
+    // 当n=1时，只有一组括号
     result = List_of(List_of(""), List_of("()"))
-    @ 2 ... n => i {
-        temp = (Str)List_of()
-        @ 0 .. i => j {
-            str1 = result[j]
-            str2 = result[i - 1 - j]
-            @ str1 => s1 {
-                @ str2 => s2 {
+    @ i := 2.Up_to(n)... {
+        temp := List_of[Str]()
+        @ j := 0.Up_until(i)... {
+            str1 := result.(j)
+            str2 := result.(i - 1 - j)
+            @ s1 := str1 {
+                @ s2 := str2... {
                     el = "(" + s1 + ")" + s2
-                    temp += el
+                    temp.Append(el)
                 }
             }
         }
-        result += temp
+        result.Append(temp)
     }
-    <- result[n]
+    <- result.(n)
 }

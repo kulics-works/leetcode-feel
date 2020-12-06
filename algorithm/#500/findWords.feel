@@ -1,42 +1,42 @@
-Line1 = Dict_of(
+Line1 := Dict_of(
         Pair_of('q', false), Pair_of('w', false), Pair_of('e', false)
         Pair_of('r', false), Pair_of('t', false), Pair_of('y', false),
         Pair_of('u', false), Pair_of('i', false), Pair_of('o', false),
         Pair_of('p', false)
     )
-Line2 = Dict_of(
+Line2 := Dict_of(
         Pair_of('a', false), Pair_of('s', false), Pair_of('d', false), 
         Pair_of('f', false), Pair_of('g', false), Pair_of('h', false), 
         Pair_of('j', false), Pair_of('k', false), Pair_of('l', false)
     )
 
-FindWords = (words: (Str)List -> v: (Str)List) {
-    ret = (Str)List_of()
-    @ words => ea {
-        lower_str = ea.To_lower()
-        line = 0
-        @ lower_str => c {
+FindWords := (words : List[Str] -> v: List[Str]) {
+    ret := List_of[Str]()
+    @ it := words... {
+        lower_str := it.To_lower()
+        line := 0
+        @ c := lower_str... {
             ? Line1.Contains(c) {
                 ? line == 0 || line == 1 {
                     line = 1
                 } | { 
-                    ~@
+                    @ <-
                 }
             } | Line2.Contains(c) {
                 ? line == 0 || line == 2 {
                     line = 2
                 } | { 
-                    ~@
+                    @ <-
                 }
             } | {
                 ? line == 0 || line == 3 {
                     line = 3
                 } | { 
-                    ~@
+                    @ <-
                 }
             }
         }
-        ret += ea
+        ret += it
     }
     <- ret
 }

@@ -1,11 +1,11 @@
-SortArrayByParity = (a: (Int)List -> v: Int) {
-    arr1 = (Int)List_of()
-    arr2 = (Int)List_of()
-    @ a => ea {
-        ? ea &&& 1 <> 1 {
-            arr1.Append(ea)
+SortArrayByParity := (a : List[Int] -> v : Int) {
+    arr1 := List_of[Int]()
+    arr2 := List_of[Int]()
+    @ it := a... {
+        ? it &&& 1 <> 1 {
+            arr1.Append(it)
         } | {
-            arr2.Append(ea)
+            arr2.Append(it)
         }
     }
     <- arr1.AppendAll(arr2)

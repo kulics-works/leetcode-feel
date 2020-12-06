@@ -1,11 +1,11 @@
-` Definition for a binary tree node. `
-TreeNode = $ (
-    val: Int,
-    left: TreeNode?,
-    right: TreeNode?
-)
+// Definition for a binary tree node.
+TreeNode := $ (
+    val : Int,
+    left : ?TreeNode,
+    right : ?TreeNode
+) {}
 
-DeleteNode = (root: TreeNode?, key: Int->v: TreeNode?) {
+DeleteNode := (root : ?TreeNode, key : Int->v : ?TreeNode) {
     ? root == nil {
         <- nil
     }
@@ -27,7 +27,7 @@ DeleteNode = (root: TreeNode?, key: Int->v: TreeNode?) {
     <- root
 }
 
-RightMin = (root: TreeNode?->v: Int) {
+RightMin := (root : ?TreeNode->v : Int) {
     root = root.right
     @ root.left <> nil {
         root = root.left
@@ -35,7 +35,7 @@ RightMin = (root: TreeNode?->v: Int) {
     <- root.val
 }
 
-LeftMax = (root: TreeNode?->v: Int) {
+LeftMax := (root : ?TreeNode->v : Int) {
     root = root.left
     @ root.right <> nil {
         root = root.right

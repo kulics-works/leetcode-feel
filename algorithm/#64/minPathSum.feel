@@ -1,22 +1,22 @@
-MinPathSum = (grid: ((Int)List)List->v: Int) {
-    m, n = grid.Size(), grid[0].Size()
-    dp = ((Int)List)New_List(m)
-    @ 0 .. m => i {
-        dp[i] = (Int)New_List(n)
+MinPathSum := (grid : List[List[Int]]->v : Int) {
+    m, n := grid.Size(), grid.(0).Size()
+    dp := List[List[Int]]$(m)
+    @ i := 0.Up_until(m)... {
+        dp.(i) = List[Int]$(n)
     }
 
-    @ 0 .. m => i {
-        @ 0 .. n => j {
+    @ i := 0.Up_until(m)... {
+        @ j := 0.Up_until(n)... {
             ? i == 0 && j == 0 {
-                dp[i][j] = grid[i][j]
+                dp.(i).(j) = grid.(i).(j)
             } | i == 0 {
-                dp[i][j] = dp[i][j - 1] + grid[i][j]
+                dp.(i).(j) = dp.(i).(j - 1) + grid.(i).(j)
             } | j == 0 {
-                dp[i][j] = dp[i - 1][j] + grid[i][j]
+                dp.(i).(j) = dp.(i - 1).(j) + grid.(i).(j)
             } | {
-                dp[i][j] = Min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j]
+                dp.(i).(j) = Min(dp.(i - 1).(j), dp.(i).(j - 1)) + grid.(i).(j)
             }
         }
     }
-    <- dp[m - 1][n - 1]
+    <- dp.(m - 1).(n - 1)
 }

@@ -1,19 +1,19 @@
-lengthOfLIS = (nums: (Int)List->v: Int) {
+lengthOfLIS := (nums : List[Int]->v : Int) {
     ? nums.Size() == 0 {
         <- 0
     }
-    dp = (Int)New_List(nums.Size())
-    maxLength = 1
-    dp[0] = 1
-    @ 1 .. nums.Size() => i {
-        maxValue = 0
-        @ 0 .. i => j {
-            ? nums[i] > nums[j] {
-                maxValue = Max(maxValue, dp[j])
+    dp := List[Int]$(nums.Size())
+    maxLength := 1
+    dp.(0) = 1
+    @ i := 1.Up_until(nums.Size())... {
+        maxValue := 0
+        @ j := 0.Up_until(i)... {
+            ? nums.(i) > nums.(j) {
+                maxValue = Max(maxValue, dp.(j))
             }
         }
-        dp[i] = maxValue + 1
-        maxLength = Max(maxLength, dp[i])
+        dp.(i) = maxValue + 1
+        maxLength = Max(maxLength, dp.(i))
     }
     <- maxLength
 }

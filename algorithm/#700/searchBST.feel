@@ -1,4 +1,4 @@
-SearchBST = (root: TreeNode?, val: Int -> v: TreeNode) {
+SearchBST := (root : ?TreeNode, val : Int -> v : ?TreeNode) {
     ? root == nil {
         <- nil
     } | root.val == val {

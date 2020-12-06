@@ -1,10 +1,10 @@
-Postorder = (root: Node? -> v: (Int)List) {
+Postorder := (root : ?Node -> v : List[Int]) {
     ? root == nil {
-        <- (Int)List_of()
+        <- List_of[Int]()
     }
-    list = (Int)List_of()
-    @ root.children => ea {
-        list += Postorder(ea)
+    list := List_of[Int]()
+    @ it := root.children... {
+        list += Postorder(it)
     }
     list += root.val
     <- list

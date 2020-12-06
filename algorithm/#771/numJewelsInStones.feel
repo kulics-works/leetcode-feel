@@ -1,7 +1,7 @@
-NumJewelsInStones = (j: Str, s: Str -> num: Int) {
-    count = 0
-    @ s => ea {
-        ? j.Contains(ea) {
+NumJewelsInStones := (j : Str, s : Str -> num : Int) {
+    count := 0
+    @ it := s... {
+        ? j.Contains(it) {
             count += 1
         }
     }

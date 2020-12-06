@@ -1,9 +1,9 @@
-JudgeCircle = (moves: Str -> yes: Bool) {
-    x = 0
-    y = 0
+JudgeCircle := (moves : Str -> yes : Bool) {
+    x := 0
+    y := 0
 
-    @ moves => ea {
-        ? ea == "L" { 
+    @ it := moves... {
+        ? it == "L" { 
             x += 1 
         } | == "R" { 
             x -= 1 

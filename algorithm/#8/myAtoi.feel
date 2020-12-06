@@ -1,17 +1,17 @@
-MyAtoi = (str: Str -> v: Int) {
-    automaton = NewAutomaton()
-    @ str => ch {
+MyAtoi := (str : Str -> v : Int) {
+    automaton := NewAutomaton()
+    @ ch := str... {
         automaton.Get(ch)
     }
-    <- automaton.sign * (automaton.ans :> Int)
+    <- automaton.sign * automaton.ans.[Int]
 }
 
-START   = "start"
-SIGNED  = "signed"
-IN_NUM  = "in_number"
-END     = "end"
+START   := "start"
+SIGNED  := "signed"
+IN_NUM  := "in_number"
+END     := "end"
 
-GetCol = (c: Chr -> v: Int) {
+GetCol := (c : Chr -> v : Int) {
     ? c == ' ' {
         <- 0
     } | c == '+' || c == '-' {
@@ -22,14 +22,14 @@ GetCol = (c: Chr -> v: Int) {
     <- 3
 }
 
-Automaton = $ (
-    state: Str
-    map: (Str, (Str)List)Dict
-    sign: Int
+Automaton := $(
+    state: Str,
+    map: Dict[Str, List[Str]],
+    sign: Int,
     ans: I64
 ) {
-    Get = (c: Chr ->) {
-        state = map[state][GetCol(c)]
+    Get := (c: Chr ->) {
+        state = map.(state).(GetCol(c))
         ? state == IN_NUM {
             ans = ans * 10 + c - '0'
             ? sign == 1 {
@@ -47,15 +47,11 @@ Automaton = $ (
     }
 }
 
-NewAutomaton = (->v: Automaton) {
-    <- Automaton(
-        state = START,
-        sign = 1,
-        map = Dict_of(
+NewAutomaton := (->v : Automaton) {
+    <- Automaton(START, 1, Dict_of(
             Pair_of(START, List_of(START, SIGNED, IN_NUM, END)),
             Pair_of(SIGNED, List_of(END, END, IN_NUM, END)),
             Pair_of(IN_NUM, List_of(END, END, IN_NUM, END)),
             Pair_of(END, List_of(END, END, END, END))
-        )
-    )
+        ), 0)
 }

@@ -1,18 +1,18 @@
-` Definition for singly-linked list. `
+// Definition for singly-linked list.
 ListNode = $ (
-    val: Int,
-    next: ListNode?
-}
+    val : Int,
+    next : ?ListNode
+) {}
 
-RotateRight = (head: ListNode?, k: Int->v: ListNode?) {
+RotateRight := (head : ?ListNode, k : Int->v : ?ListNode) {
     ? head == nil {
         <- nil
     }
     ? head.next == nil {
         <- head
     }
-    arr = (ListNode)List_of()
-    temp = head
+    arr := List_of[ListNode]()
+    temp := head
     @ temp <> nil {
         arr.Append(temp)
         ? temp.next <> nil {
@@ -26,7 +26,7 @@ RotateRight = (head: ListNode?, k: Int->v: ListNode?) {
     } | k > arr.Size() {
         k = k % arr.Size()
     } 
-    arr[arr.Size() - 1].next = arr[0]
-    arr[arr.Size() - 1 - k].next = nil
-    <- arr[arr.Size() - k]
+    arr.(arr.Size() - 1).next = arr.(0)
+    arr.(arr.Size() - 1 - k).next = nil
+    <- arr.(arr.Size() - k)
 }

@@ -1,15 +1,15 @@
-FizzBuzz = (n: Int -> v: (Str)List) {
-    arr = (Str)List_of()
+FizzBuzz := (n : Int -> v : List[Str]) {
+    arr := List_of[Str]()
 
-    @ 1 ... n => ea {
-        ? ea % 15 == 0 {
-            arr += "FizzBuzz"
-        } | ea % 3 == 0 {
-            arr += "Fizz"
-        } | ea % 5 == 0 {
-            arr += "Buzz"
+    @ i := 1.Up_to(n)... {
+        ? i % 15 == 0 {
+            arr.Append("FizzBuzz")
+        } | i % 3 == 0 {
+            arr.Append("Fizz")
+        } | i % 5 == 0 {
+            arr.Append("Buzz")
         } | {
-            arr += ea.To_Str()
+            arr.Append(i.To_Str())
         }
     }
     <- arr
