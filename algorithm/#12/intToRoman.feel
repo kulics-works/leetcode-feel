@@ -15,7 +15,7 @@ IntToRoman := (num : Int->v : Str) {
         i := num / v
         ? i > 0 {
             @ j := 0.Up_until(i)... {
-                res += hashmap.(v)
+                res += hashmap.Get(v)
             }
             num %= v
         }

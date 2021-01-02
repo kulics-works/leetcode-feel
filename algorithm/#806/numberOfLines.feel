@@ -3,7 +3,7 @@ NumberOfLines := (widths : List[Int], s : Str -> v : List[Int]) {
     line := 1
 
     @ it := s... {
-        width := widths.(it - 'a')
+        width := widths.Get(it - 'a')
         ? width + count > 100 {
             line += 1
             count = width

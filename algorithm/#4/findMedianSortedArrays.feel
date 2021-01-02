@@ -10,18 +10,18 @@ FindMedianSortedArrays := (nums1 : List[Int], nums2 : List[Int]->v : num) {
     @ iMin <= iMax {
         i := (iMin + iMax) / 2
         j := halfLen - i
-        ? i < iMax && nums2.(j - 1) > nums1.(i) {
+        ? i < iMax && nums2.Get(j - 1) > nums1.Get(i) {
             iMin = i + 1
-        } | i > iMin && nums1.(i - 1) > nums2.(j) {
+        } | i > iMin && nums1.Get(i - 1) > nums2.Get(j) {
             iMax = i - 1
         } | {
             maxLeft := 0
             ? i == 0 { 
-                maxLeft = nums2.(j - 1)
+                maxLeft = nums2.Get(j - 1)
             } | j == 0 {
-                maxLeft = nums1.(i - 1)
+                maxLeft = nums1.Get(i - 1)
             } | {
-                maxLeft = Max(nums1.(i - 1), nums2.(j - 1))
+                maxLeft = Max(nums1.Get(i - 1), nums2.Get(j - 1))
             }
 
             ? (m + n) % 2 == 1 {
@@ -30,11 +30,11 @@ FindMedianSortedArrays := (nums1 : List[Int], nums2 : List[Int]->v : num) {
 
             minRight := 0
             ? i == m {
-                minRight = nums2.(j)
+                minRight = nums2.Get(j)
             } | j == n {
-                minRight = nums1.(i)
+                minRight = nums1.Get(i)
             } | {
-                minRight = Min(nums2.(j), nums1.(i))
+                minRight = Min(nums2.Get(j), nums1.Get(i))
             }
 
             <- (maxLeft + minRight).[num] / 2.0

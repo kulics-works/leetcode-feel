@@ -2,19 +2,19 @@ UniquePaths := (m : Int, n : Int->v : Int) {
     // 动态创建一个二维路径答案表
     dp := List[List[Int]]$(n)
     @ i := 0.Up_until(n)... {
-        dp.(i) = List[Int]$(m)
+        dp.Set(i, List[Int]$(m))
     }
     
     @ i := 0.Up_until(n)... {
         @ j := 0.Up_until(m)... {
             // 最上一行或者最左一列
             ? i == 0 || j == 0 {
-                dp.(i).(j) = 1
+                dp.Get(i).Set(j, 1)
             } | {
-                dp.(i).(j) = dp.(i - 1).(j) + dp.(i).(j - 1)
+                dp.Get(i).Set(j, dp.Get(i - 1).Get(j) + dp.Get(i).Get(j - 1))
             }
         }
     }
     
-    <- dp.(n - 1).(m - 1)
+    <- dp.Get(n - 1).Get(m - 1)
 }

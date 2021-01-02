@@ -3,9 +3,9 @@ TwoSum := (nums : List[Int] -> v : List[Int]) {
     @ i, v := nums.WithIndex()... {
         Temp := target - v
         ? Hashmap.Contains(Temp) {
-            <- List_of[Int](i, Hashmap.(Temp))
+            <- List_of[Int](i, Hashmap.Get(Temp))
         } | {
-            Hashmap.(v) = i
+            Hashmap.Set(v, i)
         }
     }
     <- List_of[Int]()

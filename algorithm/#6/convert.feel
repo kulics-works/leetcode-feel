@@ -6,7 +6,7 @@ Convert := (s : Str, numRows : Int->v : Str) {
     direct := true
     n := 0
     @ v := s... {
-        res.(n) += v
+        res.Put(n, (i){i + v})
         ? n == numRows - 1 {
             direct = false
         } | n == 0 {
@@ -19,7 +19,7 @@ Convert := (s : Str, numRows : Int->v : Str) {
         }
     }
     @ i := 1.Up_until(numRows)... {
-        res.(0) += res.(i)
+        res.Put(0, (v){v+res.Get(i)})
     }
-    <- res.(0).To_Str()
+    <- res.Get(0).To_Str()
 }

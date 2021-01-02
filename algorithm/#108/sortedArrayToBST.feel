@@ -5,7 +5,7 @@ SortedArrayToBST := (nums : List[Int] -> v : ?TreeNode) {
     Middle := nums.Size() / 2
 
     <- TreeNode$(
-        nums.(Middle),
+        nums.Get(Middle),
         SortedArrayToBST(nums.Slice(nil, Middle)),
         SortedArrayToBST(nums.Slice(Middle + 1, nil))
     )

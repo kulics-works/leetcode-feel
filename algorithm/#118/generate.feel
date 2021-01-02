@@ -5,9 +5,9 @@ Generate := (numRows : Int -> v : List[List[Int]]) {
         @ j := 1.Up_to(i)... {
             right := 0
             ? j < i {
-                right = arr.(i - 1).(j)
+                right = arr.Get(i - 1).Get(j)
             }
-            temp += arr.(i - 1).(j - 1) + right
+            temp += arr.Get(i - 1).Get(j - 1) + right
         }
         arr += temp
     }

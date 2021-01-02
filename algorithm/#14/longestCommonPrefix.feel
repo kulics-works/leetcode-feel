@@ -4,20 +4,20 @@ LongestCommonPrefix := (strs : List[Str]->v : Str) {
     ? length == 0 {
         <- longest
     } | == 1 {
-        <- strs.(0)
+        <- strs.Get(0)
     }
-    longest := strs.(0)
+    longest := strs.Get(0)
     @ i := 0.Up_until(strs.Size() - 1)... {
         head := 0
-        strlen := Min(strs.(i).Size(), strs.(i + 1).Size())
+        strlen := Min(strs.Get(i).Size(), strs.Get(i + 1).Size())
         ? strlen == 0 {
             <- ""
         }
-        @ head < strlen && strs.(i).(head) == strs.(i + 1).(head) {
+        @ head < strlen && strs.Get(i).Get(head) == strs.Get(i + 1).Get(head) {
             head += 1
         }
         ? head > 0 {
-            temp = strs.(i).Slice(nil, head)
+            temp = strs.Get(i).Slice(nil, head)
             ? temp.Size() < longest.Size() {
                 longest = temp
             }

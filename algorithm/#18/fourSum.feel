@@ -5,39 +5,39 @@ FourSum := (nums : List[Int], target : Int->v: List[List[Int]]) {
     ? length < 4 {
         <- arr
     }
-    ? nums.(0) + nums.(1) + nums.(2) + nums.(3) > target ||
-    nums.(length - 1) + nums.(length - 2) + nums.(length - 3) + nums.(length - 4) < target {
+    ? nums.Get(0) + nums.Get(1) + nums.Get(2) + nums.Get(3) > target ||
+    nums.Get(length - 1) + nums.Get(length - 2) + nums.Get(length - 3) + nums.Get(length - 4) < target {
         <- arr
     }
     @ i := 0.Up_until(length - 3)... {
-        ? i > 0 && nums.(i) == nums.(i - 1) {
+        ? i > 0 && nums.Get(i) == nums.Get(i - 1) {
             @
         }
-        ? nums.(i) + nums.(i + 1) + nums.(i + 2) + nums.(i + 3) > target {
+        ? nums.Get(i) + nums.Get(i + 1) + nums.Get(i + 2) + nums.Get(i + 3) > target {
             @ <-
         }
-        ? nums.(i) + nums.(length - 3) + nums.(length - 2) + nums.(length - 1) < target {
+        ? nums.Get(i) + nums.Get(length - 3) + nums.Get(length - 2) + nums.Get(length - 1) < target {
             @
         }
         @ j := (i + 1).Up_until(length - 2)... {
-            ? j > i + 1 && nums.(j) == nums.(j - 1) {
+            ? j > i + 1 && nums.Get(j) == nums.Get(j - 1) {
                 @
             }
-            ? nums.(i) + nums.(j) + nums.(j + 1) + nums.(j + 2) > target {
+            ? nums.Get(i) + nums.Get(j) + nums.Get(j + 1) + nums.Get(j + 2) > target {
                 @ <-
             }
-            ? nums.(i) + nums.(j) + nums.(length - 2) + nums.(length - 1) < target {
+            ? nums.Get(i) + nums.Get(j) + nums.Get(length - 2) + nums.Get(length - 1) < target {
                 @
             }
             l, r := j + 1, length - 1
             @ l < r {
-                sum = nums.(i) + nums.(j) + nums.(l) + nums.(r)
+                sum = nums.Get(i) + nums.Get(j) + nums.Get(l) + nums.Get(r)
                 ? sum == target {
-                    arr.Append(List_of(nums.(i), nums.(j), nums.(l), nums.(r)))
-                    @ l < r && nums.(l) == nums.(l + 1) {
+                    arr.Append(List_of(nums.Get(i), nums.Get(j), nums.Get(l), nums.Get(r)))
+                    @ l < r && nums.Get(l) == nums.Get(l + 1) {
                         l += 1
                     }
-                    @ l < r && nums.(r) == nums.(r - 1) {
+                    @ l < r && nums.Get(r) == nums.Get(r - 1) {
                         r -= 1
                     }
                     l += 1
