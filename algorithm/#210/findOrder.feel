@@ -21,7 +21,7 @@ FindOrder := (numCourses : Int, prerequisites : List[List[Int]]->order : List[In
 		numCourses -= 1
         order.Append(cur)
         // remove the pre == cur
-		@ edges.(cur) => v {
+		@ v := edges.(cur)... {
 			indegrees.(v) -= 1
 			? indegrees.(v) == 0 {
 				queue.Append(v)
