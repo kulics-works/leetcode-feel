@@ -3,7 +3,7 @@ ArrayPairSum := (nums : List[Int] -> v : Int) {
     sum := 0
     length := nums.Size()
     @ it := 0.Up_until(length).Step(2)... {
-        sum += nums.Get(it)
+        sum += nums.(it)
     }
     <- sum
 }

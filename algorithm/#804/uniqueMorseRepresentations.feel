@@ -15,9 +15,9 @@ UniqueMorseRepresentations := (words : List[Str] -> v : Int) {
     @ it := words... {
         temp := ""
         @ c := it... {
-            temp += Morse.Get(c)
+            temp += Morse.(c)
         }
-        ret.Set(temp, true)
+        ret.(temp) = true
     }
 
     <- ret.count

@@ -7,8 +7,8 @@ GenerateParenthesis := (n : Int->v : List[Str]) {
     @ i := 2.Up_to(n)... {
         temp := List_of[Str]()
         @ j := 0.Up_until(i)... {
-            str1 := result.Get(j)
-            str2 := result.Get(i - 1 - j)
+            str1 := result.(j)
+            str2 := result.(i - 1 - j)
             @ s1 := str1 {
                 @ s2 := str2... {
                     el = "(" + s1 + ")" + s2
@@ -18,5 +18,5 @@ GenerateParenthesis := (n : Int->v : List[Str]) {
         }
         result.Append(temp)
     }
-    <- result.Get(n)
+    <- result.(n)
 }

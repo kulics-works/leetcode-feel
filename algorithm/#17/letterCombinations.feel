@@ -9,7 +9,7 @@ Backtrack := (combination : Str, next : Str->) {
     ? next.Size() == 0 {
         output.Append(combination)
     } | {
-        @ v := phone.Get(next.Get(0))... {
+        @ v := phone.(next.(0))... {
             Backtrack(combination + v, next.Slice(1, nil))
         }
     }

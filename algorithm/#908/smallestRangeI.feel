@@ -2,8 +2,8 @@ SmallestRangeI := (a : List[Int], k : Int -> v : Int) {
     ? a.Size() == 0 {
         <- 0
     }
-    max := a.Get(0)
-    min := a.Get(0)
+    max := a.(0)
+    min := a.(0)
     @ it := a... {
         ? it > max {
             max = it

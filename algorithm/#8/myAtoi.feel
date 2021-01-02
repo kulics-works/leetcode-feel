@@ -29,7 +29,7 @@ Automaton := $(
     ans: I64
 ) {
     Get := (c: Chr ->) {
-        state = map.Get(state).Get(GetCol(c))
+        state = map.(state).(GetCol(c))
         ? state == IN_NUM {
             ans = ans * 10 + c - '0'
             ? sign == 1 {

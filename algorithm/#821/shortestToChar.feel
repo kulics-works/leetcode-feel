@@ -5,14 +5,14 @@ ShortestToChar := (s : Str, c : Chr -> v : List[Int]) {
         ? v == c {
             flag = i
         }
-        ret.Set(i, i - flag)
+        ret.(i) = i - flag
     }
     flag = s.Size() * 2
     @ i := (s.Size() - 1).Down_to(0)... {
-        ? s.Get(i) == c {
+        ? s.(i) == c {
             flag = i
         }
-        ret.Set(i, Min(flag - i, ret.Get(i)))
+        ret.(i) = Min(flag - i, ret.(i))
     }
     <- ret
 }

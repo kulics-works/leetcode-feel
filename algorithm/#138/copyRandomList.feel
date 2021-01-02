@@ -11,12 +11,12 @@ CopyRandomList := (head : ?Node->v : ?Node) {
         <- nil
     }
     ? tempmap.Contains(head) {
-        <- tempmap.Get(head)
+        tempmap.(head)
     }
 
     newNode : ?Node = Node$(head.val, nil, nil)
 
-    tempmap.Set(head, newNode)
+    tempmap.(head) = newNode
 
     newNode.next = CopyRandomList(head.next)
     newNode.random = CopyRandomList(head.random)

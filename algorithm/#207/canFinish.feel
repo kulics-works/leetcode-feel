@@ -3,8 +3,8 @@ CanFinish := (numCourses : Int, prerequisites : List[List[Int]]->can : Bool) {
     indegrees := List[Int]$(numCourses)
 	edges := List[List[Int]]$(numCourses)
 	@ p := prerequisites... {
-		indegrees.Put(p.Get(0), (v){v + 1})
-		edges.Get(p.Get(1)).Append(p.Get(0))
+		indegrees.(p.(0)) += 1
+		edges.(p.(1)).Append(p.(0))
 	}
     // put courses with indegree == 0 to queue
     queue := List[Int]$(0)
@@ -15,13 +15,13 @@ CanFinish := (numCourses : Int, prerequisites : List[List[Int]]->can : Bool) {
 	}
 	// bfs
 	@ queue.Size() > 0 {
-		cur = queue.Get(0)
+		cur = queue.(0)
 		queue.RemoveAt(0)
 		numCourses -= 1
         // remove the pre == cur
-		@ v := edges.Get(cur)... {
-			indegrees.Put(v, (i){i - 1})
-			? indegrees.Get(v) == 0 {
+		@ v := edges.(cur)... {
+			indegrees.(v) -= 1
+			? indegrees.(v) == 0 {
 				queue.Append(v)
 			}
 		}

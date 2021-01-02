@@ -2,13 +2,13 @@ FlipAndInvertImage := (a : List[List[Int]] -> v : List[List[Int]]) {
     Reverse := (numbers : List[Int] -> v : List[Int]) {
         ret := List_of[Int]()
         @ i := (numbers.Size() - 1).Down_to(0)... {
-            ret += 1 - numbers.Get(i)
+            ret += 1 - numbers.(i)
         }
         <- ret
     }
 
     @ i, v := a... {
-        a.Set(i, Reverse(v))
+        a.(i) = Reverse(v)
     }
     <- a
 }

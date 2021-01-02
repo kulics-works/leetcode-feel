@@ -13,7 +13,7 @@ MergeKLists := (lists : List[ListNode]->v : ?ListNode) {
 
 Merge := (lists : List[ListNode], left : Int, right : Int->v : ?ListNode) {
     ? left == right {
-        <- lists.Get(left)
+        <- lists.(left)
     }
     middle := left + (right - left) / 2
     list1 := Merge(lists, left, middle)

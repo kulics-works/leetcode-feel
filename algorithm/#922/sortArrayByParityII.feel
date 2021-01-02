@@ -4,10 +4,10 @@ SortArrayByParityII := (a : List[Int] -> v : List[Int]) {
     ib := 1
     @ it := ia... {
         ? it && 1 <> 1 {
-            arr.Set(ia, it)
+            arr.(ia) = it
             ia += 2
         } | {
-            arr.Set(ib, it)
+            arr.(ib) = it
             ib += 2
         }
     }

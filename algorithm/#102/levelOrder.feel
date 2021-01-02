@@ -21,7 +21,7 @@ Helper := (root : ?TreeNode, level : Int) {
     ? levels.Size() == level {
         levels.Append(List_of[Int]())
     }
-    levels.Get(level).Append(root.val)
+    levels.(level).Append(root.val)
     Helper(root.left, level + 1)
     Helper(root.right, level + 1)
 }

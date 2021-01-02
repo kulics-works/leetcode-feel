@@ -3,10 +3,10 @@ MinCostClimbingStairs := (cost : List[Int]->v : Int) {
         <- 0
     }
     dp = List[Int]$(cost.Size())
-    dp.Set(0, cost.Get(0))
-    dp.Set(1, cost.Get(1))
+    dp.(0) = cost.(0)
+    dp.(1) = cost.(1)
     @ i := 2.Up_until(cost.Size())... {
-        dp.Set(i, cost.Get(i) + Min(dp.Get(i - 1), dp.Get(i - 2)))
+        dp.(i) = cost.(i) + Min(dp.(i - 1), dp.(i - 2))
     }
-    <- Min(dp.Get(cost.Size() - 1), dp.Get(cost.Size() - 2))
+    <- Min(dp.(cost.Size() - 1), dp.(cost.Size() - 2))
 }
