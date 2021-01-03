@@ -1,5 +1,5 @@
-FizzBuzz := (n : Int -> v : List[Str]) {
-    arr := List_of[Str]()
+FizzBuzz := (n : Int -> v : List{Str}) {
+    arr := List_of{Str}()
 
     @ i := 1.Up_to(n)... {
         ? i % 15 == 0 {

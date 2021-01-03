@@ -1,13 +1,13 @@
-SortArrayByParityII := (a : List[Int] -> v : List[Int]) {
-    arr := List[Int]$(a.Size())
+SortArrayByParityII := (a : List{Int} -> v : List{Int}) {
+    arr := List{Int}$(a.Size())
     ia := 0
     ib := 1
     @ it := ia... {
         ? it && 1 <> 1 {
-            arr.(ia) = it
+            arr[ia] = it
             ia += 2
         } | {
-            arr.(ib) = it
+            arr[ib] = it
             ib += 2
         }
     }

@@ -1,6 +1,6 @@
-RemoveDuplicates := (nums : List[Int] -> len : Int) {
+RemoveDuplicates := (nums : List{Int} -> len : Int) {
     @ i := (nums.Size() - 1).Down_to(0)... {
-        ? nums.(i) == nums.(i - 1) {
+        ? nums[i] == nums[i - 1] {
             nums.Remove(i)
         }
     }

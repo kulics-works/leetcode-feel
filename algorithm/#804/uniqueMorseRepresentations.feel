@@ -1,4 +1,4 @@
-UniqueMorseRepresentations := (words : List[Str] -> v : Int) {
+UniqueMorseRepresentations := (words : List{Str} -> v : Int) {
     Morse := Dict_of(
         Pair_of('a', ".-"), Pair_of('b', "-...."), Pair_of('c', "-.-."),
         Pair_of('d', "-..."), Pair_of('e', "."), Pair_of('f', "...-."), 
@@ -11,13 +11,13 @@ UniqueMorseRepresentations := (words : List[Str] -> v : Int) {
         Pair_of('y', "-.--"), Pair_of('z', "--...")
     )
     
-    ret := Dict_of[Str, Bool]()
+    ret := Dict_of{Str, Bool}()
     @ it := words... {
         temp := ""
         @ c := it... {
-            temp += Morse.(c)
+            temp += Morse[c]
         }
-        ret.(temp) = true
+        ret[temp] = true
     }
 
     <- ret.count

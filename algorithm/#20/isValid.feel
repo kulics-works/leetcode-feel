@@ -1,5 +1,5 @@
 IsValid := (s : Str->v : Bool) {
-    result := Stack_of[Int]()
+    result := Stack_of{Int}()
     @ v := s... {
         ? v == '(' {
             result.Put(0)

@@ -5,18 +5,18 @@ Node := $(
     random : ?Node
 ) {}
 
-tempmap := Dict_of[?Node, ?Node]()
+tempmap := Dict_of{?Node, ?Node}()
 CopyRandomList := (head : ?Node->v : ?Node) {
     ? head == nil {
         <- nil
     }
     ? tempmap.Contains(head) {
-        tempmap.(head)
+        <- tempmap[head]
     }
 
     newNode : ?Node = Node$(head.val, nil, nil)
 
-    tempmap.(head) = newNode
+    tempmap[head] = newNode
 
     newNode.next = CopyRandomList(head.next)
     newNode.random = CopyRandomList(head.random)

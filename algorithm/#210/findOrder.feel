@@ -1,29 +1,29 @@
-FindOrder := (numCourses : Int, prerequisites : List[List[Int]]->order : List[Int]) {
+FindOrder := (numCourses : Int, prerequisites : List{List{Int}}->order : List{Int}) {
     // get the indegree for each course
-    indegrees := List[Int]$(numCourses)
-	edges := List[List[Int]]$(numCourses)
+    indegrees := List{Int}$(numCourses)
+	edges := List{List{Int}}$(numCourses)
 	@ p := prerequisites... {
-		indegrees.(p.(0)) += 1
-		edges.(p.(1)).Append(p.(0))
+		indegrees[p[0]] += 1
+		edges[p[1]].Append(p[0])
 	}
     // put courses with indegree == 0 to queue
-    queue := List[Int]$(0)
+    queue := List{Int}$(0)
 	@ courseIdx, indegree := indegrees... {
 		? indegree == 0 {
 			queue.Append(courseIdx)
 		}
 	}
 	// bfs
-    order := List[Int]$(0)
+    order := List{Int}$(0)
 	@ queue.Size() > 0 {
-		cur = queue.(0)
+		cur = queue[0]
 		queue.RemoveAt(0)
 		numCourses -= 1
         order.Append(cur)
         // remove the pre == cur
-		@ v := edges.(cur)... {
-			indegrees.(v) -= 1
-			? indegrees.(v) == 0 {
+		@ v := edges[cur]... {
+			indegrees[v] -= 1
+			? indegrees[v] == 0 {
 				queue.Append(v)
 			}
 		}

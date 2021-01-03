@@ -18,7 +18,7 @@ LongestPalindrome := (s : Str->v : Str) {
 // 中心扩展校验回文
 ExpandAroundCenter := (s : Str, left : Int, right : Int->v : Int) {
     l, r := left, right
-    @ l >= 0 && r < s.Size() && s.(l) == s.(r) {
+    @ l >= 0 && r < s.Size() && s[l] == s[r] {
         l -= 1
         r += 1
     }

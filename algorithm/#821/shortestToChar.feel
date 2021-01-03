@@ -1,18 +1,18 @@
-ShortestToChar := (s : Str, c : Chr -> v : List[Int]) {
+ShortestToChar := (s : Str, c : Chr -> v : List{Int}) {
     flag := -s.Size()
-    ret := List[Int]$(s.Size())
+    ret := List{Int}$(s.Size())
     @ i, v := s... {
         ? v == c {
             flag = i
         }
-        ret.(i) = i - flag
+        ret[i] = i - flag
     }
     flag = s.Size() * 2
     @ i := (s.Size() - 1).Down_to(0)... {
-        ? s.(i) == c {
+        ? s[i] == c {
             flag = i
         }
-        ret.(i) = Min(flag - i, ret.(i))
+        ret[i] = Min(flag - i, ret[i])
     }
     <- ret
 }

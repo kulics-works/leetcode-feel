@@ -1,8 +1,8 @@
-Postorder := (root : ?Node -> v : List[Int]) {
+Postorder := (root : ?Node -> v : List{Int}) {
     ? root == nil {
-        <- List_of[Int]()
+        <- List_of{Int}()
     }
-    list := List_of[Int]()
+    list := List_of{Int}()
     @ it := root.children... {
         list += Postorder(it)
     }

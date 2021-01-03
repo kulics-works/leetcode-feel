@@ -1,12 +1,12 @@
-TwoSum := (nums : List[Int] -> v : List[Int]) {
-    Hashmap := Dict_of[Int, Int]()
+TwoSum := (nums : List{Int} -> v : List{Int}) {
+    Hashmap := Dict_of{Int, Int}()
     @ i, v := nums.WithIndex()... {
         Temp := target - v
         ? Hashmap.Contains(Temp) {
-            <- List_of[Int](i, Hashmap.(Temp))
+            <- List_of{Int}(i, Hashmap[Temp])
         } | {
-            Hashmap.(v) = i
+            Hashmap[v] = i
         }
     }
-    <- List_of[Int]()
+    <- List_of{Int}()
 }

@@ -19,7 +19,7 @@ RomanToInt := (s : Str->v : Int) {
         }
         i := s.Slice(endIndex = length)
         @ i == v {
-            res += hashmap.(v)
+            res += hashmap[v]
             s = s.Slice(startIndex = length)
             ? s.Size() >= length {
                 i = s.Slice(endIndex = length)

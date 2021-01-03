@@ -1,13 +1,13 @@
-Transpose := (a : List[List[Int]] -> v : List[List[Int]]) {
+Transpose := (a : List{List{Int}} -> v : List{List{Int}}) {
     l1 := a.Size()
-    l2 := a.(0).Size()
-    ret := List_of[List[Int]]()
+    l2 := a[0].Size()
+    ret := List_of{List{Int}}()
     @ i := 0.Up_until(l2)... {
-        ret.(i) = List[Int]$(l1)
+        ret[i] = List{Int}$(l1)
     }
     @ i := 0.Up_until(l2)... {
         @ j := 0.Up_until(l1)... {
-            ret.(i).(j) = a.(j).(i)
+            ret[i][j] = a[j][i]
         }
     }
     <- ret

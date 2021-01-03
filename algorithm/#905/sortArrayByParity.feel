@@ -1,6 +1,6 @@
-SortArrayByParity := (a : List[Int] -> v : Int) {
-    arr1 := List_of[Int]()
-    arr2 := List_of[Int]()
+SortArrayByParity := (a : List{Int} -> v : Int) {
+    arr1 := List_of{Int}()
+    arr2 := List_of{Int}()
     @ it := a... {
         ? it &&& 1 <> 1 {
             arr1.Append(it)

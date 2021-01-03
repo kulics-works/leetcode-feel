@@ -1,4 +1,4 @@
-LetterCombinations := (digits : Str->v : List[Str]) {
+LetterCombinations := (digits : Str->v : List{Str}) {
     ? digits.Size() <> 0 {
         Backtrack("", digits)
     }
@@ -9,13 +9,13 @@ Backtrack := (combination : Str, next : Str->) {
     ? next.Size() == 0 {
         output.Append(combination)
     } | {
-        @ v := phone.(next.(0))... {
+        @ v := phone[next[0]]... {
             Backtrack(combination + v, next.Slice(1, nil))
         }
     }
 }
 
-output := List_of[Str]()
+output := List_of{Str}()
 dict := Dict_of(
     Pair_of("2", "abc"),
     Pair_of("3", "def"),

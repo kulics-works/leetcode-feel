@@ -5,11 +5,11 @@ TreeNode := $ (
     right : ?TreeNode
 ) {}
 
-PreorderTraversal := (root : ?TreeNode->v : List[Int]) {
+PreorderTraversal := (root : ?TreeNode->v : List{Int}) {
     ? root == nil {
         <- nil
     }
-    arr := List_of[Int]()
+    arr := List_of{Int}()
     arr.Append(root.val)
     temp := PreorderTraversal(root.left)
     ? temp <> nil {

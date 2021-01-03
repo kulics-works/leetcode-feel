@@ -11,7 +11,7 @@ RotateRight := (head : ?ListNode, k : Int->v : ?ListNode) {
     ? head.next == nil {
         <- head
     }
-    arr := List_of[ListNode]()
+    arr := List_of{ListNode}()
     temp := head
     @ temp <> nil {
         arr.Append(temp)
@@ -26,7 +26,7 @@ RotateRight := (head : ?ListNode, k : Int->v : ?ListNode) {
     } | k > arr.Size() {
         k = k % arr.Size()
     } 
-    arr.(arr.Size() - 1).next = arr.(0)
-    arr.(arr.Size() - 1 - k).next = nil
-    <- arr.(arr.Size() - k)
+    arr[arr.Size() - 1].next = arr[0]
+    arr[arr.Size() - 1 - k].next = nil
+    <- arr[arr.Size() - k]
 }

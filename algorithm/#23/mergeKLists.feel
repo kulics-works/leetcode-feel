@@ -4,16 +4,16 @@ ListNode = $ (
     next : ?ListNode
 ) {}
 
-MergeKLists := (lists : List[ListNode]->v : ?ListNode) {
+MergeKLists := (lists : List{ListNode}->v : ?ListNode) {
     ? lists.Size() == 0 {
         <- nil
     }
     <- Merge(lists, 0, lists.Size() - 1)
 }
 
-Merge := (lists : List[ListNode], left : Int, right : Int->v : ?ListNode) {
+Merge := (lists : List{ListNode}, left : Int, right : Int->v : ?ListNode) {
     ? left == right {
-        <- lists.(left)
+        <- lists[left]
     }
     middle := left + (right - left) / 2
     list1 := Merge(lists, left, middle)

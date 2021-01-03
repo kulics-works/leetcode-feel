@@ -3,7 +3,7 @@ MyAtoi := (str : Str -> v : Int) {
     @ ch := str... {
         automaton.Get(ch)
     }
-    <- automaton.sign * automaton.ans.[Int]
+    <- automaton.sign * automaton.ans.to{Int}()
 }
 
 START   := "start"
@@ -29,7 +29,7 @@ Automaton := $(
     ans: I64
 ) {
     Get := (c: Chr ->) {
-        state = map.(state).(GetCol(c))
+        state = map[state][GetCol(c)]
         ? state == IN_NUM {
             ans = ans * 10 + c - '0'
             ? sign == 1 {

@@ -1,8 +1,8 @@
-Preorder := (root : ?Node -> v : List[Int]) {
+Preorder := (root : ?Node -> v : List{Int}) {
     ? root == nil {
-        <- List_of[Int]()
+        <- List_of{Int}()
     }
-    list := List_of[Int]()
+    list := List_of{Int}()
     list += root.val
     @ it := root.children... {
         list += Preorder(it)

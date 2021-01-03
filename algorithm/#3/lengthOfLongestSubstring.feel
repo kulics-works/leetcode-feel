@@ -1,8 +1,8 @@
 LengthOfLongestSubstring := (s : Str -> length : Int) {
     top := 0
-    temp := List_of[Int]()
+    temp := List_of{Int}()
 
-    HaveIt := (input : List[Int], it : Int -> yes : Bool, index : Int) {
+    HaveIt := (input : List{Int}, it : Int -> yes : Bool, index : Int) {
         @ i, v := input.WithIndex()... {
             ? v == it {
                 <- true, i

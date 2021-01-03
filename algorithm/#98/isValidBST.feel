@@ -18,10 +18,10 @@ Compare := $ (lastVal : I64) {
         ? ~~IsValidBST(root.Left) {
             <- false
         }
-        ? root.Val.[I64] <= lastVal {
+        ? root.Val.to{I64}()) <= lastVal {
             <- false
         }
-        lastVal = root.Val.[I64]
+        lastVal = root.Val.to{I64}()
         ? ~~IsValidBST(root.right) {
             <- false
         }
