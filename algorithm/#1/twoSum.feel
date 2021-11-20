@@ -1,12 +1,12 @@
-TwoSum := (nums : List{Int} -> v : List{Int}) {
-    Hashmap := Dict_of{Int, Int}()
-    @ i, v := nums.WithIndex()... {
-        Temp := target - v
-        ? Hashmap.Contains(Temp) {
-            <- List_of{Int}(i, Hashmap[Temp])
-        } | {
-            Hashmap[v] = i
-        }
-    }
-    <- List_of{Int}()
-}
+let twoSum(nums List[Int]) List[Int] = {
+    let map = hashMapOf[Int, Int]();
+    for nums.withIndex() as (i, v) then {
+        let temp = target - v;
+        if map[target - v] as Some(v) then {
+            return listOf[Int](i, v);
+        } else {
+            map[v] = i;
+        };
+    };
+    listOf[Int]()
+};

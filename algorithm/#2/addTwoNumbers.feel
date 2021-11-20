@@ -1,32 +1,15 @@
-AddTwoNumbers := (l1 : ?ListNode, l2 : ?ListNode -> v : ?ListNode) {
-    Head := ListNode$(val = 0)
-    p, q, current := l1, l2, Head
-    carry := 0
+def ListNode of Nil | Cons(val Int, next ListNode);
 
-    @ p <> nil || q <> nil {
-        x := 0
-        ? p <> nil {
-            x = p.val
-        }
-        y := 0
-        ? q <> nil {
-            y = q.val
-        }
+let addTwoNumbers(l1 ListNode, l2 ListNode) ListNode = add(l1, l2, 0);
 
-        sum := x + y + carry
-        carry = sum / 10
-        current.next = ListNode$(val = sum % 10)
-        current = current.next 
-        ? p <> nil {
-            p = p.next
-        }
-        ? q <> nil {
-            q = q.next
-        }
-    }
-
-    ? carry > 0 {
-        current.next = ListNode$(val = carry)
-    }
-    <- Head.next
-}
+let add(l1 ListNode, l2 ListNode, val Int) ListNode = {
+    let (sum, next1, next2) = when (l1, l2)
+        is (Cons(v1, n1), Cons(v2, n2)) then
+            (v1 + v2 + val, n1, n2)
+        is (Cons(v, n), Nil) then
+            (v + val, n, Nil)
+        is (Nil, Cons(v, n)) then
+            (v + val, n, Nil)
+        is _ then return if val > 0 then Cons(val, Nil) else Nil;
+    return Cons(sum % 10, add(next1, next2, sum / 10))
+};
